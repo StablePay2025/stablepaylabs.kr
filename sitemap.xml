@@ -1,28 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url>
-    <loc>https://stablepaylabs.kr/</loc>
-    <lastmod>2026-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://stablepaylabs.kr/</loc>
+<lastmod>2026-03-27</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
 </urlset>
-```
-
-**2단계 — 브라우저에서 확인 (1~2분 후)**
-```
-https://stablepaylabs.kr/sitemap.xml
-→ XML 내용이 보이면 OK!
-```
-
-**3단계 — Google Search Console에서 재제출**
-```
-Sitemaps 화면에서
-기존 /sitemap.xml 오른쪽 ⋮ 클릭
-→ "삭제" 클릭
-
-→ 입력란에 sitemap.xml 다시 입력
-→ "제출" 클릭
