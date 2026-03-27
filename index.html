@@ -252,14 +252,68 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
 .modal-btn:hover{background:var(--navy-light);}
 
 @media(max-width:768px){
-  .hero-content{flex-direction:column;align-items:flex-start;padding-bottom:40px;}
+  .hero-content{flex-direction:column;align-items:flex-start;padding-bottom:32px;gap:16px;}
   .hero-stats{align-self:stretch;width:100%;}
-  .stat{flex:1;padding:14px 12px;}
+  .stat{flex:1;padding:12px 8px;}
+  .stat-num{font-size:20px !important;}
+  .stat-label{font-size:10px !important;}
   .nav-links{display:none;}
   .footer-top{flex-direction:column;gap:32px;}
   .app-showcase-inner,.app-showcase-inner.reverse{flex-direction:column;}
   .app-img-wrap{max-width:100%;}
   .modal-box{max-height:92vh;}
+
+  /* 모바일 히어로 텍스트 블러 박스 */
+  .hero-text{
+    background:rgba(7,18,45,0.82) !important;
+    backdrop-filter:blur(16px) !important;
+    -webkit-backdrop-filter:blur(16px) !important;
+    border:1px solid rgba(255,255,255,0.18) !important;
+    border-radius:20px !important;
+    padding:22px 18px !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+  .hero-badge{
+    background:rgba(255,255,255,0.18) !important;
+    margin-bottom:12px !important;
+  }
+  .hero h1{
+    font-size:clamp(24px,7vw,34px) !important;
+    text-shadow:none !important;
+    margin-bottom:10px !important;
+    line-height:1.2 !important;
+  }
+  .hero p{
+    font-size:14px !important;
+    margin-bottom:18px !important;
+    color:rgba(255,255,255,0.95) !important;
+    line-height:1.65 !important;
+  }
+  .hero-btns{
+    flex-direction:column !important;
+    gap:10px !important;
+  }
+  .btn-primary{
+    width:100% !important;
+    justify-content:center !important;
+    padding:14px 20px !important;
+    background:white !important;
+    color:#0D2B55 !important;
+  }
+  .btn-secondary{
+    width:100% !important;
+    justify-content:center !important;
+    padding:13px 20px !important;
+    background:rgba(255,255,255,0.15) !important;
+  }
+  .hero-stats{
+    background:rgba(7,18,45,0.82) !important;
+    backdrop-filter:blur(16px) !important;
+    -webkit-backdrop-filter:blur(16px) !important;
+    border:1px solid rgba(255,255,255,0.18) !important;
+    border-radius:16px !important;
+  }
 }
 </style>
 </head>
