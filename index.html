@@ -45,7 +45,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.08);}
   padding:10px 5%;text-align:center;font-size:13px;font-weight:500;color:white;
   box-shadow:0 2px 10px rgba(0,188,212,0.3);
   transition:transform 0.4s ease, opacity 0.4s ease;
-  touch-action:pan-y;
+  touch-action:pan-x;
   user-select:none;
   display:flex;align-items:center;justify-content:center;gap:12px;
 }
@@ -56,13 +56,15 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.08);}
 }
 .launch-banner strong{font-weight:700;}
 .banner-close{
-  position:absolute;right:16px;top:50%;transform:translateY(-50%);
-  background:rgba(255,255,255,0.25);border-radius:50%;
-  width:22px;height:22px;display:flex;align-items:center;justify-content:center;
-  font-size:12px;cursor:pointer;flex-shrink:0;
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,0.3);border-radius:50%;
+  width:24px;height:24px;display:flex;align-items:center;justify-content:center;
+  font-size:13px;cursor:pointer;flex-shrink:0;font-weight:700;
   transition:background 0.2s;line-height:1;
+  border:1.5px solid rgba(255,255,255,0.5);
+  z-index:10;
 }
-.banner-close:hover{background:rgba(255,255,255,0.4);}
+.banner-close:hover{background:rgba(255,255,255,0.5);}
 
 .hero{
   position:relative;width:100%;
@@ -273,7 +275,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
 .modal-btn:hover{background:var(--navy-light);}
 
 @media(max-width:768px){
-  .launch-banner{top:64px;font-size:12px;padding:8px 4%;}
+  .launch-banner{top:64px;font-size:12px;padding:8px 4%;display:flex !important;align-items:center;justify-content:center;}
   .hero-content{flex-direction:column;align-items:flex-start;padding-bottom:32px;gap:16px;}
   .hero-stats{align-self:stretch;width:100%;}
   .stat{flex:1;padding:12px 8px;}
@@ -797,6 +799,7 @@ function closeBanner() {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
     isDragging = true;
+    banner.style.transition = 'none';
   }, {passive: true});
 
   banner.addEventListener('touchmove', function(e) {
@@ -805,14 +808,16 @@ function closeBanner() {
     const dy = Math.abs(e.touches[0].clientY - startY);
     if (dy > 30) { isDragging = false; return; }
     if (Math.abs(dx) > 10) {
+      e.preventDefault();
       banner.style.transform = 'translateX(' + dx + 'px)';
-      banner.style.opacity = Math.max(0, 1 - Math.abs(dx) / 150);
+      banner.style.opacity = Math.max(0, 1 - Math.abs(dx) / 120);
     }
-  }, {passive: true});
+  }, {passive: false});
 
   banner.addEventListener('touchend', function(e) {
     if (!isDragging) return;
     isDragging = false;
+    banner.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
     const dx = e.changedTouches[0].clientX - startX;
     if (Math.abs(dx) > 80) {
       closeBanner();
