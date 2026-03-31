@@ -378,7 +378,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
         <div class="lang-divider"></div>
         <div class="lang-menu-item" id="lang-item-ja" onclick="selectLang('ja','🇯🇵','日本語')">🇯🇵 日本語</div>
         <div class="lang-menu-item" id="lang-item-zh" onclick="selectLang('zh','🇨🇳','中文(简体)')">🇨🇳 中文(简体)</div>
-        <div class="lang-menu-item" id="lang-item-zh-tw" onclick="selectLang('zh-tw','🇭🇰','中文(繁體)')">🇭🇰 中文(繁體)</div>
+        <div class="lang-menu-item" id="lang-item-zh-hk" onclick="selectLang('zh-hk','🇭🇰','繁體中文（香港）')">🇭🇰 繁體中文（香港）</div>
         <div class="lang-menu-item" id="lang-item-th" onclick="selectLang('th','🇹🇭','ภาษาไทย')">🇹🇭 ภาษาไทย</div>
         <div class="lang-menu-item" id="lang-item-vi" onclick="selectLang('vi','🇻🇳','Tiếng Việt')">🇻🇳 Tiếng Việt</div>
         <div class="lang-menu-item" id="lang-item-fil" onclick="selectLang('fil','🇵🇭','Filipino')">🇵🇭 Filipino</div>
@@ -532,40 +532,40 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
   <div class="section-title" id="ttl-currencies">21개국 화폐 지원</div>
   <p class="section-sub" id="sub-currencies">실시간 환율 API로 당일 기준 환율을 적용하여 스테이블코인으로 자동 환산합니다.</p>
   <div class="currency-grid">
-    <div class="currency-tag"><strong>KRW</strong><span class="c-name" data-ko="한국 원" data-en="Korean Won" data-ja="韓国ウォン" data-zh="韩元">한국 원</span></div>
-    <div class="currency-tag"><strong>USD</strong><span class="c-name" data-ko="미국 달러" data-en="US Dollar" data-ja="米ドル" data-zh="美元">미국 달러</span></div>
-    <div class="currency-tag"><strong>JPY</strong><span class="c-name" data-ko="일본 엔" data-en="Japanese Yen" data-ja="日本円" data-zh="日元">일본 엔</span></div>
-    <div class="currency-tag"><strong>CNY</strong><span class="c-name" data-ko="중국 위안" data-en="Chinese Yuan" data-ja="中国元" data-zh="人民币">중국 위안</span></div>
-    <div class="currency-tag"><strong>EUR</strong><span class="c-name" data-ko="유로" data-en="Euro" data-ja="ユーロ" data-zh="欧元">유로</span></div>
-    <div class="currency-tag"><strong>GBP</strong><span class="c-name" data-ko="영국 파운드" data-en="British Pound" data-ja="英ポンド" data-zh="英镑">영국 파운드</span></div>
-    <div class="currency-tag"><strong>HKD</strong><span class="c-name" data-ko="홍콩 달러" data-en="HK Dollar" data-ja="香港ドル" data-zh="港元">홍콩 달러</span></div>
-    <div class="currency-tag"><strong>SGD</strong><span class="c-name" data-ko="싱가포르" data-en="Singapore" data-ja="シンガポール" data-zh="新加坡元">싱가포르</span></div>
-    <div class="currency-tag"><strong>AUD</strong><span class="c-name" data-ko="호주 달러" data-en="AUD" data-ja="豪ドル" data-zh="澳元">호주 달러</span></div>
-    <div class="currency-tag"><strong>THB</strong><span class="c-name" data-ko="태국 바트" data-en="Thai Baht" data-ja="タイバーツ" data-zh="泰铢">태국 바트</span></div>
-    <div class="currency-tag"><strong>PHP</strong><span class="c-name" data-ko="필리핀 페소" data-en="Philippine Peso" data-ja="フィリピンペソ" data-zh="菲律宾比索">필리핀 페소</span></div>
-    <div class="currency-tag"><strong>IDR</strong><span class="c-name" data-ko="인도네시아" data-en="Indonesian" data-ja="インドネシア" data-zh="印尼盾">인도네시아</span></div>
-    <div class="currency-tag"><strong>VND</strong><span class="c-name" data-ko="베트남 동" data-en="Vietnamese Dong" data-ja="ベトナムドン" data-zh="越南盾">베트남 동</span></div>
-    <div class="currency-tag"><strong>MYR</strong><span class="c-name" data-ko="말레이시아" data-en="Malaysian" data-ja="マレーシア" data-zh="马来西亚林吉特">말레이시아</span></div>
-    <div class="currency-tag"><strong>INR</strong><span class="c-name" data-ko="인도 루피" data-en="Indian Rupee" data-ja="インドルピー" data-zh="印度卢比">인도 루피</span></div>
-    <div class="currency-tag"><strong>AED</strong><span class="c-name" data-ko="UAE 디르함" data-en="UAE Dirham" data-ja="UAEディルハム" data-zh="阿联酋迪拉姆">UAE 디르함</span></div>
-    <div class="currency-tag"><strong>SAR</strong><span class="c-name" data-ko="사우디 리얄" data-en="Saudi Riyal" data-ja="サウジリヤル" data-zh="沙特里亚尔">사우디 리얄</span></div>
-    <div class="currency-tag"><strong>CAD</strong><span class="c-name" data-ko="캐나다 달러" data-en="Canadian $" data-ja="カナダドル" data-zh="加元">캐나다 달러</span></div>
-    <div class="currency-tag"><strong>CHF</strong><span class="c-name" data-ko="스위스 프랑" data-en="Swiss Franc" data-ja="スイスフラン" data-zh="瑞士法郎">스위스 프랑</span></div>
-    <div class="currency-tag"><strong>MXN</strong><span class="c-name" data-ko="멕시코 페소" data-en="Mexican Peso" data-ja="メキシコペソ" data-zh="墨西哥比索">멕시코 페소</span></div>
-    <div class="currency-tag"><strong>BRL</strong><span class="c-name" data-ko="브라질 헤알" data-en="Brazilian Real" data-ja="ブラジルレアル" data-zh="巴西雷亚尔">브라질 헤알</span></div>
+    <div class="currency-tag"><strong>KRW</strong><span class="c-name" data-ko="한국 원" data-en="Korean Won" data-ja="韓国ウォン" data-zh="韩元" data-zh-hk="韓元">한국 원</span></div>
+    <div class="currency-tag"><strong>USD</strong><span class="c-name" data-ko="미국 달러" data-en="US Dollar" data-ja="米ドル" data-zh="美元" data-zh-hk="美元">미국 달러</span></div>
+    <div class="currency-tag"><strong>JPY</strong><span class="c-name" data-ko="일본 엔" data-en="Japanese Yen" data-ja="日本円" data-zh="日元" data-zh-hk="日圓">일본 엔</span></div>
+    <div class="currency-tag"><strong>CNY</strong><span class="c-name" data-ko="중국 위안" data-en="Chinese Yuan" data-ja="中国元" data-zh="人民币" data-zh-hk="人民幣">중국 위안</span></div>
+    <div class="currency-tag"><strong>EUR</strong><span class="c-name" data-ko="유로" data-en="Euro" data-ja="ユーロ" data-zh="欧元" data-zh-hk="歐元">유로</span></div>
+    <div class="currency-tag"><strong>GBP</strong><span class="c-name" data-ko="영국 파운드" data-en="British Pound" data-ja="英ポンド" data-zh="英镑" data-zh-hk="英鎊">영국 파운드</span></div>
+    <div class="currency-tag"><strong>HKD</strong><span class="c-name" data-ko="홍콩 달러" data-en="HK Dollar" data-ja="香港ドル" data-zh="港元" data-zh-hk="港元">홍콩 달러</span></div>
+    <div class="currency-tag"><strong>SGD</strong><span class="c-name" data-ko="싱가포르" data-en="Singapore" data-ja="シンガポール" data-zh="新加坡元" data-zh-hk="新加坡元">싱가포르</span></div>
+    <div class="currency-tag"><strong>AUD</strong><span class="c-name" data-ko="호주 달러" data-en="AUD" data-ja="豪ドル" data-zh="澳元" data-zh-hk="澳元">호주 달러</span></div>
+    <div class="currency-tag"><strong>THB</strong><span class="c-name" data-ko="태국 바트" data-en="Thai Baht" data-ja="タイバーツ" data-zh="泰铢" data-zh-hk="泰銖">태국 바트</span></div>
+    <div class="currency-tag"><strong>PHP</strong><span class="c-name" data-ko="필리핀 페소" data-en="Philippine Peso" data-ja="フィリピンペソ" data-zh="菲律宾比索" data-zh-hk="菲律賓比索">필리핀 페소</span></div>
+    <div class="currency-tag"><strong>IDR</strong><span class="c-name" data-ko="인도네시아" data-en="Indonesian" data-ja="インドネシア" data-zh="印尼盾" data-zh-hk="印尼盾">인도네시아</span></div>
+    <div class="currency-tag"><strong>VND</strong><span class="c-name" data-ko="베트남 동" data-en="Vietnamese Dong" data-ja="ベトナムドン" data-zh="越南盾" data-zh-hk="越南盾">베트남 동</span></div>
+    <div class="currency-tag"><strong>MYR</strong><span class="c-name" data-ko="말레이시아" data-en="Malaysian" data-ja="マレーシア" data-zh="马来西亚林吉特" data-zh-hk="马來西亚林吉特">말레이시아</span></div>
+    <div class="currency-tag"><strong>INR</strong><span class="c-name" data-ko="인도 루피" data-en="Indian Rupee" data-ja="インドルピー" data-zh="印度卢比" data-zh-hk="印度盧比">인도 루피</span></div>
+    <div class="currency-tag"><strong>AED</strong><span class="c-name" data-ko="UAE 디르함" data-en="UAE Dirham" data-ja="UAEディルハム" data-zh="阿联酋迪拉姆" data-zh-hk="阿聯酋迪拉姆">UAE 디르함</span></div>
+    <div class="currency-tag"><strong>SAR</strong><span class="c-name" data-ko="사우디 리얄" data-en="Saudi Riyal" data-ja="サウジリヤル" data-zh="沙特里亚尔" data-zh-hk="沙特裡亚爾">사우디 리얄</span></div>
+    <div class="currency-tag"><strong>CAD</strong><span class="c-name" data-ko="캐나다 달러" data-en="Canadian $" data-ja="カナダドル" data-zh="加元" data-zh-hk="加元">캐나다 달러</span></div>
+    <div class="currency-tag"><strong>CHF</strong><span class="c-name" data-ko="스위스 프랑" data-en="Swiss Franc" data-ja="スイスフラン" data-zh="瑞士法郎" data-zh-hk="瑞士法郎">스위스 프랑</span></div>
+    <div class="currency-tag"><strong>MXN</strong><span class="c-name" data-ko="멕시코 페소" data-en="Mexican Peso" data-ja="メキシコペソ" data-zh="墨西哥比索" data-zh-hk="墨西哥比索">멕시코 페소</span></div>
+    <div class="currency-tag"><strong>BRL</strong><span class="c-name" data-ko="브라질 헤알" data-en="Brazilian Real" data-ja="ブラジルレアル" data-zh="巴西雷亚尔" data-zh-hk="巴西雷亚爾">브라질 헤알</span></div>
   </div>
   <div style="margin-top:64px;">
     <div class="section-label" id="lbl-countries">출시 국가</div>
     <div class="section-title" style="font-size:28px" id="ttl-countries">Google Play 출시 8개국</div>
     <div class="countries">
-      <div class="country-tag"><span class="c-name" data-ko="🇰🇷 한국" data-en="🇰🇷 Korea" data-ja="🇰🇷 韓国" data-zh="🇰🇷 韩国">🇰🇷 한국</span></div>
-      <div class="country-tag"><span class="c-name" data-ko="🇦🇺 호주" data-en="🇦🇺 Australia" data-ja="🇦🇺 オーストラリア" data-zh="🇦🇺 澳大利亚">🇦🇺 호주</span></div>
-      <div class="country-tag"><span class="c-name" data-ko="🇸🇬 싱가포르" data-en="🇸🇬 Singapore" data-ja="🇸🇬 シンガポール" data-zh="🇸🇬 新加坡">🇸🇬 싱가포르</span></div>
-      <div class="country-tag"><span class="c-name" data-ko="🇭🇰 홍콩" data-en="🇭🇰 Hong Kong" data-ja="🇭🇰 香港" data-zh="🇭🇰 香港">🇭🇰 홍콩</span></div>
-      <div class="country-tag"><span class="c-name" data-ko="🇯🇵 일본" data-en="🇯🇵 Japan" data-ja="🇯🇵 日本" data-zh="🇯🇵 日本">🇯🇵 일본</span></div>
-      <div class="country-tag"><span class="c-name" data-ko="🇵🇭 필리핀" data-en="🇵🇭 Philippines" data-ja="🇵🇭 フィリピン" data-zh="🇵🇭 菲律宾">🇵🇭 필리핀</span></div>
-      <div class="country-tag"><span class="c-name" data-ko="🇻🇳 베트남" data-en="🇻🇳 Vietnam" data-ja="🇻🇳 ベトナム" data-zh="🇻🇳 越南">🇻🇳 베트남</span></div>
-      <div class="country-tag"><span class="c-name" data-ko="🇹🇭 태국" data-en="🇹🇭 Thailand" data-ja="🇹🇭 タイ" data-zh="🇹🇭 泰国">🇹🇭 태국</span></div>
+      <div class="country-tag"><span class="c-name" data-ko="🇰🇷 한국" data-en="🇰🇷 Korea" data-ja="🇰🇷 韓国" data-zh="🇰🇷 韩国" data-zh-hk="🇰🇷 韩国">🇰🇷 한국</span></div>
+      <div class="country-tag"><span class="c-name" data-ko="🇦🇺 호주" data-en="🇦🇺 Australia" data-ja="🇦🇺 オーストラリア" data-zh="🇦🇺 澳大利亚" data-zh-hk="🇦🇺 澳大利亚">🇦🇺 호주</span></div>
+      <div class="country-tag"><span class="c-name" data-ko="🇸🇬 싱가포르" data-en="🇸🇬 Singapore" data-ja="🇸🇬 シンガポール" data-zh="🇸🇬 新加坡" data-zh-hk="🇸🇬 新加坡">🇸🇬 싱가포르</span></div>
+      <div class="country-tag"><span class="c-name" data-ko="🇭🇰 홍콩" data-en="🇭🇰 Hong Kong" data-ja="🇭🇰 香港" data-zh="🇭🇰 香港" data-zh-hk="🇭🇰 香港">🇭🇰 홍콩</span></div>
+      <div class="country-tag"><span class="c-name" data-ko="🇯🇵 일본" data-en="🇯🇵 Japan" data-ja="🇯🇵 日本" data-zh="🇯🇵 日本" data-zh-hk="🇯🇵 日本">🇯🇵 일본</span></div>
+      <div class="country-tag"><span class="c-name" data-ko="🇵🇭 필리핀" data-en="🇵🇭 Philippines" data-ja="🇵🇭 フィリピン" data-zh="🇵🇭 菲律宾" data-zh-hk="🇵🇭 菲律賓">🇵🇭 필리핀</span></div>
+      <div class="country-tag"><span class="c-name" data-ko="🇻🇳 베트남" data-en="🇻🇳 Vietnam" data-ja="🇻🇳 ベトナム" data-zh="🇻🇳 越南" data-zh-hk="🇻🇳 越南">🇻🇳 베트남</span></div>
+      <div class="country-tag"><span class="c-name" data-ko="🇹🇭 태국" data-en="🇹🇭 Thailand" data-ja="🇹🇭 タイ" data-zh="🇹🇭 泰国" data-zh-hk="🇹🇭 泰国">🇹🇭 태국</span></div>
     </div>
   </div>
 </section>
@@ -740,7 +740,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
     <div class="modal-body" id="privacy-body-zh" style="display:none">
       <p class="modal-date">生效日期：2025年6月17日 · 最后更新：2026年3月26日</p>
       <h3>第1条（个人信息处理目的）</h3>
-      <p>StablePay（以下简称“公司”）仅为以下目的处理个人信息。若使用目的发生变化，将依法另行取得同意并采取必要措施。</p>
+      <p>StablePay（以下简称“公司”）仅为以下目的处理个人信息。若使用目的发生变化，将依法另行取得同意并採取必要措施。</p>
       <ul>
         <li>会员注册与管理（社交登录账号关联）</li>
         <li>服务提供与支付处理</li>
@@ -761,7 +761,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
         <li>消费者投诉及争议处理记录：3年</li>
       </ul>
       <h3>第4条（私钥与钱包信息）</h3>
-      <p>StablePay 采用非托管（Non-Custodial）模式运行。</p>
+      <p>StablePay 采用非托管（Non-Custodial）模式運行。</p>
       <ul>
         <li>私钥（Private Key）仅保存在用户设备内的 Android Keystore 中。</li>
         <li>私钥不会被传输至服务器，也不会由公司托管。</li>
@@ -784,6 +784,54 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
       </ul>
       <h3>第8条（隐私政策的变更）</h3>
       <p>本政策如有变更，将至少提前 7 日通过应用内公告进行通知。</p>
+    </div>
+    <div class="modal-body" id="privacy-body-zh-hk" style="display:none">
+      <p class="modal-date">生效日期：2025年6月17日 · 最後更新：2026年3月26日</p>
+      <h3>第1條（個人資料處理目的）</h3>
+      <p>StablePay（以下簡稱“公司”）僅為以下目的處理個人資料。若使用目的發生變更，將依法另行取得同意並採取必要措施。</p>
+      <ul>
+        <li>會員註冊與管理（社交登入帳號關聯）</li>
+        <li>服務提供與付款處理</li>
+        <li>客戶查詢與投訴處理</li>
+        <li>服務優化與新服務開發</li>
+      </ul>
+      <h3>第2條（收集的個人資料項目）</h3>
+      <p>公司僅收集提供服務所必需的最少個人資料。</p>
+      <ul>
+        <li>必填項目：社交登入帳號資訊（電郵地址、暱稱）、裝置識別資訊</li>
+        <li>選填項目：頭像圖片</li>
+        <li>自動收集項目：應用程式使用記錄、存取日誌、付款交易記錄</li>
+      </ul>
+      <h3>第3條（個人資料保存與使用期限）</h3>
+      <ul>
+        <li>會員註銷時立即刪除（法律法規要求保存的除外）</li>
+        <li>電子商務相關記錄：5年</li>
+        <li>消費者投訴及爭議處理記錄：3年</li>
+      </ul>
+      <h3>第4條（私鑰與錢包資訊）</h3>
+      <p>StablePay 採用非託管（Non-Custodial）模式運行。</p>
+      <ul>
+        <li>私鑰（Private Key）僅保存在用戶裝置內的 Android Keystore 中。</li>
+        <li>私鑰不會被傳輸至伺服器，也不會由公司託管。</li>
+        <li>所有交易僅會在用戶親自簽署後才會執行。</li>
+        <li>相機僅用於掃描二維碼，影像不會被保存或傳輸。</li>
+      </ul>
+      <h3>第5條（向第三方提供個人資料）</h3>
+      <p>除以下情形外，公司原則上不會向第三方提供用戶個人資料：</p>
+      <ul>
+        <li>用戶事先同意的情況</li>
+        <li>法律法規要求或偵查機關依法提出請求的情況</li>
+      </ul>
+      <h3>第6條（用戶權利）</h3>
+      <p>用戶可隨時透過電郵申請查閱、更正、刪除或停止處理其個人資料。</p>
+      <h3>第7條（個人資料保護負責人）</h3>
+      <ul>
+        <li>負責人：StablePay Labs 運營團隊</li>
+        <li>電郵：<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0c3c4d1d2dcd5c0d1c982808285f0d7ddd1d9dc9ed3dfdd">[email&#160;protected]</a></li>
+        <li>處理期限：受理後 7 個工作天內</li>
+      </ul>
+      <h3>第8條（私隱政策的變更）</h3>
+      <p>本政策如有變更，將至少提前 7 日透過應用程式內公告作出通知。</p>
     </div>
     <div class="modal-body" id="privacy-body-en" style="display:none">
       <p class="modal-date">Effective: June 17, 2025 · Last Updated: March 26, 2026</p>
@@ -967,7 +1015,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
       <h3>第10条（特許および知的財産権）</h3>
       <ul>
         <li>QRベース ステーブルコイン決済システムおよび方法（出願番号 10-2025-0079540）</li>
-        <li>Web3ベース マルチウォレットを利用した決済精算および税務自動化システム（出願番号 10-2025-0215773）</li>
+        <li>Web3ベース マルチウォレットを利用した決済精算および稅務自動化システム（出願番号 10-2025-0215773）</li>
       </ul>
     </div>
     <div class="modal-body" id="terms-body-zh" style="display:none">
@@ -1030,6 +1078,68 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
       <ul>
         <li>基于 QR 的稳定币支付系统及方法（申请号 10-2025-0079540）</li>
         <li>基于 Web3 多钱包的支付结算与税务自动化系统（申请号 10-2025-0215773）</li>
+      </ul>
+    </div>
+    <div class="modal-body" id="terms-body-zh-hk" style="display:none">
+      <p class="modal-date">生效日期：2025年6月17日 · 最後更新：2026年3月26日</p>
+      <h3>第1條（目的）</h3>
+      <p>本條款旨在規定 StablePay Labs（以下簡稱“公司”）提供的 StablePay 服務的使用條件、程序、權利、義務及責任事項。</p>
+      <h3>第2條（服務內容）</h3>
+      <ul>
+        <li>基於穩定幣（USDT/USDC）的付款請求與批准服務</li>
+        <li>基於即時匯率的本地貨幣換算服務</li>
+        <li>二維碼及 OPT 代碼的生成與掃描服務</li>
+        <li>零錢自動累積服務</li>
+        <li>Particle Wallet 整合服務</li>
+      </ul>
+      <h3>第3條（會員註冊）</h3>
+      <ul>
+        <li>可透過 Google、KakaoTalk、Facebook 帳號進行社交登入註冊。</li>
+        <li>未滿 14 歲的用戶可能會被限制註冊。</li>
+        <li>必須遵守一人一帳號原則。</li>
+      </ul>
+      <h3>第4條（服務費用）</h3>
+      <ul>
+        <li>買家：完全免費 · 無限使用</li>
+        <li>商戶（免費）：每天最多可免費生成 5 次 QR/OPT 請求</li>
+        <li>正式會員：45 美元 / 6 個月 或 75 美元 / 1 年（Google 應用程式內購買）</li>
+        <li>Gas 費：為正式會員免費代付（上線紀念期間包含普通會員）</li>
+      </ul>
+      <h3>第5條（請求式付款結構）</h3>
+      <ul>
+        <li>僅針對商戶生成的 QR 或 OPT 請求才會進行付款。</li>
+        <li>未經用戶明確批准，任何交易都不會執行。</li>
+        <li>公司不會保管用戶資產，也不會代為轉帳。</li>
+      </ul>
+      <h3>第6條（用戶義務）</h3>
+      <ul>
+        <li>禁止盜用他人帳號或以不正當方式使用服務</li>
+        <li>禁止非法資金轉移或洗錢行為</li>
+        <li>未經公司事先批准，禁止將服務用於商業用途</li>
+        <li>用戶應自行負責妥善管理私鑰及帳號資料</li>
+      </ul>
+      <h3>第7條（服務限制與中斷）</h3>
+      <ul>
+        <li>區塊鏈網絡故障或維護</li>
+        <li>自然災害、國家緊急狀態等不可抗力事由</li>
+        <li>用戶違反本條款的情況</li>
+      </ul>
+      <h3>第8條（免責條款）</h3>
+      <ul>
+        <li>公司不對因加密資產市場波動導致的損失承擔責任。</li>
+        <li>公司不對因區塊鏈網絡錯誤導致的交易延遲或失敗承擔責任。</li>
+        <li>公司不對因用戶私鑰遺失或洩露造成的損失承擔責任。</li>
+      </ul>
+      <h3>第9條（準據法與爭議解決）</h3>
+      <ul>
+        <li>本條款適用大韓民國法律。</li>
+        <li>爭議由首爾中央地方法院專屬管轄。</li>
+        <li>爭議將優先透過電郵協商解決（<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9eadaabfbcb2bbaebfa7eceeeceb9eb9b3bfb7b2f0bdb1b3">[email&#160;protected]</a>）。</li>
+      </ul>
+      <h3>第10條（專利與知識產權）</h3>
+      <ul>
+        <li>基於 QR 的穩定幣付款系統及方法（申請號 10-2025-0079540）</li>
+        <li>基於 Web3 多錢包的付款結算與稅務自動化系統（申請號 10-2025-0215773）</li>
       </ul>
     </div>
     <div class="modal-body" id="terms-body-en" style="display:none">
@@ -1315,8 +1425,8 @@ var TEXTS = {
     "pat1-h": "QRベーステーブルコイン決済システムおよび方法",
     "pat1-p": "<span class=\"highlight\">出願日 2025年6月17日</span> · PCT国際出願完了",
     "pat2-num": "出願番号 10-2025-0215773 · 出願 2025.12.31",
-    "pat2-h": "Web3マルチウォレットを活用した決済精算・税務自動化システム",
-    "pat2-p": "ブロックチェーンベースの決済精算および税務自動化コア技術",
+    "pat2-h": "Web3マルチウォレットを活用した決済精算・稅務自動化システム",
+    "pat2-p": "ブロックチェーンベースの決済精算および稅務自動化コア技術",
     "footer-desc": "両替なしで世界中どこでも。<br>Web3ステーブルコイン決済の新しい基準。",
     "footer-h-service": "サービス", "footer-h-info": "情報",
     "footer-h-download": "ダウンロード", "footer-h-contact": "お問い合わせ",
@@ -1359,7 +1469,7 @@ var TEXTS = {
     "f4-h": "零钱自动积存",
     "f4-p": "低于 0.01 美元的零钱将自动累计为积分，并实时更新统计数据。",
     "f5-h": "Gas 费免费代付",
-    "f5-p": "基于 Particle Wallet，为正式会员全额代付 Gas 费。上线纪念期间普通会员也可享受。",
+    "f5-p": "基于 Particle Wallet，为正式会员全额代付 Gas 费。上线纪念期间普通会员亦可享受。",
     "f6-h": "完整支持 15 种语言",
     "f6-p": "支持韩语、英语、阿拉伯语、中文等 15 种语言，并根据屏幕尺寸自动调整字体。",
     "lbl-app": "实际应用界面",
@@ -1373,7 +1483,7 @@ var TEXTS = {
     "app1-li4": "第4步：自动检查币种余额",
     "app1-li5": "实时汇率自动显示（例如：1 USD = 1,441.97 KRW）",
     "app2-h": "一次生成 QR 码<br>即可完成支付",
-    "app2-p": "卖家输入金额并生成二维码后，买家扫码即可立即确认并批准支付内容。7 位确认码也可安全处理远程转账。",
+    "app2-p": "卖家输入金额并生成二维码后，买家扫码即可立即确认并批准支付内容。7 位确认码亦可安全处理远程转账。",
     "app2-li1": "卖家：输入金额后立即生成二维码",
     "app2-li2": "买家：扫码查看支付详情",
     "app2-li3": "7 位确认码实现双重安全验证",
@@ -1381,7 +1491,7 @@ var TEXTS = {
     "app2-li5": "支付完成后零钱自动积存",
     "lbl-how": "使用方法",
     "ttl-how": "4 个简单步骤即可开始",
-    "sub-how": "无需复杂设置，只要社交登录即可立即开始支付。",
+    "sub-how": "无需复杂设置，只需社交登录即可立即开始支付。",
     "s1-h": "通过社交登录注册",
     "s1-p": "使用 Google · KakaoTalk · Facebook 账号，30 秒内即可完成注册。Particle Wallet 会自动创建。",
     "s2-h": "选择货币与币种",
@@ -1452,6 +1562,131 @@ var TEXTS = {
     "modal-privacy-btn": "关闭",
     "modal-terms-title": "📋 服务条款",
     "modal-terms-btn": "关闭"
+  },
+  zh-hk: {
+    "page-title": "StablePay Labs | 基於專利的穩定幣付款系統",
+    "banner-text": "🚀 <strong>上線特別優惠</strong> — 截至6月底，所有會員<span class=\"highlight\">Gas 費全免代付！</span>",
+    "nav-features": "功能",
+    "nav-app": "應用程式介面",
+    "nav-how": "使用方法",
+    "nav-pricing": "收費方案",
+    "nav-currencies": "支援貨幣",
+    "nav-patent": "專利",
+    "nav-download": "下載應用程式",
+    "hero-badge-text": "Web3 穩定幣付款",
+    "hero-h1": "無需換匯<br><span>在全球任何地方</span><br>都能付款",
+    "hero-p": "使用 USDT · USDC 按即時匯率自動換算 21 種本地貨幣。<br>無手續費、無需換匯，立即開始。",
+    "btn-download": "Google Play 下載",
+    "btn-contact": "📩 聯絡我們",
+    "stat-currencies": "支援貨幣",
+    "stat-languages": "支援語言",
+    "stat-countries": "上線國家",
+    "stat-patents": "註冊專利",
+    "lbl-features": "核心功能",
+    "ttl-features": "為什麼選擇 StablePay？",
+    "sub-features": "無需換匯，即可在全球任何地方付款的最智能方式。",
+    "f1-h": "即時匯率自動換算",
+    "f1-p": "按當日即時匯率，將 21 個國家的本地貨幣即時自動換算為穩定幣（USDT/USDC）。",
+    "f2-h": "QR 掃碼 + OPT 代碼",
+    "f2-p": "近距離使用二維碼，遠距離使用 7 位 OPT 代碼，輕鬆又安全地發起和確認付款。",
+    "f3-h": "指紋安全驗證",
+    "f3-p": "應用進入與付款簽名均支援生物識別。私鑰採用 AES-256 加密並安全保存在裝置內。",
+    "f4-h": "零錢自動積存",
+    "f4-p": "低於 0.01 美元的零錢將自動累計為積分，並即時更新統計數據。",
+    "f5-h": "Gas 費免費代付",
+    "f5-p": "基於 Particle Wallet，為正式會員全額代付 Gas 費。上線紀念期間普通會員亦可享有。",
+    "f6-h": "完整支援 15 種語言",
+    "f6-p": "支援韓語、英語、阿拉伯語、中文等 15 種語言，並根據螢幕尺寸自動調整字體。",
+    "lbl-app": "實際應用程式介面",
+    "ttl-app": "親自看看",
+    "sub-app": "無需複雜設定，直觀 UI 人人都能輕鬆使用。",
+    "app1-h": "輕鬆選擇<br>21 種本地貨幣",
+    "app1-p": "在應用程式設定頁面中，可按步驟便捷登記付款貨幣、穩定幣和錢包地址。即時匯率會自動顯示，無需額外計算。",
+    "app1-li1": "第1步：選擇付款貨幣（21 個國家）",
+    "app1-li2": "第2步：選擇穩定幣（USDT/USDC）",
+    "app1-li3": "第3步：登記您的錢包地址",
+    "app1-li4": "第4步：自動檢查幣種餘額",
+    "app1-li5": "即時匯率自動顯示（例如：1 USD = 1,441.97 KRW）",
+    "app2-h": "一次生成 QR 碼<br>即可完成付款",
+    "app2-p": "商戶輸入金額並生成二維碼後，買家掃碼即可立即確認並批准付款內容。7 位確認碼亦可安全處理遠端轉帳。",
+    "app2-li1": "商戶：輸入金額後立即生成二維碼",
+    "app2-li2": "買家：掃碼查看付款詳情",
+    "app2-li3": "7 位確認碼實現雙重安全驗證",
+    "app2-li4": "設定二維碼有效期（2 分鐘 / 5 分鐘）",
+    "app2-li5": "付款完成後零錢自動積存",
+    "lbl-how": "使用方法",
+    "ttl-how": "4 個簡單步驟即可開始",
+    "sub-how": "無需複雜設定，只需社交登入即可立即開始付款。",
+    "s1-h": "透過社交登入註冊",
+    "s1-p": "使用 Google · KakaoTalk · Facebook 帳號，30 秒內即可完成註冊。Particle Wallet 會自動建立。",
+    "s2-h": "選擇貨幣與幣種",
+    "s2-p": "選擇您要使用的本地貨幣和穩定幣（USDT/USDC），然後登記錢包地址。",
+    "s3-h": "QR 或 OPT 請求",
+    "s3-p": "商戶生成 QR 碼或 OPT 代碼後，買家掃碼查看並確認付款內容。",
+    "s4-h": "指紋認證完成付款",
+    "s4-p": "透過指紋認證批准簽署後，付款會立即完成，零錢也會自動積存。",
+    "lbl-pricing": "收費方案",
+    "ttl-pricing": "優惠價格輕鬆開始",
+    "sub-pricing": "買家可永久免費無限使用。商戶每天可獲得 5 次免費請求。",
+    "plan1-tag": "買家",
+    "plan1-h": "完全免費",
+    "plan1-period": "/ 無限使用",
+    "plan1-desc": "任何人都可以免費使用，且無付款次數限制。",
+    "plan1-f1": "無限次二維碼掃碼付款",
+    "plan1-f2": "無限次 OPT 代碼付款",
+    "plan1-f3": "支援 21 種貨幣",
+    "plan1-f4": "零錢自動積存",
+    "plan1-f5": "支援 15 種語言",
+    "plan2-tag": "商戶免費",
+    "plan2-h": "基礎商戶",
+    "plan2-period": "/ 每天 5 次",
+    "plan2-desc": "每天最多可免費生成 5 次 QR / OPT 付款請求。",
+    "plan2-f1": "每天 5 個二維碼",
+    "plan2-f2": "每天 5 個 OPT 代碼",
+    "plan2-f3": "即時匯率",
+    "plan2-f4": "付款記錄",
+    "plan3-tag": "高級版",
+    "plan3-h": "高級版",
+    "plan3-period": "/ 6 個月",
+    "plan3-desc": "無限使用 + Gas 費全額代付。另有年付方案 75 美元。",
+    "plan3-f1": "無限生成 QR / OPT",
+    "plan3-f2": "Gas 費免費代付",
+    "plan3-f3": "優先支援",
+    "plan3-f4": "累計統計儀表板",
+    "plan3-f5": "年付方案 75 美元",
+    "lbl-currencies": "支援貨幣",
+    "ttl-currencies": "支援 21 種貨幣",
+    "sub-currencies": "透過匯率 API 提供的每日即時匯率，自動換算為穩定幣。",
+    "lbl-countries": "可用國家",
+    "ttl-countries": "已於 Google Play 上線 8 個國家",
+    "lbl-patent": "註冊專利",
+    "ttl-patent": "技術實力已獲驗證",
+    "pat1-num": "申請號 10-2025-0079540 · 韓國專利已於 2025.11.14 獲批",
+    "pat1-h": "基於 QR 的穩定幣付款系統及方法",
+    "pat1-p": "<span class='highlight'>申請日：2025年6月17日</span> · 已完成 PCT 國際申請",
+    "pat2-num": "申請號 10-2025-0215773 · 申請日 2025.12.31",
+    "pat2-h": "基於 Web3 多錢包的付款結算與稅務自動化系統",
+    "pat2-p": "區塊鏈付款結算與稅務自動化的核心技術",
+    "footer-desc": "無需換匯即可付款。<br>Web3 穩定幣付款的新標準。",
+    "footer-h-service": "服務",
+    "footer-h-info": "資訊",
+    "footer-h-download": "下載",
+    "footer-h-contact": "聯絡",
+    "footer-features": "功能",
+    "footer-app": "應用程式介面",
+    "footer-how": "使用方法",
+    "footer-pricing": "收費方案",
+    "footer-currencies": "支援貨幣",
+    "footer-patent": "專利",
+    "footer-contact": "聯絡我們",
+    "footer-privacy": "私隱政策",
+    "footer-terms": "服務條款",
+    "footer-privacy2": "私隱政策",
+    "footer-terms2": "服務條款",
+    "modal-privacy-title": "🔐 私隱政策",
+    "modal-privacy-btn": "關閉",
+    "modal-terms-title": "📋 服務條款",
+    "modal-terms-btn": "關閉"
   },
   en: {
     "page-title": "StablePay Labs | QR-Based Stablecoin Payment System",
@@ -1553,8 +1788,8 @@ function setLang(lang) {
 
   // 모달 바디 전환
   var bodies = [
-    'privacy-body-ko','privacy-body-ja','privacy-body-zh','privacy-body-en',
-    'terms-body-ko','terms-body-ja','terms-body-zh','terms-body-en'
+    'privacy-body-ko','privacy-body-ja','privacy-body-zh','privacy-body-zh-hk','privacy-body-en',
+    'terms-body-ko','terms-body-ja','terms-body-zh','terms-body-zh-hk','terms-body-en'
   ];
   bodies.forEach(function(id) {
     var el = document.getElementById(id);
@@ -1563,11 +1798,13 @@ function setLang(lang) {
       (id === 'privacy-body-ko' && lang === 'ko') ||
       (id === 'privacy-body-ja' && lang === 'ja') ||
       (id === 'privacy-body-zh' && lang === 'zh') ||
-      (id === 'privacy-body-en' && lang !== 'ko' && lang !== 'ja' && lang !== 'zh') ||
+      (id === 'privacy-body-zh-hk' && lang === 'zh-hk') ||
+      (id === 'privacy-body-en' && lang !== 'ko' && lang !== 'ja' && lang !== 'zh' && lang !== 'zh-hk') ||
       (id === 'terms-body-ko' && lang === 'ko') ||
       (id === 'terms-body-ja' && lang === 'ja') ||
       (id === 'terms-body-zh' && lang === 'zh') ||
-      (id === 'terms-body-en' && lang !== 'ko' && lang !== 'ja' && lang !== 'zh');
+      (id === 'terms-body-zh-hk' && lang === 'zh-hk') ||
+      (id === 'terms-body-en' && lang !== 'ko' && lang !== 'ja' && lang !== 'zh' && lang !== 'zh-hk');
     el.style.display = active ? 'block' : 'none';
   });
 
@@ -1587,7 +1824,7 @@ function setLang(lang) {
       var langMap = {
         'ko':['🇰🇷','한국어'], 'en':['🇺🇸','English'],
         'ja':['🇯🇵','日本語'], 'zh':['🇨🇳','中文(简体)'],
-        'zh-tw':['🇭🇰','中文(繁體)'], 'th':['🇹🇭','ภาษาไทย'],
+        'zh-hk':['🇭🇰','繁體中文（香港）'], 'th':['🇹🇭','ภาษาไทย'],
         'vi':['🇻🇳','Tiếng Việt'], 'fil':['🇵🇭','Filipino'],
         'ar':['🇸🇦','العربية'], 'de':['🇩🇪','Deutsch'],
         'fr':['🇫🇷','Français'], 'pt':['🇧🇷','Português'],
