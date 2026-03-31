@@ -1200,9 +1200,11 @@ function setLang(lang) {
     if (el) el.innerHTML = texts[id];
   }
 
-  // 화폐/국가 태그 (data-ko/en 방식)
+  // 화폐/국가 태그 (data-ko/en 방식, 없으면 영어 fallback)
   document.querySelectorAll('.c-name[data-ko][data-en]').forEach(function(el) {
-    el.textContent = el.getAttribute('data-' + lang);
+    var val = el.getAttribute('data-' + lang);
+    if (!val) val = el.getAttribute('data-en');
+    el.textContent = val;
   });
 
   // 모달 바디 전환
