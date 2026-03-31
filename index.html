@@ -39,15 +39,38 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.08);}
 .nav-links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--text-muted);transition:color 0.2s;}
 .nav-links a:hover{color:var(--navy);}
 .nav-right{display:flex;align-items:center;gap:10px;}
-.lang-switcher{display:flex;gap:4px;background:var(--gray);border-radius:20px;padding:3px;}
-.lang-btn{
-  background:transparent;border:none;cursor:pointer;
-  padding:5px 12px;border-radius:16px;font-size:13px;font-weight:500;
-  color:var(--text-muted);transition:all 0.2s;font-family:"Noto Sans KR",sans-serif;
-  white-space:nowrap;
+.lang-dropdown{position:relative;display:inline-block;}
+.lang-selected{
+  display:flex;align-items:center;gap:6px;
+  background:var(--gray);border:none;cursor:pointer;
+  padding:7px 12px;border-radius:20px;font-size:13px;font-weight:500;
+  color:var(--navy);font-family:"Noto Sans KR",sans-serif;
+  transition:all 0.2s;white-space:nowrap;
 }
-.lang-btn.active{background:var(--navy);color:white;}
-.lang-btn:hover:not(.active){background:rgba(13,43,85,0.08);}
+.lang-selected:hover{background:#e8eef5;}
+.lang-selected .arrow{font-size:10px;color:var(--text-muted);transition:transform 0.2s;}
+.lang-selected.open .arrow{transform:rotate(180deg);}
+.lang-menu{
+  display:none;position:absolute;top:calc(100% + 6px);right:0;
+  background:white;border-radius:14px;
+  box-shadow:0 8px 32px rgba(13,43,85,0.15);
+  border:1px solid rgba(93,197,232,0.2);
+  min-width:160px;z-index:200;overflow:hidden;
+}
+.lang-menu.open{display:block;}
+.lang-menu-item{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 16px;font-size:13px;font-weight:500;
+  color:var(--text);cursor:pointer;transition:background 0.15s;
+  font-family:"Noto Sans KR",sans-serif;white-space:nowrap;
+}
+.lang-menu-item:hover{background:var(--gray);}
+.lang-menu-item.active{background:#e8f6fc;color:var(--navy);font-weight:600;}
+.lang-divider{height:1px;background:rgba(93,197,232,0.15);margin:4px 0;}
+@media(max-width:768px){
+  .lang-selected{padding:5px 8px;font-size:11px;}
+  .lang-menu{right:0;}
+}
 .nav-cta{
   background:var(--navy);color:white;border:none;cursor:pointer;
   padding:10px 16px;border-radius:24px;font-size:13px;font-weight:600;
@@ -343,9 +366,31 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
     <li><a href="#patent" id="nav-patent">특허</a></li>
   </ul>
   <div class="nav-right">
-    <div class="lang-switcher">
-      <button class="lang-btn active" id="btn-ko" onclick="setLang('ko')">🇰🇷 KO</button>
-      <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇺🇸 EN</button>
+    <div class="lang-dropdown" id="lang-dropdown">
+      <button class="lang-selected" id="lang-selected-btn" onclick="toggleLangMenu()">
+        <span id="lang-flag">🇰🇷</span>
+        <span id="lang-code">한국어</span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="lang-menu" id="lang-menu">
+        <div class="lang-menu-item active" id="lang-item-ko" onclick="selectLang('ko','🇰🇷','한국어')">🇰🇷 한국어</div>
+        <div class="lang-menu-item" id="lang-item-en" onclick="selectLang('en','🇺🇸','English')">🇺🇸 English</div>
+        <div class="lang-divider"></div>
+        <div class="lang-menu-item" id="lang-item-ja" onclick="selectLang('ja','🇯🇵','日本語')">🇯🇵 日本語</div>
+        <div class="lang-menu-item" id="lang-item-zh" onclick="selectLang('zh','🇨🇳','中文(简体)')">🇨🇳 中文(简体)</div>
+        <div class="lang-menu-item" id="lang-item-zh-tw" onclick="selectLang('zh-tw','🇭🇰','中文(繁體)')">🇭🇰 中文(繁體)</div>
+        <div class="lang-menu-item" id="lang-item-th" onclick="selectLang('th','🇹🇭','ภาษาไทย')">🇹🇭 ภาษาไทย</div>
+        <div class="lang-menu-item" id="lang-item-vi" onclick="selectLang('vi','🇻🇳','Tiếng Việt')">🇻🇳 Tiếng Việt</div>
+        <div class="lang-menu-item" id="lang-item-fil" onclick="selectLang('fil','🇵🇭','Filipino')">🇵🇭 Filipino</div>
+        <div class="lang-divider"></div>
+        <div class="lang-menu-item" id="lang-item-ar" onclick="selectLang('ar','🇸🇦','العربية')">🇸🇦 العربية</div>
+        <div class="lang-menu-item" id="lang-item-de" onclick="selectLang('de','🇩🇪','Deutsch')">🇩🇪 Deutsch</div>
+        <div class="lang-menu-item" id="lang-item-fr" onclick="selectLang('fr','🇫🇷','Français')">🇫🇷 Français</div>
+        <div class="lang-menu-item" id="lang-item-pt" onclick="selectLang('pt','🇧🇷','Português')">🇧🇷 Português</div>
+        <div class="lang-menu-item" id="lang-item-es" onclick="selectLang('es','🇪🇸','Español')">🇪🇸 Español</div>
+        <div class="lang-menu-item" id="lang-item-hi" onclick="selectLang('hi','🇮🇳','हिन्दी')">🇮🇳 हिन्दी</div>
+        <div class="lang-menu-item" id="lang-item-ru" onclick="selectLang('ru','🇷🇺','Русский')">🇷🇺 Русский</div>
+      </div>
     </div>
     <a href="https://play.google.com/store/apps/details?id=com.stablepay" class="nav-cta" id="nav-download" target="_blank">앱 다운로드</a>
   </div>
@@ -874,6 +919,43 @@ document.addEventListener("keydown", function(e) {
   if (e.key === "Escape") { closeModal("privacy"); closeModal("terms"); }
 });
 
+// ===== 언어 드롭다운 =====
+function toggleLangMenu() {
+  var menu = document.getElementById('lang-menu');
+  var btn = document.getElementById('lang-selected-btn');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+function selectLang(lang, flag, name) {
+  // 선택된 버튼 텍스트 업데이트
+  document.getElementById('lang-flag').textContent = flag;
+  document.getElementById('lang-code').textContent = name;
+
+  // 드롭다운 닫기
+  document.getElementById('lang-menu').classList.remove('open');
+  document.getElementById('lang-selected-btn').classList.remove('open');
+
+  // active 클래스 업데이트
+  document.querySelectorAll('.lang-menu-item').forEach(function(el) {
+    el.classList.remove('active');
+  });
+  var activeItem = document.getElementById('lang-item-' + lang);
+  if (activeItem) activeItem.classList.add('active');
+
+  // 언어 전환
+  setLang(lang);
+}
+
+// 외부 클릭 시 드롭다운 닫기
+document.addEventListener('click', function(e) {
+  var dropdown = document.getElementById('lang-dropdown');
+  if (dropdown && !dropdown.contains(e.target)) {
+    document.getElementById('lang-menu').classList.remove('open');
+    document.getElementById('lang-selected-btn').classList.remove('open');
+  }
+});
+
 // ===== 언어 전환 (ID 기반 - 가장 안정적인 방식) =====
 var TEXTS = {
   ko: {
@@ -1034,11 +1116,8 @@ function setLang(lang) {
   currentLang = lang;
 
   // 버튼 활성화
-  document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
   // ID 기반 텍스트 교체
-  var texts = TEXTS[lang];
+  var texts = TEXTS[lang] || TEXTS['en'];
   for (var id in texts) {
     var el = document.getElementById(id);
     if (el) el.innerHTML = texts[id];
@@ -1071,7 +1150,21 @@ function setLang(lang) {
 (function() {
   try {
     var saved = localStorage.getItem('sp-lang');
-    if (saved && saved !== 'ko') setLang(saved);
+    if (saved && saved !== 'ko') {
+      var langMap = {
+        'ko':['🇰🇷','한국어'], 'en':['🇺🇸','English'],
+        'ja':['🇯🇵','日本語'], 'zh':['🇨🇳','中文(简体)'],
+        'zh-tw':['🇭🇰','中文(繁體)'], 'th':['🇹🇭','ภาษาไทย'],
+        'vi':['🇻🇳','Tiếng Việt'], 'fil':['🇵🇭','Filipino'],
+        'ar':['🇸🇦','العربية'], 'de':['🇩🇪','Deutsch'],
+        'fr':['🇫🇷','Français'], 'pt':['🇧🇷','Português'],
+        'es':['🇪🇸','Español'], 'hi':['🇮🇳','हिन्दी'],
+        'ru':['🇷🇺','Русский']
+      };
+      if (langMap[saved]) {
+        selectLang(saved, langMap[saved][0], langMap[saved][1]);
+      }
+    }
   } catch(e) {}
 })();
 
