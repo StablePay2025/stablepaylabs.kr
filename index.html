@@ -366,29 +366,29 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
 </ul>
 <div class="nav-right">
 <div class="lang-dropdown" id="lang-dropdown">
-<button class="lang-selected" id="lang-selected-btn" onclick="toggleLangMenu()">
+<button type="button" class="lang-selected" id="lang-selected-btn" onclick="toggleLangMenu(event)">
 <span id="lang-flag">🇰🇷</span>
 <span id="lang-code">한국어</span>
 <span class="arrow">▼</span>
 </button>
 <div class="lang-menu" id="lang-menu">
-<div class="lang-menu-item active" id="lang-item-ko" onclick="selectLang('ko','🇰🇷','한국어')">🇰🇷 한국어</div>
-<div class="lang-menu-item" id="lang-item-en" onclick="selectLang('en','🇺🇸','English')">🇺🇸 English</div>
+<div class="lang-menu-item active" id="lang-item-ko" onclick="return selectLang('ko','🇰🇷','한국어', event)">🇰🇷 한국어</div>
+<div class="lang-menu-item" id="lang-item-en" onclick="return selectLang('en','🇺🇸','English', event)">🇺🇸 English</div>
 <div class="lang-divider"></div>
-<div class="lang-menu-item" id="lang-item-ja" onclick="selectLang('ja','🇯🇵','日本語')">🇯🇵 日本語</div>
-<div class="lang-menu-item" id="lang-item-zh" onclick="selectLang('zh','🇨🇳','中文(简体)')">🇨🇳 中文(简体)</div>
-<div class="lang-menu-item" id="lang-item-zh-hk" onclick="selectLang('zh-hk','🇭🇰','繁體中文（香港）')">🇭🇰 繁體中文（香港）</div>
-<div class="lang-menu-item" id="lang-item-th" onclick="selectLang('th','🇹🇭','ภาษาไทย')">🇹🇭 ภาษาไทย</div>
-<div class="lang-menu-item" id="lang-item-vi" onclick="selectLang('vi','🇻🇳','Tiếng Việt')">🇻🇳 Tiếng Việt</div>
-<div class="lang-menu-item" id="lang-item-fil" onclick="selectLang('fil','🇵🇭','Filipino')">🇵🇭 Filipino</div>
+<div class="lang-menu-item" id="lang-item-ja" onclick="return selectLang('ja','🇯🇵','日本語', event)">🇯🇵 日本語</div>
+<div class="lang-menu-item" id="lang-item-zh" onclick="return selectLang('zh','🇨🇳','中文(简体)', event)">🇨🇳 中文(简体)</div>
+<div class="lang-menu-item" id="lang-item-zh-hk" onclick="return selectLang('zh-hk','🇭🇰','繁體中文（香港）', event)">🇭🇰 繁體中文（香港）</div>
+<div class="lang-menu-item" id="lang-item-th" onclick="return selectLang('th','🇹🇭','ภาษาไทย', event)">🇹🇭 ภาษาไทย</div>
+<div class="lang-menu-item" id="lang-item-vi" onclick="return selectLang('vi','🇻🇳','Tiếng Việt', event)">🇻🇳 Tiếng Việt</div>
+<div class="lang-menu-item" id="lang-item-fil" onclick="return selectLang('fil','🇵🇭','Filipino', event)">🇵🇭 Filipino</div>
 <div class="lang-divider"></div>
-<div class="lang-menu-item" id="lang-item-ar" onclick="selectLang('ar','🇸🇦','العربية')">🇸🇦 العربية</div>
-<div class="lang-menu-item" id="lang-item-de" onclick="selectLang('de','🇩🇪','Deutsch')">🇩🇪 Deutsch</div>
-<div class="lang-menu-item" id="lang-item-fr" onclick="selectLang('fr','🇫🇷','Français')">🇫🇷 Français</div>
-<div class="lang-menu-item" id="lang-item-pt" onclick="selectLang('pt','🇧🇷','Português')">🇧🇷 Português</div>
-<div class="lang-menu-item" id="lang-item-es" onclick="selectLang('es','🇪🇸','Español')">🇪🇸 Español</div>
-<div class="lang-menu-item" id="lang-item-hi" onclick="selectLang('hi','🇮🇳','हिन्दी')">🇮🇳 हिन्दी</div>
-<div class="lang-menu-item" id="lang-item-ru" onclick="selectLang('ru','🇷🇺','Русский')">🇷🇺 Русский</div>
+<div class="lang-menu-item" id="lang-item-ar" onclick="return selectLang('ar','🇸🇦','العربية', event)">🇸🇦 العربية</div>
+<div class="lang-menu-item" id="lang-item-de" onclick="return selectLang('de','🇩🇪','Deutsch', event)">🇩🇪 Deutsch</div>
+<div class="lang-menu-item" id="lang-item-fr" onclick="return selectLang('fr','🇫🇷','Français', event)">🇫🇷 Français</div>
+<div class="lang-menu-item" id="lang-item-pt" onclick="return selectLang('pt','🇧🇷','Português', event)">🇧🇷 Português</div>
+<div class="lang-menu-item" id="lang-item-es" onclick="return selectLang('es','🇪🇸','Español', event)">🇪🇸 Español</div>
+<div class="lang-menu-item" id="lang-item-hi" onclick="return selectLang('hi','🇮🇳','हिन्दी', event)">🇮🇳 हिन्दी</div>
+<div class="lang-menu-item" id="lang-item-ru" onclick="return selectLang('ru','🇷🇺','Русский', event)">🇷🇺 Русский</div>
 </div>
 </div>
 <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.stablepay" id="nav-download" target="_blank">앱 다운로드</a>
@@ -2335,14 +2335,16 @@ document.addEventListener("keydown", function(e) {
 });
 
 // ===== 언어 드롭다운 =====
-function toggleLangMenu() {
+function toggleLangMenu(event) {
+  if (event) { event.preventDefault(); event.stopPropagation(); }
   var menu = document.getElementById('lang-menu');
   var btn = document.getElementById('lang-selected-btn');
   menu.classList.toggle('open');
   btn.classList.toggle('open');
 }
 
-function selectLang(lang, flag, name) {
+function selectLang(lang, flag, name, event) {
+  if (event) { event.preventDefault(); event.stopPropagation(); }
   // 선택된 버튼 텍스트 업데이트
   document.getElementById('lang-flag').textContent = flag;
   document.getElementById('lang-code').textContent = name;
@@ -2360,7 +2362,23 @@ function selectLang(lang, flag, name) {
 
   // 언어 전환
   setLang(lang);
+  return false;
 }
+
+// 백업 클릭 처리: 인라인 onclick이 차단되는 환경에서도 언어 선택 유지
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('#lang-menu .lang-menu-item').forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var onclick = item.getAttribute('onclick') || '';
+      var m = onclick.match(/selectLang\('([^']+)'\s*,\s*'([^']+)'\s*,\s*'([^']+)'/);
+      if (m) {
+        selectLang(m[1], m[2], m[3], e);
+      }
+    });
+  });
+});
 
 // 외부 클릭 시 드롭다운 닫기
 document.addEventListener('click', function(e) {
@@ -4127,26 +4145,33 @@ function setLang(lang) {
 }
 
 // 페이지 로드 시 저장된 언어 적용
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   try {
-    var saved = localStorage.getItem('sp-lang');
-    if (saved && saved !== 'ko') {
-      var langMap = {
-        'ko':['🇰🇷','한국어'], 'en':['🇺🇸','English'],
-        'ja':['🇯🇵','日本語'], 'zh':['🇨🇳','中文(简体)'],
-        'zh-hk':['🇭🇰','繁體中文（香港）'], 'th':['🇹🇭','ภาษาไทย'],
-        'vi':['🇻🇳','Tiếng Việt'], 'fil':['🇵🇭','Filipino'],
-        'ar':['🇸🇦','العربية'], 'de':['🇩🇪','Deutsch'],
-        'fr':['🇫🇷','Français'], 'pt':['🇧🇷','Português'],
-        'es':['🇪🇸','Español'], 'hi':['🇮🇳','हिन्दी'],
-        'ru':['🇷🇺','Русский']
-      };
-      if (langMap[saved]) {
-        selectLang(saved, langMap[saved][0], langMap[saved][1]);
-      }
-    }
-  } catch(e) {}
-})();
+    var langMap = {
+      'ko':['🇰🇷','한국어'], 'en':['🇺🇸','English'],
+      'ja':['🇯🇵','日本語'], 'zh':['🇨🇳','中文(简体)'],
+      'zh-hk':['🇭🇰','繁體中文（香港）'], 'th':['🇹🇭','ภาษาไทย'],
+      'vi':['🇻🇳','Tiếng Việt'], 'fil':['🇵🇭','Filipino'],
+      'ar':['🇸🇦','العربية'], 'de':['🇩🇪','Deutsch'],
+      'fr':['🇫🇷','Français'], 'pt':['🇧🇷','Português'],
+      'es':['🇪🇸','Español'], 'hi':['🇮🇳','हिन्दी'],
+      'ru':['🇷🇺','Русский']
+    };
+    var saved = localStorage.getItem('sp-lang') || 'ko';
+    if (!langMap[saved]) saved = 'ko';
+    currentLang = saved;
+    document.getElementById('lang-flag').textContent = langMap[saved][0];
+    document.getElementById('lang-code').textContent = langMap[saved][1];
+    document.querySelectorAll('.lang-menu-item').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    var activeItem = document.getElementById('lang-item-' + saved);
+    if (activeItem) activeItem.classList.add('active');
+    setLang(saved);
+  } catch(e) {
+    setLang('ko');
+  }
+});
 
 // ===== hero-text 스와이프 닫기 =====
 (function() {
