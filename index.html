@@ -56,6 +56,21 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.08);}
 .nav-links a{text-decoration:none;font-size:14px;font-weight:500;color:var(--text-muted);transition:color 0.2s;}
 .nav-links a:hover{color:var(--navy);}
 .nav-right{display:flex;align-items:center;gap:10px;}
+
+.lang-switch-wrap{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.lang-guide{
+  font-size:12px;
+  font-weight:600;
+  color:var(--text-muted);
+  letter-spacing:0.2px;
+  white-space:nowrap;
+  font-family:"Sora","Noto Sans KR",sans-serif;
+}
 .lang-dropdown{position:relative;display:inline-block;}
 .lang-selected{
   display:flex;align-items:center;gap:6px;
@@ -85,6 +100,8 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.08);}
 .lang-menu-item.active{background:#e8f6fc;color:var(--navy);font-weight:600;}
 .lang-divider{height:1px;background:rgba(93,197,232,0.15);margin:4px 0;}
 @media(max-width:768px){
+  .lang-switch-wrap{gap:6px;}
+  .lang-guide{font-size:10px;}
   .lang-selected{padding:5px 8px;font-size:11px;}
   .lang-menu{right:0;}
 }
@@ -381,13 +398,16 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
 <li><a href="#patent" id="nav-patent">특허</a></li>
 </ul>
 <div class="nav-right">
-<div class="lang-dropdown" id="lang-dropdown">
-<button type="button" class="lang-selected" id="lang-selected-btn" onclick="toggleLangMenu(event)">
-<span id="lang-flag">🇰🇷</span>
-<span id="lang-code">한국어</span>
-<span class="arrow">▼</span>
-</button>
-<div class="lang-menu" id="lang-menu">
+  <div class="lang-switch-wrap">
+    <span class="lang-guide">Language</span>
+
+    <div class="lang-dropdown">
+      <button class="lang-selected" id="lang-selected">
+        <span id="current-lang">Korean</span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="lang-menu" id="lang-menu">
+
 <div class="lang-menu-item active" id="lang-item-ko" onclick="return selectLang('ko','🇰🇷','한국어', event)">🇰🇷 한국어</div>
 <div class="lang-menu-item" id="lang-item-en" onclick="return selectLang('en','🇺🇸','English', event)">🇺🇸 English</div>
 <div class="lang-divider"></div>
