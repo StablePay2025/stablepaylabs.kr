@@ -401,12 +401,14 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
   <div class="lang-switch-wrap">
     <span class="lang-guide">Language</span>
 
-    <div class="lang-dropdown">
-      <button class="lang-selected" id="lang-selected">
-        <span id="current-lang">Korean</span>
-        <span class="arrow">▼</span>
-      </button>
-      <div class="lang-menu" id="lang-menu">
+  <div class="lang-dropdown" id="lang-dropdown">
+    <button type="button" class="lang-selected" id="lang-selected-btn" onclick="toggleLangMenu(event)">
+      <span id="lang-flag">🇰🇷</span>
+      <span id="lang-code">Korean</span>
+      <span class="arrow">▼</span>
+    </button>
+
+    <div class="lang-menu" id="lang-menu">
 
 <div class="lang-menu-item active" id="lang-item-ko" onclick="return selectLang('ko','🇰🇷','한국어', event)">🇰🇷 한국어</div>
 <div class="lang-menu-item" id="lang-item-en" onclick="return selectLang('en','🇺🇸','English', event)">🇺🇸 English</div>
