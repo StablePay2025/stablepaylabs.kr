@@ -230,7 +230,24 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.08);}
 }
 .qr-paradigm-sub{
   max-width:900px;
-  margin-bottom:34px;
+  margin-bottom:18px;
+}
+.qr-paradigm-core{
+  max-width:980px;
+  margin:0 0 34px;
+  padding:18px 22px;
+  border-left:4px solid var(--cyan);
+  border-radius:18px;
+  background:rgba(255,255,255,0.78);
+  box-shadow:0 14px 32px rgba(13,43,85,0.08);
+  color:var(--navy);
+  font-size:16px;
+  font-weight:700;
+  line-height:1.75;
+}
+html[dir="rtl"] .qr-paradigm-core{
+  border-left:0;
+  border-right:4px solid var(--cyan);
 }
 .qr-paradigm-figure{
   margin:0;
@@ -417,6 +434,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
   .app-img-wrap{max-width:100%;}
   .modal-box{max-height:92vh;}
   .qr-paradigm-section{padding:72px 5%;}
+  .qr-paradigm-core{font-size:14px;padding:14px 16px;margin-bottom:26px;border-radius:14px;}
   .qr-paradigm-figure{padding:8px;border-radius:20px;box-shadow:0 14px 38px rgba(13,43,85,0.13);}
   .qr-paradigm-figure img{border-radius:14px;}
   .qr-paradigm-figure figcaption{text-align:left;font-size:12px;padding:12px 4px 2px;}
@@ -549,6 +567,9 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
     <div class="section-title" id="qr-paradigm-title">기존 QR은 주소표, StablePay QR은 결제 명령입니다</div>
     <p class="section-sub qr-paradigm-sub" id="qr-paradigm-sub">
       Web2 QR 결제는 중앙 서버로 연결되는 라우팅 키에 가깝습니다. 반면 StablePay의 Web3 QR은 지갑 주소, 결제 금액, 네트워크 검증 정보를 하나의 QR에 담아 블록체인에서 실행되는 자기완결형 결제 명령으로 작동합니다.
+    </p>
+    <p class="qr-paradigm-core" id="qr-paradigm-core">
+      StablePay는 기존 QR의 서버 라우팅 구조를 넘어, 결제 금액·지갑 주소·네트워크 검증 정보를 하나의 QR에 담는 Web3 자기완결형 결제 구조를 제공합니다.
     </p>
     <figure class="qr-paradigm-figure">
       <a id="qr-paradigm-link" href="web2-web3-qr-stablepay-ko.webp" target="_blank" rel="noopener">
@@ -2448,7 +2469,7 @@ var obs = new IntersectionObserver(function(entries) {
     }
   });
 }, {threshold: 0.1});
-document.querySelectorAll(".feature-card,.step,.plan,.patent-card,.country-tag,.app-img-wrap,.app-text,.qr-paradigm-figure,.qr-paradigm-sub").forEach(function(el) {
+document.querySelectorAll(".feature-card,.step,.plan,.patent-card,.country-tag,.app-img-wrap,.app-text,.qr-paradigm-figure,.qr-paradigm-sub,.qr-paradigm-core").forEach(function(el) {
   el.style.opacity = "0";
   el.style.transform = "translateY(28px)";
   el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
@@ -4218,6 +4239,7 @@ var QR_COPY = {
     label: "QR 기술 구조",
     title: "기존 QR은 주소표, StablePay QR은 결제 명령입니다",
     sub: "Web2 QR 결제는 중앙 서버로 연결되는 라우팅 키에 가깝습니다. 반면 StablePay의 Web3 QR은 지갑 주소, 결제 금액, 네트워크 검증 정보를 하나의 QR에 담아 블록체인에서 실행되는 자기완결형 결제 명령으로 작동합니다.",
+    core: "StablePay는 기존 QR의 서버 라우팅 구조를 넘어, 결제 금액·지갑 주소·네트워크 검증 정보를 하나의 QR에 담는 Web3 자기완결형 결제 구조를 제공합니다.",
     caption: "StablePay는 특허 제10-2025-0079540호 기반의 QR 스테이블코인 결제 구조를 통해 기존 QR 결제의 중앙 서버 의존 구조와 구분되는 Web3 결제 프로토콜을 제시합니다.",
     note: "모바일에서는 이미지를 누르면 크게 볼 수 있습니다.",
     img: "web2-web3-qr-stablepay-ko.webp",
@@ -4227,6 +4249,7 @@ var QR_COPY = {
     label: "QR Architecture",
     title: "Traditional QR is an address label. StablePay QR is a payment instruction.",
     sub: "Web2 QR payment is mainly a routing key that points to a central server. StablePay Web3 QR embeds wallet address, amount, and network verification data into one QR, allowing the payment instruction to execute on-chain.",
+    core: "StablePay goes beyond the server-routing structure of traditional QR codes by placing the payment amount, wallet address, and network verification data into a single QR, providing a Web3 self-contained payment architecture.",
     caption: "StablePay presents a Web3 QR stablecoin payment protocol distinguished from server-dependent Web2 QR payments, based on Patent No. 10-2025-0079540.",
     note: "On mobile, tap the image to view it in full size.",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4236,6 +4259,7 @@ var QR_COPY = {
     label: "QRアーキテクチャ",
     title: "従来のQRは住所ラベル、StablePay QRは決済命令です",
     sub: "Web2のQR決済は中央サーバーへ接続するルーティングキーに近い構造です。StablePayのWeb3 QRはウォレットアドレス、金額、ネットワーク検証情報を1つのQRに含め、オンチェーンで実行される自己完結型の決済命令として機能します。",
+    core: "StablePayは、従来のQRのサーバールーティング構造を超え、決済金額・ウォレットアドレス・ネットワーク検証情報を1つのQRに組み込むWeb3自己完結型の決済構造を提供します。",
     caption: "StablePayは、特許第10-2025-0079540号に基づくQRステーブルコイン決済構造により、中央サーバー依存型の既存QR決済とは異なるWeb3決済プロトコルを提示します。",
     note: "モバイルでは画像をタップすると大きく表示できます。",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4245,6 +4269,7 @@ var QR_COPY = {
     label: "QR 技术架构",
     title: "传统 QR 是地址标签，StablePay QR 是支付指令",
     sub: "Web2 QR 支付更像是连接中央服务器的路由键。StablePay 的 Web3 QR 将钱包地址、金额和网络验证信息整合到一个 QR 中，作为可在链上执行的自包含支付指令。",
+    core: "StablePay 超越传统 QR 的服务器路由结构，将支付金额、钱包地址和网络验证信息整合到一个 QR 中，提供 Web3 自包含支付架构。",
     caption: "StablePay 基于专利第10-2025-0079540号的 QR 稳定币支付结构，提出了区别于传统中央服务器依赖型 QR 支付的 Web3 支付协议。",
     note: "在手机上点击图片可查看大图。",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4254,6 +4279,7 @@ var QR_COPY = {
     label: "QR 技術架構",
     title: "傳統 QR 是地址標籤，StablePay QR 是支付指令",
     sub: "Web2 QR 支付更像是連接中央伺服器的路由鍵。StablePay 的 Web3 QR 將錢包地址、金額和網絡驗證資訊整合到一個 QR 中，作為可在鏈上執行的自包含支付指令。",
+    core: "StablePay 超越傳統 QR 的伺服器路由結構，將支付金額、錢包地址和網絡驗證資訊整合到一個 QR 中，提供 Web3 自包含支付架構。",
     caption: "StablePay 基於專利第10-2025-0079540號的 QR 穩定幣支付結構，提出有別於傳統中央伺服器依賴型 QR 支付的 Web3 支付協議。",
     note: "在手機上點擊圖片可查看大圖。",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4263,6 +4289,7 @@ var QR_COPY = {
     label: "สถาปัตยกรรม QR",
     title: "QR แบบเดิมคือป้ายที่อยู่ แต่ StablePay QR คือคำสั่งชำระเงิน",
     sub: "การชำระเงินด้วย QR แบบ Web2 ส่วนใหญ่เป็นคีย์นำทางไปยังเซิร์ฟเวอร์กลาง ส่วน StablePay Web3 QR รวมที่อยู่กระเป๋า จำนวนเงิน และข้อมูลตรวจสอบเครือข่ายไว้ใน QR เดียว เพื่อทำงานเป็นคำสั่งชำระเงินบนบล็อกเชน",
+    core: "StablePay ก้าวข้ามโครงสร้าง QR แบบเดิมที่ใช้การนำทางผ่านเซิร์ฟเวอร์ โดยรวมจำนวนเงิน ที่อยู่กระเป๋า และข้อมูลตรวจสอบเครือข่ายไว้ใน QR เดียว เพื่อมอบโครงสร้างการชำระเงิน Web3 แบบครบในตัวเอง",
     caption: "StablePay นำเสนอโปรโตคอลชำระเงิน Web3 ด้วย QR stablecoin ที่แตกต่างจากระบบ QR แบบพึ่งพาเซิร์ฟเวอร์กลาง โดยอ้างอิงสิทธิบัตรเลขที่ 10-2025-0079540",
     note: "บนมือถือ แตะรูปภาพเพื่อดูขนาดเต็ม",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4272,6 +4299,7 @@ var QR_COPY = {
     label: "Kiến trúc QR",
     title: "QR truyền thống là nhãn địa chỉ, StablePay QR là lệnh thanh toán",
     sub: "Thanh toán QR Web2 chủ yếu là khóa định tuyến đến máy chủ trung tâm. StablePay Web3 QR tích hợp địa chỉ ví, số tiền và dữ liệu xác minh mạng vào một QR duy nhất, hoạt động như lệnh thanh toán tự chứa trên blockchain.",
+    core: "StablePay vượt qua cấu trúc định tuyến qua máy chủ của QR truyền thống bằng cách đưa số tiền thanh toán, địa chỉ ví và dữ liệu xác minh mạng vào một QR duy nhất, cung cấp kiến trúc thanh toán Web3 tự chứa.",
     caption: "StablePay giới thiệu giao thức thanh toán stablecoin QR Web3 khác biệt với QR Web2 phụ thuộc máy chủ trung tâm, dựa trên Bằng sáng chế số 10-2025-0079540.",
     note: "Trên di động, chạm vào hình để xem kích thước lớn.",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4281,6 +4309,7 @@ var QR_COPY = {
     label: "QR Architecture",
     title: "Ang tradisyonal na QR ay address label; ang StablePay QR ay payment instruction",
     sub: "Ang Web2 QR payment ay kadalasang routing key papunta sa central server. Ang StablePay Web3 QR ay naglalaman ng wallet address, halaga, at network verification data sa iisang QR para maisagawa ang payment instruction on-chain.",
+    core: "Nilalampasan ng StablePay ang server-routing structure ng tradisyonal na QR sa pamamagitan ng paglalagay ng payment amount, wallet address, at network verification data sa iisang QR, na nagbibigay ng Web3 self-contained payment architecture.",
     caption: "Ipinapakita ng StablePay ang Web3 QR stablecoin payment protocol na naiiba sa server-dependent Web2 QR payments, batay sa Patent No. 10-2025-0079540.",
     note: "Sa mobile, i-tap ang image para makita sa full size.",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4290,6 +4319,7 @@ var QR_COPY = {
     label: "بنية QR",
     title: "رمز QR التقليدي هو ملصق عنوان، أما StablePay QR فهو أمر دفع",
     sub: "دفع QR في Web2 يعمل غالبًا كمفتاح توجيه إلى خادم مركزي. أما StablePay Web3 QR فيضم عنوان المحفظة والمبلغ وبيانات التحقق من الشبكة داخل رمز واحد، ليعمل كأمر دفع ذاتي التنفيذ على البلوكشين.",
+    core: "تتجاوز StablePay بنية التوجيه عبر الخادم في رموز QR التقليدية، من خلال تضمين مبلغ الدفع وعنوان المحفظة وبيانات التحقق من الشبكة داخل رمز QR واحد، لتوفر بنية دفع Web3 ذاتية الاكتمال.",
     caption: "تقدم StablePay بروتوكول دفع Web3 بالعملات المستقرة عبر QR متميزًا عن مدفوعات QR المعتمدة على الخادم المركزي، استنادًا إلى براءة الاختراع رقم 10-2025-0079540.",
     note: "على الهاتف، اضغط على الصورة لعرضها بالحجم الكامل.",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4299,6 +4329,7 @@ var QR_COPY = {
     label: "QR-Architektur",
     title: "Klassischer QR ist ein Adressetikett. StablePay QR ist eine Zahlungsanweisung.",
     sub: "Web2-QR-Zahlung ist hauptsächlich ein Routing-Schlüssel zu einem zentralen Server. StablePay Web3 QR integriert Wallet-Adresse, Betrag und Netzwerk-Verifizierungsdaten in einem QR und funktioniert als selbstenthaltende On-Chain-Zahlungsanweisung.",
+    core: "StablePay geht über die Server-Routing-Struktur herkömmlicher QR-Codes hinaus, indem Zahlungsbetrag, Wallet-Adresse und Netzwerk-Verifizierungsdaten in einem einzigen QR zusammengeführt werden – als Web3-Zahlungsarchitektur mit selbstenthaltender Struktur.",
     caption: "StablePay präsentiert ein Web3-QR-Stablecoin-Zahlungsprotokoll, das sich von serverabhängigen Web2-QR-Zahlungen unterscheidet, basierend auf Patent Nr. 10-2025-0079540.",
     note: "Auf Mobilgeräten tippen Sie auf das Bild, um es in voller Größe zu öffnen.",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4308,6 +4339,7 @@ var QR_COPY = {
     label: "Architecture QR",
     title: "Le QR classique est une étiquette d’adresse. Le QR StablePay est une instruction de paiement.",
     sub: "Le paiement QR Web2 est surtout une clé de routage vers un serveur central. StablePay Web3 QR intègre l’adresse du wallet, le montant et les données de vérification réseau dans un seul QR, qui fonctionne comme une instruction de paiement on-chain autoportante.",
+    core: "StablePay dépasse la structure de routage serveur des QR classiques en intégrant le montant du paiement, l’adresse du wallet et les données de vérification réseau dans un seul QR, afin de fournir une architecture de paiement Web3 autoportante.",
     caption: "StablePay présente un protocole de paiement stablecoin QR Web3 distinct des paiements QR Web2 dépendants d’un serveur central, sur la base du brevet n° 10-2025-0079540.",
     note: "Sur mobile, touchez l’image pour l’ouvrir en grand format.",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4317,6 +4349,7 @@ var QR_COPY = {
     label: "Arquitetura QR",
     title: "O QR tradicional é um rótulo de endereço. O StablePay QR é uma instrução de pagamento.",
     sub: "O pagamento QR Web2 é principalmente uma chave de roteamento para um servidor central. O StablePay Web3 QR incorpora endereço da carteira, valor e dados de verificação da rede em um único QR, funcionando como uma instrução de pagamento on-chain autossuficiente.",
+    core: "A StablePay vai além da estrutura de roteamento por servidor dos QR tradicionais ao incorporar o valor do pagamento, o endereço da carteira e os dados de verificação da rede em um único QR, oferecendo uma arquitetura de pagamento Web3 autossuficiente.",
     caption: "A StablePay apresenta um protocolo Web3 de pagamento em stablecoin via QR, distinto dos pagamentos QR Web2 dependentes de servidor, com base na Patente nº 10-2025-0079540.",
     note: "No celular, toque na imagem para ver em tamanho completo.",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4326,6 +4359,7 @@ var QR_COPY = {
     label: "Arquitectura QR",
     title: "El QR tradicional es una etiqueta de dirección. StablePay QR es una instrucción de pago.",
     sub: "El pago QR Web2 es principalmente una clave de enrutamiento hacia un servidor central. StablePay Web3 QR integra dirección de wallet, importe y datos de verificación de red en un solo QR, funcionando como una instrucción de pago on-chain autocontenida.",
+    core: "StablePay supera la estructura de enrutamiento por servidor de los QR tradicionales al incorporar el importe del pago, la dirección de wallet y los datos de verificación de red en un solo QR, ofreciendo una arquitectura de pago Web3 autocontenida.",
     caption: "StablePay presenta un protocolo Web3 de pago con stablecoins mediante QR, distinto de los pagos QR Web2 dependientes de servidor, basado en la Patente n.º 10-2025-0079540.",
     note: "En móvil, toca la imagen para verla en tamaño completo.",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4335,6 +4369,7 @@ var QR_COPY = {
     label: "QR आर्किटेक्चर",
     title: "पारंपरिक QR एक address label है, StablePay QR एक payment instruction है",
     sub: "Web2 QR payment मुख्य रूप से central server तक जाने वाला routing key है। StablePay Web3 QR एक ही QR में wallet address, amount और network verification data शामिल करता है, जिससे payment instruction on-chain execute हो सकता है।",
+    core: "StablePay पारंपरिक QR की server-routing संरचना से आगे बढ़कर payment amount, wallet address और network verification data को एक ही QR में शामिल करता है, जिससे Web3 self-contained payment architecture प्रदान होती है।",
     caption: "StablePay Patent No. 10-2025-0079540 के आधार पर server-dependent Web2 QR payments से अलग Web3 QR stablecoin payment protocol प्रस्तुत करता है।",
     note: "मोबाइल पर image को full size में देखने के लिए tap करें।",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4344,6 +4379,7 @@ var QR_COPY = {
     label: "QR-архитектура",
     title: "Обычный QR — это адресная метка. StablePay QR — платежная инструкция.",
     sub: "Web2 QR-платеж в основном является ключом маршрутизации к центральному серверу. StablePay Web3 QR включает адрес кошелька, сумму и данные сетевой проверки в один QR, работая как самодостаточная on-chain платежная инструкция.",
+    core: "StablePay выходит за пределы серверной маршрутизации традиционных QR-кодов, объединяя сумму платежа, адрес кошелька и данные сетевой проверки в одном QR, обеспечивая самодостаточную Web3-архитектуру платежей.",
     caption: "StablePay представляет Web3 QR-протокол оплаты стейблкоинами, отличающийся от сервер-зависимых Web2 QR-платежей, на основе патента № 10-2025-0079540.",
     note: "На мобильном устройстве нажмите на изображение, чтобы открыть его в полном размере.",
     img: "web2-web3-qr-stablepay-en.webp",
@@ -4357,6 +4393,7 @@ function updateQrParadigm(lang) {
     "qr-paradigm-label": copy.label,
     "qr-paradigm-title": copy.title,
     "qr-paradigm-sub": copy.sub,
+    "qr-paradigm-core": copy.core,
     "qr-paradigm-caption": copy.caption,
     "qr-paradigm-mobile-note": copy.note
   };
