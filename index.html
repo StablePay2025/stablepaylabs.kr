@@ -4574,36 +4574,424 @@ var QR_COPY = {
 
 
 var PAYMENT_ARCH_COPY = {
-  ko: {
-    label: "결제 구조",
-    title: "StablePay 결제 구조",
-    sub: "StablePay는 판매자가 결제 요청을 생성하고, 구매자가 QR 스캔 또는 7자리 OTP로 승인하는 요청 기반 결제 구조입니다. 현지 화폐 금액은 실시간 환율을 통해 USD 기준 스테이블코인 금액으로 변환되며, 구매자의 비수탁 지갑 서명을 통해 Polygon 또는 Solana 네트워크에서 결제가 실행됩니다.",
-    core: "요청 기반 QR/OTP 스테이블코인 결제 프로토콜: 판매자는 별도 POS 단말기 없이 스마트폰만으로 결제 요청을 만들고, 구매자는 지갑 서명으로 결제를 승인합니다.",
-    caption: "StablePay는 하나의 앱에서 구매자 지갑과 판매자 단말기 역할을 동시에 수행하며, 별도 POS 없이 QR/OTP 요청 기반 결제 구조를 제공합니다.",
-    note: "모바일에서는 이미지를 누르면 크게 볼 수 있습니다.",
-    img: "stablepay-payment-architecture-ko.webp",
-    alt: "StablePay 결제 구조 - QR OTP 요청 기반 스테이블코인 결제 프로토콜",
-    steps: [
-      { title: "판매자 요청 생성", body: "판매자가 현지 화폐 금액, 결제 통화, 네트워크 정보를 입력하고 QR 코드 또는 7자리 OTP를 생성합니다." },
-      { title: "구매자 승인", body: "구매자는 QR을 스캔하거나 OTP를 입력해 요청된 금액과 지갑 주소를 확인합니다." },
-      { title: "스테이블코인 결제 실행", body: "StablePay는 실시간 환율을 기준으로 금액을 계산하고, 비수탁 지갑 서명을 통해 USDT 또는 USDC 결제를 실행합니다." },
-      { title: "잔돈 적립 및 정산 연결", body: "0.01달러 미만의 잔돈은 자동 적립되어 향후 가스비 보전 및 결제 편의성 향상에 활용됩니다." }
+  "ko": {
+    "label": "결제 구조",
+    "title": "StablePay 결제 구조",
+    "sub": "StablePay는 판매자가 결제 요청을 생성하고, 구매자가 QR 스캔 또는 7자리 OTP로 승인하는 요청 기반 결제 구조입니다. 현지 화폐 금액은 실시간 환율을 통해 USD 기준 스테이블코인 금액으로 변환되며, 구매자의 비수탁 지갑 서명을 통해 Polygon 또는 Solana 네트워크에서 결제가 실행됩니다.",
+    "core": "요청 기반 QR/OTP 스테이블코인 결제 프로토콜: 판매자는 별도 POS 단말기 없이 스마트폰만으로 결제 요청을 만들고, 구매자는 지갑 서명으로 결제를 승인합니다.",
+    "caption": "StablePay는 하나의 앱에서 구매자 지갑과 판매자 단말기 역할을 동시에 수행하며, 별도 POS 없이 QR/OTP 요청 기반 결제 구조를 제공합니다.",
+    "note": "모바일에서는 이미지를 누르면 크게 볼 수 있습니다.",
+    "img": "stablepay-payment-architecture-ko.webp",
+    "alt": "StablePay 결제 구조 - QR OTP 요청 기반 스테이블코인 결제 프로토콜",
+    "steps": [
+      {
+        "title": "판매자 요청 생성",
+        "body": "판매자가 현지 화폐 금액, 결제 통화, 네트워크 정보를 입력하고 QR 코드 또는 7자리 OTP를 생성합니다."
+      },
+      {
+        "title": "구매자 승인",
+        "body": "구매자는 QR을 스캔하거나 OTP를 입력해 요청된 금액과 지갑 주소를 확인합니다."
+      },
+      {
+        "title": "스테이블코인 결제 실행",
+        "body": "StablePay는 실시간 환율을 기준으로 금액을 계산하고, 비수탁 지갑 서명을 통해 USDT 또는 USDC 결제를 실행합니다."
+      },
+      {
+        "title": "잔돈 적립 및 정산 연결",
+        "body": "0.01달러 미만의 잔돈은 자동 적립되어 향후 가스비 보전 및 결제 편의성 향상에 활용됩니다."
+      }
     ]
   },
-  en: {
-    label: "Payment Architecture",
-    title: "StablePay Payment Architecture",
-    sub: "StablePay uses a request-based payment flow where the seller creates a payment request and the buyer approves it through a QR scan or a 7-digit OTP. The local currency amount is converted into a USD-based stablecoin amount using real-time exchange rates, and the payment is executed on Polygon or Solana through the buyer’s non-custodial wallet signature.",
-    core: "A request-based QR/OTP stablecoin payment protocol: sellers create payment requests directly from any smartphone without an external POS terminal, while buyers approve the payment with a wallet signature.",
-    caption: "StablePay allows one app to work as both buyer wallet and seller terminal, providing a QR/OTP request-based payment structure without external POS hardware.",
-    note: "On mobile, tap the image to view it in full size.",
-    img: "stablepay-payment-architecture-en.webp",
-    alt: "StablePay Payment Architecture - Request-Based QR OTP Stablecoin Payment Protocol",
-    steps: [
-      { title: "Seller Creates a Request", body: "The seller enters the local currency amount, selected currency, and network details, then generates a QR code or 7-digit OTP." },
-      { title: "Buyer Approves the Payment", body: "The buyer scans the QR code or enters the OTP to verify the requested amount and wallet address." },
-      { title: "Stablecoin Payment Execution", body: "StablePay calculates the payment amount using real-time exchange rates and executes USDT or USDC payment through a non-custodial wallet signature." },
-      { title: "Dust Accumulation & Settlement Link", body: "Dust under $0.01 is automatically accumulated and can be used to offset future gas fees and improve payment efficiency." }
+  "en": {
+    "label": "Payment Architecture",
+    "title": "StablePay Payment Architecture",
+    "sub": "StablePay uses a request-based payment flow where the seller creates a payment request and the buyer approves it through a QR scan or a 7-digit OTP. The local currency amount is converted into a USD-based stablecoin amount using real-time exchange rates, and the payment is executed on Polygon or Solana through the buyer’s non-custodial wallet signature.",
+    "core": "A request-based QR/OTP stablecoin payment protocol: sellers create payment requests directly from any smartphone without an external POS terminal, while buyers approve the payment with a wallet signature.",
+    "caption": "StablePay allows one app to work as both buyer wallet and seller terminal, providing a QR/OTP request-based payment structure without external POS hardware.",
+    "note": "On mobile, tap the image to view it in full size.",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "StablePay Payment Architecture - Request-Based QR OTP Stablecoin Payment Protocol",
+    "steps": [
+      {
+        "title": "Seller Creates a Request",
+        "body": "The seller enters the local currency amount, selected currency, and network details, then generates a QR code or 7-digit OTP."
+      },
+      {
+        "title": "Buyer Approves the Payment",
+        "body": "The buyer scans the QR code or enters the OTP to verify the requested amount and wallet address."
+      },
+      {
+        "title": "Stablecoin Payment Execution",
+        "body": "StablePay calculates the payment amount using real-time exchange rates and executes USDT or USDC payment through a non-custodial wallet signature."
+      },
+      {
+        "title": "Dust Accumulation & Settlement Link",
+        "body": "Dust under $0.01 is automatically accumulated and can be used to offset future gas fees and improve payment efficiency."
+      }
+    ]
+  },
+  "ja": {
+    "label": "決済アーキテクチャ",
+    "title": "StablePayの決済アーキテクチャ",
+    "sub": "StablePayは、販売者が決済リクエストを作成し、購入者がQRスキャンまたは7桁OTPで承認するリクエストベースの決済フローを採用しています。現地通貨の金額はリアルタイム為替レートでUSD基準のステーブルコイン金額に換算され、購入者のノンカストディアルウォレット署名によりPolygonまたはSolanaネットワーク上で実行されます。",
+    "core": "リクエストベースのQR/OTPステーブルコイン決済プロトコル：販売者は外部POS端末なしでスマートフォンから決済リクエストを作成し、購入者はウォレット署名で決済を承認します。",
+    "caption": "StablePayは、1つのアプリで購入者ウォレットと販売者端末の両方の役割を担い、外部POSなしでQR/OTPリクエスト型決済構造を提供します。",
+    "note": "モバイルでは画像をタップすると拡大表示できます。",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "StablePay 決済アーキテクチャ - リクエストベースQR OTPステーブルコイン決済プロトコル",
+    "steps": [
+      {
+        "title": "販売者がリクエストを作成",
+        "body": "販売者は現地通貨の金額、決済通貨、ネットワーク情報を入力し、QRコードまたは7桁OTPを生成します。"
+      },
+      {
+        "title": "購入者が決済を承認",
+        "body": "購入者はQRコードをスキャンするかOTPを入力し、請求金額とウォレットアドレスを確認します。"
+      },
+      {
+        "title": "ステーブルコイン決済を実行",
+        "body": "StablePayはリアルタイム為替レートで決済金額を計算し、ノンカストディアルウォレット署名を通じてUSDTまたはUSDC決済を実行します。"
+      },
+      {
+        "title": "端数積立と精算連携",
+        "body": "0.01ドル未満の端数は自動的に積み立てられ、将来のガス代補填や決済効率の向上に活用できます。"
+      }
+    ]
+  },
+  "zh": {
+    "label": "支付架构",
+    "title": "StablePay 支付架构",
+    "sub": "StablePay 采用请求式支付流程：卖家创建支付请求，买家通过扫描 QR 码或输入 7 位 OTP 进行确认。当地货币金额会根据实时汇率转换为以美元计价的稳定币金额，并通过买家的非托管钱包签名在 Polygon 或 Solana 网络上执行。",
+    "core": "请求式 QR/OTP 稳定币支付协议：卖家无需外部 POS 终端，只需使用智能手机即可创建支付请求；买家通过钱包签名完成授权。",
+    "caption": "StablePay 让一个 App 同时充当买家钱包和卖家收款终端，无需外部 POS 硬件即可提供 QR/OTP 请求式支付结构。",
+    "note": "在移动设备上，点击图片可查看大图。",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "StablePay 支付架构 - 请求式 QR OTP 稳定币支付协议",
+    "steps": [
+      {
+        "title": "卖家创建请求",
+        "body": "卖家输入当地货币金额、支付币种和网络信息，然后生成 QR 码或 7 位 OTP。"
+      },
+      {
+        "title": "买家确认支付",
+        "body": "买家扫描 QR 码或输入 OTP，确认请求金额和钱包地址。"
+      },
+      {
+        "title": "执行稳定币支付",
+        "body": "StablePay 根据实时汇率计算支付金额，并通过非托管钱包签名执行 USDT 或 USDC 支付。"
+      },
+      {
+        "title": "零钱累积与结算连接",
+        "body": "低于 0.01 美元的零钱会自动累积，可用于抵扣未来 gas 费用并提升支付效率。"
+      }
+    ]
+  },
+  "zh-hk": {
+    "label": "支付架構",
+    "title": "StablePay 支付架構",
+    "sub": "StablePay 採用請求式支付流程：賣家建立支付請求，買家透過掃描 QR 碼或輸入 7 位 OTP 進行確認。本地貨幣金額會按照實時匯率轉換為以美元計價的穩定幣金額，並透過買家的非託管錢包簽名在 Polygon 或 Solana 網絡上執行。",
+    "core": "請求式 QR/OTP 穩定幣支付協議：賣家無需外部 POS 終端，只需使用智能手機即可建立支付請求；買家則透過錢包簽名完成授權。",
+    "caption": "StablePay 讓一個 App 同時成為買家錢包和賣家收款終端，無需外部 POS 硬件即可提供 QR/OTP 請求式支付結構。",
+    "note": "在流動裝置上，點按圖片可查看大圖。",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "StablePay 支付架構 - 請求式 QR OTP 穩定幣支付協議",
+    "steps": [
+      {
+        "title": "賣家建立請求",
+        "body": "賣家輸入本地貨幣金額、支付幣種和網絡資料，然後產生 QR 碼或 7 位 OTP。"
+      },
+      {
+        "title": "買家確認支付",
+        "body": "買家掃描 QR 碼或輸入 OTP，確認請求金額和錢包地址。"
+      },
+      {
+        "title": "執行穩定幣支付",
+        "body": "StablePay 按照實時匯率計算支付金額，並透過非託管錢包簽名執行 USDT 或 USDC 支付。"
+      },
+      {
+        "title": "零錢累積與結算連接",
+        "body": "低於 0.01 美元的零錢會自動累積，可用於抵扣未來 gas 費用並提升支付效率。"
+      }
+    ]
+  },
+  "th": {
+    "label": "สถาปัตยกรรมการชำระเงิน",
+    "title": "สถาปัตยกรรมการชำระเงินของ StablePay",
+    "sub": "StablePay ใช้โครงสร้างการชำระเงินแบบอิงคำขอ โดยผู้ขายสร้างคำขอชำระเงิน และผู้ซื้ออนุมัติผ่านการสแกน QR หรือรหัส OTP 7 หลัก ยอดเงินในสกุลท้องถิ่นจะถูกแปลงเป็นมูลค่า stablecoin ที่อ้างอิง USD ด้วยอัตราแลกเปลี่ยนแบบเรียลไทม์ และดำเนินการบนเครือข่าย Polygon หรือ Solana ผ่านลายเซ็นจากกระเป๋าเงินแบบ non-custodial ของผู้ซื้อ",
+    "core": "โปรโตคอลชำระเงิน stablecoin แบบ QR/OTP ที่อิงคำขอ: ผู้ขายสร้างคำขอชำระเงินได้จากสมาร์ทโฟนโดยไม่ต้องใช้เครื่อง POS ภายนอก และผู้ซื้ออนุมัติด้วยลายเซ็นกระเป๋าเงิน",
+    "caption": "StablePay ทำให้แอปเดียวทำหน้าที่ได้ทั้งกระเป๋าเงินของผู้ซื้อและเครื่องรับชำระของผู้ขาย โดยรองรับโครงสร้างชำระเงินแบบ QR/OTP โดยไม่ต้องใช้ฮาร์ดแวร์ POS ภายนอก",
+    "note": "บนมือถือ ให้แตะรูปภาพเพื่อดูขนาดเต็ม",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "สถาปัตยกรรมการชำระเงิน StablePay - โปรโตคอล QR OTP Stablecoin แบบอิงคำขอ",
+    "steps": [
+      {
+        "title": "ผู้ขายสร้างคำขอ",
+        "body": "ผู้ขายกรอกยอดเงินสกุลท้องถิ่น สกุลเงินที่เลือก และข้อมูลเครือข่าย จากนั้นสร้าง QR code หรือรหัส OTP 7 หลัก"
+      },
+      {
+        "title": "ผู้ซื้ออนุมัติการชำระเงิน",
+        "body": "ผู้ซื้อสแกน QR code หรือกรอกรหัส OTP เพื่อตรวจสอบยอดที่ร้องขอและที่อยู่กระเป๋าเงิน"
+      },
+      {
+        "title": "ดำเนินการชำระด้วย Stablecoin",
+        "body": "StablePay คำนวณยอดชำระด้วยอัตราแลกเปลี่ยนแบบเรียลไทม์ และดำเนินการชำระ USDT หรือ USDC ผ่านลายเซ็นของกระเป๋าเงิน non-custodial"
+      },
+      {
+        "title": "สะสมเศษเงินและเชื่อมต่อการชำระบัญชี",
+        "body": "เศษเงินต่ำกว่า $0.01 จะถูกสะสมอัตโนมัติ และสามารถใช้ชดเชยค่า gas ในอนาคตหรือเพิ่มประสิทธิภาพการชำระเงินได้"
+      }
+    ]
+  },
+  "vi": {
+    "label": "Kiến trúc thanh toán",
+    "title": "Kiến trúc thanh toán StablePay",
+    "sub": "StablePay sử dụng luồng thanh toán dựa trên yêu cầu: người bán tạo yêu cầu thanh toán và người mua phê duyệt bằng cách quét QR hoặc nhập OTP 7 chữ số. Số tiền bằng nội tệ được quy đổi sang giá trị stablecoin theo USD bằng tỷ giá thời gian thực, sau đó giao dịch được thực thi trên mạng Polygon hoặc Solana thông qua chữ ký ví non-custodial của người mua.",
+    "core": "Giao thức thanh toán stablecoin QR/OTP dựa trên yêu cầu: người bán tạo yêu cầu thanh toán trực tiếp từ điện thoại thông minh mà không cần thiết bị POS bên ngoài, còn người mua phê duyệt bằng chữ ký ví.",
+    "caption": "StablePay cho phép một ứng dụng đóng vai trò đồng thời là ví của người mua và thiết bị đầu cuối của người bán, cung cấp cấu trúc thanh toán QR/OTP không cần phần cứng POS bên ngoài.",
+    "note": "Trên thiết bị di động, hãy chạm vào hình ảnh để xem kích thước đầy đủ.",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "Kiến trúc thanh toán StablePay - Giao thức QR OTP Stablecoin dựa trên yêu cầu",
+    "steps": [
+      {
+        "title": "Người bán tạo yêu cầu",
+        "body": "Người bán nhập số tiền nội tệ, đơn vị tiền tệ đã chọn và thông tin mạng, sau đó tạo mã QR hoặc OTP 7 chữ số."
+      },
+      {
+        "title": "Người mua phê duyệt thanh toán",
+        "body": "Người mua quét mã QR hoặc nhập OTP để xác minh số tiền được yêu cầu và địa chỉ ví."
+      },
+      {
+        "title": "Thực thi thanh toán Stablecoin",
+        "body": "StablePay tính toán số tiền thanh toán bằng tỷ giá thời gian thực và thực thi thanh toán USDT hoặc USDC thông qua chữ ký ví non-custodial."
+      },
+      {
+        "title": "Tích lũy tiền lẻ và liên kết đối soát",
+        "body": "Phần tiền lẻ dưới $0.01 được tự động tích lũy và có thể dùng để bù phí gas trong tương lai cũng như cải thiện hiệu quả thanh toán."
+      }
+    ]
+  },
+  "fil": {
+    "label": "Arkitektura ng Pagbabayad",
+    "title": "StablePay Payment Architecture",
+    "sub": "Gumagamit ang StablePay ng request-based payment flow: ang seller ang gumagawa ng payment request at ang buyer ang nag-aapruba nito sa pamamagitan ng QR scan o 7-digit OTP. Ang halaga sa lokal na pera ay kino-convert sa USD-based stablecoin amount gamit ang real-time exchange rates, at isinasagawa ang bayad sa Polygon o Solana sa pamamagitan ng non-custodial wallet signature ng buyer.",
+    "core": "Request-based QR/OTP stablecoin payment protocol: ang seller ay maaaring gumawa ng payment request mula sa anumang smartphone nang walang external POS terminal, habang ang buyer ay nag-aapruba gamit ang wallet signature.",
+    "caption": "Pinapayagan ng StablePay ang isang app na magsilbing parehong buyer wallet at seller terminal, na nagbibigay ng QR/OTP request-based payment structure nang walang external POS hardware.",
+    "note": "Sa mobile, i-tap ang larawan upang makita ito sa full size.",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "StablePay Payment Architecture - Request-Based QR OTP Stablecoin Payment Protocol",
+    "steps": [
+      {
+        "title": "Gumagawa ng Request ang Seller",
+        "body": "Ilalagay ng seller ang lokal na halaga, napiling currency, at network details, pagkatapos ay gagawa ng QR code o 7-digit OTP."
+      },
+      {
+        "title": "Inaaprubahan ng Buyer ang Payment",
+        "body": "Ii-scan ng buyer ang QR code o ilalagay ang OTP upang i-verify ang hinihinging halaga at wallet address."
+      },
+      {
+        "title": "Stablecoin Payment Execution",
+        "body": "Kinakalkula ng StablePay ang halaga ng bayad gamit ang real-time exchange rates at isinasagawa ang USDT o USDC payment sa pamamagitan ng non-custodial wallet signature."
+      },
+      {
+        "title": "Dust Accumulation at Settlement Link",
+        "body": "Ang dust na mas mababa sa $0.01 ay awtomatikong naiipon at maaaring gamitin upang bawasan ang future gas fees at mapahusay ang payment efficiency."
+      }
+    ]
+  },
+  "ar": {
+    "label": "بنية الدفع",
+    "title": "بنية الدفع في StablePay",
+    "sub": "تستخدم StablePay تدفق دفع قائماً على الطلب، حيث ينشئ البائع طلب الدفع ويوافق المشتري عليه عبر مسح رمز QR أو إدخال رمز OTP مكوّن من 7 أرقام. يتم تحويل مبلغ العملة المحلية إلى قيمة Stablecoin مقومة بالدولار باستخدام أسعار الصرف الفورية، ثم يتم تنفيذ الدفع على شبكة Polygon أو Solana من خلال توقيع محفظة غير احتجازية يملكه المشتري.",
+    "core": "بروتوكول دفع Stablecoin قائم على الطلب عبر QR/OTP: يستطيع البائع إنشاء طلب الدفع من أي هاتف ذكي دون جهاز POS خارجي، بينما يوافق المشتري من خلال توقيع المحفظة.",
+    "caption": "تجعل StablePay التطبيق الواحد يعمل كمحفظة للمشتري ومحطة دفع للبائع في الوقت نفسه، مع بنية دفع QR/OTP قائمة على الطلب دون الحاجة إلى أجهزة POS خارجية.",
+    "note": "على الهاتف المحمول، اضغط على الصورة لعرضها بالحجم الكامل.",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "بنية الدفع في StablePay - بروتوكول Stablecoin عبر QR OTP قائم على الطلب",
+    "steps": [
+      {
+        "title": "ينشئ البائع طلب الدفع",
+        "body": "يدخل البائع مبلغ العملة المحلية، والعملة المحددة، وبيانات الشبكة، ثم ينشئ رمز QR أو رمز OTP مكوّناً من 7 أرقام."
+      },
+      {
+        "title": "يوافق المشتري على الدفع",
+        "body": "يمسح المشتري رمز QR أو يدخل رمز OTP للتحقق من المبلغ المطلوب وعنوان المحفظة."
+      },
+      {
+        "title": "تنفيذ دفع Stablecoin",
+        "body": "تحسب StablePay مبلغ الدفع باستخدام أسعار الصرف الفورية وتنفذ دفع USDT أو USDC عبر توقيع محفظة غير احتجازية."
+      },
+      {
+        "title": "تجميع الفروقات وربط التسوية",
+        "body": "يتم تجميع الفروقات التي تقل عن 0.01 دولار تلقائياً، ويمكن استخدامها لتعويض رسوم الغاز المستقبلية وتحسين كفاءة الدفع."
+      }
+    ]
+  },
+  "de": {
+    "label": "Zahlungsarchitektur",
+    "title": "StablePay Zahlungsarchitektur",
+    "sub": "StablePay nutzt einen anfragebasierten Zahlungsablauf: Der Verkäufer erstellt eine Zahlungsanforderung, und der Käufer bestätigt sie per QR-Scan oder 7-stelligem OTP. Der Betrag in lokaler Währung wird mit Echtzeit-Wechselkursen in einen USD-basierten Stablecoin-Betrag umgerechnet und über die Non-Custodial-Wallet-Signatur des Käufers auf Polygon oder Solana ausgeführt.",
+    "core": "Ein anfragebasiertes QR/OTP-Stablecoin-Zahlungsprotokoll: Verkäufer erstellen Zahlungsanforderungen direkt vom Smartphone aus, ohne externes POS-Terminal; Käufer bestätigen die Zahlung per Wallet-Signatur.",
+    "caption": "StablePay macht eine einzige App gleichzeitig zur Käufer-Wallet und zum Verkäufer-Terminal und ermöglicht eine QR/OTP-basierte Zahlungsstruktur ohne externe POS-Hardware.",
+    "note": "Auf Mobilgeräten tippen Sie auf das Bild, um es in voller Größe zu öffnen.",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "StablePay Zahlungsarchitektur - Anfragebasiertes QR OTP Stablecoin-Zahlungsprotokoll",
+    "steps": [
+      {
+        "title": "Verkäufer erstellt Anfrage",
+        "body": "Der Verkäufer gibt den Betrag in lokaler Währung, die ausgewählte Währung und die Netzwerkdaten ein und erzeugt anschließend einen QR-Code oder ein 7-stelliges OTP."
+      },
+      {
+        "title": "Käufer bestätigt die Zahlung",
+        "body": "Der Käufer scannt den QR-Code oder gibt das OTP ein, um den angeforderten Betrag und die Wallet-Adresse zu prüfen."
+      },
+      {
+        "title": "Stablecoin-Zahlung ausführen",
+        "body": "StablePay berechnet den Zahlungsbetrag mit Echtzeit-Wechselkursen und führt die USDT- oder USDC-Zahlung über eine Non-Custodial-Wallet-Signatur aus."
+      },
+      {
+        "title": "Dust-Sammlung & Settlement-Link",
+        "body": "Beträge unter 0,01 USD werden automatisch gesammelt und können zur Kompensation zukünftiger Gasgebühren sowie zur Verbesserung der Zahlungseffizienz genutzt werden."
+      }
+    ]
+  },
+  "fr": {
+    "label": "Architecture de paiement",
+    "title": "Architecture de paiement StablePay",
+    "sub": "StablePay utilise un flux de paiement basé sur la demande : le vendeur crée une demande de paiement et l’acheteur l’approuve par scan QR ou OTP à 7 chiffres. Le montant en devise locale est converti en stablecoin indexé sur l’USD grâce aux taux de change en temps réel, puis le paiement est exécuté sur Polygon ou Solana via la signature du wallet non-custodial de l’acheteur.",
+    "core": "Un protocole de paiement stablecoin QR/OTP basé sur la demande : le vendeur crée une demande de paiement depuis n’importe quel smartphone sans terminal POS externe, tandis que l’acheteur approuve le paiement par signature de wallet.",
+    "caption": "StablePay permet à une seule application de servir à la fois de wallet acheteur et de terminal vendeur, avec une structure de paiement QR/OTP sans matériel POS externe.",
+    "note": "Sur mobile, touchez l’image pour l’ouvrir en grand format.",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "Architecture de paiement StablePay - Protocole QR OTP Stablecoin basé sur la demande",
+    "steps": [
+      {
+        "title": "Le vendeur crée une demande",
+        "body": "Le vendeur saisit le montant en devise locale, la devise sélectionnée et les informations réseau, puis génère un QR code ou un OTP à 7 chiffres."
+      },
+      {
+        "title": "L’acheteur approuve le paiement",
+        "body": "L’acheteur scanne le QR code ou saisit l’OTP pour vérifier le montant demandé et l’adresse du wallet."
+      },
+      {
+        "title": "Exécution du paiement en stablecoin",
+        "body": "StablePay calcule le montant avec les taux de change en temps réel et exécute le paiement USDT ou USDC via une signature de wallet non-custodial."
+      },
+      {
+        "title": "Accumulation du dust & lien de règlement",
+        "body": "Le dust inférieur à 0,01 USD est automatiquement accumulé et peut servir à compenser de futurs frais de gas et à améliorer l’efficacité des paiements."
+      }
+    ]
+  },
+  "pt": {
+    "label": "Arquitetura de Pagamento",
+    "title": "Arquitetura de Pagamento StablePay",
+    "sub": "A StablePay usa um fluxo de pagamento baseado em solicitação: o vendedor cria uma solicitação de pagamento e o comprador aprova por leitura de QR ou OTP de 7 dígitos. O valor em moeda local é convertido em um valor de stablecoin baseado em USD usando taxas de câmbio em tempo real, e o pagamento é executado na Polygon ou Solana por meio da assinatura da carteira non-custodial do comprador.",
+    "core": "Um protocolo de pagamento stablecoin QR/OTP baseado em solicitação: vendedores criam solicitações de pagamento diretamente de qualquer smartphone, sem terminal POS externo, enquanto compradores aprovam o pagamento com assinatura da carteira.",
+    "caption": "A StablePay permite que um único aplicativo funcione como carteira do comprador e terminal do vendedor, oferecendo uma estrutura de pagamento QR/OTP sem hardware POS externo.",
+    "note": "No celular, toque na imagem para ver em tamanho completo.",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "Arquitetura de Pagamento StablePay - Protocolo QR OTP Stablecoin baseado em solicitação",
+    "steps": [
+      {
+        "title": "Vendedor cria a solicitação",
+        "body": "O vendedor informa o valor em moeda local, a moeda selecionada e os detalhes da rede, depois gera um QR code ou OTP de 7 dígitos."
+      },
+      {
+        "title": "Comprador aprova o pagamento",
+        "body": "O comprador escaneia o QR code ou insere o OTP para verificar o valor solicitado e o endereço da carteira."
+      },
+      {
+        "title": "Execução do pagamento em Stablecoin",
+        "body": "A StablePay calcula o valor do pagamento com taxas de câmbio em tempo real e executa o pagamento em USDT ou USDC por assinatura de carteira non-custodial."
+      },
+      {
+        "title": "Acúmulo de dust e conexão com liquidação",
+        "body": "O dust abaixo de US$ 0,01 é acumulado automaticamente e pode ser usado para compensar futuras taxas de gas e melhorar a eficiência do pagamento."
+      }
+    ]
+  },
+  "es": {
+    "label": "Arquitectura de pago",
+    "title": "Arquitectura de pago de StablePay",
+    "sub": "StablePay utiliza un flujo de pago basado en solicitud: el vendedor crea una solicitud de pago y el comprador la aprueba mediante escaneo QR o un OTP de 7 dígitos. El importe en moneda local se convierte en un valor de stablecoin basado en USD con tipos de cambio en tiempo real, y el pago se ejecuta en Polygon o Solana mediante la firma de la wallet no custodial del comprador.",
+    "core": "Un protocolo de pago con stablecoins QR/OTP basado en solicitud: los vendedores crean solicitudes de pago directamente desde cualquier smartphone sin terminal POS externo, mientras los compradores aprueban el pago con una firma de wallet.",
+    "caption": "StablePay permite que una sola app funcione como wallet del comprador y terminal del vendedor, ofreciendo una estructura de pago QR/OTP sin hardware POS externo.",
+    "note": "En móvil, toca la imagen para verla en tamaño completo.",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "Arquitectura de pago StablePay - Protocolo QR OTP Stablecoin basado en solicitud",
+    "steps": [
+      {
+        "title": "El vendedor crea una solicitud",
+        "body": "El vendedor introduce el importe en moneda local, la moneda seleccionada y los datos de red, y luego genera un código QR o un OTP de 7 dígitos."
+      },
+      {
+        "title": "El comprador aprueba el pago",
+        "body": "El comprador escanea el código QR o introduce el OTP para verificar el importe solicitado y la dirección de la wallet."
+      },
+      {
+        "title": "Ejecución del pago en Stablecoin",
+        "body": "StablePay calcula el importe con tipos de cambio en tiempo real y ejecuta el pago en USDT o USDC mediante una firma de wallet no custodial."
+      },
+      {
+        "title": "Acumulación de dust y enlace de liquidación",
+        "body": "El dust inferior a 0,01 USD se acumula automáticamente y puede usarse para compensar futuras comisiones de gas y mejorar la eficiencia del pago."
+      }
+    ]
+  },
+  "hi": {
+    "label": "पेमेंट आर्किटेक्चर",
+    "title": "StablePay पेमेंट आर्किटेक्चर",
+    "sub": "StablePay एक request-based payment flow का उपयोग करता है, जिसमें seller payment request बनाता है और buyer QR scan या 7-digit OTP के माध्यम से उसे approve करता है। Local currency amount को real-time exchange rates के आधार पर USD-based stablecoin amount में convert किया जाता है, और payment buyer के non-custodial wallet signature के माध्यम से Polygon या Solana network पर execute होता है।",
+    "core": "Request-based QR/OTP stablecoin payment protocol: sellers किसी external POS terminal के बिना किसी भी smartphone से payment request बना सकते हैं, और buyers wallet signature से payment approve करते हैं।",
+    "caption": "StablePay एक ही app को buyer wallet और seller terminal दोनों की भूमिका देता है, जिससे external POS hardware के बिना QR/OTP request-based payment structure उपलब्ध होता है।",
+    "note": "मोबाइल पर image को full size में देखने के लिए tap करें।",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "StablePay Payment Architecture - Request-Based QR OTP Stablecoin Payment Protocol",
+    "steps": [
+      {
+        "title": "Seller request बनाता है",
+        "body": "Seller local currency amount, selected currency और network details दर्ज करता है, फिर QR code या 7-digit OTP generate करता है।"
+      },
+      {
+        "title": "Buyer payment approve करता है",
+        "body": "Buyer QR code scan करता है या OTP दर्ज करता है ताकि requested amount और wallet address verify हो सके।"
+      },
+      {
+        "title": "Stablecoin payment execution",
+        "body": "StablePay real-time exchange rates से payment amount calculate करता है और non-custodial wallet signature के माध्यम से USDT या USDC payment execute करता है।"
+      },
+      {
+        "title": "Dust accumulation और settlement link",
+        "body": "$0.01 से कम dust अपने आप accumulate होता है और future gas fees को offset करने तथा payment efficiency बढ़ाने में उपयोग हो सकता है।"
+      }
+    ]
+  },
+  "ru": {
+    "label": "Платежная архитектура",
+    "title": "Платежная архитектура StablePay",
+    "sub": "StablePay использует платежный поток на основе запроса: продавец создает платежный запрос, а покупатель подтверждает его через сканирование QR или 7-значный OTP. Сумма в местной валюте конвертируется в сумму стейблкоина, привязанную к USD, по обменному курсу в реальном времени, а платеж выполняется в сети Polygon или Solana через подпись non-custodial кошелька покупателя.",
+    "core": "Платежный протокол QR/OTP для стейблкоинов на основе запроса: продавец создает платежный запрос с любого смартфона без внешнего POS-терминала, а покупатель подтверждает оплату подписью кошелька.",
+    "caption": "StablePay позволяет одному приложению работать одновременно как кошелек покупателя и терминал продавца, обеспечивая QR/OTP-структуру оплаты без внешнего POS-оборудования.",
+    "note": "На мобильном устройстве нажмите на изображение, чтобы открыть его в полном размере.",
+    "img": "stablepay-payment-architecture-en.webp",
+    "alt": "Платежная архитектура StablePay - QR OTP протокол оплаты стейблкоинами на основе запроса",
+    "steps": [
+      {
+        "title": "Продавец создает запрос",
+        "body": "Продавец вводит сумму в местной валюте, выбранную валюту и данные сети, затем генерирует QR-код или 7-значный OTP."
+      },
+      {
+        "title": "Покупатель подтверждает оплату",
+        "body": "Покупатель сканирует QR-код или вводит OTP, чтобы проверить запрошенную сумму и адрес кошелька."
+      },
+      {
+        "title": "Выполнение платежа в Stablecoin",
+        "body": "StablePay рассчитывает сумму платежа по курсу в реальном времени и выполняет платеж USDT или USDC через подпись non-custodial кошелька."
+      },
+      {
+        "title": "Накопление dust и связь с расчетами",
+        "body": "Dust менее 0,01 USD автоматически накапливается и может использоваться для компенсации будущих gas fees и повышения эффективности платежей."
+      }
     ]
   }
 };
