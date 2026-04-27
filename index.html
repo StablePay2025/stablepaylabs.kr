@@ -18,14 +18,14 @@
    gtag('config', 'G-CBG5MNMHBL');
 </script>
 
-<meta content="StablePay Labs는 'QR 시스템을 이용한 스테이블코인 결제' 및 '정산 및 세무 자동화(특허 제10-2025-0215773호)' 원천 기술을 보유하고 있습니다. 환전 없는 결제와 웹3 기반 자동 정산 솔루션을 제공합니다." name="description"/>
+<meta content="StablePay Labs는 'QR 시스템을 이용한 스테이블코인 결제' 및 '정산 및 세무 자동화(특허 제10-2025-0215773호)' 원천 기술을 보유하고 있습니다. 요청 기반 QR/OTP 스테이블코인 결제 구조와 비수탁 지갑 서명을 통해 환전 없는 결제와 웹3 기반 자동 정산 솔루션을 제공합니다." name="description"/>
 
-<meta content="StablePay, StablePay Labs, 스테이블페이, 스테이블코인 결제, QR 결제, Web3 결제, 비수탁형 지갑, USDT 결제, QR 시스템을 이용한 스테이블코인 결제, 정산 및 세무 자동화, 결제 정산 자동화" name="keywords"/>
+<meta content="StablePay, StablePay Labs, 스테이블페이, 스테이블코인 결제, QR 결제, QR OTP 결제, 요청 기반 결제, StablePay Payment Architecture, Web3 결제, 비수탁형 지갑, USDT 결제, USDC 결제, Polygon 결제, Solana 결제, QR 시스템을 이용한 스테이블코인 결제, 정산 및 세무 자동화, 결제 정산 자동화" name="keywords"/>
 
 <meta content="website" property="og:type"/>
 <meta content="https://stablepaylabs.kr" property="og:url"/>
 <meta content="StablePay Labs - QR 결제 및 정산·세무 자동화 솔루션" property="og:title"/>
-<meta content="특허받은 'QR 시스템을 이용한 스테이블코인 결제'와 '정산 및 세무 자동화' 기술로 구현한 차세대 결제 네트워크입니다. 한국 포함 8개국 서비스 중." property="og:description"/>
+<meta content="특허받은 QR 기반 스테이블코인 결제와 정산·세무 자동화 기술로 구현한 차세대 결제 네트워크입니다. 요청 기반 QR/OTP 결제 구조와 비수탁 지갑 서명을 지원합니다." property="og:description"/>
 
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=Noto+Sans+Thai:wght@300;400;500;700&amp;family=Sora:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -288,6 +288,130 @@ html[dir="rtl"] .qr-paradigm-section{
   text-align:right;
 }
 
+
+/* StablePay 결제 구조 이미지 섹션 */
+.payment-architecture-section{
+  position:relative;
+  padding:96px 5%;
+  background:
+    radial-gradient(circle at 82% 16%,rgba(0,200,150,0.14),transparent 34%),
+    linear-gradient(135deg,#ffffff 0%,#f4f8fb 44%,#eef9f7 100%);
+  overflow:hidden;
+}
+.payment-architecture-section::before{
+  content:"";
+  position:absolute;
+  inset:auto auto -26% -10%;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:rgba(93,197,232,0.12);
+  filter:blur(6px);
+}
+.payment-architecture-inner{
+  position:relative;
+  max-width:1240px;
+  margin:0 auto;
+}
+.payment-architecture-sub{
+  max-width:920px;
+  margin-bottom:18px;
+}
+.payment-architecture-core{
+  max-width:1040px;
+  margin:0 0 34px;
+  padding:18px 22px;
+  border-left:4px solid var(--accent);
+  border-radius:18px;
+  background:rgba(255,255,255,0.82);
+  box-shadow:0 14px 32px rgba(13,43,85,0.08);
+  color:var(--navy);
+  font-size:16px;
+  font-weight:700;
+  line-height:1.75;
+}
+html[dir="rtl"] .payment-architecture-core{
+  border-left:0;
+  border-right:4px solid var(--accent);
+}
+.payment-architecture-figure{
+  margin:0;
+  background:white;
+  border:1px solid rgba(0,200,150,0.22);
+  border-radius:28px;
+  padding:14px;
+  box-shadow:0 24px 70px rgba(13,43,85,0.16);
+}
+.payment-architecture-figure a{
+  display:block;
+  line-height:0;
+}
+.payment-architecture-figure img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:20px;
+}
+.payment-architecture-figure figcaption{
+  padding:14px 8px 4px;
+  color:var(--text-muted);
+  font-size:13px;
+  line-height:1.65;
+  text-align:center;
+}
+.payment-architecture-mobile-note{
+  display:none;
+  margin-top:14px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:rgba(0,200,150,0.09);
+  color:var(--navy);
+  font-size:13px;
+  font-weight:600;
+}
+.payment-architecture-steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
+  margin-top:28px;
+}
+.payment-architecture-step-card{
+  background:rgba(255,255,255,0.88);
+  border:1px solid rgba(93,197,232,0.18);
+  border-radius:20px;
+  padding:22px 20px;
+  box-shadow:0 14px 34px rgba(13,43,85,0.08);
+}
+.payment-architecture-step-num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:38px;
+  height:38px;
+  border-radius:13px;
+  margin-bottom:14px;
+  background:linear-gradient(135deg,rgba(93,197,232,0.22),rgba(0,200,150,0.18));
+  color:var(--navy);
+  font-family:"Sora",sans-serif;
+  font-weight:800;
+  font-size:13px;
+}
+.payment-architecture-step-card h3{
+  color:var(--navy);
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:10px;
+  line-height:1.45;
+}
+.payment-architecture-step-card p{
+  color:var(--text-muted);
+  font-size:14px;
+  line-height:1.7;
+}
+html[dir="rtl"] .payment-architecture-section{
+  text-align:right;
+}
+
 .app-showcase{background:linear-gradient(135deg,#0a1f3d 0%,#0d2b55 50%,#0f3060 100%);padding:96px 5%;}
 .app-showcase .section-title{color:white;}
 .app-showcase .section-sub{color:rgba(255,255,255,0.6);}
@@ -440,6 +564,16 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
   .qr-paradigm-figure figcaption{text-align:left;font-size:12px;padding:12px 4px 2px;}
   .qr-paradigm-mobile-note{display:block;}
 
+  .payment-architecture-section{padding:72px 5%;}
+  .payment-architecture-core{font-size:14px;padding:14px 16px;margin-bottom:26px;border-radius:14px;}
+  .payment-architecture-figure{padding:8px;border-radius:20px;box-shadow:0 14px 38px rgba(13,43,85,0.13);}
+  .payment-architecture-figure img{border-radius:14px;}
+  .payment-architecture-figure figcaption{text-align:left;font-size:12px;padding:12px 4px 2px;}
+  .payment-architecture-mobile-note{display:block;}
+  .payment-architecture-steps{grid-template-columns:1fr;gap:14px;margin-top:22px;}
+  .payment-architecture-step-card{padding:18px 16px;border-radius:16px;}
+
+
   .launch-banner{top:64px;font-size:12px;padding:7px 3%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .nav-cta{padding:8px 12px;font-size:12px;}
   .lang-btn{padding:3px 6px;font-size:11px;}
@@ -586,6 +720,57 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
       </figcaption>
     </figure>
     <div class="qr-paradigm-mobile-note" id="qr-paradigm-mobile-note">모바일에서는 이미지를 누르면 크게 볼 수 있습니다.</div>
+  </div>
+</section>
+
+<section class="payment-architecture-section" id="payment-architecture">
+  <div class="payment-architecture-inner">
+    <div class="section-label" id="payment-architecture-label">결제 구조</div>
+    <div class="section-title" id="payment-architecture-title">StablePay 결제 구조</div>
+    <p class="section-sub payment-architecture-sub" id="payment-architecture-sub">
+      StablePay는 판매자가 결제 요청을 생성하고, 구매자가 QR 스캔 또는 7자리 OTP로 승인하는 요청 기반 결제 구조입니다. 현지 화폐 금액은 실시간 환율을 통해 USD 기준 스테이블코인 금액으로 변환되며, 구매자의 비수탁 지갑 서명을 통해 Polygon 또는 Solana 네트워크에서 결제가 실행됩니다.
+    </p>
+    <p class="payment-architecture-core" id="payment-architecture-core">
+      요청 기반 QR/OTP 스테이블코인 결제 프로토콜: 판매자는 별도 POS 단말기 없이 스마트폰만으로 결제 요청을 만들고, 구매자는 지갑 서명으로 결제를 승인합니다.
+    </p>
+    <figure class="payment-architecture-figure">
+      <a id="payment-architecture-link" href="stablepay-payment-architecture-ko.webp" target="_blank" rel="noopener">
+        <img
+          id="payment-architecture-img"
+          src="stablepay-payment-architecture-ko.webp"
+          alt="StablePay 결제 구조 - QR OTP 요청 기반 스테이블코인 결제 프로토콜"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <figcaption id="payment-architecture-caption">
+        StablePay는 하나의 앱에서 구매자 지갑과 판매자 단말기 역할을 동시에 수행하며, 별도 POS 없이 QR/OTP 요청 기반 결제 구조를 제공합니다.
+      </figcaption>
+    </figure>
+    <div class="payment-architecture-mobile-note" id="payment-architecture-mobile-note">모바일에서는 이미지를 누르면 크게 볼 수 있습니다.</div>
+
+    <div class="payment-architecture-steps">
+      <div class="payment-architecture-step-card">
+        <div class="payment-architecture-step-num">01</div>
+        <h3 id="payment-architecture-step1-title">판매자 요청 생성</h3>
+        <p id="payment-architecture-step1-body">판매자가 현지 화폐 금액, 결제 통화, 네트워크 정보를 입력하고 QR 코드 또는 7자리 OTP를 생성합니다.</p>
+      </div>
+      <div class="payment-architecture-step-card">
+        <div class="payment-architecture-step-num">02</div>
+        <h3 id="payment-architecture-step2-title">구매자 승인</h3>
+        <p id="payment-architecture-step2-body">구매자는 QR을 스캔하거나 OTP를 입력해 요청된 금액과 지갑 주소를 확인합니다.</p>
+      </div>
+      <div class="payment-architecture-step-card">
+        <div class="payment-architecture-step-num">03</div>
+        <h3 id="payment-architecture-step3-title">스테이블코인 결제 실행</h3>
+        <p id="payment-architecture-step3-body">StablePay는 실시간 환율을 기준으로 금액을 계산하고, 비수탁 지갑 서명을 통해 USDT 또는 USDC 결제를 실행합니다.</p>
+      </div>
+      <div class="payment-architecture-step-card">
+        <div class="payment-architecture-step-num">04</div>
+        <h3 id="payment-architecture-step4-title">잔돈 적립 및 정산 연결</h3>
+        <p id="payment-architecture-step4-body">0.01달러 미만의 잔돈은 자동 적립되어 향후 가스비 보전 및 결제 편의성 향상에 활용됩니다.</p>
+      </div>
+    </div>
   </div>
 </section>
 <section class="app-showcase" id="appscreen">
@@ -2469,7 +2654,7 @@ var obs = new IntersectionObserver(function(entries) {
     }
   });
 }, {threshold: 0.1});
-document.querySelectorAll(".feature-card,.step,.plan,.patent-card,.country-tag,.app-img-wrap,.app-text,.qr-paradigm-figure,.qr-paradigm-sub,.qr-paradigm-core").forEach(function(el) {
+document.querySelectorAll(".feature-card,.step,.plan,.patent-card,.country-tag,.app-img-wrap,.app-text,.qr-paradigm-figure,.qr-paradigm-sub,.qr-paradigm-core,.payment-architecture-figure,.payment-architecture-sub,.payment-architecture-core,.payment-architecture-step-card").forEach(function(el) {
   el.style.opacity = "0";
   el.style.transform = "translateY(28px)";
   el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
@@ -4387,6 +4572,75 @@ var QR_COPY = {
   }
 };
 
+
+var PAYMENT_ARCH_COPY = {
+  ko: {
+    label: "결제 구조",
+    title: "StablePay 결제 구조",
+    sub: "StablePay는 판매자가 결제 요청을 생성하고, 구매자가 QR 스캔 또는 7자리 OTP로 승인하는 요청 기반 결제 구조입니다. 현지 화폐 금액은 실시간 환율을 통해 USD 기준 스테이블코인 금액으로 변환되며, 구매자의 비수탁 지갑 서명을 통해 Polygon 또는 Solana 네트워크에서 결제가 실행됩니다.",
+    core: "요청 기반 QR/OTP 스테이블코인 결제 프로토콜: 판매자는 별도 POS 단말기 없이 스마트폰만으로 결제 요청을 만들고, 구매자는 지갑 서명으로 결제를 승인합니다.",
+    caption: "StablePay는 하나의 앱에서 구매자 지갑과 판매자 단말기 역할을 동시에 수행하며, 별도 POS 없이 QR/OTP 요청 기반 결제 구조를 제공합니다.",
+    note: "모바일에서는 이미지를 누르면 크게 볼 수 있습니다.",
+    img: "stablepay-payment-architecture-ko.webp",
+    alt: "StablePay 결제 구조 - QR OTP 요청 기반 스테이블코인 결제 프로토콜",
+    steps: [
+      { title: "판매자 요청 생성", body: "판매자가 현지 화폐 금액, 결제 통화, 네트워크 정보를 입력하고 QR 코드 또는 7자리 OTP를 생성합니다." },
+      { title: "구매자 승인", body: "구매자는 QR을 스캔하거나 OTP를 입력해 요청된 금액과 지갑 주소를 확인합니다." },
+      { title: "스테이블코인 결제 실행", body: "StablePay는 실시간 환율을 기준으로 금액을 계산하고, 비수탁 지갑 서명을 통해 USDT 또는 USDC 결제를 실행합니다." },
+      { title: "잔돈 적립 및 정산 연결", body: "0.01달러 미만의 잔돈은 자동 적립되어 향후 가스비 보전 및 결제 편의성 향상에 활용됩니다." }
+    ]
+  },
+  en: {
+    label: "Payment Architecture",
+    title: "StablePay Payment Architecture",
+    sub: "StablePay uses a request-based payment flow where the seller creates a payment request and the buyer approves it through a QR scan or a 7-digit OTP. The local currency amount is converted into a USD-based stablecoin amount using real-time exchange rates, and the payment is executed on Polygon or Solana through the buyer’s non-custodial wallet signature.",
+    core: "A request-based QR/OTP stablecoin payment protocol: sellers create payment requests directly from any smartphone without an external POS terminal, while buyers approve the payment with a wallet signature.",
+    caption: "StablePay allows one app to work as both buyer wallet and seller terminal, providing a QR/OTP request-based payment structure without external POS hardware.",
+    note: "On mobile, tap the image to view it in full size.",
+    img: "stablepay-payment-architecture-en.webp",
+    alt: "StablePay Payment Architecture - Request-Based QR OTP Stablecoin Payment Protocol",
+    steps: [
+      { title: "Seller Creates a Request", body: "The seller enters the local currency amount, selected currency, and network details, then generates a QR code or 7-digit OTP." },
+      { title: "Buyer Approves the Payment", body: "The buyer scans the QR code or enters the OTP to verify the requested amount and wallet address." },
+      { title: "Stablecoin Payment Execution", body: "StablePay calculates the payment amount using real-time exchange rates and executes USDT or USDC payment through a non-custodial wallet signature." },
+      { title: "Dust Accumulation & Settlement Link", body: "Dust under $0.01 is automatically accumulated and can be used to offset future gas fees and improve payment efficiency." }
+    ]
+  }
+};
+
+function updatePaymentArchitecture(lang) {
+  var copy = PAYMENT_ARCH_COPY[lang] || PAYMENT_ARCH_COPY.en;
+  var map = {
+    "payment-architecture-label": copy.label,
+    "payment-architecture-title": copy.title,
+    "payment-architecture-sub": copy.sub,
+    "payment-architecture-core": copy.core,
+    "payment-architecture-caption": copy.caption,
+    "payment-architecture-mobile-note": copy.note
+  };
+  for (var id in map) {
+    var el = document.getElementById(id);
+    if (el) el.innerHTML = map[id];
+  }
+  var img = document.getElementById("payment-architecture-img");
+  var link = document.getElementById("payment-architecture-link");
+  if (img) {
+    img.src = copy.img;
+    img.alt = copy.alt;
+  }
+  if (link) link.href = copy.img;
+
+  if (copy.steps) {
+    copy.steps.forEach(function(step, idx) {
+      var n = idx + 1;
+      var titleEl = document.getElementById("payment-architecture-step" + n + "-title");
+      var bodyEl = document.getElementById("payment-architecture-step" + n + "-body");
+      if (titleEl) titleEl.innerHTML = step.title;
+      if (bodyEl) bodyEl.innerHTML = step.body;
+    });
+  }
+}
+
 function updateQrParadigm(lang) {
   var copy = QR_COPY[lang] || QR_COPY.en;
   var map = {
@@ -4439,6 +4693,7 @@ function setLang(lang) {
   });
 
   updateQrParadigm(lang);
+  updatePaymentArchitecture(lang);
 
   // 모달 바디 전환
   var bodies = [
