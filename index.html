@@ -677,9 +677,9 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
   .misdeposit-comparison-section{padding:72px 5%;}
   .misdeposit-comparison-core{font-size:14px;padding:14px 16px;margin-bottom:26px;border-radius:14px;}
   .misdeposit-comparison-figure{padding:8px;border-radius:20px;box-shadow:0 14px 38px rgba(13,43,85,0.13);}
-  .misdeposit-image-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px;}
-  .misdeposit-image-scroll a{width:920px;max-width:none;}
-  .misdeposit-image-scroll img{width:920px;max-width:none;border-radius:14px;}
+  .misdeposit-image-scroll{overflow:hidden;border-radius:14px;}
+  .misdeposit-image-scroll a{width:100%;max-width:100%;}
+  .misdeposit-image-scroll img{width:100%;max-width:100%;height:auto;border-radius:14px;}
   .misdeposit-comparison-figure figcaption{text-align:left;font-size:12px;padding:12px 4px 2px;}
   .misdeposit-comparison-mobile-note{display:block;}
 
@@ -948,7 +948,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
         StablePay는 특허 제10-2025-0079540호 기반의 요청 기반 QR/OTP 스테이블코인 결제 구조를 통해 네트워크·화폐 코드 불일치로 인한 고위험 오입금을 결제 실행 전 단계에서 차단하도록 설계되었습니다.
       </figcaption>
     </figure>
-    <div class="misdeposit-comparison-mobile-note" id="misdeposit-comparison-mobile-note">모바일에서는 이미지를 좌우로 밀어서 자세히 보고, 이미지를 누르면 크게 볼 수 있습니다.</div>
+    <div class="misdeposit-comparison-mobile-note" id="misdeposit-comparison-mobile-note">모바일에서는 이미지를 누르면 크게 볼 수 있습니다.</div>
   </div>
 </section>
 <section class="app-showcase" id="appscreen">
@@ -5200,7 +5200,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePay는 네트워크·화폐 코드·스마트 컨트랙트 주소 불일치를 앱 단계에서 감지하여 결제 버튼을 자동 비활성화하는 사전 차단 구조를 제공합니다.",
     "core": "StablePay의 핵심은 사용자에게 ‘확인하라’고 맡기는 수동 대조가 아니라, 불일치가 감지되면 결제 자체가 진행되지 않도록 막는 자동 보안 로직입니다.",
     "caption": "StablePay는 특허 제10-2025-0079540호 기반의 요청 기반 QR/OTP 스테이블코인 결제 구조를 통해 네트워크·화폐 코드 불일치로 인한 고위험 오입금을 결제 실행 전 단계에서 차단하도록 설계되었습니다.",
-    "note": "모바일에서는 이미지를 좌우로 밀어서 자세히 보고, 이미지를 누르면 크게 볼 수 있습니다.",
+    "note": "모바일에서는 이미지를 누르면 크게 볼 수 있습니다.",
     "alt": "가상자산 오입금 방지 기술 비교 - 기존 송금 방식과 StablePay 혁신 기술"
   },
   "en": {
@@ -5209,7 +5209,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePay detects mismatches between currency code, network, and smart contract or wallet address at the app level, then automatically disables the payment button before a mistaken transfer can occur.",
     "core": "The key difference is not asking users to manually double-check. StablePay blocks the transaction path itself when a mismatch is detected.",
     "caption": "Conventional digital asset transfers leave liability to the user after an irreversible mistake. StablePay is designed as a patented, request-based stablecoin payment structure that prevents high-risk mismatches before payment execution. Patent No. 10-2025-0079540.",
-    "note": "On mobile, swipe horizontally to read details, or tap the image to view it in full size.",
+    "note": "On mobile, tap the image to view it in full size.",
     "alt": "Preventing mistaken digital asset transfers - Conventional method versus StablePay innovative technology"
   },
   "ja": {
@@ -5218,7 +5218,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePayは、通貨コード、ネットワーク、スマートコントラクトまたはウォレットアドレスの不一致をアプリ内で検知し、誤送金が発生する前に決済ボタンを自動的に無効化します。",
     "core": "StablePayの違いは、ユーザーに手動確認を任せるのではなく、不一致が検知された時点で決済経路そのものを遮断する点にあります。",
     "caption": "StablePayは、特許番号10-2025-0079540に基づくリクエスト型QR/OTPステーブルコイン決済構造により、ネットワークや通貨コードの不一致による高リスクな誤送金を決済実行前に防ぐよう設計されています。",
-    "note": "モバイルでは画像を左右にスワイプして詳細を確認でき、画像をタップすると大きく表示できます。",
+    "note": "モバイルでは画像をタップすると拡大表示できます。",
     "alt": "暗号資産の誤送金防止技術比較 - 従来方式とStablePay革新技術"
   },
   "zh": {
@@ -5227,7 +5227,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePay可在应用层检测货币代码、网络、智能合约或钱包地址的不一致，并在误转发生前自动禁用支付按钮。",
     "core": "StablePay的核心并不是让用户自行反复核对，而是在检测到不一致时直接阻断交易路径。",
     "caption": "StablePay基于专利号10-2025-0079540的请求式QR/OTP稳定币支付结构，旨在支付执行前阻止因网络或货币代码不一致导致的高风险误转。",
-    "note": "在移动设备上，可左右滑动查看图片细节，也可点击图片放大查看。",
+    "note": "在移动设备上，点击图片可查看大图。",
     "alt": "数字资产误转防范技术比较 - 传统方式与StablePay创新技术"
   },
   "zh-hk": {
@@ -5236,7 +5236,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePay會在應用程式層面偵測貨幣代碼、網絡、智能合約或錢包地址不一致，並在誤轉發生前自動停用付款按鈕。",
     "core": "StablePay的核心並不是要求用戶自行反覆核對，而是在偵測到不一致時直接阻斷交易路徑。",
     "caption": "StablePay基於專利號10-2025-0079540的請求式QR/OTP穩定幣付款結構，旨在付款執行前阻止因網絡或貨幣代碼不一致造成的高風險誤轉。",
-    "note": "在手機上可左右滑動查看圖片細節，也可點擊圖片放大查看。",
+    "note": "在流動裝置上，點按圖片可查看大圖。",
     "alt": "數碼資產誤轉防範技術比較 - 傳統方式與StablePay創新技術"
   },
   "th": {
@@ -5245,7 +5245,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePay ตรวจจับความไม่ตรงกันของรหัสสกุลเงิน เครือข่าย สมาร์ตคอนแทรกต์ หรือที่อยู่วอลเล็ตในระดับแอป และปิดใช้งานปุ่มชำระเงินโดยอัตโนมัติก่อนเกิดการโอนผิด",
     "core": "จุดต่างสำคัญคือ StablePay ไม่ได้ปล่อยให้ผู้ใช้ตรวจสอบเองทั้งหมด แต่จะบล็อกเส้นทางธุรกรรมทันทีเมื่อพบความไม่ตรงกัน",
     "caption": "StablePay ได้รับการออกแบบด้วยโครงสร้างการชำระเงินสเตเบิลคอยน์แบบ QR/OTP ตามคำขอ โดยอ้างอิงสิทธิบัตรเลขที่ 10-2025-0079540 เพื่อป้องกันการโอนผิดที่มีความเสี่ยงสูงก่อนการชำระเงินจริง",
-    "note": "บนมือถือ สามารถเลื่อนภาพซ้ายขวาเพื่อดูรายละเอียด หรือแตะภาพเพื่อดูขนาดใหญ่ได้",
+    "note": "บนมือถือ ให้แตะรูปภาพเพื่อดูขนาดเต็ม",
     "alt": "เปรียบเทียบเทคโนโลยีป้องกันการโอนสินทรัพย์ดิจิทัลผิดพลาด - วิธีดั้งเดิมกับ StablePay"
   },
   "vi": {
@@ -5254,7 +5254,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePay phát hiện sự không khớp giữa mã tiền tệ, mạng lưới, smart contract hoặc địa chỉ ví ngay trong ứng dụng, rồi tự động vô hiệu hóa nút thanh toán trước khi giao dịch nhầm xảy ra.",
     "core": "Điểm khác biệt cốt lõi là StablePay không chỉ yêu cầu người dùng tự kiểm tra thủ công, mà chặn luôn đường dẫn giao dịch khi phát hiện sai lệch.",
     "caption": "StablePay được thiết kế dựa trên cấu trúc thanh toán stablecoin QR/OTP theo yêu cầu, theo Bằng sáng chế số 10-2025-0079540, nhằm ngăn các lỗi chuyển nhầm rủi ro cao trước khi thanh toán được thực thi.",
-    "note": "Trên di động, hãy vuốt ngang để xem chi tiết hoặc chạm vào hình để xem kích thước lớn.",
+    "note": "Trên thiết bị di động, hãy chạm vào hình ảnh để xem kích thước đầy đủ.",
     "alt": "So sánh công nghệ ngăn chuyển nhầm tài sản số - phương thức truyền thống và công nghệ StablePay"
   },
   "fil": {
@@ -5263,7 +5263,7 @@ var MISDEPOSIT_COPY = {
     "sub": "Nade-detect ng StablePay sa mismong app ang hindi pagtutugma ng currency code, network, smart contract, o wallet address, at awtomatikong dini-disable ang payment button bago mangyari ang maling transfer.",
     "core": "Ang pangunahing kaibahan ay hindi lang pinapaubaya ng StablePay sa user ang manual checking; kapag may mismatch, hinaharang nito ang mismong transaction path.",
     "caption": "Dinisenyo ang StablePay bilang request-based QR/OTP stablecoin payment structure batay sa Patent No. 10-2025-0079540 upang pigilan ang high-risk mismatched transfers bago pa maisagawa ang payment.",
-    "note": "Sa mobile, i-swipe ang larawan pakaliwa o pakanan para makita ang detalye, o i-tap ito para lumaki.",
+    "note": "Sa mobile, i-tap ang larawan upang makita ito sa full size.",
     "alt": "Paghahambing ng teknolohiya para maiwasan ang maling digital asset transfer - tradisyonal na paraan at StablePay"
   },
   "ar": {
@@ -5272,7 +5272,7 @@ var MISDEPOSIT_COPY = {
     "sub": "تكتشف StablePay عدم تطابق رمز العملة أو الشبكة أو عنوان العقد الذكي أو المحفظة داخل التطبيق، ثم تعطل زر الدفع تلقائياً قبل حدوث تحويل خاطئ.",
     "core": "الفرق الأساسي هو أن StablePay لا تترك التحقق اليدوي للمستخدم فقط، بل تمنع مسار المعاملة نفسه عند اكتشاف أي عدم تطابق.",
     "caption": "صُممت StablePay كبنية دفع بالعملات المستقرة عبر QR/OTP قائمة على الطلب، وفق براءة الاختراع رقم 10-2025-0079540، لمنع التحويلات عالية المخاطر قبل تنفيذ الدفع.",
-    "note": "على الهاتف، مرر الصورة أفقياً لقراءة التفاصيل، أو اضغط عليها لعرضها بحجم أكبر.",
+    "note": "على الهاتف المحمول، اضغط على الصورة لعرضها بالحجم الكامل.",
     "alt": "مقارنة تقنية منع تحويل الأصول الرقمية بالخطأ - الطريقة التقليدية مقابل StablePay"
   },
   "de": {
@@ -5281,7 +5281,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePay erkennt Abweichungen bei Währungscode, Netzwerk, Smart Contract oder Wallet-Adresse direkt in der App und deaktiviert den Zahlungsbutton automatisch, bevor ein Fehltransfer entstehen kann.",
     "core": "Der wesentliche Unterschied: StablePay verlässt sich nicht nur auf manuelle Prüfung durch den Nutzer, sondern blockiert den Transaktionspfad selbst, sobald ein Mismatch erkannt wird.",
     "caption": "StablePay ist als patentierte, anfragebasierte QR/OTP-Stablecoin-Zahlungsstruktur konzipiert, um risikoreiche Fehltransfers vor der Zahlungsausführung zu verhindern. Patent Nr. 10-2025-0079540.",
-    "note": "Auf Mobilgeräten können Sie horizontal wischen, um Details zu lesen, oder das Bild antippen, um es größer anzuzeigen.",
+    "note": "Auf Mobilgeräten tippen Sie auf das Bild, um es in voller Größe zu öffnen.",
     "alt": "Vergleich der Technologie zur Vermeidung falscher Digital-Asset-Transfers - konventionelle Methode versus StablePay"
   },
   "fr": {
@@ -5290,7 +5290,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePay détecte dans l’application les incohérences de code de devise, de réseau, de smart contract ou d’adresse de portefeuille, puis désactive automatiquement le bouton de paiement avant qu’un transfert erroné ne puisse se produire.",
     "core": "La différence essentielle est que StablePay ne se limite pas à demander une vérification manuelle à l’utilisateur : lorsqu’une incohérence est détectée, le chemin de transaction est bloqué.",
     "caption": "StablePay est conçue comme une structure brevetée de paiement en stablecoin par QR/OTP sur demande, afin de prévenir les transferts à haut risque avant l’exécution du paiement. Brevet n° 10-2025-0079540.",
-    "note": "Sur mobile, faites glisser l’image horizontalement pour lire les détails, ou touchez-la pour l’agrandir.",
+    "note": "Sur mobile, touchez l’image pour l’ouvrir en grand format.",
     "alt": "Comparaison des technologies de prévention des transferts d’actifs numériques erronés - méthode conventionnelle et StablePay"
   },
   "pt": {
@@ -5299,7 +5299,7 @@ var MISDEPOSIT_COPY = {
     "sub": "O StablePay detecta no nível do aplicativo divergências de código de moeda, rede, smart contract ou endereço de carteira, e desativa automaticamente o botão de pagamento antes que uma transferência incorreta ocorra.",
     "core": "A principal diferença é que o StablePay não depende apenas da conferência manual do usuário; quando detecta uma incompatibilidade, bloqueia o próprio caminho da transação.",
     "caption": "O StablePay foi projetado como uma estrutura patenteada de pagamento em stablecoin por QR/OTP baseada em solicitação, para impedir transferências de alto risco antes da execução do pagamento. Patente nº 10-2025-0079540.",
-    "note": "No celular, deslize a imagem horizontalmente para ver os detalhes ou toque nela para ampliar.",
+    "note": "No celular, toque na imagem para ver em tamanho completo.",
     "alt": "Comparação da tecnologia para evitar transferências incorretas de ativos digitais - método convencional versus StablePay"
   },
   "es": {
@@ -5308,7 +5308,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePay detecta en la aplicación discrepancias de código de moneda, red, smart contract o dirección de billetera, y desactiva automáticamente el botón de pago antes de que ocurra una transferencia errónea.",
     "core": "La diferencia clave es que StablePay no deja todo a la verificación manual del usuario; cuando detecta una discrepancia, bloquea directamente la ruta de la transacción.",
     "caption": "StablePay está diseñado como una estructura patentada de pago con stablecoins mediante QR/OTP basada en solicitud, para prevenir transferencias de alto riesgo antes de ejecutar el pago. Patente n.º 10-2025-0079540.",
-    "note": "En móvil, deslice la imagen horizontalmente para leer los detalles o tóquela para verla en tamaño grande.",
+    "note": "En móvil, toca la imagen para verla en tamaño completo.",
     "alt": "Comparación de tecnología para prevenir transferencias erróneas de activos digitales - método convencional frente a StablePay"
   },
   "hi": {
@@ -5317,7 +5317,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePay ऐप स्तर पर करेंसी कोड, नेटवर्क, स्मार्ट कॉन्ट्रैक्ट या वॉलेट पते की असंगति पहचानता है और गलत ट्रांसफ़र होने से पहले भुगतान बटन को स्वतः निष्क्रिय कर देता है।",
     "core": "मुख्य अंतर यह है कि StablePay उपयोगकर्ता पर केवल मैनुअल जाँच नहीं छोड़ता; असंगति मिलते ही यह लेन-देन के रास्ते को ही रोक देता है।",
     "caption": "StablePay को अनुरोध-आधारित QR/OTP स्टेबलकॉइन भुगतान संरचना के रूप में डिज़ाइन किया गया है, जो पेटेंट संख्या 10-2025-0079540 पर आधारित है और भुगतान निष्पादन से पहले उच्च जोखिम वाले गलत ट्रांसफ़र को रोकता है।",
-    "note": "मोबाइल पर विवरण पढ़ने के लिए चित्र को क्षैतिज रूप से स्वाइप करें, या बड़े आकार में देखने के लिए चित्र पर टैप करें।",
+    "note": "मोबाइल पर image को full size में देखने के लिए tap करें।",
     "alt": "डिजिटल एसेट के गलत ट्रांसफ़र को रोकने वाली तकनीक की तुलना - पारंपरिक तरीका बनाम StablePay"
   },
   "ru": {
@@ -5326,7 +5326,7 @@ var MISDEPOSIT_COPY = {
     "sub": "StablePay на уровне приложения обнаруживает несоответствие кода валюты, сети, smart contract или адреса кошелька и автоматически отключает кнопку оплаты до совершения ошибочного перевода.",
     "core": "Ключевое отличие в том, что StablePay не перекладывает всё на ручную проверку пользователя: при обнаружении несоответствия сам путь транзакции блокируется.",
     "caption": "StablePay разработан как запатентованная структура платежей в стейблкоинах через QR/OTP по запросу, чтобы предотвращать высокорисковые ошибки до исполнения платежа. Патент № 10-2025-0079540.",
-    "note": "На мобильном устройстве проведите по изображению горизонтально, чтобы прочитать детали, или нажмите на него для увеличения.",
+    "note": "На мобильном устройстве нажмите на изображение, чтобы открыть его в полном размере.",
     "alt": "Сравнение технологий предотвращения ошибочных переводов цифровых активов - традиционный метод и StablePay"
   }
 };
