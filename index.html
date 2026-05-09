@@ -418,20 +418,20 @@ html[dir="rtl"] .payment-architecture-section{
   position:relative;
   padding:96px 5%;
   background:
-    radial-gradient(circle at 12% 20%,rgba(255,90,64,0.10),transparent 30%),
-    radial-gradient(circle at 88% 20%,rgba(0,188,212,0.15),transparent 34%),
-    linear-gradient(135deg,#07182f 0%,#0d2b55 46%,#071625 100%);
+    radial-gradient(circle at 18% 18%,rgba(93,197,232,0.16),transparent 34%),
+    radial-gradient(circle at 82% 16%,rgba(0,200,150,0.14),transparent 34%),
+    linear-gradient(135deg,#f4f8fb 0%,#ffffff 46%,#eef7fb 100%);
   overflow:hidden;
 }
 .misdeposit-comparison-section::before{
   content:"";
   position:absolute;
-  inset:0;
-  background:
-    linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px),
-    linear-gradient(0deg,rgba(255,255,255,0.035) 1px,transparent 1px);
-  background-size:42px 42px;
-  opacity:0.22;
+  inset:auto -12% -28% auto;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:rgba(0,188,212,0.10);
+  filter:blur(6px);
   pointer-events:none;
 }
 .misdeposit-comparison-inner{
@@ -443,12 +443,12 @@ html[dir="rtl"] .payment-architecture-section{
   color:var(--cyan);
 }
 .misdeposit-comparison-section .section-title{
-  color:#fff;
+  color:var(--navy);
 }
 .misdeposit-comparison-sub{
   max-width:980px;
   margin-bottom:18px;
-  color:rgba(255,255,255,0.68);
+  color:var(--text-muted);
 }
 .misdeposit-comparison-core{
   max-width:1040px;
@@ -456,9 +456,9 @@ html[dir="rtl"] .payment-architecture-section{
   padding:18px 22px;
   border-left:4px solid var(--cyan);
   border-radius:18px;
-  background:rgba(255,255,255,0.08);
-  box-shadow:0 16px 38px rgba(0,0,0,0.22);
-  color:#fff;
+  background:rgba(255,255,255,0.82);
+  box-shadow:0 14px 32px rgba(13,43,85,0.08);
+  color:var(--navy);
   font-size:16px;
   font-weight:700;
   line-height:1.75;
@@ -469,17 +469,17 @@ html[dir="rtl"] .misdeposit-comparison-core{
 }
 .misdeposit-comparison-figure{
   margin:0;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(93,197,232,0.34);
+  background:white;
+  border:1px solid rgba(93,197,232,0.22);
   border-radius:28px;
   padding:14px;
-  box-shadow:0 26px 76px rgba(0,0,0,0.35);
+  box-shadow:0 24px 70px rgba(13,43,85,0.16);
 }
 .misdeposit-image-scroll{
   width:100%;
   border-radius:20px;
   overflow:hidden;
-  background:#071625;
+  background:#ffffff;
 }
 .misdeposit-image-scroll a{
   display:block;
@@ -493,7 +493,7 @@ html[dir="rtl"] .misdeposit-comparison-core{
 }
 .misdeposit-comparison-figure figcaption{
   padding:14px 8px 4px;
-  color:rgba(255,255,255,0.72);
+  color:var(--text-muted);
   font-size:13px;
   line-height:1.65;
   text-align:center;
@@ -503,8 +503,8 @@ html[dir="rtl"] .misdeposit-comparison-core{
   margin-top:14px;
   padding:12px 14px;
   border-radius:14px;
-  background:rgba(93,197,232,0.14);
-  color:#fff;
+  background:rgba(13,43,85,0.07);
+  color:var(--navy);
   font-size:13px;
   font-weight:600;
 }
@@ -676,7 +676,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
 
   .misdeposit-comparison-section{padding:72px 5%;}
   .misdeposit-comparison-core{font-size:14px;padding:14px 16px;margin-bottom:26px;border-radius:14px;}
-  .misdeposit-comparison-figure{padding:8px;border-radius:20px;box-shadow:0 14px 38px rgba(0,0,0,0.25);}
+  .misdeposit-comparison-figure{padding:8px;border-radius:20px;box-shadow:0 14px 38px rgba(13,43,85,0.13);}
   .misdeposit-image-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px;}
   .misdeposit-image-scroll a{width:920px;max-width:none;}
   .misdeposit-image-scroll img{width:920px;max-width:none;border-radius:14px;}
