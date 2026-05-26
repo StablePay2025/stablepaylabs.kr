@@ -770,7 +770,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
     <span class="lang-guide">Language</span>
 
   <div class="lang-dropdown" id="lang-dropdown">
-    <button type="button" class="lang-selected" id="lang-selected-btn" onclick="toggleLangMenu(event)">
+    <button type="button" class="lang-selected" id="lang-selected-btn">
       <span id="lang-flag">🇰🇷</span>
       <span id="lang-code">Korean</span>
       <span class="arrow">▼</span>
@@ -778,23 +778,23 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
 
     <div class="lang-menu" id="lang-menu">
 
-<div class="lang-menu-item active" id="lang-item-ko" onclick="return selectLang('ko','🇰🇷','Korean', event)">🇰🇷 한국어</div>
-<div class="lang-menu-item" id="lang-item-en" onclick="return selectLang('en','🇺🇸','English', event)">🇺🇸 English</div>
+<div class="lang-menu-item active" id="lang-item-ko">🇰🇷 한국어</div>
+<div class="lang-menu-item" id="lang-item-en">🇺🇸 English</div>
 <div class="lang-divider"></div>
-<div class="lang-menu-item" id="lang-item-ja" onclick="return selectLang('ja','🇯🇵','日本語', event)">🇯🇵 日本語</div>
-<div class="lang-menu-item" id="lang-item-zh" onclick="return selectLang('zh','🇨🇳','中文(简体)', event)">🇨🇳 中文(简体)</div>
-<div class="lang-menu-item" id="lang-item-zh-hk" onclick="return selectLang('zh-hk','🇭🇰','中文(繁體,香港)', event)">🇭🇰 中文(繁體,香港)</div>
-<div class="lang-menu-item" id="lang-item-th" onclick="return selectLang('th','🇹🇭','ภาษาไทย', event)">🇹🇭 ภาษาไทย</div>
-<div class="lang-menu-item" id="lang-item-vi" onclick="return selectLang('vi','🇻🇳','Tiếng Việt', event)">🇻🇳 Tiếng Việt</div>
-<div class="lang-menu-item" id="lang-item-fil" onclick="return selectLang('fil','🇵🇭','Filipino', event)">🇵🇭 Filipino</div>
+<div class="lang-menu-item" id="lang-item-ja">🇯🇵 日本語</div>
+<div class="lang-menu-item" id="lang-item-zh">🇨🇳 中文(简体)</div>
+<div class="lang-menu-item" id="lang-item-zh-hk">🇭🇰 中文(繁體,香港)</div>
+<div class="lang-menu-item" id="lang-item-th">🇹🇭 ภาษาไทย</div>
+<div class="lang-menu-item" id="lang-item-vi">🇻🇳 Tiếng Việt</div>
+<div class="lang-menu-item" id="lang-item-fil">🇵🇭 Filipino</div>
 <div class="lang-divider"></div>
-<div class="lang-menu-item" id="lang-item-ar" onclick="return selectLang('ar','🇸🇦','العربية', event)">🇸🇦 العربية</div>
-<div class="lang-menu-item" id="lang-item-de" onclick="return selectLang('de','🇩🇪','Deutsch', event)">🇩🇪 Deutsch</div>
-<div class="lang-menu-item" id="lang-item-fr" onclick="return selectLang('fr','🇫🇷','Français', event)">🇫🇷 Français</div>
-<div class="lang-menu-item" id="lang-item-pt" onclick="return selectLang('pt','🇧🇷','Português', event)">🇧🇷 Português</div>
-<div class="lang-menu-item" id="lang-item-es" onclick="return selectLang('es','🇪🇸','Español', event)">🇪🇸 Español</div>
-<div class="lang-menu-item" id="lang-item-hi" onclick="return selectLang('hi','🇮🇳','हिन्दी', event)">🇮🇳 हिन्दी</div>
-<div class="lang-menu-item" id="lang-item-ru" onclick="return selectLang('ru','🇷🇺','Русский', event)">🇷🇺 Русский</div>
+<div class="lang-menu-item" id="lang-item-ar">🇸🇦 العربية</div>
+<div class="lang-menu-item" id="lang-item-de">🇩🇪 Deutsch</div>
+<div class="lang-menu-item" id="lang-item-fr">🇫🇷 Français</div>
+<div class="lang-menu-item" id="lang-item-pt">🇧🇷 Português</div>
+<div class="lang-menu-item" id="lang-item-es">🇪🇸 Español</div>
+<div class="lang-menu-item" id="lang-item-hi">🇮🇳 हिन्दी</div>
+<div class="lang-menu-item" id="lang-item-ru">🇷🇺 Русский</div>
 </div>
 </div>
 <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.stablepay" id="nav-download" target="_blank">앱 다운로드</a>
@@ -806,7 +806,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
 <div class="hero-text" id="hero-text">
 <div class="hero-badge"><span class="dot"></span> <span id="hero-badge-text">Web3 스테이블코인 결제</span></div>
 <h1 id="hero-h1">환전 없이<br/><span>전 세계 어디서나</span><br/>결제하세요</h1>
-<p id="hero-p">USDT · USDC로 21개국 현지 화폐를 실시간 환율로 자동 환산.<br/>수수료 없이, 환전 없이, 지금 바로 시작하세요.<br/><br/>일반회원 가입만으로 하루 5회의 QR+OTP(원거리 인증)를 무료로 이용할 수 있습니다.<br/><br/><a class="hero-inline-contact" href="mailto:stablepay2025@stablepaylabs.kr">[문의하기]<br/>stablepay2025@stablepaylabs.kr</a></p>
+<p id="hero-p">USDT · USDC로 21개국 현지 화폐를 실시간 환율로 자동 환산.<br/>수수료 없이, 환전 없이, 지금 바로 시작하세요.<br/><br/>일반회원 가입만으로 하루 5회의 QR+OTP(원거리 인증)를 무료로 이용할 수 있습니다.</p>
 <div class="hero-btns">
 <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.stablepay" target="_blank">
 <svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M3 20.5v-17c0-.83 1.01-1.3 1.62-.77l14 8.5c.51.31.51 1.04 0 1.35l-14 8.5C4.01 21.8 3 21.33 3 20.5z"></path></svg>
@@ -1126,8 +1126,8 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
 <ul>
 <li><a href="#patent" id="footer-patent">등록 특허</a></li>
 <li><a href="mailto:stablepay2025@stablepaylabs.kr" id="footer-contact">문의하기</a></li>
-<li><a id="footer-privacy" onclick="openModal('privacy')">개인정보처리방침</a></li>
-<li><a id="footer-terms" onclick="openModal('terms')">이용약관</a></li>
+<li><a href="#" id="footer-privacy">개인정보처리방침</a></li>
+<li><a href="#" id="footer-terms">이용약관</a></li>
 </ul>
 </div>
 <div class="footer-col">
@@ -1142,8 +1142,8 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
 <div class="footer-bottom">
 <p>© 2025 StablePay Labs · stablepaylabs.kr · All rights reserved.</p>
 <div style="display:flex;gap:20px;">
-<a class="footer-link" id="footer-privacy2" onclick="openModal('privacy')">개인정보처리방침</a>
-<a class="footer-link" id="footer-terms2" onclick="openModal('terms')">이용약관</a>
+<a href="#" class="footer-link" id="footer-privacy2">개인정보처리방침</a>
+<a href="#" class="footer-link" id="footer-terms2">이용약관</a>
 </div>
 </div>
 </footer>
@@ -2923,7 +2923,7 @@ var TEXTS = {
     "cafe-caption": "카페에서도, 해외에서도 — 환전 없이 바로 결제",
     "hero-badge-text": "Web3 스테이블코인 결제",
     "hero-h1": "환전 없이<br><span>전 세계 어디서나</span><br>결제하세요",
-    "hero-p": "USDT · USDC로 21개국 현지 화폐를 실시간 환율로 자동 환산.<br>수수료 없이, 환전 없이, 지금 바로 시작하세요.<br><br>일반회원 가입만으로 하루 5회의 QR+OTP(원거리 인증)를 무료로 이용할 수 있습니다.<br><br><a class="hero-inline-contact" href="mailto:stablepay2025@stablepaylabs.kr">[문의하기]<br>stablepay2025@stablepaylabs.kr</a>",
+    "hero-p": "USDT · USDC로 21개국 현지 화폐를 실시간 환율로 자동 환산.<br>수수료 없이, 환전 없이, 지금 바로 시작하세요.<br><br>일반회원 가입만으로 하루 5회의 QR+OTP(원거리 인증)를 무료로 이용할 수 있습니다.",
     "btn-download": "Google Play 다운로드", "btn-contact": "📩 문의하기",
     "stat-currencies": "지원 화폐", "stat-languages": "지원 언어",
     "stat-countries": "출시 국가", "stat-patents": "등록 특허",
@@ -2997,7 +2997,7 @@ var TEXTS = {
     "cafe-caption": "どこでも、両替なしで即時決済",
     "hero-badge-text": "Web3 ステーブルコイン決済",
     "hero-h1": "両替不要。<br><span>世界中どこでも</span><br>決済できます。",
-    "hero-p": "USDT・USDCで21か国の現地通貨をリアルタイムレートで自動換算。<br>手数料なし、両替なし、今すぐ始めましょう。",
+    "hero-p": "USDT・USDCで21か国の現地通貨をリアルタイムレートで自動換算。<br>手数料なし、両替なし、今すぐ始めましょう。<br><br>一般会員登録だけで、1日5回までQR+OTP（遠隔認証）を無料で利用できます。",
     "btn-download": "Google Playでダウンロード", "btn-contact": "📩 お問い合わせ",
     "stat-currencies": "対応通貨", "stat-languages": "対応言語",
     "stat-countries": "提供国", "stat-patents": "登録特許",
@@ -3079,7 +3079,7 @@ var TEXTS = {
     "cafe-caption": "无需换汇，扫码即付",
     "hero-badge-text": "Web3 稳定币支付",
     "hero-h1": "无需换汇<br><span>在全球任何地方</span><br>都能支付",
-    "hero-p": "使用 USDT · USDC 按实时汇率自动换算 21 种本地货币。<br>无手续费、无需换汇，立即开始。",
+    "hero-p": "使用 USDT · USDC 按实时汇率自动换算 21 种本地货币。<br>无手续费、无需换汇，立即开始。<br><br>普通会员注册后，每天可免费使用 5 次 QR+OTP（远程认证）。",
     "btn-download": "Google Play 下载",
     "btn-contact": "📩 联系我们",
     "stat-currencies": "支持货币",
@@ -3204,7 +3204,7 @@ var TEXTS = {
     "nav-download": "下載 App",
     "hero-badge-text": "Web3 穩定幣付款",
     "hero-h1": "無需換匯<br><span>在全球任何地方</span><br>都能付款",
-    "hero-p": "使用 USDT · USDC 按即時匯率自動換算 21 種本地貨幣。<br>無手續費、無需換匯，立即開始。",
+    "hero-p": "使用 USDT · USDC 按即時匯率自動換算 21 種本地貨幣。<br>無手續費、無需換匯，立即開始。<br><br>普通會員註冊後，每天可免費使用 5 次 QR+OTP（遠端認證）。",
     "btn-download": "Google Play 下載",
     "btn-contact": "📩 聯絡我們",
     "stat-currencies": "支援貨幣",
@@ -3330,7 +3330,7 @@ var TEXTS = {
     "cafe-caption": "Thanh toán ngay, không cần đổi tiền",
     "hero-badge-text": "Thanh toán stablecoin Web3",
     "hero-h1": "Không cần đổi tiền<br><span>Thanh toán ở mọi nơi</span><br>trên thế giới",
-    "hero-p": "USDT · USDC tự động quy đổi 21 loại tiền tệ địa phương theo tỷ giá thời gian thực.<br>Không phí, không cần đổi tiền, bắt đầu ngay.",
+    "hero-p": "USDT · USDC tự động quy đổi 21 loại tiền tệ địa phương theo tỷ giá thời gian thực.<br>Không phí, không cần đổi tiền, bắt đầu ngay.<br><br>Chỉ cần đăng ký thành viên thường, bạn có thể sử dụng miễn phí QR+OTP (xác thực từ xa) 5 lần mỗi ngày.",
     "btn-download": "Tải trên Google Play",
     "btn-contact": "📩 Liên hệ",
     "stat-currencies": "Tiền tệ",
@@ -3456,7 +3456,7 @@ var TEXTS = {
     "cafe-caption": "ชำระเงินทันที ไม่ต้องแลกเปลี่ยน",
     "hero-badge-text": "การชำระเงินด้วยสเตเบิลคอยน์ Web3",
     "hero-h1": "ไม่ต้องแลกเงิน<br><span>จ่ายได้ทุกที่</span><br>ทั่วโลก",
-    "hero-p": "USDT · USDC แปลง 21 สกุลเงินท้องถิ่นอัตโนมัติตามอัตราแลกเปลี่ยนแบบเรียลไทม์<br>ไม่มีค่าธรรมเนียม ไม่ต้องแลกเงิน เริ่มได้ทันที",
+    "hero-p": "USDT · USDC แปลง 21 สกุลเงินท้องถิ่นอัตโนมัติตามอัตราแลกเปลี่ยนแบบเรียลไทม์<br>ไม่มีค่าธรรมเนียม ไม่ต้องแลกเงิน เริ่มได้ทันที<br><br>เพียงสมัครสมาชิกทั่วไป ก็สามารถใช้ QR+OTP (การยืนยันตัวตนระยะไกล) ได้ฟรีวันละ 5 ครั้ง",
     "btn-download": "ดาวน์โหลด Google Play",
     "btn-contact": "📩 ติดต่อเรา",
     "stat-currencies": "สกุลเงิน",
@@ -3581,7 +3581,7 @@ var TEXTS = {
     "nav-download": "I-download ang App",
     "hero-badge-text": "Web3 Stablecoin Payment",
     "hero-h1": "Magbayad kahit saan<br><span>sa buong mundo</span><br>nang walang palitan ng pera",
-    "hero-p": "Awtomatikong kino-convert ang 21 lokal na currency sa USDT · USDC gamit ang real-time exchange rate.<br>Walang bayad, walang money exchange, magsimula agad.",
+    "hero-p": "Awtomatikong kino-convert ang 21 lokal na currency sa USDT · USDC gamit ang real-time exchange rate.<br>Walang bayad, walang palitan ng pera, magsimula na ngayon.<br><br>Sa simpleng pagrerehistro bilang regular member, maaari kang gumamit ng QR+OTP (remote authentication) nang libre hanggang 5 beses bawat araw.",
     "btn-download": "I-download sa Google Play",
     "btn-contact": "📩 Makipag-ugnayan",
     "stat-currencies": "Suportadong Currency",
@@ -3704,7 +3704,7 @@ var TEXTS = {
     "cafe-caption": "ادفع في أي مكان بدون صرف العملة",
     "hero-badge-text": "مدفوعات Web3 بالعملات المستقرة",
     "hero-h1": "من دون تحويل عملات.<br><span>ادفع في أي مكان</span><br>في العالم.",
-    "hero-p": "يحوِّل USDT وUSDC قيمة 21 عملة محلية تلقائيًا وفق أسعار الصرف الفورية.<br>من دون رسوم تحويل ومن دون الحاجة إلى تبديل العملات، ابدأ الآن.",
+    "hero-p": "يحوِّل USDT وUSDC قيمة 21 عملة محلية تلقائيًا وفق أسعار الصرف الفورية.<br>من دون رسوم تحويل ومن دون الحاجة إلى تبديل العملة، ابدأ الآن.<br><br>بمجرد التسجيل كعضو عادي، يمكنك استخدام QR+OTP (المصادقة عن بُعد) مجانًا حتى 5 مرات يوميًا.",
     "btn-download": "تنزيل Google Play", "btn-contact": "📩 تواصل معنا",
     "stat-currencies": "العملات", "stat-languages": "اللغات",
     "stat-countries": "الدول", "stat-patents": "البراءات",
@@ -3782,7 +3782,7 @@ var TEXTS = {
     "cafe-caption": "Pay anywhere. No exchange. Just scan.",
     "hero-badge-text": "Web3 Stablecoin Payment",
     "hero-h1": "No currency exchange.<br><span>Pay anywhere</span><br>in the world.",
-    "hero-p": "USDT and USDC are automatically converted from 21 local currencies using real-time exchange rates.<br>No exchange hassles. Get started right away.",
+    "hero-p": "USDT and USDC are automatically converted from 21 local currencies using real-time exchange rates.<br>No exchange hassle, no conversion fees — start now.<br><br>Free members can use QR+OTP (remote authentication) up to 5 times per day.",
     "btn-download": "Google Play Download", "btn-contact": "📩 Contact Us",
     "stat-currencies": "Currencies", "stat-languages": "Languages",
     "stat-countries": "Countries", "stat-patents": "Patents",
@@ -3864,7 +3864,7 @@ var TEXTS = {
     "cafe-caption": "Überall zahlen. Kein Umtausch nötig.",
     "hero-badge-text": "Web3-Stablecoin-Zahlung",
     "hero-h1": "Kein Währungswechsel.<br><span>Weltweit bezahlen</span><br>– ganz einfach.",
-    "hero-p": "USDT · USDC werden automatisch zum Echtzeitkurs in 21 Landeswährungen umgerechnet.<br>Keine Umtauschgebühren, keine Wartezeit bei der Bank, keine komplizierte Einrichtung.",
+    "hero-p": "USDT · USDC werden automatisch zum Echtzeitkurs in 21 Landeswährungen umgerechnet.<br>Keine Umtauschgebühren, kein Währungswechsel – starten Sie jetzt.<br><br>Mit einer kostenlosen Mitgliedschaft können Sie QR+OTP (Fernverifizierung) bis zu 5 Mal pro Tag kostenlos nutzen.",
     "btn-download": "Google Play Download",
     "btn-contact": "📩 Kontakt",
     "stat-currencies": "Währungen",
@@ -3991,7 +3991,7 @@ var TEXTS = {
     "cafe-caption": "Payez partout, sans échange de devises.",
     "hero-badge-text": "Paiement Web3 en stablecoin",
     "hero-h1": "Pas de change.<br><span>Payer partout</span><br>dans le monde.",
-    "hero-p": "USDT · USDC permettent de convertir automatiquement 21 devises locales au taux de change en temps réel.<br>Sans conversion manuelle, sans complication, commencez immédiatement.",
+    "hero-p": "USDT · USDC permettent de convertir automatiquement 21 devises locales au taux de change en temps réel.<br>Sans frais, sans change manuel : commencez dès maintenant.<br><br>Avec une inscription gratuite, vous pouvez utiliser QR+OTP (authentification à distance) gratuitement jusqu’à 5 fois par jour.",
     "btn-download": "Télécharger sur Google Play",
     "btn-contact": "📩 Contactez-nous",
     "stat-currencies": "Devises",
@@ -4117,7 +4117,7 @@ var TEXTS = {
     "cafe-caption": "Pague em qualquer lugar, sem câmbio.",
       "hero-badge-text": "Pagamentos Web3 com stablecoins",
       "hero-h1": "Sem câmbio.<br><span>Pague em qualquer lugar</span><br>do mundo.",
-      "hero-p": "USDT · USDC converte automaticamente 21 moedas locais pela taxa em tempo real.<br>Sem taxas, sem câmbio, comece agora mesmo.",
+      "hero-p": "USDT · USDC converte automaticamente 21 moedas locais pela taxa em tempo real.<br>Sem taxas, sem câmbio, comece agora mesmo.<br><br>Com uma conta gratuita, você pode usar QR+OTP (autenticação remota) gratuitamente até 5 vezes por dia.",
       "btn-download": "Baixar no Google Play",
       "btn-contact": "📩 Fale conosco",
       "stat-currencies": "Moedas",
@@ -4243,7 +4243,7 @@ var TEXTS = {
     "cafe-caption": "Paga en cualquier lugar sin cambio.",
       "hero-badge-text": "Pago Web3 con stablecoins",
       "hero-h1": "Sin cambiar divisas.<br><span>Paga en cualquier parte</span><br>del mundo.",
-      "hero-p": "USDT · USDC convierte automáticamente 21 monedas locales según el tipo de cambio en tiempo real.<br>Sin comisiones y sin cambiar divisas, empieza ahora.",
+      "hero-p": "USDT · USDC convierte automáticamente 21 monedas locales según el tipo de cambio en tiempo real.<br>Sin comisiones ni cambio de divisa, empieza ahora.<br><br>Con una cuenta gratuita, puedes usar QR+OTP (autenticación remota) gratis hasta 5 veces al día.",
       "btn-download": "Descargar en Google Play",
       "btn-contact": "📩 Contáctanos",
       "stat-currencies": "Monedas",
@@ -4369,7 +4369,7 @@ var TEXTS = {
     "cafe-caption": "बिना विनिमय के कहीं भी भुगतान करें",
       "hero-badge-text": "Web3 स्टेबलकॉइन भुगतान",
       "hero-h1": "मुद्रा बदले बिना<br><span>दुनिया में कहीं भी</span><br>भुगतान करें।",
-      "hero-p": "USDT · USDC वास्तविक समय विनिमय दर के अनुसार 21 स्थानीय मुद्राओं को स्वतः रूपांतरित करता है।<br>बिना अलग विनिमय प्रक्रिया, बिना झंझट — अभी शुरू करें।",
+      "hero-p": "USDT · USDC वास्तविक समय विनिमय दर के अनुसार 21 स्थानीय मुद्राओं को स्वतः रूपांतरित करता है।<br>बिना शुल्क, बिना अलग मुद्रा विनिमय — अभी शुरू करें।<br><br>सामान्य सदस्यता पंजीकरण के साथ आप QR+OTP (दूरस्थ प्रमाणीकरण) का उपयोग प्रतिदिन 5 बार तक निःशुल्क कर सकते हैं।",
       "btn-download": "Google Play से डाउनलोड करें",
       "btn-contact": "📩 हमसे संपर्क करें",
       "stat-currencies": "मुद्राएँ",
@@ -4495,7 +4495,7 @@ var TEXTS = {
     "cafe-caption": "Платите везде без обмена валют",
       "hero-badge-text": "Web3-платежи в стейблкоинах",
       "hero-h1": "Без обмена валюты<br><span>оплачивайте покупки где угодно</span><br>по всему миру",
-      "hero-p": "USDT · USDC автоматически конвертируются в 21 местную валюту по курсу в реальном времени.<br>Без лишних шагов и без обмена валюты — начните прямо сейчас.",
+      "hero-p": "USDT · USDC автоматически конвертируются в 21 местную валюту по курсу в реальном времени.<br>Без комиссии и без обмена валюты — начните прямо сейчас.<br><br>После регистрации обычного участника вы можете бесплатно использовать QR+OTP (удалённую аутентификацию) до 5 раз в день.",
       "btn-download": "Скачать в Google Play",
       "btn-contact": "📩 Связаться с нами",
       "stat-currencies": "Валюты",
@@ -4612,883 +4612,68 @@ var TEXTS = {
 
 var currentLang = 'ko';
 
-var QR_COPY = {
-  ko: {
-    label: "QR 기술 구조",
-    title: "기존 QR은 주소표, StablePay QR은 결제 명령입니다",
-    sub: "Web2 QR 결제는 중앙 서버로 연결되는 라우팅 키에 가깝습니다. 반면 StablePay의 Web3 QR은 지갑 주소, 결제 금액, 네트워크 검증 정보를 하나의 QR에 담아 블록체인에서 실행되는 자기완결형 결제 명령으로 작동합니다.",
-    core: "StablePay는 기존 QR의 서버 라우팅 구조를 넘어, 결제 금액·지갑 주소·네트워크 검증 정보를 하나의 QR에 담는 Web3 자기완결형 결제 구조를 제공합니다.",
-    caption: "StablePay는 특허 제10-2025-0079540호 기반의 QR 스테이블코인 결제 구조를 통해 기존 QR 결제의 중앙 서버 의존 구조와 구분되는 Web3 결제 프로토콜을 제시합니다.",
-    note: "모바일에서는 이미지를 누르면 크게 볼 수 있습니다.",
-    img: "web2-web3-qr-stablepay-ko.webp",
-    alt: "StablePay Web2 QR 결제와 Web3 QR 스테이블코인 결제 구조 비교 - 특허 제10-2025-0079540호"
-  },
-  en: {
-    label: "QR Architecture",
-    title: "Traditional QR is an address label. StablePay QR is a payment instruction.",
-    sub: "Web2 QR payment is mainly a routing key that points to a central server. StablePay Web3 QR embeds wallet address, amount, and network verification data into one QR, allowing the payment instruction to execute on-chain.",
-    core: "StablePay goes beyond the server-routing structure of traditional QR codes by placing the payment amount, wallet address, and network verification data into a single QR, providing a Web3 self-contained payment architecture.",
-    caption: "StablePay presents a Web3 QR stablecoin payment protocol distinguished from server-dependent Web2 QR payments, based on Patent No. 10-2025-0079540.",
-    note: "On mobile, tap the image to view it in full size.",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "Comparison between Web2 QR payment and StablePay Web3 QR stablecoin payment architecture - Patent No. 10-2025-0079540"
-  },
-  ja: {
-    label: "QRアーキテクチャ",
-    title: "従来のQRは住所ラベル、StablePay QRは決済命令です",
-    sub: "Web2のQR決済は中央サーバーへ接続するルーティングキーに近い構造です。StablePayのWeb3 QRはウォレットアドレス、金額、ネットワーク検証情報を1つのQRに含め、オンチェーンで実行される自己完結型の決済命令として機能します。",
-    core: "StablePayは、従来のQRのサーバールーティング構造を超え、決済金額・ウォレットアドレス・ネットワーク検証情報を1つのQRに組み込むWeb3自己完結型の決済構造を提供します。",
-    caption: "StablePayは、特許第10-2025-0079540号に基づくQRステーブルコイン決済構造により、中央サーバー依存型の既存QR決済とは異なるWeb3決済プロトコルを提示します。",
-    note: "モバイルでは画像をタップすると大きく表示できます。",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "StablePay Web2 QR決済とWeb3 QRステーブルコイン決済アーキテクチャの比較 - 特許第10-2025-0079540号"
-  },
-  zh: {
-    label: "QR 技术架构",
-    title: "传统 QR 是地址标签，StablePay QR 是支付指令",
-    sub: "Web2 QR 支付更像是连接中央服务器的路由键。StablePay 的 Web3 QR 将钱包地址、金额和网络验证信息整合到一个 QR 中，作为可在链上执行的自包含支付指令。",
-    core: "StablePay 超越传统 QR 的服务器路由结构，将支付金额、钱包地址和网络验证信息整合到一个 QR 中，提供 Web3 自包含支付架构。",
-    caption: "StablePay 基于专利第10-2025-0079540号的 QR 稳定币支付结构，提出了区别于传统中央服务器依赖型 QR 支付的 Web3 支付协议。",
-    note: "在手机上点击图片可查看大图。",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "StablePay Web2 QR 支付与 Web3 QR 稳定币支付架构比较 - 专利第10-2025-0079540号"
-  },
-  "zh-hk": {
-    label: "QR 技術架構",
-    title: "傳統 QR 是地址標籤，StablePay QR 是支付指令",
-    sub: "Web2 QR 支付更像是連接中央伺服器的路由鍵。StablePay 的 Web3 QR 將錢包地址、金額和網絡驗證資訊整合到一個 QR 中，作為可在鏈上執行的自包含支付指令。",
-    core: "StablePay 超越傳統 QR 的伺服器路由結構，將支付金額、錢包地址和網絡驗證資訊整合到一個 QR 中，提供 Web3 自包含支付架構。",
-    caption: "StablePay 基於專利第10-2025-0079540號的 QR 穩定幣支付結構，提出有別於傳統中央伺服器依賴型 QR 支付的 Web3 支付協議。",
-    note: "在手機上點擊圖片可查看大圖。",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "StablePay Web2 QR 支付與 Web3 QR 穩定幣支付架構比較 - 專利第10-2025-0079540號"
-  },
-  th: {
-    label: "สถาปัตยกรรม QR",
-    title: "QR แบบเดิมคือป้ายที่อยู่ แต่ StablePay QR คือคำสั่งชำระเงิน",
-    sub: "การชำระเงินด้วย QR แบบ Web2 ส่วนใหญ่เป็นคีย์นำทางไปยังเซิร์ฟเวอร์กลาง ส่วน StablePay Web3 QR รวมที่อยู่กระเป๋า จำนวนเงิน และข้อมูลตรวจสอบเครือข่ายไว้ใน QR เดียว เพื่อทำงานเป็นคำสั่งชำระเงินบนบล็อกเชน",
-    core: "StablePay ก้าวข้ามโครงสร้าง QR แบบเดิมที่ใช้การนำทางผ่านเซิร์ฟเวอร์ โดยรวมจำนวนเงิน ที่อยู่กระเป๋า และข้อมูลตรวจสอบเครือข่ายไว้ใน QR เดียว เพื่อมอบโครงสร้างการชำระเงิน Web3 แบบครบในตัวเอง",
-    caption: "StablePay นำเสนอโปรโตคอลชำระเงิน Web3 ด้วย QR stablecoin ที่แตกต่างจากระบบ QR แบบพึ่งพาเซิร์ฟเวอร์กลาง โดยอ้างอิงสิทธิบัตรเลขที่ 10-2025-0079540",
-    note: "บนมือถือ แตะรูปภาพเพื่อดูขนาดเต็ม",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "การเปรียบเทียบ Web2 QR Payment และ StablePay Web3 QR Stablecoin Payment - Patent No. 10-2025-0079540"
-  },
-  vi: {
-    label: "Kiến trúc QR",
-    title: "QR truyền thống là nhãn địa chỉ, StablePay QR là lệnh thanh toán",
-    sub: "Thanh toán QR Web2 chủ yếu là khóa định tuyến đến máy chủ trung tâm. StablePay Web3 QR tích hợp địa chỉ ví, số tiền và dữ liệu xác minh mạng vào một QR duy nhất, hoạt động như lệnh thanh toán tự chứa trên blockchain.",
-    core: "StablePay vượt qua cấu trúc định tuyến qua máy chủ của QR truyền thống bằng cách đưa số tiền thanh toán, địa chỉ ví và dữ liệu xác minh mạng vào một QR duy nhất, cung cấp kiến trúc thanh toán Web3 tự chứa.",
-    caption: "StablePay giới thiệu giao thức thanh toán stablecoin QR Web3 khác biệt với QR Web2 phụ thuộc máy chủ trung tâm, dựa trên Bằng sáng chế số 10-2025-0079540.",
-    note: "Trên di động, chạm vào hình để xem kích thước lớn.",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "So sánh kiến trúc thanh toán Web2 QR và StablePay Web3 QR stablecoin - Patent No. 10-2025-0079540"
-  },
-  fil: {
-    label: "QR Architecture",
-    title: "Ang tradisyonal na QR ay address label; ang StablePay QR ay payment instruction",
-    sub: "Ang Web2 QR payment ay kadalasang routing key papunta sa central server. Ang StablePay Web3 QR ay naglalaman ng wallet address, halaga, at network verification data sa iisang QR para maisagawa ang payment instruction on-chain.",
-    core: "Nilalampasan ng StablePay ang server-routing structure ng tradisyonal na QR sa pamamagitan ng paglalagay ng payment amount, wallet address, at network verification data sa iisang QR, na nagbibigay ng Web3 self-contained payment architecture.",
-    caption: "Ipinapakita ng StablePay ang Web3 QR stablecoin payment protocol na naiiba sa server-dependent Web2 QR payments, batay sa Patent No. 10-2025-0079540.",
-    note: "Sa mobile, i-tap ang image para makita sa full size.",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "Comparison ng Web2 QR payment at StablePay Web3 QR stablecoin payment architecture - Patent No. 10-2025-0079540"
-  },
-  ar: {
-    label: "بنية QR",
-    title: "رمز QR التقليدي هو ملصق عنوان، أما StablePay QR فهو أمر دفع",
-    sub: "دفع QR في Web2 يعمل غالبًا كمفتاح توجيه إلى خادم مركزي. أما StablePay Web3 QR فيضم عنوان المحفظة والمبلغ وبيانات التحقق من الشبكة داخل رمز واحد، ليعمل كأمر دفع ذاتي التنفيذ على البلوكشين.",
-    core: "تتجاوز StablePay بنية التوجيه عبر الخادم في رموز QR التقليدية، من خلال تضمين مبلغ الدفع وعنوان المحفظة وبيانات التحقق من الشبكة داخل رمز QR واحد، لتوفر بنية دفع Web3 ذاتية الاكتمال.",
-    caption: "تقدم StablePay بروتوكول دفع Web3 بالعملات المستقرة عبر QR متميزًا عن مدفوعات QR المعتمدة على الخادم المركزي، استنادًا إلى براءة الاختراع رقم 10-2025-0079540.",
-    note: "على الهاتف، اضغط على الصورة لعرضها بالحجم الكامل.",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "مقارنة بين Web2 QR payment و StablePay Web3 QR stablecoin payment architecture - Patent No. 10-2025-0079540"
-  },
-  de: {
-    label: "QR-Architektur",
-    title: "Klassischer QR ist ein Adressetikett. StablePay QR ist eine Zahlungsanweisung.",
-    sub: "Web2-QR-Zahlung ist hauptsächlich ein Routing-Schlüssel zu einem zentralen Server. StablePay Web3 QR integriert Wallet-Adresse, Betrag und Netzwerk-Verifizierungsdaten in einem QR und funktioniert als selbstenthaltende On-Chain-Zahlungsanweisung.",
-    core: "StablePay geht über die Server-Routing-Struktur herkömmlicher QR-Codes hinaus, indem Zahlungsbetrag, Wallet-Adresse und Netzwerk-Verifizierungsdaten in einem einzigen QR zusammengeführt werden – als Web3-Zahlungsarchitektur mit selbstenthaltender Struktur.",
-    caption: "StablePay präsentiert ein Web3-QR-Stablecoin-Zahlungsprotokoll, das sich von serverabhängigen Web2-QR-Zahlungen unterscheidet, basierend auf Patent Nr. 10-2025-0079540.",
-    note: "Auf Mobilgeräten tippen Sie auf das Bild, um es in voller Größe zu öffnen.",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "Vergleich zwischen Web2 QR Payment und StablePay Web3 QR Stablecoin Payment Architecture - Patent No. 10-2025-0079540"
-  },
-  fr: {
-    label: "Architecture QR",
-    title: "Le QR classique est une étiquette d’adresse. Le QR StablePay est une instruction de paiement.",
-    sub: "Le paiement QR Web2 est surtout une clé de routage vers un serveur central. StablePay Web3 QR intègre l’adresse du wallet, le montant et les données de vérification réseau dans un seul QR, qui fonctionne comme une instruction de paiement on-chain autoportante.",
-    core: "StablePay dépasse la structure de routage serveur des QR classiques en intégrant le montant du paiement, l’adresse du wallet et les données de vérification réseau dans un seul QR, afin de fournir une architecture de paiement Web3 autoportante.",
-    caption: "StablePay présente un protocole de paiement stablecoin QR Web3 distinct des paiements QR Web2 dépendants d’un serveur central, sur la base du brevet n° 10-2025-0079540.",
-    note: "Sur mobile, touchez l’image pour l’ouvrir en grand format.",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "Comparaison entre Web2 QR Payment et StablePay Web3 QR Stablecoin Payment Architecture - Patent No. 10-2025-0079540"
-  },
-  pt: {
-    label: "Arquitetura QR",
-    title: "O QR tradicional é um rótulo de endereço. O StablePay QR é uma instrução de pagamento.",
-    sub: "O pagamento QR Web2 é principalmente uma chave de roteamento para um servidor central. O StablePay Web3 QR incorpora endereço da carteira, valor e dados de verificação da rede em um único QR, funcionando como uma instrução de pagamento on-chain autossuficiente.",
-    core: "A StablePay vai além da estrutura de roteamento por servidor dos QR tradicionais ao incorporar o valor do pagamento, o endereço da carteira e os dados de verificação da rede em um único QR, oferecendo uma arquitetura de pagamento Web3 autossuficiente.",
-    caption: "A StablePay apresenta um protocolo Web3 de pagamento em stablecoin via QR, distinto dos pagamentos QR Web2 dependentes de servidor, com base na Patente nº 10-2025-0079540.",
-    note: "No celular, toque na imagem para ver em tamanho completo.",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "Comparação entre Web2 QR payment e StablePay Web3 QR stablecoin payment architecture - Patent No. 10-2025-0079540"
-  },
-  es: {
-    label: "Arquitectura QR",
-    title: "El QR tradicional es una etiqueta de dirección. StablePay QR es una instrucción de pago.",
-    sub: "El pago QR Web2 es principalmente una clave de enrutamiento hacia un servidor central. StablePay Web3 QR integra dirección de wallet, importe y datos de verificación de red en un solo QR, funcionando como una instrucción de pago on-chain autocontenida.",
-    core: "StablePay supera la estructura de enrutamiento por servidor de los QR tradicionales al incorporar el importe del pago, la dirección de wallet y los datos de verificación de red en un solo QR, ofreciendo una arquitectura de pago Web3 autocontenida.",
-    caption: "StablePay presenta un protocolo Web3 de pago con stablecoins mediante QR, distinto de los pagos QR Web2 dependientes de servidor, basado en la Patente n.º 10-2025-0079540.",
-    note: "En móvil, toca la imagen para verla en tamaño completo.",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "Comparación entre Web2 QR payment y StablePay Web3 QR stablecoin payment architecture - Patent No. 10-2025-0079540"
-  },
-  hi: {
-    label: "QR आर्किटेक्चर",
-    title: "पारंपरिक QR एक address label है, StablePay QR एक payment instruction है",
-    sub: "Web2 QR payment मुख्य रूप से central server तक जाने वाला routing key है। StablePay Web3 QR एक ही QR में wallet address, amount और network verification data शामिल करता है, जिससे payment instruction on-chain execute हो सकता है।",
-    core: "StablePay पारंपरिक QR की server-routing संरचना से आगे बढ़कर payment amount, wallet address और network verification data को एक ही QR में शामिल करता है, जिससे Web3 self-contained payment architecture प्रदान होती है।",
-    caption: "StablePay Patent No. 10-2025-0079540 के आधार पर server-dependent Web2 QR payments से अलग Web3 QR stablecoin payment protocol प्रस्तुत करता है।",
-    note: "मोबाइल पर image को full size में देखने के लिए tap करें।",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "Web2 QR payment और StablePay Web3 QR stablecoin payment architecture की तुलना - Patent No. 10-2025-0079540"
-  },
-  ru: {
-    label: "QR-архитектура",
-    title: "Обычный QR — это адресная метка. StablePay QR — платежная инструкция.",
-    sub: "Web2 QR-платеж в основном является ключом маршрутизации к центральному серверу. StablePay Web3 QR включает адрес кошелька, сумму и данные сетевой проверки в один QR, работая как самодостаточная on-chain платежная инструкция.",
-    core: "StablePay выходит за пределы серверной маршрутизации традиционных QR-кодов, объединяя сумму платежа, адрес кошелька и данные сетевой проверки в одном QR, обеспечивая самодостаточную Web3-архитектуру платежей.",
-    caption: "StablePay представляет Web3 QR-протокол оплаты стейблкоинами, отличающийся от сервер-зависимых Web2 QR-платежей, на основе патента № 10-2025-0079540.",
-    note: "На мобильном устройстве нажмите на изображение, чтобы открыть его в полном размере.",
-    img: "web2-web3-qr-stablepay-en.webp",
-    alt: "Сравнение Web2 QR payment и StablePay Web3 QR stablecoin payment architecture - Patent No. 10-2025-0079540"
-  }
-};
-
-
-var PAYMENT_ARCH_COPY = {
-  "ko": {
-    "label": "결제 구조",
-    "title": "StablePay 결제 구조",
-    "sub": "StablePay는 판매자가 결제 요청을 생성하고, 구매자가 QR 스캔 또는 7자리 OTP로 승인하는 요청 기반 결제 구조입니다. 현지 화폐 금액은 실시간 환율을 통해 USD 기준 스테이블코인 금액으로 변환되며, 구매자의 비수탁 지갑 서명을 통해 Polygon 또는 Solana 네트워크에서 결제가 실행됩니다.",
-    "core": "요청 기반 QR/OTP 스테이블코인 결제 프로토콜: 판매자는 별도 POS 단말기 없이 스마트폰만으로 결제 요청을 만들고, 구매자는 지갑 서명으로 결제를 승인합니다.",
-    "caption": "StablePay는 하나의 앱에서 구매자 지갑과 판매자 단말기 역할을 동시에 수행하며, 별도 POS 없이 QR/OTP 요청 기반 결제 구조를 제공합니다.",
-    "note": "모바일에서는 이미지를 누르면 크게 볼 수 있습니다.",
-    "img": "stablepay-payment-architecture-ko.webp",
-    "alt": "StablePay 결제 구조 - QR OTP 요청 기반 스테이블코인 결제 프로토콜",
-    "steps": [
-      {
-        "title": "판매자 요청 생성",
-        "body": "판매자가 현지 화폐 금액, 결제 통화, 네트워크 정보를 입력하고 QR 코드 또는 7자리 OTP를 생성합니다."
-      },
-      {
-        "title": "구매자 승인",
-        "body": "구매자는 QR을 스캔하거나 OTP를 입력해 요청된 금액과 지갑 주소를 확인합니다."
-      },
-      {
-        "title": "스테이블코인 결제 실행",
-        "body": "StablePay는 실시간 환율을 기준으로 금액을 계산하고, 비수탁 지갑 서명을 통해 USDT 또는 USDC 결제를 실행합니다."
-      },
-      {
-        "title": "잔돈 적립 및 정산 연결",
-        "body": "0.01달러 미만의 잔돈은 자동 적립되어 향후 가스비 보전 및 결제 편의성 향상에 활용됩니다."
-      }
-    ]
-  },
-  "en": {
-    "label": "Payment Architecture",
-    "title": "StablePay Payment Architecture",
-    "sub": "StablePay uses a request-based payment flow where the seller creates a payment request and the buyer approves it through a QR scan or a 7-digit OTP. The local currency amount is converted into a USD-based stablecoin amount using real-time exchange rates, and the payment is executed on Polygon or Solana through the buyer’s non-custodial wallet signature.",
-    "core": "A request-based QR/OTP stablecoin payment protocol: sellers create payment requests directly from any smartphone without an external POS terminal, while buyers approve the payment with a wallet signature.",
-    "caption": "StablePay allows one app to work as both buyer wallet and seller terminal, providing a QR/OTP request-based payment structure without external POS hardware.",
-    "note": "On mobile, tap the image to view it in full size.",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "StablePay Payment Architecture - Request-Based QR OTP Stablecoin Payment Protocol",
-    "steps": [
-      {
-        "title": "Seller Creates a Request",
-        "body": "The seller enters the local currency amount, selected currency, and network details, then generates a QR code or 7-digit OTP."
-      },
-      {
-        "title": "Buyer Approves the Payment",
-        "body": "The buyer scans the QR code or enters the OTP to verify the requested amount and wallet address."
-      },
-      {
-        "title": "Stablecoin Payment Execution",
-        "body": "StablePay calculates the payment amount using real-time exchange rates and executes USDT or USDC payment through a non-custodial wallet signature."
-      },
-      {
-        "title": "Dust Accumulation & Settlement Link",
-        "body": "Dust under $0.01 is automatically accumulated and can be used to offset future gas fees and improve payment efficiency."
-      }
-    ]
-  },
-  "ja": {
-    "label": "決済アーキテクチャ",
-    "title": "StablePayの決済アーキテクチャ",
-    "sub": "StablePayは、販売者が決済リクエストを作成し、購入者がQRスキャンまたは7桁OTPで承認するリクエストベースの決済フローを採用しています。現地通貨の金額はリアルタイム為替レートでUSD基準のステーブルコイン金額に換算され、購入者のノンカストディアルウォレット署名によりPolygonまたはSolanaネットワーク上で実行されます。",
-    "core": "リクエストベースのQR/OTPステーブルコイン決済プロトコル：販売者は外部POS端末なしでスマートフォンから決済リクエストを作成し、購入者はウォレット署名で決済を承認します。",
-    "caption": "StablePayは、1つのアプリで購入者ウォレットと販売者端末の両方の役割を担い、外部POSなしでQR/OTPリクエスト型決済構造を提供します。",
-    "note": "モバイルでは画像をタップすると拡大表示できます。",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "StablePay 決済アーキテクチャ - リクエストベースQR OTPステーブルコイン決済プロトコル",
-    "steps": [
-      {
-        "title": "販売者がリクエストを作成",
-        "body": "販売者は現地通貨の金額、決済通貨、ネットワーク情報を入力し、QRコードまたは7桁OTPを生成します。"
-      },
-      {
-        "title": "購入者が決済を承認",
-        "body": "購入者はQRコードをスキャンするかOTPを入力し、請求金額とウォレットアドレスを確認します。"
-      },
-      {
-        "title": "ステーブルコイン決済を実行",
-        "body": "StablePayはリアルタイム為替レートで決済金額を計算し、ノンカストディアルウォレット署名を通じてUSDTまたはUSDC決済を実行します。"
-      },
-      {
-        "title": "端数積立と精算連携",
-        "body": "0.01ドル未満の端数は自動的に積み立てられ、将来のガス代補填や決済効率の向上に活用できます。"
-      }
-    ]
-  },
-  "zh": {
-    "label": "支付架构",
-    "title": "StablePay 支付架构",
-    "sub": "StablePay 采用请求式支付流程：卖家创建支付请求，买家通过扫描 QR 码或输入 7 位 OTP 进行确认。当地货币金额会根据实时汇率转换为以美元计价的稳定币金额，并通过买家的非托管钱包签名在 Polygon 或 Solana 网络上执行。",
-    "core": "请求式 QR/OTP 稳定币支付协议：卖家无需外部 POS 终端，只需使用智能手机即可创建支付请求；买家通过钱包签名完成授权。",
-    "caption": "StablePay 让一个 App 同时充当买家钱包和卖家收款终端，无需外部 POS 硬件即可提供 QR/OTP 请求式支付结构。",
-    "note": "在移动设备上，点击图片可查看大图。",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "StablePay 支付架构 - 请求式 QR OTP 稳定币支付协议",
-    "steps": [
-      {
-        "title": "卖家创建请求",
-        "body": "卖家输入当地货币金额、支付币种和网络信息，然后生成 QR 码或 7 位 OTP。"
-      },
-      {
-        "title": "买家确认支付",
-        "body": "买家扫描 QR 码或输入 OTP，确认请求金额和钱包地址。"
-      },
-      {
-        "title": "执行稳定币支付",
-        "body": "StablePay 根据实时汇率计算支付金额，并通过非托管钱包签名执行 USDT 或 USDC 支付。"
-      },
-      {
-        "title": "零钱累积与结算连接",
-        "body": "低于 0.01 美元的零钱会自动累积，可用于抵扣未来 gas 费用并提升支付效率。"
-      }
-    ]
-  },
-  "zh-hk": {
-    "label": "支付架構",
-    "title": "StablePay 支付架構",
-    "sub": "StablePay 採用請求式支付流程：賣家建立支付請求，買家透過掃描 QR 碼或輸入 7 位 OTP 進行確認。本地貨幣金額會按照實時匯率轉換為以美元計價的穩定幣金額，並透過買家的非託管錢包簽名在 Polygon 或 Solana 網絡上執行。",
-    "core": "請求式 QR/OTP 穩定幣支付協議：賣家無需外部 POS 終端，只需使用智能手機即可建立支付請求；買家則透過錢包簽名完成授權。",
-    "caption": "StablePay 讓一個 App 同時成為買家錢包和賣家收款終端，無需外部 POS 硬件即可提供 QR/OTP 請求式支付結構。",
-    "note": "在流動裝置上，點按圖片可查看大圖。",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "StablePay 支付架構 - 請求式 QR OTP 穩定幣支付協議",
-    "steps": [
-      {
-        "title": "賣家建立請求",
-        "body": "賣家輸入本地貨幣金額、支付幣種和網絡資料，然後產生 QR 碼或 7 位 OTP。"
-      },
-      {
-        "title": "買家確認支付",
-        "body": "買家掃描 QR 碼或輸入 OTP，確認請求金額和錢包地址。"
-      },
-      {
-        "title": "執行穩定幣支付",
-        "body": "StablePay 按照實時匯率計算支付金額，並透過非託管錢包簽名執行 USDT 或 USDC 支付。"
-      },
-      {
-        "title": "零錢累積與結算連接",
-        "body": "低於 0.01 美元的零錢會自動累積，可用於抵扣未來 gas 費用並提升支付效率。"
-      }
-    ]
-  },
-  "th": {
-    "label": "สถาปัตยกรรมการชำระเงิน",
-    "title": "สถาปัตยกรรมการชำระเงินของ StablePay",
-    "sub": "StablePay ใช้โครงสร้างการชำระเงินแบบอิงคำขอ โดยผู้ขายสร้างคำขอชำระเงิน และผู้ซื้ออนุมัติผ่านการสแกน QR หรือรหัส OTP 7 หลัก ยอดเงินในสกุลท้องถิ่นจะถูกแปลงเป็นมูลค่า stablecoin ที่อ้างอิง USD ด้วยอัตราแลกเปลี่ยนแบบเรียลไทม์ และดำเนินการบนเครือข่าย Polygon หรือ Solana ผ่านลายเซ็นจากกระเป๋าเงินแบบ non-custodial ของผู้ซื้อ",
-    "core": "โปรโตคอลชำระเงิน stablecoin แบบ QR/OTP ที่อิงคำขอ: ผู้ขายสร้างคำขอชำระเงินได้จากสมาร์ทโฟนโดยไม่ต้องใช้เครื่อง POS ภายนอก และผู้ซื้ออนุมัติด้วยลายเซ็นกระเป๋าเงิน",
-    "caption": "StablePay ทำให้แอปเดียวทำหน้าที่ได้ทั้งกระเป๋าเงินของผู้ซื้อและเครื่องรับชำระของผู้ขาย โดยรองรับโครงสร้างชำระเงินแบบ QR/OTP โดยไม่ต้องใช้ฮาร์ดแวร์ POS ภายนอก",
-    "note": "บนมือถือ ให้แตะรูปภาพเพื่อดูขนาดเต็ม",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "สถาปัตยกรรมการชำระเงิน StablePay - โปรโตคอล QR OTP Stablecoin แบบอิงคำขอ",
-    "steps": [
-      {
-        "title": "ผู้ขายสร้างคำขอ",
-        "body": "ผู้ขายกรอกยอดเงินสกุลท้องถิ่น สกุลเงินที่เลือก และข้อมูลเครือข่าย จากนั้นสร้าง QR code หรือรหัส OTP 7 หลัก"
-      },
-      {
-        "title": "ผู้ซื้ออนุมัติการชำระเงิน",
-        "body": "ผู้ซื้อสแกน QR code หรือกรอกรหัส OTP เพื่อตรวจสอบยอดที่ร้องขอและที่อยู่กระเป๋าเงิน"
-      },
-      {
-        "title": "ดำเนินการชำระด้วย Stablecoin",
-        "body": "StablePay คำนวณยอดชำระด้วยอัตราแลกเปลี่ยนแบบเรียลไทม์ และดำเนินการชำระ USDT หรือ USDC ผ่านลายเซ็นของกระเป๋าเงิน non-custodial"
-      },
-      {
-        "title": "สะสมเศษเงินและเชื่อมต่อการชำระบัญชี",
-        "body": "เศษเงินต่ำกว่า $0.01 จะถูกสะสมอัตโนมัติ และสามารถใช้ชดเชยค่า gas ในอนาคตหรือเพิ่มประสิทธิภาพการชำระเงินได้"
-      }
-    ]
-  },
-  "vi": {
-    "label": "Kiến trúc thanh toán",
-    "title": "Kiến trúc thanh toán StablePay",
-    "sub": "StablePay sử dụng luồng thanh toán dựa trên yêu cầu: người bán tạo yêu cầu thanh toán và người mua phê duyệt bằng cách quét QR hoặc nhập OTP 7 chữ số. Số tiền bằng nội tệ được quy đổi sang giá trị stablecoin theo USD bằng tỷ giá thời gian thực, sau đó giao dịch được thực thi trên mạng Polygon hoặc Solana thông qua chữ ký ví non-custodial của người mua.",
-    "core": "Giao thức thanh toán stablecoin QR/OTP dựa trên yêu cầu: người bán tạo yêu cầu thanh toán trực tiếp từ điện thoại thông minh mà không cần thiết bị POS bên ngoài, còn người mua phê duyệt bằng chữ ký ví.",
-    "caption": "StablePay cho phép một ứng dụng đóng vai trò đồng thời là ví của người mua và thiết bị đầu cuối của người bán, cung cấp cấu trúc thanh toán QR/OTP không cần phần cứng POS bên ngoài.",
-    "note": "Trên thiết bị di động, hãy chạm vào hình ảnh để xem kích thước đầy đủ.",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "Kiến trúc thanh toán StablePay - Giao thức QR OTP Stablecoin dựa trên yêu cầu",
-    "steps": [
-      {
-        "title": "Người bán tạo yêu cầu",
-        "body": "Người bán nhập số tiền nội tệ, đơn vị tiền tệ đã chọn và thông tin mạng, sau đó tạo mã QR hoặc OTP 7 chữ số."
-      },
-      {
-        "title": "Người mua phê duyệt thanh toán",
-        "body": "Người mua quét mã QR hoặc nhập OTP để xác minh số tiền được yêu cầu và địa chỉ ví."
-      },
-      {
-        "title": "Thực thi thanh toán Stablecoin",
-        "body": "StablePay tính toán số tiền thanh toán bằng tỷ giá thời gian thực và thực thi thanh toán USDT hoặc USDC thông qua chữ ký ví non-custodial."
-      },
-      {
-        "title": "Tích lũy tiền lẻ và liên kết đối soát",
-        "body": "Phần tiền lẻ dưới $0.01 được tự động tích lũy và có thể dùng để bù phí gas trong tương lai cũng như cải thiện hiệu quả thanh toán."
-      }
-    ]
-  },
-  "fil": {
-    "label": "Arkitektura ng Pagbabayad",
-    "title": "StablePay Payment Architecture",
-    "sub": "Gumagamit ang StablePay ng request-based payment flow: ang seller ang gumagawa ng payment request at ang buyer ang nag-aapruba nito sa pamamagitan ng QR scan o 7-digit OTP. Ang halaga sa lokal na pera ay kino-convert sa USD-based stablecoin amount gamit ang real-time exchange rates, at isinasagawa ang bayad sa Polygon o Solana sa pamamagitan ng non-custodial wallet signature ng buyer.",
-    "core": "Request-based QR/OTP stablecoin payment protocol: ang seller ay maaaring gumawa ng payment request mula sa anumang smartphone nang walang external POS terminal, habang ang buyer ay nag-aapruba gamit ang wallet signature.",
-    "caption": "Pinapayagan ng StablePay ang isang app na magsilbing parehong buyer wallet at seller terminal, na nagbibigay ng QR/OTP request-based payment structure nang walang external POS hardware.",
-    "note": "Sa mobile, i-tap ang larawan upang makita ito sa full size.",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "StablePay Payment Architecture - Request-Based QR OTP Stablecoin Payment Protocol",
-    "steps": [
-      {
-        "title": "Gumagawa ng Request ang Seller",
-        "body": "Ilalagay ng seller ang lokal na halaga, napiling currency, at network details, pagkatapos ay gagawa ng QR code o 7-digit OTP."
-      },
-      {
-        "title": "Inaaprubahan ng Buyer ang Payment",
-        "body": "Ii-scan ng buyer ang QR code o ilalagay ang OTP upang i-verify ang hinihinging halaga at wallet address."
-      },
-      {
-        "title": "Stablecoin Payment Execution",
-        "body": "Kinakalkula ng StablePay ang halaga ng bayad gamit ang real-time exchange rates at isinasagawa ang USDT o USDC payment sa pamamagitan ng non-custodial wallet signature."
-      },
-      {
-        "title": "Dust Accumulation at Settlement Link",
-        "body": "Ang dust na mas mababa sa $0.01 ay awtomatikong naiipon at maaaring gamitin upang bawasan ang future gas fees at mapahusay ang payment efficiency."
-      }
-    ]
-  },
-  "ar": {
-    "label": "بنية الدفع",
-    "title": "بنية الدفع في StablePay",
-    "sub": "تستخدم StablePay تدفق دفع قائماً على الطلب، حيث ينشئ البائع طلب الدفع ويوافق المشتري عليه عبر مسح رمز QR أو إدخال رمز OTP مكوّن من 7 أرقام. يتم تحويل مبلغ العملة المحلية إلى قيمة Stablecoin مقومة بالدولار باستخدام أسعار الصرف الفورية، ثم يتم تنفيذ الدفع على شبكة Polygon أو Solana من خلال توقيع محفظة غير احتجازية يملكه المشتري.",
-    "core": "بروتوكول دفع Stablecoin قائم على الطلب عبر QR/OTP: يستطيع البائع إنشاء طلب الدفع من أي هاتف ذكي دون جهاز POS خارجي، بينما يوافق المشتري من خلال توقيع المحفظة.",
-    "caption": "تجعل StablePay التطبيق الواحد يعمل كمحفظة للمشتري ومحطة دفع للبائع في الوقت نفسه، مع بنية دفع QR/OTP قائمة على الطلب دون الحاجة إلى أجهزة POS خارجية.",
-    "note": "على الهاتف المحمول، اضغط على الصورة لعرضها بالحجم الكامل.",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "بنية الدفع في StablePay - بروتوكول Stablecoin عبر QR OTP قائم على الطلب",
-    "steps": [
-      {
-        "title": "ينشئ البائع طلب الدفع",
-        "body": "يدخل البائع مبلغ العملة المحلية، والعملة المحددة، وبيانات الشبكة، ثم ينشئ رمز QR أو رمز OTP مكوّناً من 7 أرقام."
-      },
-      {
-        "title": "يوافق المشتري على الدفع",
-        "body": "يمسح المشتري رمز QR أو يدخل رمز OTP للتحقق من المبلغ المطلوب وعنوان المحفظة."
-      },
-      {
-        "title": "تنفيذ دفع Stablecoin",
-        "body": "تحسب StablePay مبلغ الدفع باستخدام أسعار الصرف الفورية وتنفذ دفع USDT أو USDC عبر توقيع محفظة غير احتجازية."
-      },
-      {
-        "title": "تجميع الفروقات وربط التسوية",
-        "body": "يتم تجميع الفروقات التي تقل عن 0.01 دولار تلقائياً، ويمكن استخدامها لتعويض رسوم الغاز المستقبلية وتحسين كفاءة الدفع."
-      }
-    ]
-  },
-  "de": {
-    "label": "Zahlungsarchitektur",
-    "title": "StablePay Zahlungsarchitektur",
-    "sub": "StablePay nutzt einen anfragebasierten Zahlungsablauf: Der Verkäufer erstellt eine Zahlungsanforderung, und der Käufer bestätigt sie per QR-Scan oder 7-stelligem OTP. Der Betrag in lokaler Währung wird mit Echtzeit-Wechselkursen in einen USD-basierten Stablecoin-Betrag umgerechnet und über die Non-Custodial-Wallet-Signatur des Käufers auf Polygon oder Solana ausgeführt.",
-    "core": "Ein anfragebasiertes QR/OTP-Stablecoin-Zahlungsprotokoll: Verkäufer erstellen Zahlungsanforderungen direkt vom Smartphone aus, ohne externes POS-Terminal; Käufer bestätigen die Zahlung per Wallet-Signatur.",
-    "caption": "StablePay macht eine einzige App gleichzeitig zur Käufer-Wallet und zum Verkäufer-Terminal und ermöglicht eine QR/OTP-basierte Zahlungsstruktur ohne externe POS-Hardware.",
-    "note": "Auf Mobilgeräten tippen Sie auf das Bild, um es in voller Größe zu öffnen.",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "StablePay Zahlungsarchitektur - Anfragebasiertes QR OTP Stablecoin-Zahlungsprotokoll",
-    "steps": [
-      {
-        "title": "Verkäufer erstellt Anfrage",
-        "body": "Der Verkäufer gibt den Betrag in lokaler Währung, die ausgewählte Währung und die Netzwerkdaten ein und erzeugt anschließend einen QR-Code oder ein 7-stelliges OTP."
-      },
-      {
-        "title": "Käufer bestätigt die Zahlung",
-        "body": "Der Käufer scannt den QR-Code oder gibt das OTP ein, um den angeforderten Betrag und die Wallet-Adresse zu prüfen."
-      },
-      {
-        "title": "Stablecoin-Zahlung ausführen",
-        "body": "StablePay berechnet den Zahlungsbetrag mit Echtzeit-Wechselkursen und führt die USDT- oder USDC-Zahlung über eine Non-Custodial-Wallet-Signatur aus."
-      },
-      {
-        "title": "Dust-Sammlung & Settlement-Link",
-        "body": "Beträge unter 0,01 USD werden automatisch gesammelt und können zur Kompensation zukünftiger Gasgebühren sowie zur Verbesserung der Zahlungseffizienz genutzt werden."
-      }
-    ]
-  },
-  "fr": {
-    "label": "Architecture de paiement",
-    "title": "Architecture de paiement StablePay",
-    "sub": "StablePay utilise un flux de paiement basé sur la demande : le vendeur crée une demande de paiement et l’acheteur l’approuve par scan QR ou OTP à 7 chiffres. Le montant en devise locale est converti en stablecoin indexé sur l’USD grâce aux taux de change en temps réel, puis le paiement est exécuté sur Polygon ou Solana via la signature du wallet non-custodial de l’acheteur.",
-    "core": "Un protocole de paiement stablecoin QR/OTP basé sur la demande : le vendeur crée une demande de paiement depuis n’importe quel smartphone sans terminal POS externe, tandis que l’acheteur approuve le paiement par signature de wallet.",
-    "caption": "StablePay permet à une seule application de servir à la fois de wallet acheteur et de terminal vendeur, avec une structure de paiement QR/OTP sans matériel POS externe.",
-    "note": "Sur mobile, touchez l’image pour l’ouvrir en grand format.",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "Architecture de paiement StablePay - Protocole QR OTP Stablecoin basé sur la demande",
-    "steps": [
-      {
-        "title": "Le vendeur crée une demande",
-        "body": "Le vendeur saisit le montant en devise locale, la devise sélectionnée et les informations réseau, puis génère un QR code ou un OTP à 7 chiffres."
-      },
-      {
-        "title": "L’acheteur approuve le paiement",
-        "body": "L’acheteur scanne le QR code ou saisit l’OTP pour vérifier le montant demandé et l’adresse du wallet."
-      },
-      {
-        "title": "Exécution du paiement en stablecoin",
-        "body": "StablePay calcule le montant avec les taux de change en temps réel et exécute le paiement USDT ou USDC via une signature de wallet non-custodial."
-      },
-      {
-        "title": "Accumulation du dust & lien de règlement",
-        "body": "Le dust inférieur à 0,01 USD est automatiquement accumulé et peut servir à compenser de futurs frais de gas et à améliorer l’efficacité des paiements."
-      }
-    ]
-  },
-  "pt": {
-    "label": "Arquitetura de Pagamento",
-    "title": "Arquitetura de Pagamento StablePay",
-    "sub": "A StablePay usa um fluxo de pagamento baseado em solicitação: o vendedor cria uma solicitação de pagamento e o comprador aprova por leitura de QR ou OTP de 7 dígitos. O valor em moeda local é convertido em um valor de stablecoin baseado em USD usando taxas de câmbio em tempo real, e o pagamento é executado na Polygon ou Solana por meio da assinatura da carteira non-custodial do comprador.",
-    "core": "Um protocolo de pagamento stablecoin QR/OTP baseado em solicitação: vendedores criam solicitações de pagamento diretamente de qualquer smartphone, sem terminal POS externo, enquanto compradores aprovam o pagamento com assinatura da carteira.",
-    "caption": "A StablePay permite que um único aplicativo funcione como carteira do comprador e terminal do vendedor, oferecendo uma estrutura de pagamento QR/OTP sem hardware POS externo.",
-    "note": "No celular, toque na imagem para ver em tamanho completo.",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "Arquitetura de Pagamento StablePay - Protocolo QR OTP Stablecoin baseado em solicitação",
-    "steps": [
-      {
-        "title": "Vendedor cria a solicitação",
-        "body": "O vendedor informa o valor em moeda local, a moeda selecionada e os detalhes da rede, depois gera um QR code ou OTP de 7 dígitos."
-      },
-      {
-        "title": "Comprador aprova o pagamento",
-        "body": "O comprador escaneia o QR code ou insere o OTP para verificar o valor solicitado e o endereço da carteira."
-      },
-      {
-        "title": "Execução do pagamento em Stablecoin",
-        "body": "A StablePay calcula o valor do pagamento com taxas de câmbio em tempo real e executa o pagamento em USDT ou USDC por assinatura de carteira non-custodial."
-      },
-      {
-        "title": "Acúmulo de dust e conexão com liquidação",
-        "body": "O dust abaixo de US$ 0,01 é acumulado automaticamente e pode ser usado para compensar futuras taxas de gas e melhorar a eficiência do pagamento."
-      }
-    ]
-  },
-  "es": {
-    "label": "Arquitectura de pago",
-    "title": "Arquitectura de pago de StablePay",
-    "sub": "StablePay utiliza un flujo de pago basado en solicitud: el vendedor crea una solicitud de pago y el comprador la aprueba mediante escaneo QR o un OTP de 7 dígitos. El importe en moneda local se convierte en un valor de stablecoin basado en USD con tipos de cambio en tiempo real, y el pago se ejecuta en Polygon o Solana mediante la firma de la wallet no custodial del comprador.",
-    "core": "Un protocolo de pago con stablecoins QR/OTP basado en solicitud: los vendedores crean solicitudes de pago directamente desde cualquier smartphone sin terminal POS externo, mientras los compradores aprueban el pago con una firma de wallet.",
-    "caption": "StablePay permite que una sola app funcione como wallet del comprador y terminal del vendedor, ofreciendo una estructura de pago QR/OTP sin hardware POS externo.",
-    "note": "En móvil, toca la imagen para verla en tamaño completo.",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "Arquitectura de pago StablePay - Protocolo QR OTP Stablecoin basado en solicitud",
-    "steps": [
-      {
-        "title": "El vendedor crea una solicitud",
-        "body": "El vendedor introduce el importe en moneda local, la moneda seleccionada y los datos de red, y luego genera un código QR o un OTP de 7 dígitos."
-      },
-      {
-        "title": "El comprador aprueba el pago",
-        "body": "El comprador escanea el código QR o introduce el OTP para verificar el importe solicitado y la dirección de la wallet."
-      },
-      {
-        "title": "Ejecución del pago en Stablecoin",
-        "body": "StablePay calcula el importe con tipos de cambio en tiempo real y ejecuta el pago en USDT o USDC mediante una firma de wallet no custodial."
-      },
-      {
-        "title": "Acumulación de dust y enlace de liquidación",
-        "body": "El dust inferior a 0,01 USD se acumula automáticamente y puede usarse para compensar futuras comisiones de gas y mejorar la eficiencia del pago."
-      }
-    ]
-  },
-  "hi": {
-    "label": "पेमेंट आर्किटेक्चर",
-    "title": "StablePay पेमेंट आर्किटेक्चर",
-    "sub": "StablePay एक request-based payment flow का उपयोग करता है, जिसमें seller payment request बनाता है और buyer QR scan या 7-digit OTP के माध्यम से उसे approve करता है। Local currency amount को real-time exchange rates के आधार पर USD-based stablecoin amount में convert किया जाता है, और payment buyer के non-custodial wallet signature के माध्यम से Polygon या Solana network पर execute होता है।",
-    "core": "Request-based QR/OTP stablecoin payment protocol: sellers किसी external POS terminal के बिना किसी भी smartphone से payment request बना सकते हैं, और buyers wallet signature से payment approve करते हैं।",
-    "caption": "StablePay एक ही app को buyer wallet और seller terminal दोनों की भूमिका देता है, जिससे external POS hardware के बिना QR/OTP request-based payment structure उपलब्ध होता है।",
-    "note": "मोबाइल पर image को full size में देखने के लिए tap करें।",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "StablePay Payment Architecture - Request-Based QR OTP Stablecoin Payment Protocol",
-    "steps": [
-      {
-        "title": "Seller request बनाता है",
-        "body": "Seller local currency amount, selected currency और network details दर्ज करता है, फिर QR code या 7-digit OTP generate करता है।"
-      },
-      {
-        "title": "Buyer payment approve करता है",
-        "body": "Buyer QR code scan करता है या OTP दर्ज करता है ताकि requested amount और wallet address verify हो सके।"
-      },
-      {
-        "title": "Stablecoin payment execution",
-        "body": "StablePay real-time exchange rates से payment amount calculate करता है और non-custodial wallet signature के माध्यम से USDT या USDC payment execute करता है।"
-      },
-      {
-        "title": "Dust accumulation और settlement link",
-        "body": "$0.01 से कम dust अपने आप accumulate होता है और future gas fees को offset करने तथा payment efficiency बढ़ाने में उपयोग हो सकता है।"
-      }
-    ]
-  },
-  "ru": {
-    "label": "Платежная архитектура",
-    "title": "Платежная архитектура StablePay",
-    "sub": "StablePay использует платежный поток на основе запроса: продавец создает платежный запрос, а покупатель подтверждает его через сканирование QR или 7-значный OTP. Сумма в местной валюте конвертируется в сумму стейблкоина, привязанную к USD, по обменному курсу в реальном времени, а платеж выполняется в сети Polygon или Solana через подпись non-custodial кошелька покупателя.",
-    "core": "Платежный протокол QR/OTP для стейблкоинов на основе запроса: продавец создает платежный запрос с любого смартфона без внешнего POS-терминала, а покупатель подтверждает оплату подписью кошелька.",
-    "caption": "StablePay позволяет одному приложению работать одновременно как кошелек покупателя и терминал продавца, обеспечивая QR/OTP-структуру оплаты без внешнего POS-оборудования.",
-    "note": "На мобильном устройстве нажмите на изображение, чтобы открыть его в полном размере.",
-    "img": "stablepay-payment-architecture-en.webp",
-    "alt": "Платежная архитектура StablePay - QR OTP протокол оплаты стейблкоинами на основе запроса",
-    "steps": [
-      {
-        "title": "Продавец создает запрос",
-        "body": "Продавец вводит сумму в местной валюте, выбранную валюту и данные сети, затем генерирует QR-код или 7-значный OTP."
-      },
-      {
-        "title": "Покупатель подтверждает оплату",
-        "body": "Покупатель сканирует QR-код или вводит OTP, чтобы проверить запрошенную сумму и адрес кошелька."
-      },
-      {
-        "title": "Выполнение платежа в Stablecoin",
-        "body": "StablePay рассчитывает сумму платежа по курсу в реальном времени и выполняет платеж USDT или USDC через подпись non-custodial кошелька."
-      },
-      {
-        "title": "Накопление dust и связь с расчетами",
-        "body": "Dust менее 0,01 USD автоматически накапливается и может использоваться для компенсации будущих gas fees и повышения эффективности платежей."
-      }
-    ]
-  }
-};
-
-
-var MISDEPOSIT_IMAGE_SRC = {
-  ko: "stablepay-mistaken-transfer-prevention-ko.jpg",
-  en: "stablepay-mistaken-transfer-prevention-en.jpg"
-};
-
-var MISDEPOSIT_COPY = {
-  "ko": {
-    "label": "오입금 방지 기술",
-    "title": "가상자산 오입금 방지 기술 비교",
-    "sub": "StablePay는 네트워크·화폐 코드·스마트 컨트랙트 주소 불일치를 앱 단계에서 감지하여 결제 버튼을 자동 비활성화하는 사전 차단 구조를 제공합니다.",
-    "core": "StablePay의 핵심은 사용자에게 ‘확인하라’고 맡기는 수동 대조가 아니라, 불일치가 감지되면 결제 자체가 진행되지 않도록 막는 자동 보안 로직입니다.",
-    "caption": "StablePay는 특허 제10-2025-0079540호 기반의 요청 기반 QR/OTP 스테이블코인 결제 구조를 통해 네트워크·화폐 코드 불일치로 인한 고위험 오입금을 결제 실행 전 단계에서 차단하도록 설계되었습니다.",
-    "note": "모바일에서는 이미지를 누르면 크게 볼 수 있습니다.",
-    "alt": "가상자산 오입금 방지 기술 비교 - 기존 송금 방식과 StablePay 혁신 기술"
-  },
-  "en": {
-    "label": "Mistaken Transfer Prevention",
-    "title": "Preventing Mistaken Digital Asset Transfers",
-    "sub": "StablePay detects mismatches between currency code, network, and smart contract or wallet address at the app level, then automatically disables the payment button before a mistaken transfer can occur.",
-    "core": "The key difference is not asking users to manually double-check. StablePay blocks the transaction path itself when a mismatch is detected.",
-    "caption": "Conventional digital asset transfers leave liability to the user after an irreversible mistake. StablePay is designed as a patented, request-based stablecoin payment structure that prevents high-risk mismatches before payment execution. Patent No. 10-2025-0079540.",
-    "note": "On mobile, tap the image to view it in full size.",
-    "alt": "Preventing mistaken digital asset transfers - Conventional method versus StablePay innovative technology"
-  },
-  "ja": {
-    "label": "誤送金防止技術",
-    "title": "暗号資産の誤送金防止技術比較",
-    "sub": "StablePayは、通貨コード、ネットワーク、スマートコントラクトまたはウォレットアドレスの不一致をアプリ内で検知し、誤送金が発生する前に決済ボタンを自動的に無効化します。",
-    "core": "StablePayの違いは、ユーザーに手動確認を任せるのではなく、不一致が検知された時点で決済経路そのものを遮断する点にあります。",
-    "caption": "StablePayは、特許番号10-2025-0079540に基づくリクエスト型QR/OTPステーブルコイン決済構造により、ネットワークや通貨コードの不一致による高リスクな誤送金を決済実行前に防ぐよう設計されています。",
-    "note": "モバイルでは画像をタップすると拡大表示できます。",
-    "alt": "暗号資産の誤送金防止技術比較 - 従来方式とStablePay革新技術"
-  },
-  "zh": {
-    "label": "误转防范技术",
-    "title": "数字资产误转防范技术比较",
-    "sub": "StablePay可在应用层检测货币代码、网络、智能合约或钱包地址的不一致，并在误转发生前自动禁用支付按钮。",
-    "core": "StablePay的核心并不是让用户自行反复核对，而是在检测到不一致时直接阻断交易路径。",
-    "caption": "StablePay基于专利号10-2025-0079540的请求式QR/OTP稳定币支付结构，旨在支付执行前阻止因网络或货币代码不一致导致的高风险误转。",
-    "note": "在移动设备上，点击图片可查看大图。",
-    "alt": "数字资产误转防范技术比较 - 传统方式与StablePay创新技术"
-  },
-  "zh-hk": {
-    "label": "誤轉防範技術",
-    "title": "數碼資產誤轉防範技術比較",
-    "sub": "StablePay會在應用程式層面偵測貨幣代碼、網絡、智能合約或錢包地址不一致，並在誤轉發生前自動停用付款按鈕。",
-    "core": "StablePay的核心並不是要求用戶自行反覆核對，而是在偵測到不一致時直接阻斷交易路徑。",
-    "caption": "StablePay基於專利號10-2025-0079540的請求式QR/OTP穩定幣付款結構，旨在付款執行前阻止因網絡或貨幣代碼不一致造成的高風險誤轉。",
-    "note": "在流動裝置上，點按圖片可查看大圖。",
-    "alt": "數碼資產誤轉防範技術比較 - 傳統方式與StablePay創新技術"
-  },
-  "th": {
-    "label": "เทคโนโลยีป้องกันการโอนผิด",
-    "title": "เปรียบเทียบเทคโนโลยีป้องกันการโอนสินทรัพย์ดิจิทัลผิดพลาด",
-    "sub": "StablePay ตรวจจับความไม่ตรงกันของรหัสสกุลเงิน เครือข่าย สมาร์ตคอนแทรกต์ หรือที่อยู่วอลเล็ตในระดับแอป และปิดใช้งานปุ่มชำระเงินโดยอัตโนมัติก่อนเกิดการโอนผิด",
-    "core": "จุดต่างสำคัญคือ StablePay ไม่ได้ปล่อยให้ผู้ใช้ตรวจสอบเองทั้งหมด แต่จะบล็อกเส้นทางธุรกรรมทันทีเมื่อพบความไม่ตรงกัน",
-    "caption": "StablePay ได้รับการออกแบบด้วยโครงสร้างการชำระเงินสเตเบิลคอยน์แบบ QR/OTP ตามคำขอ โดยอ้างอิงสิทธิบัตรเลขที่ 10-2025-0079540 เพื่อป้องกันการโอนผิดที่มีความเสี่ยงสูงก่อนการชำระเงินจริง",
-    "note": "บนมือถือ ให้แตะรูปภาพเพื่อดูขนาดเต็ม",
-    "alt": "เปรียบเทียบเทคโนโลยีป้องกันการโอนสินทรัพย์ดิจิทัลผิดพลาด - วิธีดั้งเดิมกับ StablePay"
-  },
-  "vi": {
-    "label": "Công nghệ chống chuyển nhầm",
-    "title": "So sánh công nghệ ngăn chuyển nhầm tài sản số",
-    "sub": "StablePay phát hiện sự không khớp giữa mã tiền tệ, mạng lưới, smart contract hoặc địa chỉ ví ngay trong ứng dụng, rồi tự động vô hiệu hóa nút thanh toán trước khi giao dịch nhầm xảy ra.",
-    "core": "Điểm khác biệt cốt lõi là StablePay không chỉ yêu cầu người dùng tự kiểm tra thủ công, mà chặn luôn đường dẫn giao dịch khi phát hiện sai lệch.",
-    "caption": "StablePay được thiết kế dựa trên cấu trúc thanh toán stablecoin QR/OTP theo yêu cầu, theo Bằng sáng chế số 10-2025-0079540, nhằm ngăn các lỗi chuyển nhầm rủi ro cao trước khi thanh toán được thực thi.",
-    "note": "Trên thiết bị di động, hãy chạm vào hình ảnh để xem kích thước đầy đủ.",
-    "alt": "So sánh công nghệ ngăn chuyển nhầm tài sản số - phương thức truyền thống và công nghệ StablePay"
-  },
-  "fil": {
-    "label": "Teknolohiya Laban sa Maling Transfer",
-    "title": "Paghahambing ng Teknolohiya para Maiwasan ang Maling Digital Asset Transfer",
-    "sub": "Nade-detect ng StablePay sa mismong app ang hindi pagtutugma ng currency code, network, smart contract, o wallet address, at awtomatikong dini-disable ang payment button bago mangyari ang maling transfer.",
-    "core": "Ang pangunahing kaibahan ay hindi lang pinapaubaya ng StablePay sa user ang manual checking; kapag may mismatch, hinaharang nito ang mismong transaction path.",
-    "caption": "Dinisenyo ang StablePay bilang request-based QR/OTP stablecoin payment structure batay sa Patent No. 10-2025-0079540 upang pigilan ang high-risk mismatched transfers bago pa maisagawa ang payment.",
-    "note": "Sa mobile, i-tap ang larawan upang makita ito sa full size.",
-    "alt": "Paghahambing ng teknolohiya para maiwasan ang maling digital asset transfer - tradisyonal na paraan at StablePay"
-  },
-  "ar": {
-    "label": "تقنية منع التحويل الخاطئ",
-    "title": "مقارنة تقنية منع تحويل الأصول الرقمية بالخطأ",
-    "sub": "تكتشف StablePay عدم تطابق رمز العملة أو الشبكة أو عنوان العقد الذكي أو المحفظة داخل التطبيق، ثم تعطل زر الدفع تلقائياً قبل حدوث تحويل خاطئ.",
-    "core": "الفرق الأساسي هو أن StablePay لا تترك التحقق اليدوي للمستخدم فقط، بل تمنع مسار المعاملة نفسه عند اكتشاف أي عدم تطابق.",
-    "caption": "صُممت StablePay كبنية دفع بالعملات المستقرة عبر QR/OTP قائمة على الطلب، وفق براءة الاختراع رقم 10-2025-0079540، لمنع التحويلات عالية المخاطر قبل تنفيذ الدفع.",
-    "note": "على الهاتف المحمول، اضغط على الصورة لعرضها بالحجم الكامل.",
-    "alt": "مقارنة تقنية منع تحويل الأصول الرقمية بالخطأ - الطريقة التقليدية مقابل StablePay"
-  },
-  "de": {
-    "label": "Schutz vor Fehlüberweisungen",
-    "title": "Vergleich der Technologie zur Vermeidung falscher Digital-Asset-Transfers",
-    "sub": "StablePay erkennt Abweichungen bei Währungscode, Netzwerk, Smart Contract oder Wallet-Adresse direkt in der App und deaktiviert den Zahlungsbutton automatisch, bevor ein Fehltransfer entstehen kann.",
-    "core": "Der wesentliche Unterschied: StablePay verlässt sich nicht nur auf manuelle Prüfung durch den Nutzer, sondern blockiert den Transaktionspfad selbst, sobald ein Mismatch erkannt wird.",
-    "caption": "StablePay ist als patentierte, anfragebasierte QR/OTP-Stablecoin-Zahlungsstruktur konzipiert, um risikoreiche Fehltransfers vor der Zahlungsausführung zu verhindern. Patent Nr. 10-2025-0079540.",
-    "note": "Auf Mobilgeräten tippen Sie auf das Bild, um es in voller Größe zu öffnen.",
-    "alt": "Vergleich der Technologie zur Vermeidung falscher Digital-Asset-Transfers - konventionelle Methode versus StablePay"
-  },
-  "fr": {
-    "label": "Prévention des transferts erronés",
-    "title": "Comparaison des technologies de prévention des transferts d’actifs numériques erronés",
-    "sub": "StablePay détecte dans l’application les incohérences de code de devise, de réseau, de smart contract ou d’adresse de portefeuille, puis désactive automatiquement le bouton de paiement avant qu’un transfert erroné ne puisse se produire.",
-    "core": "La différence essentielle est que StablePay ne se limite pas à demander une vérification manuelle à l’utilisateur : lorsqu’une incohérence est détectée, le chemin de transaction est bloqué.",
-    "caption": "StablePay est conçue comme une structure brevetée de paiement en stablecoin par QR/OTP sur demande, afin de prévenir les transferts à haut risque avant l’exécution du paiement. Brevet n° 10-2025-0079540.",
-    "note": "Sur mobile, touchez l’image pour l’ouvrir en grand format.",
-    "alt": "Comparaison des technologies de prévention des transferts d’actifs numériques erronés - méthode conventionnelle et StablePay"
-  },
-  "pt": {
-    "label": "Prevenção de transferências incorretas",
-    "title": "Comparação da tecnologia para evitar transferências incorretas de ativos digitais",
-    "sub": "O StablePay detecta no nível do aplicativo divergências de código de moeda, rede, smart contract ou endereço de carteira, e desativa automaticamente o botão de pagamento antes que uma transferência incorreta ocorra.",
-    "core": "A principal diferença é que o StablePay não depende apenas da conferência manual do usuário; quando detecta uma incompatibilidade, bloqueia o próprio caminho da transação.",
-    "caption": "O StablePay foi projetado como uma estrutura patenteada de pagamento em stablecoin por QR/OTP baseada em solicitação, para impedir transferências de alto risco antes da execução do pagamento. Patente nº 10-2025-0079540.",
-    "note": "No celular, toque na imagem para ver em tamanho completo.",
-    "alt": "Comparação da tecnologia para evitar transferências incorretas de ativos digitais - método convencional versus StablePay"
-  },
-  "es": {
-    "label": "Prevención de transferencias erróneas",
-    "title": "Comparación de tecnología para prevenir transferencias erróneas de activos digitales",
-    "sub": "StablePay detecta en la aplicación discrepancias de código de moneda, red, smart contract o dirección de billetera, y desactiva automáticamente el botón de pago antes de que ocurra una transferencia errónea.",
-    "core": "La diferencia clave es que StablePay no deja todo a la verificación manual del usuario; cuando detecta una discrepancia, bloquea directamente la ruta de la transacción.",
-    "caption": "StablePay está diseñado como una estructura patentada de pago con stablecoins mediante QR/OTP basada en solicitud, para prevenir transferencias de alto riesgo antes de ejecutar el pago. Patente n.º 10-2025-0079540.",
-    "note": "En móvil, toca la imagen para verla en tamaño completo.",
-    "alt": "Comparación de tecnología para prevenir transferencias erróneas de activos digitales - método convencional frente a StablePay"
-  },
-  "hi": {
-    "label": "गलत ट्रांसफ़र रोकथाम तकनीक",
-    "title": "डिजिटल एसेट के गलत ट्रांसफ़र को रोकने वाली तकनीक की तुलना",
-    "sub": "StablePay ऐप स्तर पर करेंसी कोड, नेटवर्क, स्मार्ट कॉन्ट्रैक्ट या वॉलेट पते की असंगति पहचानता है और गलत ट्रांसफ़र होने से पहले भुगतान बटन को स्वतः निष्क्रिय कर देता है।",
-    "core": "मुख्य अंतर यह है कि StablePay उपयोगकर्ता पर केवल मैनुअल जाँच नहीं छोड़ता; असंगति मिलते ही यह लेन-देन के रास्ते को ही रोक देता है।",
-    "caption": "StablePay को अनुरोध-आधारित QR/OTP स्टेबलकॉइन भुगतान संरचना के रूप में डिज़ाइन किया गया है, जो पेटेंट संख्या 10-2025-0079540 पर आधारित है और भुगतान निष्पादन से पहले उच्च जोखिम वाले गलत ट्रांसफ़र को रोकता है।",
-    "note": "मोबाइल पर image को full size में देखने के लिए tap करें।",
-    "alt": "डिजिटल एसेट के गलत ट्रांसफ़र को रोकने वाली तकनीक की तुलना - पारंपरिक तरीका बनाम StablePay"
-  },
-  "ru": {
-    "label": "Защита от ошибочных переводов",
-    "title": "Сравнение технологий предотвращения ошибочных переводов цифровых активов",
-    "sub": "StablePay на уровне приложения обнаруживает несоответствие кода валюты, сети, smart contract или адреса кошелька и автоматически отключает кнопку оплаты до совершения ошибочного перевода.",
-    "core": "Ключевое отличие в том, что StablePay не перекладывает всё на ручную проверку пользователя: при обнаружении несоответствия сам путь транзакции блокируется.",
-    "caption": "StablePay разработан как запатентованная структура платежей в стейблкоинах через QR/OTP по запросу, чтобы предотвращать высокорисковые ошибки до исполнения платежа. Патент № 10-2025-0079540.",
-    "note": "На мобильном устройстве нажмите на изображение, чтобы открыть его в полном размере.",
-    "alt": "Сравнение технологий предотвращения ошибочных переводов цифровых активов - традиционный метод и StablePay"
-  }
-};
-
-function updateMisdepositComparison(lang) {
-  var copy = MISDEPOSIT_COPY[lang] || MISDEPOSIT_COPY.en;
-  var imageSrc = (lang === 'ko') ? MISDEPOSIT_IMAGE_SRC.ko : MISDEPOSIT_IMAGE_SRC.en;
-  var map = {
-    "misdeposit-comparison-label": copy.label,
-    "misdeposit-comparison-title": copy.title,
-    "misdeposit-comparison-sub": copy.sub,
-    "misdeposit-comparison-core": copy.core,
-    "misdeposit-comparison-caption": copy.caption,
-    "misdeposit-comparison-mobile-note": copy.note
+// ===== 클릭 안정화: 언어 선택, 메뉴 이동, 정책 모달을 모두 JS 이벤트로 처리 =====
+document.addEventListener('DOMContentLoaded', function() {
+  var langMeta = {
+    'ko': ['🇰🇷','Korean'], 'en': ['🇺🇸','English'], 'ja': ['🇯🇵','日本語'],
+    'zh': ['🇨🇳','中文(简体)'], 'zh-hk': ['🇭🇰','中文(繁體,香港)'],
+    'th': ['🇹🇭','ภาษาไทย'], 'vi': ['🇻🇳','Tiếng Việt'], 'fil': ['🇵🇭','Filipino'],
+    'ar': ['🇸🇦','العربية'], 'de': ['🇩🇪','Deutsch'], 'fr': ['🇫🇷','Français'],
+    'pt': ['🇧🇷','Português'], 'es': ['🇪🇸','Español'], 'hi': ['🇮🇳','हिन्दी'], 'ru': ['🇷🇺','Русский']
   };
-  for (var id in map) {
-    var el = document.getElementById(id);
-    if (el) el.innerHTML = map[id];
-  }
-  var img = document.getElementById("misdeposit-comparison-img");
-  var link = document.getElementById("misdeposit-comparison-link");
-  if (img) {
-    img.src = imageSrc;
-    img.alt = copy.alt;
-  }
-  if (link) link.href = imageSrc;
-}
 
-function updatePaymentArchitecture(lang) {
-  var copy = PAYMENT_ARCH_COPY[lang] || PAYMENT_ARCH_COPY.en;
-  var map = {
-    "payment-architecture-label": copy.label,
-    "payment-architecture-title": copy.title,
-    "payment-architecture-sub": copy.sub,
-    "payment-architecture-core": copy.core,
-    "payment-architecture-caption": copy.caption,
-    "payment-architecture-mobile-note": copy.note
-  };
-  for (var id in map) {
-    var el = document.getElementById(id);
-    if (el) el.innerHTML = map[id];
-  }
-  var img = document.getElementById("payment-architecture-img");
-  var link = document.getElementById("payment-architecture-link");
-  if (img) {
-    img.src = copy.img;
-    img.alt = copy.alt;
-  }
-  if (link) link.href = copy.img;
-
-  if (copy.steps) {
-    copy.steps.forEach(function(step, idx) {
-      var n = idx + 1;
-      var titleEl = document.getElementById("payment-architecture-step" + n + "-title");
-      var bodyEl = document.getElementById("payment-architecture-step" + n + "-body");
-      if (titleEl) titleEl.innerHTML = step.title;
-      if (bodyEl) bodyEl.innerHTML = step.body;
-    });
-  }
-}
-
-function updateQrParadigm(lang) {
-  var copy = QR_COPY[lang] || QR_COPY.en;
-  var map = {
-    "qr-paradigm-label": copy.label,
-    "qr-paradigm-title": copy.title,
-    "qr-paradigm-sub": copy.sub,
-    "qr-paradigm-core": copy.core,
-    "qr-paradigm-caption": copy.caption,
-    "qr-paradigm-mobile-note": copy.note
-  };
-  for (var id in map) {
-    var el = document.getElementById(id);
-    if (el) el.innerHTML = map[id];
-  }
-  var img = document.getElementById("qr-paradigm-img");
-  var link = document.getElementById("qr-paradigm-link");
-  if (img) {
-    img.src = copy.img;
-    img.alt = copy.alt;
-  }
-  if (link) link.href = copy.img;
-}
-
-function setLang(lang) {
-  currentLang = lang;
-
-  // RTL 지원 (아랍어)
-  if (lang === 'ar') {
-    document.documentElement.setAttribute('dir', 'rtl');
-    document.body.style.direction = 'rtl';
-    document.body.style.textAlign = 'right';
-  } else {
-    document.documentElement.setAttribute('dir', 'ltr');
-    document.body.style.direction = 'ltr';
-    document.body.style.textAlign = '';
+  var langBtn = document.getElementById('lang-selected-btn');
+  if (langBtn) {
+    langBtn.removeAttribute('onclick');
+    langBtn.onclick = function(e) { toggleLangMenu(e); return false; };
   }
 
-  // ID 기반 텍스트 교체
-  var texts = TEXTS[lang] || TEXTS['en'];
-  for (var id in texts) {
-    var el = document.getElementById(id);
-    if (el) el.innerHTML = texts[id];
-  }
-
-  // 화폐/국가 태그 (data-ko/en/ja 방식, 없으면 영어 fallback)
-  document.querySelectorAll('.c-name').forEach(function(el) {
-    var val = el.getAttribute('data-' + lang);
-    if (!val) val = el.getAttribute('data-en') || el.getAttribute('data-ko') || el.textContent;
-    el.textContent = val;
+  Object.keys(langMeta).forEach(function(lang) {
+    var item = document.getElementById('lang-item-' + lang);
+    if (!item) return;
+    item.removeAttribute('onclick');
+    item.onclick = function(e) {
+      return selectLang(lang, langMeta[lang][0], langMeta[lang][1], e);
+    };
   });
 
-  updateQrParadigm(lang);
-  updatePaymentArchitecture(lang);
-  updateMisdepositComparison(lang);
-
-  // 모달 바디 전환
-  var bodies = [
-    'privacy-body-ko','privacy-body-ja','privacy-body-zh','privacy-body-zh-hk','privacy-body-th','privacy-body-vi','privacy-body-fil','privacy-body-ar','privacy-body-de','privacy-body-fr','privacy-body-pt','privacy-body-es','privacy-body-hi','privacy-body-ru','privacy-body-en',
-    'terms-body-ko','terms-body-ja','terms-body-zh','terms-body-zh-hk','terms-body-th','terms-body-vi','terms-body-fil','terms-body-ar','terms-body-de','terms-body-fr','terms-body-pt','terms-body-es','terms-body-hi','terms-body-ru','terms-body-en'
+  var modalLinks = [
+    ['footer-privacy', 'privacy'], ['footer-privacy2', 'privacy'],
+    ['footer-terms', 'terms'], ['footer-terms2', 'terms']
   ];
-  bodies.forEach(function(id) {
-    var el = document.getElementById(id);
+  modalLinks.forEach(function(pair) {
+    var el = document.getElementById(pair[0]);
     if (!el) return;
-    var active =
-      (id === 'privacy-body-ko' && lang === 'ko') ||
-      (id === 'privacy-body-ja' && lang === 'ja') ||
-      (id === 'privacy-body-zh' && lang === 'zh') ||
-      (id === 'privacy-body-zh-hk' && lang === 'zh-hk') ||
-      (id === 'privacy-body-th' && lang === 'th') ||
-      (id === 'privacy-body-vi' && lang === 'vi') ||
-      (id === 'privacy-body-fil' && lang === 'fil') ||
-      (id === 'privacy-body-ar' && lang === 'ar') ||
-      (id === 'privacy-body-de' && lang === 'de') ||
-      (id === 'privacy-body-fr' && lang === 'fr') ||
-      (id === 'privacy-body-pt' && lang === 'pt') ||
-      (id === 'privacy-body-es' && lang === 'es') ||
-      (id === 'privacy-body-hi' && lang === 'hi') ||
-      (id === 'privacy-body-ru' && lang === 'ru') ||
-      (id === 'privacy-body-en' && lang !== 'ko' && lang !== 'ja' && lang !== 'zh' && lang !== 'zh-hk' && lang !== 'th' && lang !== 'vi' && lang !== 'fil' && lang !== 'ar' && lang !== 'de' && lang !== 'fr' && lang !== 'pt' && lang !== 'es' && lang !== 'hi' && lang !== 'ru') ||
-      (id === 'terms-body-ko' && lang === 'ko') ||
-      (id === 'terms-body-ja' && lang === 'ja') ||
-      (id === 'terms-body-zh' && lang === 'zh') ||
-      (id === 'terms-body-zh-hk' && lang === 'zh-hk') ||
-      (id === 'terms-body-th' && lang === 'th') ||
-      (id === 'terms-body-vi' && lang === 'vi') ||
-      (id === 'terms-body-fil' && lang === 'fil') ||
-      (id === 'terms-body-ar' && lang === 'ar') ||
-      (id === 'terms-body-de' && lang === 'de') ||
-      (id === 'terms-body-fr' && lang === 'fr') ||
-      (id === 'terms-body-pt' && lang === 'pt') ||
-      (id === 'terms-body-es' && lang === 'es') ||
-      (id === 'terms-body-hi' && lang === 'hi') ||
-      (id === 'terms-body-ru' && lang === 'ru') ||
-      (id === 'terms-body-en' && lang !== 'ko' && lang !== 'ja' && lang !== 'zh' && lang !== 'zh-hk' && lang !== 'th' && lang !== 'vi' && lang !== 'fil' && lang !== 'ar' && lang !== 'de' && lang !== 'fr' && lang !== 'pt' && lang !== 'es' && lang !== 'hi' && lang !== 'ru');
-    el.style.display = active ? 'block' : 'none';
+    el.removeAttribute('onclick');
+    el.setAttribute('href', '#');
+    el.style.cursor = 'pointer';
+    el.onclick = function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openModal(pair[1]);
+      return false;
+    };
   });
-}
 
-var currentLang = 'ko';
+  // 상단/하단 메뉴 스크롤 이동 안정화
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    if (a.id === 'footer-privacy' || a.id === 'footer-privacy2' || a.id === 'footer-terms' || a.id === 'footer-terms2') return;
+    a.addEventListener('click', function(e) {
+      var targetId = a.getAttribute('href');
+      if (!targetId || targetId === '#') {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        return;
+      }
+      var target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        var y = target.getBoundingClientRect().top + window.pageYOffset - 84;
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
+    });
+  });
+});
+
 setLang('ko');
 </script>
 </body>
