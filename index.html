@@ -4674,7 +4674,76 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-setLang('ko');
+
+function setLang(lang) {
+  if (!window.TEXTS || !TEXTS[lang]) {
+    console.warn('StablePay: missing language pack:', lang);
+    return false;
+  }
+
+  currentLang = lang;
+  try { localStorage.setItem('stablepay_lang', lang); } catch (e) {}
+
+  var dict = TEXTS[lang];
+
+  Object.keys(dict).forEach(function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+
+    if (id === 'page-title') {
+      document.title = dict[id].replace(/<[^>]*>/g, '');
+      el.textContent = dict[id].replace(/<[^>]*>/g, '');
+      return;
+    }
+
+    // 번역 문자열에는 <br>, <span class="highlight"> 등 기존 디자인용 HTML이 포함되어 있음
+    el.innerHTML = dict[id];
+  });
+
+  var meta = {
+    'ko': ['🇰🇷','Korean','ko','ltr'],
+    'en': ['🇺🇸','English','en','ltr'],
+    'ja': ['🇯🇵','日本語','ja','ltr'],
+    'zh': ['🇨🇳','中文(简体)','zh-CN','ltr'],
+    'zh-hk': ['🇭🇰','中文(繁體,香港)','zh-HK','ltr'],
+    'th': ['🇹🇭','ภาษาไทย','th','ltr'],
+    'vi': ['🇻🇳','Tiếng Việt','vi','ltr'],
+    'fil': ['🇵🇭','Filipino','fil','ltr'],
+    'ar': ['🇸🇦','العربية','ar','rtl'],
+    'de': ['🇩🇪','Deutsch','de','ltr'],
+    'fr': ['🇫🇷','Français','fr','ltr'],
+    'pt': ['🇧🇷','Português','pt-BR','ltr'],
+    'es': ['🇪🇸','Español','es','ltr'],
+    'hi': ['🇮🇳','हिन्दी','hi','ltr'],
+    'ru': ['🇷🇺','Русский','ru','ltr']
+  };
+
+  if (meta[lang]) {
+    var flagEl = document.getElementById('lang-flag');
+    var codeEl = document.getElementById('lang-code');
+    if (flagEl) flagEl.textContent = meta[lang][0];
+    if (codeEl) codeEl.textContent = meta[lang][1];
+    document.documentElement.setAttribute('lang', meta[lang][2]);
+    document.documentElement.setAttribute('dir', meta[lang][3]);
+  }
+
+  document.querySelectorAll('.lang-menu-item').forEach(function(el) {
+    el.classList.remove('active');
+  });
+  var activeItem = document.getElementById('lang-item-' + lang);
+  if (activeItem) activeItem.classList.add('active');
+
+  var menu = document.getElementById('lang-menu');
+  var btn = document.getElementById('lang-selected-btn');
+  if (menu) menu.classList.remove('open');
+  if (btn) btn.classList.remove('open');
+
+  return false;
+}
+
+var initialStablePayLang = 'ko';
+try { initialStablePayLang = localStorage.getItem('stablepay_lang') || 'ko'; } catch(e) {}
+setLang(initialStablePayLang);
 </script>
 </body>
 </html>
