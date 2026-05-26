@@ -39,6 +39,8 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 a[href="mailto:stablepay2025@stablepaylabs.kr"]{color:#fff;}
+.modal-contact-email a[href="mailto:stablepay2025@stablepaylabs.kr"],
+.modal-body a[href="mailto:stablepay2025@stablepaylabs.kr"]{color:var(--navy) !important;}
 body{font-family:"Noto Sans KR","Noto Sans Thai",sans-serif;color:var(--text);background:#fff;overflow-x:hidden;}
 
 nav{
@@ -821,6 +823,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
 <div class="hero-badge"><span class="dot"></span> <span id="hero-badge-text">Web3 스테이블코인 결제</span></div>
 <h1 id="hero-h1">환전 없이<br/><span>전 세계 어디서나</span><br/>결제하세요</h1>
 <p id="hero-p">USDT · USDC로 21개국 현지 화폐를 실시간 환율로 자동 환산.<br/>수수료 없이, 환전 없이, 지금 바로 시작하세요.</p>
+<p id="hero-free-note" style="color:#FFEB3B;font-size:14px;font-weight:600;margin-top:10px;margin-bottom:0;line-height:1.6;text-shadow:0 1px 4px rgba(0,0,0,0.35);">일반회원 가입만으로 하루 5회의 QR+OTP(원거리 인증)를 무료로 이용할 수 있습니다.</p>
 <div class="hero-btns">
 <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.stablepay" target="_blank">
 <svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M3 20.5v-17c0-.83 1.01-1.3 1.62-.77l14 8.5c.51.31.51 1.04 0 1.35l-14 8.5C4.01 21.8 3 21.33 3 20.5z"></path></svg>
@@ -2992,6 +2995,7 @@ var TEXTS = {
     "hero-badge-text": "Web3 스테이블코인 결제",
     "hero-h1": "환전 없이<br><span>전 세계 어디서나</span><br>결제하세요",
     "hero-p": "USDT · USDC로 21개국 현지 화폐를 실시간 환율로 자동 환산.<br>수수료 없이, 환전 없이, 지금 바로 시작하세요.",
+    "hero-free-note": "일반회원 가입만으로 하루 5회의 QR+OTP(원거리 인증)를 무료로 이용할 수 있습니다.",
     "btn-download": "Google Play 다운로드", "btn-contact": "📩 문의하기",
     "stat-currencies": "지원 화폐", "stat-languages": "지원 언어",
     "stat-countries": "출시 국가", "stat-patents": "등록 특허",
@@ -3066,6 +3070,7 @@ var TEXTS = {
     "hero-badge-text": "Web3 ステーブルコイン決済",
     "hero-h1": "両替不要。<br><span>世界中どこでも</span><br>決済できます。",
     "hero-p": "USDT・USDCで21か国の現地通貨をリアルタイムレートで自動換算。<br>手数料なし、両替なし、今すぐ始めましょう。",
+    "hero-free-note": "一般会員登録だけで、1日5回のQR+OTP（遠距離認証）を無料でご利用いただけます。",
     "btn-download": "Google Playでダウンロード", "btn-contact": "📩 お問い合わせ",
     "stat-currencies": "対応通貨", "stat-languages": "対応言語",
     "stat-countries": "提供国", "stat-patents": "登録特許",
@@ -3148,6 +3153,7 @@ var TEXTS = {
     "hero-badge-text": "Web3 稳定币支付",
     "hero-h1": "无需换汇<br><span>在全球任何地方</span><br>都能支付",
     "hero-p": "使用 USDT · USDC 按实时汇率自动换算 21 种本地货币。<br>无手续费、无需换汇，立即开始。",
+    "hero-free-note": "仅需注册普通会员，即可每天免费使用 5 次 QR+OTP（远程认证）。",
     "btn-download": "Google Play 下载",
     "btn-contact": "📩 联系我们",
     "stat-currencies": "支持货币",
@@ -3274,6 +3280,7 @@ var TEXTS = {
     "hero-badge-text": "Web3 穩定幣付款",
     "hero-h1": "無需換匯<br><span>在全球任何地方</span><br>都能付款",
     "hero-p": "使用 USDT · USDC 按即時匯率自動換算 21 種本地貨幣。<br>無手續費、無需換匯，立即開始。",
+    "hero-free-note": "只需註冊普通會員，每天即可免費使用 5 次 QR+OTP（遠端認證）。",
     "btn-download": "Google Play 下載",
     "btn-contact": "📩 聯絡我們",
     "stat-currencies": "支援貨幣",
@@ -3400,6 +3407,7 @@ var TEXTS = {
     "hero-badge-text": "Thanh toán stablecoin Web3",
     "hero-h1": "Không cần đổi tiền<br><span>Thanh toán ở mọi nơi</span><br>trên thế giới",
     "hero-p": "USDT · USDC tự động quy đổi 21 loại tiền tệ địa phương theo tỷ giá thời gian thực.<br>Không phí, không cần đổi tiền, bắt đầu ngay.",
+    "hero-free-note": "Chỉ cần đăng ký thành viên thường, bạn có thể dùng miễn phí 5 lần QR+OTP (xác thực từ xa) mỗi ngày.",
     "btn-download": "Tải trên Google Play",
     "btn-contact": "📩 Liên hệ",
     "stat-currencies": "Tiền tệ",
@@ -3526,6 +3534,7 @@ var TEXTS = {
     "hero-badge-text": "การชำระเงินด้วยสเตเบิลคอยน์ Web3",
     "hero-h1": "ไม่ต้องแลกเงิน<br><span>จ่ายได้ทุกที่</span><br>ทั่วโลก",
     "hero-p": "USDT · USDC แปลง 21 สกุลเงินท้องถิ่นอัตโนมัติตามอัตราแลกเปลี่ยนแบบเรียลไทม์<br>ไม่มีค่าธรรมเนียม ไม่ต้องแลกเงิน เริ่มได้ทันที",
+    "hero-free-note": "เพียงสมัครสมาชิกทั่วไป ใช้ QR+OTP (ยืนยันระยะไกล) ฟรี 5 ครั้งต่อวัน",
     "btn-download": "ดาวน์โหลด Google Play",
     "btn-contact": "📩 ติดต่อเรา",
     "stat-currencies": "สกุลเงิน",
@@ -3652,6 +3661,7 @@ var TEXTS = {
     "hero-badge-text": "Web3 Stablecoin Payment",
     "hero-h1": "Magbayad kahit saan<br><span>sa buong mundo</span><br>nang walang palitan ng pera",
     "hero-p": "Awtomatikong kino-convert ang 21 lokal na currency sa USDT · USDC gamit ang real-time exchange rate.<br>Walang bayad, walang money exchange, magsimula agad.",
+    "hero-free-note": "Sa simpleng pag-sign up bilang regular na miyembro, makakatanggap ka ng 5 libreng QR+OTP (remote authentication) bawat araw.",
     "btn-download": "I-download sa Google Play",
     "btn-contact": "📩 Makipag-ugnayan",
     "stat-currencies": "Suportadong Currency",
@@ -3775,6 +3785,7 @@ var TEXTS = {
     "hero-badge-text": "مدفوعات Web3 بالعملات المستقرة",
     "hero-h1": "من دون تحويل عملات.<br><span>ادفع في أي مكان</span><br>في العالم.",
     "hero-p": "يحوِّل USDT وUSDC قيمة 21 عملة محلية تلقائيًا وفق أسعار الصرف الفورية.<br>من دون رسوم تحويل ومن دون الحاجة إلى تبديل العملات، ابدأ الآن.",
+    "hero-free-note": "بمجرد التسجيل كعضو عادي، يمكنك استخدام QR+OTP (التحقق عن بُعد) 5 مرات يوميًا مجانًا.",
     "btn-download": "تنزيل Google Play", "btn-contact": "📩 تواصل معنا",
     "stat-currencies": "العملات", "stat-languages": "اللغات",
     "stat-countries": "الدول", "stat-patents": "البراءات",
@@ -3853,6 +3864,7 @@ var TEXTS = {
     "hero-badge-text": "Web3 Stablecoin Payment",
     "hero-h1": "No currency exchange.<br><span>Pay anywhere</span><br>in the world.",
     "hero-p": "USDT and USDC are automatically converted from 21 local currencies using real-time exchange rates.<br>No exchange hassles. Get started right away.",
+    "hero-free-note": "Simply sign up as a regular member to get 5 free QR+OTP (remote authentication) uses per day.",
     "btn-download": "Google Play Download", "btn-contact": "📩 Contact Us",
     "stat-currencies": "Currencies", "stat-languages": "Languages",
     "stat-countries": "Countries", "stat-patents": "Patents",
@@ -3935,6 +3947,7 @@ var TEXTS = {
     "hero-badge-text": "Web3-Stablecoin-Zahlung",
     "hero-h1": "Kein Währungswechsel.<br><span>Weltweit bezahlen</span><br>– ganz einfach.",
     "hero-p": "USDT · USDC werden automatisch zum Echtzeitkurs in 21 Landeswährungen umgerechnet.<br>Keine Umtauschgebühren, keine Wartezeit bei der Bank, keine komplizierte Einrichtung.",
+    "hero-free-note": "Einfach als normales Mitglied registrieren und täglich 5 kostenlose QR+OTP (Fernverifizierung) nutzen.",
     "btn-download": "Google Play Download",
     "btn-contact": "📩 Kontakt",
     "stat-currencies": "Währungen",
@@ -4062,6 +4075,7 @@ var TEXTS = {
     "hero-badge-text": "Paiement Web3 en stablecoin",
     "hero-h1": "Pas de change.<br><span>Payer partout</span><br>dans le monde.",
     "hero-p": "USDT · USDC permettent de convertir automatiquement 21 devises locales au taux de change en temps réel.<br>Sans conversion manuelle, sans complication, commencez immédiatement.",
+    "hero-free-note": "En vous inscrivant simplement comme membre ordinaire, vous bénéficiez de 5 utilisations gratuites de QR+OTP (authentification à distance) par jour.",
     "btn-download": "Télécharger sur Google Play",
     "btn-contact": "📩 Contactez-nous",
     "stat-currencies": "Devises",
@@ -4188,6 +4202,7 @@ var TEXTS = {
       "hero-badge-text": "Pagamentos Web3 com stablecoins",
       "hero-h1": "Sem câmbio.<br><span>Pague em qualquer lugar</span><br>do mundo.",
       "hero-p": "USDT · USDC converte automaticamente 21 moedas locais pela taxa em tempo real.<br>Sem taxas, sem câmbio, comece agora mesmo.",
+    "hero-free-note": "Ao se cadastrar como membro regular, você pode usar QR+OTP (autenticação remota) gratuitamente 5 vezes por dia.",
       "btn-download": "Baixar no Google Play",
       "btn-contact": "📩 Fale conosco",
       "stat-currencies": "Moedas",
@@ -4314,6 +4329,7 @@ var TEXTS = {
       "hero-badge-text": "Pago Web3 con stablecoins",
       "hero-h1": "Sin cambiar divisas.<br><span>Paga en cualquier parte</span><br>del mundo.",
       "hero-p": "USDT · USDC convierte automáticamente 21 monedas locales según el tipo de cambio en tiempo real.<br>Sin comisiones y sin cambiar divisas, empieza ahora.",
+    "hero-free-note": "Con solo registrarte como miembro regular, puedes usar QR+OTP (autenticación remota) 5 veces al día de forma gratuita.",
       "btn-download": "Descargar en Google Play",
       "btn-contact": "📩 Contáctanos",
       "stat-currencies": "Monedas",
@@ -4440,6 +4456,7 @@ var TEXTS = {
       "hero-badge-text": "Web3 स्टेबलकॉइन भुगतान",
       "hero-h1": "मुद्रा बदले बिना<br><span>दुनिया में कहीं भी</span><br>भुगतान करें।",
       "hero-p": "USDT · USDC वास्तविक समय विनिमय दर के अनुसार 21 स्थानीय मुद्राओं को स्वतः रूपांतरित करता है।<br>बिना अलग विनिमय प्रक्रिया, बिना झंझट — अभी शुरू करें।",
+    "hero-free-note": "साधारण सदस्य के रूप में पंजीकरण करें और प्रतिदिन 5 बार QR+OTP (दूरस्थ प्रमाणीकरण) निःशुल्क उपयोग करें।",
       "btn-download": "Google Play से डाउनलोड करें",
       "btn-contact": "📩 हमसे संपर्क करें",
       "stat-currencies": "मुद्राएँ",
@@ -4566,6 +4583,7 @@ var TEXTS = {
       "hero-badge-text": "Web3-платежи в стейблкоинах",
       "hero-h1": "Без обмена валюты<br><span>оплачивайте покупки где угодно</span><br>по всему миру",
       "hero-p": "USDT · USDC автоматически конвертируются в 21 местную валюту по курсу в реальном времени.<br>Без лишних шагов и без обмена валюты — начните прямо сейчас.",
+    "hero-free-note": "Просто зарегистрируйтесь как обычный участник и получайте 5 бесплатных использований QR+OTP (удалённая аутентификация) в день.",
       "btn-download": "Скачать в Google Play",
       "btn-contact": "📩 Связаться с нами",
       "stat-currencies": "Валюты",
