@@ -839,7 +839,7 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
 <section class="cafe-scene-section">
   <div class="cafe-scene-inner">
     <img src="QR%20Code%20payment.png" alt="StablePay cafe payment" class="cafe-scene-img" loading="lazy" />
-    <p class="cafe-scene-caption" id="cafe-caption">카페에서도, 해외에서도 — 환전 없이 바로 결제</p>
+    <p class="cafe-scene-caption" id="cafe-caption" data-i18n="cafe-caption">카페에서도, 해외에서도 — 환전 없이 바로 결제</p>
   </div>
 </section>
 
@@ -5489,5 +5489,24 @@ function setLang(lang) {
 var currentLang = 'ko';
 setLang('ko');
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const syncCafe=()=>{
+   const lang=document.documentElement.lang||localStorage.getItem('lang')||'ko';
+   const map={
+     ko:'카페에서도, 해외에서도 — 환전 없이 바로 결제',
+     en:'At a cafe or abroad — pay instantly without exchange',
+     ja:'カフェでも海外でも — 両替なしですぐ決済',
+     zh:'无论在咖啡馆还是海外——无需换汇即可支付'
+   };
+   const el=document.getElementById('cafe-caption');
+   if(el && map[lang]) el.textContent=map[lang];
+ };
+ new MutationObserver(syncCafe).observe(document.documentElement,{attributes:true});
+ syncCafe();
+});
+</script>
+
 </body>
 </html>
