@@ -747,6 +747,62 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
   .cafe-scene-caption{font-size:15px;}
 }
 
+/* ── FX Invisible Section ── */
+.fx-invisible-section{
+  padding:96px 6%;
+  background:linear-gradient(160deg,#0a1628 0%,#0d2b55 100%);
+  position:relative;
+  overflow:hidden;
+}
+.fx-invisible-section::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 40%,rgba(0,198,255,0.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.fx-invisible-inner{
+  max-width:900px;margin:0 auto;
+}
+.fx-invisible-sub{
+  max-width:680px;margin:0 auto 32px;text-align:center;
+  font-size:16px;color:rgba(255,255,255,0.7);line-height:1.75;
+}
+.fx-invisible-core{
+  font-size:15px;line-height:1.8;color:rgba(255,255,255,0.85);
+  background:rgba(255,255,255,0.05);border-left:3px solid var(--gold);
+  padding:18px 22px;border-radius:0 12px 12px 0;margin-bottom:36px;
+  max-width:680px;margin-left:auto;margin-right:auto;
+}
+html[dir="rtl"] .fx-invisible-core{border-left:none;border-right:3px solid var(--gold);border-radius:12px 0 0 12px;}
+.fx-invisible-figure{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:24px;padding:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  text-align:center;
+}
+.fx-invisible-figure a{display:block;}
+.fx-invisible-figure img{
+  width:100%;max-width:640px;border-radius:16px;
+  display:block;margin:0 auto;
+}
+.fx-invisible-figure figcaption{
+  font-size:12px;color:rgba(255,255,255,0.4);
+  padding:14px 8px 4px;text-align:center;line-height:1.6;
+}
+.fx-invisible-mobile-note{
+  display:none;font-size:12px;color:rgba(255,255,255,0.35);
+  text-align:center;margin-top:10px;
+}
+@media(max-width:768px){
+  .fx-invisible-section{padding:72px 5%;}
+  .fx-invisible-core{font-size:14px;padding:14px 16px;margin-bottom:26px;border-radius:14px;}
+  .fx-invisible-figure{padding:8px;border-radius:20px;}
+  .fx-invisible-figure img{border-radius:14px;}
+  .fx-invisible-figure figcaption{font-size:11px;padding:10px 4px 2px;}
+  .fx-invisible-mobile-note{display:block;}
+}
+/* ── end FX Invisible Section ── */
+
 .modal-contact-email{
   margin:8px 0 18px;
   padding:10px 12px;
@@ -887,6 +943,35 @@ footer{background:#07192e;padding:60px 5% 32px;border-top:1px solid rgba(93,197,
       </figcaption>
     </figure>
     <div class="qr-paradigm-mobile-note" id="qr-paradigm-mobile-note">모바일에서는 이미지를 누르면 크게 볼 수 있습니다.</div>
+  </div>
+</section>
+
+<!-- FX Invisible Section -->
+<section class="fx-invisible-section" id="fx-invisible">
+  <div class="fx-invisible-inner">
+    <div class="section-label" id="fx-invisible-label">스테이블코인 결제 구조</div>
+    <div class="section-title" id="fx-invisible-title">원화 스테이블코인 시대: 환율 계산은 사라지는 것이 아니라 '보이지 않게' 됩니다</div>
+    <p class="section-sub fx-invisible-sub" id="fx-invisible-sub">
+      스테이블코인은 환율(FX)을 제거하는 기술이 아닙니다. 정산 자산을 디지털화하는 기술입니다. 하나의 결제 안에 상품 가격·구매자 자산·판매자 정산 자산이라는 3개 기준이 일치하지 않는 한, 실시간 가치 환산은 반드시 발생합니다.
+    </p>
+    <p class="fx-invisible-core" id="fx-invisible-core">
+      스테이블코인의 미래는 환율을 없애는 것이 아닙니다. 사용자가 환율을 의식하지 않고 결제하게 만드는 것 — 환산과 정산을 보이지 않게 만드는 기술이 바로 StablePay입니다.
+    </p>
+    <figure class="fx-invisible-figure">
+      <a id="fx-invisible-link" href="원화_스테이블코인_시대_결제_구조.jpg" target="_blank" rel="noopener">
+        <img
+          id="fx-invisible-img"
+          src="원화_스테이블코인_시대_결제_구조.jpg"
+          alt="원화 스테이블코인 시대 결제 구조 인포그래픽"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+      <figcaption id="fx-invisible-caption">
+        가치 환산은 사라지지 않는 필수 레이어입니다. StablePay는 이 환산을 사용자에게 보이지 않게 처리하는 결제 구조를 특허로 보호받고 있습니다.
+      </figcaption>
+    </figure>
+    <div class="fx-invisible-mobile-note" id="fx-invisible-mobile-note">모바일에서는 이미지를 누르면 크게 볼 수 있습니다.</div>
   </div>
 </section>
 
@@ -2999,6 +3084,13 @@ var TEXTS = {
     "hero-h1": "환전 없이<br><span>전 세계 어디서나</span><br>결제하세요",
     "hero-p": "USDT · USDC로 21개국 현지 화폐를 실시간 환율로 자동 환산.<br>수수료 없이, 환전 없이, 지금 바로 시작하세요.",
     "hero-free-note": "일반회원 가입만으로 하루 5회의 QR+OTP(원거리 인증)를 무료로 이용할 수 있습니다.",
+    "fx-invisible-label": "스테이블코인 결제 구조",
+    "fx-invisible-title": "원화 스테이블코인 시대: 환율 계산은 사라지는 것이 아니라 '보이지 않게' 됩니다",
+    "fx-invisible-sub": "스테이블코인은 환율(FX)을 제거하는 기술이 아닙니다. 정산 자산을 디지털화하는 기술입니다. 상품 가격·구매자 자산·판매자 정산 자산이라는 3개 기준이 일치하지 않는 한, 실시간 가치 환산은 반드시 발생합니다.",
+    "fx-invisible-core": "스테이블코인의 미래는 환율을 없애는 것이 아닙니다. 사용자가 환율을 의식하지 않고 결제하게 만드는 것 — 환산과 정산을 보이지 않게 만드는 기술이 바로 StablePay입니다.",
+    "fx-invisible-caption": "가치 환산은 사라지지 않는 필수 레이어입니다. StablePay는 이 환산을 사용자에게 보이지 않게 처리하는 결제 구조를 특허로 보호받고 있습니다.",
+    "fx-invisible-mobile": "모바일에서는 이미지를 누르면 크게 볼 수 있습니다.",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조.jpg",
     "btn-download": "Google Play 다운로드", "btn-contact": "📩 문의하기",
     "stat-currencies": "지원 화폐", "stat-languages": "지원 언어",
     "stat-countries": "출시 국가", "stat-patents": "등록 특허",
@@ -3074,6 +3166,13 @@ var TEXTS = {
     "hero-h1": "両替不要。<br><span>世界中どこでも</span><br>決済できます。",
     "hero-p": "USDT・USDCで21か国の現地通貨をリアルタイムレートで自動換算。<br>手数料なし、両替なし、今すぐ始めましょう。",
     "hero-free-note": "一般会員登録だけで、1日5回のQR+OTP（遠距離認証）を無料でご利用いただけます。",
+    "fx-invisible-label": "ステーブルコイン決済構造",
+    "fx-invisible-title": "ウォンステーブルコイン時代：為替計算は消えるのではなく「見えなくなる」のです",
+    "fx-invisible-sub": "ステーブルコインはFXを除去する技術ではありません。決済資産をデジタル化する技術です。商品価格・購入者資産・販売者決済資産の3基準が一致しない限り、リアルタイムの価値換算は必ず発生します。",
+    "fx-invisible-core": "ステーブルコインの未来は為替をなくすことではありません。ユーザーが為替を意識せずに決済できるようにすること — 換算と決済を見えなくする技術がStablePayです。",
+    "fx-invisible-caption": "価値換算は欠かせない必須レイヤーです。StablePayはこの換算をユーザーに見えない形で処理する決済構造を特許で保護しています。",
+    "fx-invisible-mobile": "画像をタップすると拡大表示できます。",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
     "btn-download": "Google Playでダウンロード", "btn-contact": "📩 お問い合わせ",
     "stat-currencies": "対応通貨", "stat-languages": "対応言語",
     "stat-countries": "提供国", "stat-patents": "登録特許",
@@ -3157,6 +3256,13 @@ var TEXTS = {
     "hero-h1": "无需换汇<br><span>在全球任何地方</span><br>都能支付",
     "hero-p": "使用 USDT · USDC 按实时汇率自动换算 21 种本地货币。<br>无手续费、无需换汇，立即开始。",
     "hero-free-note": "仅需注册普通会员，即可每天免费使用 5 次 QR+OTP（远程认证）。",
+    "fx-invisible-label": "稳定币支付结构",
+    "fx-invisible-title": "韩元稳定币时代：汇率计算不会消失，而是变得'不可见'",
+    "fx-invisible-sub": "稳定币不是消除外汇（FX）的技术，而是将结算资产数字化的技术。只要商品价格、买方资产和卖方结算资产三个基准不一致，实时价值换算就必然发生。",
+    "fx-invisible-core": "稳定币的未来不是消除汇率，而是让用户在不意识到汇率的情况下完成支付——让换算与结算变得不可见，这正是StablePay的核心技术。",
+    "fx-invisible-caption": "价值换算是不可或缺的必要层。StablePay通过专利保护这一让用户无感换算的支付结构。",
+    "fx-invisible-mobile": "点击图片可放大查看。",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
     "btn-download": "Google Play 下载",
     "btn-contact": "📩 联系我们",
     "stat-currencies": "支持货币",
@@ -3284,6 +3390,13 @@ var TEXTS = {
     "hero-h1": "無需換匯<br><span>在全球任何地方</span><br>都能付款",
     "hero-p": "使用 USDT · USDC 按即時匯率自動換算 21 種本地貨幣。<br>無手續費、無需換匯，立即開始。",
     "hero-free-note": "只需註冊普通會員，每天即可免費使用 5 次 QR+OTP（遠端認證）。",
+    "fx-invisible-label": "穩定幣支付結構",
+    "fx-invisible-title": "韓元穩定幣時代：匯率計算不會消失，而是變得「看不見」",
+    "fx-invisible-sub": "穩定幣不是消除外匯（FX）的技術，而是將結算資產數位化的技術。只要商品價格、買方資產和賣方結算資產三個基準不一致，即時價值換算就必然發生。",
+    "fx-invisible-core": "穩定幣的未來不是消除匯率，而是讓用戶在不察覺匯率的情況下完成支付——讓換算與結算變得不可見，這正是StablePay的核心技術。",
+    "fx-invisible-caption": "價值換算是不可或缺的必要層。StablePay通過專利保護這種讓用戶無感換算的支付結構。",
+    "fx-invisible-mobile": "點擊圖片可放大查看。",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
     "btn-download": "Google Play 下載",
     "btn-contact": "📩 聯絡我們",
     "stat-currencies": "支援貨幣",
@@ -3411,6 +3524,13 @@ var TEXTS = {
     "hero-h1": "Không cần đổi tiền<br><span>Thanh toán ở mọi nơi</span><br>trên thế giới",
     "hero-p": "USDT · USDC tự động quy đổi 21 loại tiền tệ địa phương theo tỷ giá thời gian thực.<br>Không phí, không cần đổi tiền, bắt đầu ngay.",
     "hero-free-note": "Chỉ cần đăng ký thành viên thường, bạn có thể dùng miễn phí 5 lần QR+OTP (xác thực từ xa) mỗi ngày.",
+    "fx-invisible-label": "Cấu trúc thanh toán Stablecoin",
+    "fx-invisible-title": "Kỷ nguyên Stablecoin KRW: Tính toán tỷ giá không biến mất mà trở nên 'vô hình'",
+    "fx-invisible-sub": "Stablecoin không phải là công nghệ loại bỏ FX, mà là công nghệ số hóa tài sản thanh toán. Miễn là giá sản phẩm, tài sản người mua và tài sản thanh toán người bán không khớp nhau, việc quy đổi giá trị thời gian thực vẫn phải xảy ra.",
+    "fx-invisible-core": "Tương lai của stablecoin không phải là xóa bỏ tỷ giá, mà là giúp người dùng thanh toán mà không cần ý thức về tỷ giá — công nghệ làm cho việc quy đổi và thanh toán trở nên vô hình chính là StablePay.",
+    "fx-invisible-caption": "Quy đổi giá trị là lớp thiết yếu không thể bỏ qua. StablePay bảo hộ bằng sáng chế cấu trúc thanh toán xử lý quy đổi một cách vô hình với người dùng.",
+    "fx-invisible-mobile": "Nhấn vào ảnh để xem phóng to.",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
     "btn-download": "Tải trên Google Play",
     "btn-contact": "📩 Liên hệ",
     "stat-currencies": "Tiền tệ",
@@ -3538,6 +3658,13 @@ var TEXTS = {
     "hero-h1": "ไม่ต้องแลกเงิน<br><span>จ่ายได้ทุกที่</span><br>ทั่วโลก",
     "hero-p": "USDT · USDC แปลง 21 สกุลเงินท้องถิ่นอัตโนมัติตามอัตราแลกเปลี่ยนแบบเรียลไทม์<br>ไม่มีค่าธรรมเนียม ไม่ต้องแลกเงิน เริ่มได้ทันที",
     "hero-free-note": "เพียงสมัครสมาชิกทั่วไป ใช้ QR+OTP (ยืนยันระยะไกล) ฟรี 5 ครั้งต่อวัน",
+    "fx-invisible-label": "โครงสร้างการชำระเงิน Stablecoin",
+    "fx-invisible-title": "ยุค KRW Stablecoin: การคำนวณอัตราแลกเปลี่ยนไม่ได้หายไป แต่ 'มองไม่เห็น'",
+    "fx-invisible-sub": "Stablecoin ไม่ใช่เทคโนโลยีที่ขจัด FX แต่เป็นเทคโนโลยีที่ทำให้สินทรัพย์การชำระเงินเป็นดิจิทัล ตราบใดที่ราคาสินค้า สินทรัพย์ผู้ซื้อ และสินทรัพย์การชำระเงินของผู้ขายไม่ตรงกัน การแปลงมูลค่าแบบเรียลไทม์จะต้องเกิดขึ้น",
+    "fx-invisible-core": "อนาคตของ Stablecoin ไม่ใช่การลบอัตราแลกเปลี่ยน แต่คือการทำให้ผู้ใช้ชำระเงินโดยไม่รู้ตัวถึงอัตราแลกเปลี่ยน — เทคโนโลยีที่ทำให้การแปลงและชำระเงินมองไม่เห็นคือ StablePay",
+    "fx-invisible-caption": "การแปลงมูลค่าเป็นเลเยอร์จำเป็นที่ขาดไม่ได้ StablePay ปกป้องโครงสร้างการชำระเงินที่ซ่อนการแปลงจากผู้ใช้ด้วยสิทธิบัตร",
+    "fx-invisible-mobile": "แตะที่ภาพเพื่อขยาย",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
     "btn-download": "ดาวน์โหลด Google Play",
     "btn-contact": "📩 ติดต่อเรา",
     "stat-currencies": "สกุลเงิน",
@@ -3665,6 +3792,13 @@ var TEXTS = {
     "hero-h1": "Magbayad kahit saan<br><span>sa buong mundo</span><br>nang walang palitan ng pera",
     "hero-p": "Awtomatikong kino-convert ang 21 lokal na currency sa USDT · USDC gamit ang real-time exchange rate.<br>Walang bayad, walang money exchange, magsimula agad.",
     "hero-free-note": "Sa simpleng pag-sign up bilang regular na miyembro, makakatanggap ka ng 5 libreng QR+OTP (remote authentication) bawat araw.",
+    "fx-invisible-label": "Istraktura ng Stablecoin na Pagbabayad",
+    "fx-invisible-title": "Panahon ng KRW Stablecoin: Hindi nawawala ang pagkalkula ng palitan — nagiging 'hindi nakikita'",
+    "fx-invisible-sub": "Ang Stablecoin ay hindi teknolohiya para alisin ang FX, kundi para i-digitize ang settlement asset. Habang hindi nagtatugma ang presyo ng produkto, asset ng bumibili, at settlement asset ng nagbebenta, ang real-time na value conversion ay hindi maiiwasan.",
+    "fx-invisible-core": "Ang kinabukasan ng stablecoin ay hindi pag-aalis ng palitan, kundi ang pagbabayad nang hindi namamalayan ang palitan — ang teknolohiyang nagtatago ng conversion at settlement ay StablePay.",
+    "fx-invisible-caption": "Ang value conversion ay isang mahalagang layer na hindi maaaring laktawan. Pinoprotektahan ng StablePay ang istrakturang ito sa pamamagitan ng patent.",
+    "fx-invisible-mobile": "I-tap ang larawan para palakihin.",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
     "btn-download": "I-download sa Google Play",
     "btn-contact": "📩 Makipag-ugnayan",
     "stat-currencies": "Suportadong Currency",
@@ -3789,6 +3923,13 @@ var TEXTS = {
     "hero-h1": "من دون تحويل عملات.<br><span>ادفع في أي مكان</span><br>في العالم.",
     "hero-p": "يحوِّل USDT وUSDC قيمة 21 عملة محلية تلقائيًا وفق أسعار الصرف الفورية.<br>من دون رسوم تحويل ومن دون الحاجة إلى تبديل العملات، ابدأ الآن.",
     "hero-free-note": "بمجرد التسجيل كعضو عادي، يمكنك استخدام QR+OTP (التحقق عن بُعد) 5 مرات يوميًا مجانًا.",
+    "fx-invisible-label": "هيكل مدفوعات العملات المستقرة",
+    "fx-invisible-title": "عصر العملة المستقرة بالوون: حساب سعر الصرف لا يختفي بل يصبح 'غير مرئي'",
+    "fx-invisible-sub": "العملة المستقرة ليست تقنية لإزالة صرف العملات الأجنبية، بل هي تقنية لرقمنة أصول التسوية. ما لم تتطابق معايير سعر المنتج وأصول المشتري وأصول تسوية البائع، فإن تحويل القيمة في الوقت الفعلي سيحدث دائمًا.",
+    "fx-invisible-core": "مستقبل العملات المستقرة ليس إزالة سعر الصرف، بل جعل المستخدمين يدفعون دون الوعي به — التقنية التي تجعل التحويل والتسوية غير مرئيَين هي StablePay.",
+    "fx-invisible-caption": "تحويل القيمة طبقة ضرورية لا يمكن تجاوزها. تحمي StablePay هيكل الدفع هذا بموجب براءة اختراع.",
+    "fx-invisible-mobile": "انقر على الصورة لتكبيرها.",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
     "btn-download": "تنزيل Google Play", "btn-contact": "📩 تواصل معنا",
     "stat-currencies": "العملات", "stat-languages": "اللغات",
     "stat-countries": "الدول", "stat-patents": "البراءات",
@@ -3868,6 +4009,13 @@ var TEXTS = {
     "hero-h1": "No currency exchange.<br><span>Pay anywhere</span><br>in the world.",
     "hero-p": "USDT and USDC are automatically converted from 21 local currencies using real-time exchange rates.<br>No exchange hassles. Get started right away.",
     "hero-free-note": "Simply sign up as a regular member to get 5 free QR+OTP (remote authentication) uses per day.",
+    "fx-invisible-label": "Stablecoin Payment Structure",
+    "fx-invisible-title": "The Era of KRW Stablecoins: Exchange-rate calculation does not disappear — it becomes 'invisible'",
+    "fx-invisible-sub": "A stablecoin is not a technology that removes FX. It is a technology that digitizes the settlement asset. As long as the item price, buyer asset, and seller settlement asset do not align, real-time value conversion must occur.",
+    "fx-invisible-core": "The future of stablecoins isn't about removing FX. It's about making people pay without ever being conscious of it — the technology that makes conversion and settlement invisible is StablePay.",
+    "fx-invisible-caption": "Value conversion is an essential layer that cannot be skipped. StablePay protects this invisible conversion payment structure through its registered patents.",
+    "fx-invisible-mobile": "Tap the image to enlarge.",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
     "btn-download": "Google Play Download", "btn-contact": "📩 Contact Us",
     "stat-currencies": "Currencies", "stat-languages": "Languages",
     "stat-countries": "Countries", "stat-patents": "Patents",
@@ -3951,6 +4099,13 @@ var TEXTS = {
     "hero-h1": "Kein Währungswechsel.<br><span>Weltweit bezahlen</span><br>– ganz einfach.",
     "hero-p": "USDT · USDC werden automatisch zum Echtzeitkurs in 21 Landeswährungen umgerechnet.<br>Keine Umtauschgebühren, keine Wartezeit bei der Bank, keine komplizierte Einrichtung.",
     "hero-free-note": "Einfach als normales Mitglied registrieren und täglich 5 kostenlose QR+OTP (Fernverifizierung) nutzen.",
+    "fx-invisible-label": "Stablecoin-Zahlungsstruktur",
+    "fx-invisible-title": "Das Zeitalter des KRW-Stablecoins: Die Wechselkursberechnung verschwindet nicht — sie wird 'unsichtbar'",
+    "fx-invisible-sub": "Ein Stablecoin ist keine Technologie zur Eliminierung von FX, sondern zur Digitalisierung von Abrechnungsaktiva. Solange Produktpreis, Käufer-Asset und Verkäufer-Abrechnungs-Asset nicht übereinstimmen, findet eine Echtzeit-Wertkonvertierung statt.",
+    "fx-invisible-core": "Die Zukunft von Stablecoins liegt nicht darin, FX zu eliminieren, sondern darin, dass Nutzer zahlen, ohne sich des Wechselkurses bewusst zu sein — die Technologie, die Konvertierung und Abrechnung unsichtbar macht, ist StablePay.",
+    "fx-invisible-caption": "Wertkonvertierung ist eine unverzichtbare Schicht. StablePay schützt diese unsichtbare Konvertierungsstruktur durch Patente.",
+    "fx-invisible-mobile": "Tippen Sie auf das Bild zum Vergrößern.",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
     "btn-download": "Google Play Download",
     "btn-contact": "📩 Kontakt",
     "stat-currencies": "Währungen",
@@ -4079,6 +4234,13 @@ var TEXTS = {
     "hero-h1": "Pas de change.<br><span>Payer partout</span><br>dans le monde.",
     "hero-p": "USDT · USDC permettent de convertir automatiquement 21 devises locales au taux de change en temps réel.<br>Sans conversion manuelle, sans complication, commencez immédiatement.",
     "hero-free-note": "En vous inscrivant simplement comme membre ordinaire, vous bénéficiez de 5 utilisations gratuites de QR+OTP (authentification à distance) par jour.",
+    "fx-invisible-label": "Structure de paiement en Stablecoin",
+    "fx-invisible-title": "L'ère du Stablecoin en KRW : le calcul du taux de change ne disparaît pas, il devient « invisible »",
+    "fx-invisible-sub": "Un stablecoin n'est pas une technologie pour éliminer le change (FX), mais pour numériser l'actif de règlement. Tant que le prix du produit, l'actif de l'acheteur et l'actif de règlement du vendeur ne correspondent pas, une conversion de valeur en temps réel doit obligatoirement se produire.",
+    "fx-invisible-core": "L'avenir des stablecoins n'est pas d'éliminer le taux de change, mais de permettre aux utilisateurs de payer sans en être conscients — la technologie qui rend la conversion et le règlement invisibles, c'est StablePay.",
+    "fx-invisible-caption": "La conversion de valeur est une couche essentielle incontournable. StablePay protège par brevet cette structure de paiement à conversion invisible.",
+    "fx-invisible-mobile": "Appuyez sur l'image pour l'agrandir.",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
     "btn-download": "Télécharger sur Google Play",
     "btn-contact": "📩 Contactez-nous",
     "stat-currencies": "Devises",
@@ -4206,6 +4368,13 @@ var TEXTS = {
       "hero-h1": "Sem câmbio.<br><span>Pague em qualquer lugar</span><br>do mundo.",
       "hero-p": "USDT · USDC converte automaticamente 21 moedas locais pela taxa em tempo real.<br>Sem taxas, sem câmbio, comece agora mesmo.",
     "hero-free-note": "Ao se cadastrar como membro regular, você pode usar QR+OTP (autenticação remota) gratuitamente 5 vezes por dia.",
+    "fx-invisible-label": "Estrutura de Pagamento em Stablecoin",
+    "fx-invisible-title": "A era do KRW Stablecoin: o cálculo da taxa de câmbio não desaparece — torna-se 'invisível'",
+    "fx-invisible-sub": "Um stablecoin não é uma tecnologia para eliminar o câmbio (FX), mas para digitalizar o ativo de liquidação. Enquanto o preço do produto, o ativo do comprador e o ativo de liquidação do vendedor não coincidirem, a conversão de valor em tempo real ocorrerá inevitavelmente.",
+    "fx-invisible-core": "O futuro dos stablecoins não é eliminar o câmbio, mas fazer com que os usuários paguem sem perceber a taxa — a tecnologia que torna a conversão e liquidação invisíveis é o StablePay.",
+    "fx-invisible-caption": "A conversão de valor é uma camada essencial indispensável. O StablePay protege essa estrutura de pagamento com conversão invisível por meio de patentes.",
+    "fx-invisible-mobile": "Toque na imagem para ampliar.",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
       "btn-download": "Baixar no Google Play",
       "btn-contact": "📩 Fale conosco",
       "stat-currencies": "Moedas",
@@ -4333,6 +4502,13 @@ var TEXTS = {
       "hero-h1": "Sin cambiar divisas.<br><span>Paga en cualquier parte</span><br>del mundo.",
       "hero-p": "USDT · USDC convierte automáticamente 21 monedas locales según el tipo de cambio en tiempo real.<br>Sin comisiones y sin cambiar divisas, empieza ahora.",
     "hero-free-note": "Con solo registrarte como miembro regular, puedes usar QR+OTP (autenticación remota) 5 veces al día de forma gratuita.",
+    "fx-invisible-label": "Estructura de pago en Stablecoin",
+    "fx-invisible-title": "La era del KRW Stablecoin: el cálculo del tipo de cambio no desaparece, se vuelve 'invisible'",
+    "fx-invisible-sub": "Un stablecoin no es una tecnología para eliminar el FX, sino para digitalizar el activo de liquidación. Mientras el precio del producto, el activo del comprador y el activo de liquidación del vendedor no coincidan, la conversión de valor en tiempo real inevitablemente ocurrirá.",
+    "fx-invisible-core": "El futuro de los stablecoins no es eliminar el tipo de cambio, sino hacer que los usuarios paguen sin ser conscientes de él — la tecnología que hace invisible la conversión y liquidación es StablePay.",
+    "fx-invisible-caption": "La conversión de valor es una capa esencial que no se puede omitir. StablePay protege esta estructura de pago con conversión invisible mediante patentes.",
+    "fx-invisible-mobile": "Toca la imagen para ampliarla.",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
       "btn-download": "Descargar en Google Play",
       "btn-contact": "📩 Contáctanos",
       "stat-currencies": "Monedas",
@@ -4460,6 +4636,13 @@ var TEXTS = {
       "hero-h1": "मुद्रा बदले बिना<br><span>दुनिया में कहीं भी</span><br>भुगतान करें।",
       "hero-p": "USDT · USDC वास्तविक समय विनिमय दर के अनुसार 21 स्थानीय मुद्राओं को स्वतः रूपांतरित करता है।<br>बिना अलग विनिमय प्रक्रिया, बिना झंझट — अभी शुरू करें।",
     "hero-free-note": "साधारण सदस्य के रूप में पंजीकरण करें और प्रतिदिन 5 बार QR+OTP (दूरस्थ प्रमाणीकरण) निःशुल्क उपयोग करें।",
+    "fx-invisible-label": "स्टेबलकॉइन भुगतान संरचना",
+    "fx-invisible-title": "KRW स्टेबलकॉइन का युग: विनिमय दर गणना गायब नहीं होती — यह 'अदृश्य' हो जाती है",
+    "fx-invisible-sub": "स्टेबलकॉइन FX को समाप्त करने की तकनीक नहीं है, बल्कि सेटलमेंट एसेट को डिजिटल करने की तकनीक है। जब तक उत्पाद मूल्य, खरीदार संपत्ति और विक्रेता सेटलमेंट संपत्ति एक समान नहीं होती, रीयल-टाइम मूल्य रूपांतरण अवश्य होगा।",
+    "fx-invisible-core": "स्टेबलकॉइन का भविष्य विनिमय दर को हटाना नहीं है, बल्कि उपयोगकर्ताओं को बिना विनिमय दर के प्रति जागरूक हुए भुगतान करने देना है — रूपांतरण और सेटलमेंट को अदृश्य बनाने की तकनीक StablePay है।",
+    "fx-invisible-caption": "मूल्य रूपांतरण एक अनिवार्य परत है जिसे छोड़ा नहीं जा सकता। StablePay इस अदृश्य रूपांतरण भुगतान संरचना को पेटेंट द्वारा सुरक्षित करता है।",
+    "fx-invisible-mobile": "छवि को बड़ा देखने के लिए टैप करें।",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
       "btn-download": "Google Play से डाउनलोड करें",
       "btn-contact": "📩 हमसे संपर्क करें",
       "stat-currencies": "मुद्राएँ",
@@ -4587,6 +4770,13 @@ var TEXTS = {
       "hero-h1": "Без обмена валюты<br><span>оплачивайте покупки где угодно</span><br>по всему миру",
       "hero-p": "USDT · USDC автоматически конвертируются в 21 местную валюту по курсу в реальном времени.<br>Без лишних шагов и без обмена валюты — начните прямо сейчас.",
     "hero-free-note": "Просто зарегистрируйтесь как обычный участник и получайте 5 бесплатных использований QR+OTP (удалённая аутентификация) в день.",
+    "fx-invisible-label": "Структура платежей на стейблкоинах",
+    "fx-invisible-title": "Эпоха KRW-стейблкоина: расчёт обменного курса не исчезает — он становится «невидимым»",
+    "fx-invisible-sub": "Стейблкоин — это не технология устранения валютного обмена (FX), а технология оцифровки расчётного актива. Пока цена товара, актив покупателя и расчётный актив продавца не совпадают, конвертация стоимости в реальном времени неизбежна.",
+    "fx-invisible-core": "Будущее стейблкоинов — не в устранении обменного курса, а в том, чтобы пользователи платили, не задумываясь о нём — технология, делающая конвертацию и расчёт невидимыми, — это StablePay.",
+    "fx-invisible-caption": "Конвертация стоимости — это обязательный слой, который нельзя пропустить. StablePay защищает эту структуру платежей с невидимой конвертацией патентами.",
+    "fx-invisible-mobile": "Нажмите на изображение для увеличения.",
+    "fx-invisible-img": "원화_스테이블코인_시대_결제_구조_Eng_2.jpg",
       "btn-download": "Скачать в Google Play",
       "btn-contact": "📩 Связаться с нами",
       "stat-currencies": "Валюты",
@@ -5504,6 +5694,20 @@ function updateQrParadigm(lang) {
   if (link) link.href = copy.img;
 }
 
+function updateFxInvisible(lang) {
+  var t = TEXTS[lang] || TEXTS['en'];
+  var ids = ['fx-invisible-label','fx-invisible-title','fx-invisible-sub','fx-invisible-core','fx-invisible-caption','fx-invisible-mobile'];
+  ids.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el && t[id]) el.innerHTML = t[id];
+  });
+  var img = document.getElementById('fx-invisible-img');
+  var link = document.getElementById('fx-invisible-link');
+  var src = (t && t['fx-invisible-img']) ? t['fx-invisible-img'] : '원화_스테이블코인_시대_결제_구조_Eng_2.jpg';
+  if (img) img.src = src;
+  if (link) link.href = src;
+}
+
 function setLang(lang) {
   currentLang = lang;
   document.documentElement.setAttribute('lang', lang);
@@ -5537,6 +5741,7 @@ function setLang(lang) {
   updatePaymentArchitecture(lang);
   updateMisdepositComparison(lang);
   updateCafeCaption(lang);
+  updateFxInvisible(lang);
 
   // 모달 바디 전환
   var bodies = [
