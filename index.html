@@ -566,17 +566,75 @@ html[dir="rtl"] .misdeposit-comparison-section{
 .currency-tag:hover{background:var(--sky);color:white;border-color:var(--sky);}
 .currency-tag strong{display:block;font-size:15px;}
 
-.patent-section{background:linear-gradient(135deg,#0D2B55 0%,#1A3F73 100%);padding:96px 5%;}
-.patent-section .section-title{color:white;}
-.patents{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:40px;}
-.patent-card{
-  background:rgba(255,255,255,0.07);border:1px solid rgba(93,197,232,0.2);
-  border-radius:20px;padding:28px;transition:background 0.2s;
+.patent-section{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 10% 0%,rgba(0,188,212,0.14),transparent 34%),
+    radial-gradient(circle at 92% 100%,rgba(93,197,232,0.10),transparent 32%),
+    linear-gradient(135deg,#0D2B55 0%,#102F5D 52%,#1A3F73 100%);
+  padding:104px 5%;
 }
-.patent-card:hover{background:rgba(255,255,255,0.12);}
-.patent-num{font-size:12px;font-weight:600;color:var(--cyan);margin-bottom:12px;letter-spacing:0.04em;}
-.patent-card h3{font-size:16px;font-weight:600;color:white;margin-bottom:10px;line-height:1.5;}
-.patent-card p{font-size:13px;color:rgba(255,255,255,0.5);}
+.patent-section::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);
+  background-size:42px 42px;mask-image:linear-gradient(to bottom,rgba(0,0,0,0.65),transparent 82%);
+}
+.patent-inner{position:relative;z-index:1;max-width:1280px;margin:0 auto;}
+.patent-section .section-label{color:var(--cyan);letter-spacing:0.12em;}
+.patent-section .section-title{color:white;max-width:760px;}
+.patents{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:44px;align-items:stretch;}
+.patent-card{
+  position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:370px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.085),rgba(255,255,255,0.055));
+  border:1px solid rgba(93,197,232,0.22);border-radius:22px;padding:30px 28px 28px;
+  box-shadow:0 18px 42px rgba(4,18,43,0.18);
+  transition:transform 0.25s ease,background 0.25s ease,border-color 0.25s ease,box-shadow 0.25s ease;
+}
+.patent-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--cyan),var(--sky),rgba(93,197,232,0.15));
+}
+.patent-card.is-pending::before{background:linear-gradient(90deg,var(--gold),#FFD178,rgba(245,166,35,0.12));}
+.patent-card:hover{
+  transform:translateY(-5px);background:linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.075));
+  border-color:rgba(93,197,232,0.42);box-shadow:0 24px 54px rgba(4,18,43,0.28);
+}
+.patent-num{
+  display:inline-flex;align-items:center;align-self:flex-start;gap:8px;
+  font-family:"Sora",sans-serif;font-size:12px;font-weight:700;color:var(--cyan);
+  letter-spacing:0.10em;margin-bottom:16px;text-transform:uppercase;
+}
+.patent-num::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 5px rgba(0,188,212,0.10);}
+.patent-card.is-pending .patent-num{color:var(--gold);}
+.patent-card.is-pending .patent-num::before{box-shadow:0 0 0 5px rgba(245,166,35,0.11);}
+.patent-card h3{
+  font-size:20px;font-weight:700;color:white;margin:0;line-height:1.58;letter-spacing:-0.02em;
+  text-wrap:balance;word-break:keep-all;
+}
+.patent-divider{height:1px;background:linear-gradient(90deg,rgba(93,197,232,0.32),rgba(255,255,255,0.03));margin:22px 0 18px;}
+.patent-details{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px;}
+.patent-detail{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,0.72);font-size:13.5px;line-height:1.7;}
+.patent-dot{width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:rgba(93,197,232,0.82);margin-top:8px;}
+.patent-detail.registered{color:#D8FFF4;}
+.patent-detail.registered .patent-dot{background:var(--accent);box-shadow:0 0 0 4px rgba(0,200,150,0.10);}
+.patent-detail.pct{color:#D9F6FF;}
+.patent-detail.pct .patent-dot{background:var(--cyan);}
+.patent-detail.pending{color:#FFE2A8;font-weight:600;}
+.patent-detail.pending .patent-dot{background:var(--gold);box-shadow:0 0 0 4px rgba(245,166,35,0.10);}
+.patent-detail-text{min-width:0;word-break:keep-all;}
+.patent-detail-text bdi{font-family:"Sora","Noto Sans KR",sans-serif;font-size:0.96em;unicode-bidi:isolate;}
+@media(max-width:1080px){
+  .patents{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .patent-card:last-child{grid-column:1/-1;min-height:auto;}
+}
+@media(max-width:680px){
+  .patent-section{padding:76px 5%;}
+  .patents{grid-template-columns:1fr;gap:16px;margin-top:30px;}
+  .patent-card,.patent-card:last-child{grid-column:auto;min-height:auto;padding:24px 20px 22px;border-radius:18px;}
+  .patent-card h3{font-size:18px;line-height:1.55;}
+  .patent-detail{font-size:13px;gap:9px;}
+  .patent-divider{margin:18px 0 16px;}
+}
 
 .countries{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
 .country-tag{
@@ -1201,18 +1259,38 @@ html[dir="rtl"] .fx-invisible-core{
 </div>
 </section>
 <section class="patent-section" id="patent">
-<div class="section-label" id="lbl-patent">등록 특허</div>
+<div class="patent-inner">
+<div class="section-label" id="lbl-patent">PATENTS &amp; INTELLECTUAL PROPERTY</div>
 <div class="section-title" id="ttl-patent">기술력으로 증명합니다</div>
 <div class="patents">
 <div class="patent-card">
-<div class="patent-num" id="pat1-num">출원번호 10-2025-0079540 · 특허 승인 2025.11.14</div>
-<h3 id="pat1-h">QR 기반 스테이블코인 결제 시스템 및 방법</h3>
-<p id="pat1-p"><span class="highlight">출원일 2025년 6월 17일</span> · PCT 국제 출원 완료</p>
+<div class="patent-num" id="pat1-label">PATENT 01</div>
+<h3 id="pat1-h">특허 1: 「QR 코드 기반 스테이블코인 결제 시스템 및 방법」</h3>
+<div class="patent-divider"></div>
+<ul class="patent-details">
+<li class="patent-detail"><span class="patent-dot"></span><span class="patent-detail-text" id="pat1-filed">출원일자: 2025.06.17 (출원번호: 10-2025-0079540)</span></li>
+<li class="patent-detail registered"><span class="patent-dot"></span><span class="patent-detail-text" id="pat1-registered">등록일자: 2025.11.14 (등록번호: 10-2888374-0000)</span></li>
+<li class="patent-detail pct"><span class="patent-dot"></span><span class="patent-detail-text" id="pat1-pct">PCT 국제출원번호: PCT/KR2025/021643</span></li>
+</ul>
 </div>
 <div class="patent-card">
-<div class="patent-num" id="pat2-num">출원번호 10-2025-0215773 · 출원 2025.12.31</div>
-<h3 id="pat2-h">Web3 기반 다중 지갑을 이용한 결제 정산 및 세무 자동화 시스템</h3>
-<p id="pat2-p">블록체인 기반 결제 정산 및 세무 자동화 핵심 기술</p>
+<div class="patent-num" id="pat2-label">PATENT 02</div>
+<h3 id="pat2-h">특허 2: 「웹3 기반 다중 지갑을 이용한 결제 정산 및 세무 자동화 시스템」</h3>
+<div class="patent-divider"></div>
+<ul class="patent-details">
+<li class="patent-detail"><span class="patent-dot"></span><span class="patent-detail-text" id="pat2-filed">출원일자: 2025.12.31 (출원번호: 10-2025-0215773)</span></li>
+<li class="patent-detail registered"><span class="patent-dot"></span><span class="patent-detail-text" id="pat2-registered">등록일자: 2026.08.03 (등록번호: 10-3001369-0000)</span></li>
+</ul>
+</div>
+<div class="patent-card is-pending">
+<div class="patent-num" id="pat3-label">PATENT 03</div>
+<h3 id="pat3-h">특허 3: 「KYC 연동 지갑 권한 위임 및 AI 에이전트를 이용한 블록체인 결제 및 정산 시스템」</h3>
+<div class="patent-divider"></div>
+<ul class="patent-details">
+<li class="patent-detail"><span class="patent-dot"></span><span class="patent-detail-text" id="pat3-filed">출원일자: 2026.03.31 (출원번호: 10-2026-0058433)</span></li>
+<li class="patent-detail pending"><span class="patent-dot"></span><span class="patent-detail-text" id="pat3-status">현재 우선심사 진행 중 (Patent Pending)</span></li>
+</ul>
+</div>
 </div>
 </div>
 </section>
@@ -3149,13 +3227,21 @@ var TEXTS = {
     "lbl-currencies": "지원 현지 화폐", "ttl-currencies": "21개국 화폐 지원",
     "sub-currencies": "실시간 환율 API로 당일 기준 환율을 적용하여 스테이블코인으로 자동 환산합니다.",
     "lbl-countries": "출시 국가", "ttl-countries": "Google Play 출시 8개국",
-    "lbl-patent": "등록 특허", "ttl-patent": "기술력으로 증명합니다",
-    "pat1-num": "출원번호 10-2025-0079540 · 특허 승인 2025.11.14",
-    "pat1-h": "QR 기반 스테이블코인 결제 시스템 및 방법",
-    "pat1-p": "<span class='highlight'>출원일 2025년 6월 17일</span> · PCT 국제 출원 완료",
-    "pat2-num": "출원번호 10-2025-0215773 · 출원 2025.12.31",
-    "pat2-h": "Web3 기반 다중 지갑을 이용한 결제 정산 및 세무 자동화 시스템",
-    "pat2-p": "블록체인 기반 결제 정산 및 세무 자동화 핵심 기술",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "기술력으로 증명합니다",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "특허 1: 「QR 코드 기반 스테이블코인 결제 시스템 및 방법」",
+    "pat1-filed": "출원일자: 2025.06.17 (출원번호: 10-2025-0079540)",
+    "pat1-registered": "등록일자: 2025.11.14 (등록번호: 10-2888374-0000)",
+    "pat1-pct": "PCT 국제출원번호: PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "특허 2: 「웹3 기반 다중 지갑을 이용한 결제 정산 및 세무 자동화 시스템」",
+    "pat2-filed": "출원일자: 2025.12.31 (출원번호: 10-2025-0215773)",
+    "pat2-registered": "등록일자: 2026.08.03 (등록번호: 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "특허 3: 「KYC 연동 지갑 권한 위임 및 AI 에이전트를 이용한 블록체인 결제 및 정산 시스템」",
+    "pat3-filed": "출원일자: 2026.03.31 (출원번호: 10-2026-0058433)",
+    "pat3-status": "현재 우선심사 진행 중 (Patent Pending)",
     "footer-desc": "환전 없이 전 세계 어디서나.<br>Web3 스테이블코인 결제의 새로운 기준.",
     "footer-h-service": "서비스", "footer-h-info": "정보",
     "footer-h-download": "다운로드", "footer-h-contact": "문의",
@@ -3234,13 +3320,21 @@ var TEXTS = {
     "lbl-currencies": "対応現地通貨", "ttl-currencies": "21通貨に対応",
     "sub-currencies": "リアルタイム為替APIで当日レートを適用し、ステーブルコインに自動換算します。",
     "lbl-countries": "提供地域", "ttl-countries": "Google Playで8か国にて提供中",
-    "lbl-patent": "登録特許", "ttl-patent": "技術で証明された信頼性",
-    "pat1-num": "出願番号 10-2025-0079540 · 特許承認 2025.11.14",
-    "pat1-h": "QRベース・ステーブルコイン決済システムおよび方法",
-    "pat1-p": "<span class=\"highlight\">出願日 2025年6月17日</span> · PCT国際出願完了",
-    "pat2-num": "出願番号 10-2025-0215773 · 出願 2025.12.31",
-    "pat2-h": "Web3マルチウォレットを活用した決済精算・税務自動化システム",
-    "pat2-p": "ブロックチェーンベースの決済精算および税務自動化の中核技術",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "技術力で証明します",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "特許1：「QRベースのステーブルコイン決済システムおよび方法」",
+    "pat1-filed": "出願日：2025.06.17（出願番号：10-2025-0079540）",
+    "pat1-registered": "登録日：2025.11.14（登録番号：10-2888374-0000）",
+    "pat1-pct": "PCT国際出願番号：PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "特許2：「Web3ベースのマルチウォレットを利用した決済精算および税務自動化システム」",
+    "pat2-filed": "出願日：2025.12.31（出願番号：10-2025-0215773）",
+    "pat2-registered": "登録日：2026.08.03（登録番号：10-3001369-0000）",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "特許3：「KYC連携ウォレット権限委任およびAIエージェントを利用したブロックチェーン決済・精算システム」",
+    "pat3-filed": "出願日：2026.03.31（出願番号：10-2026-0058433）",
+    "pat3-status": "現在、優先審査進行中（Patent Pending）",
     "footer-desc": "両替不要で、世界中どこでも。<br>Web3ステーブルコイン決済の新しいスタンダード。",
     "footer-h-service": "サービス", "footer-h-info": "情報",
     "footer-h-download": "ダウンロード", "footer-h-contact": "お問い合わせ",
@@ -3356,14 +3450,21 @@ var TEXTS = {
     "sub-currencies": "通过汇率 API 提供的每日实时汇率，自动换算为稳定币。",
     "lbl-countries": "可用国家",
     "ttl-countries": "已在 Google Play 上线 8 个国家",
-    "lbl-patent": "注册专利",
-    "ttl-patent": "技术实力已获验证",
-    "pat1-num": "申请号 10-2025-0079540 · 韩国专利已于 2025.11.14 获批",
-    "pat1-h": "基于 QR 的稳定币支付系统及方法",
-    "pat1-p": "<span class='highlight'>申请日：2025年6月17日</span> · 已完成 PCT 国际申请",
-    "pat2-num": "申请号 10-2025-0215773 · 申请日 2025.12.31",
-    "pat2-h": "基于 Web3 多钱包的支付结算与税务自动化系统",
-    "pat2-p": "区块链支付结算与税务自动化的核心技术",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "以技术实力证明",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "专利1：《基于QR的稳定币支付系统及方法》",
+    "pat1-filed": "申请日期：2025.06.17（申请号：10-2025-0079540）",
+    "pat1-registered": "注册日期：2025.11.14（注册号：10-2888374-0000）",
+    "pat1-pct": "PCT国际申请号：PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "专利2：《基于Web3多钱包的支付结算与税务自动化系统》",
+    "pat2-filed": "申请日期：2025.12.31（申请号：10-2025-0215773）",
+    "pat2-registered": "注册日期：2026.08.03（注册号：10-3001369-0000）",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "专利3：《利用KYC联动钱包权限委托与AI智能体的区块链支付及结算系统》",
+    "pat3-filed": "申请日期：2026.03.31（申请号：10-2026-0058433）",
+    "pat3-status": "目前正在优先审查中（Patent Pending）",
     "footer-desc": "无需换汇即可支付。<br>Web3 稳定币支付的新标准。",
     "footer-h-service": "服务",
     "footer-h-info": "信息",
@@ -3489,14 +3590,21 @@ var TEXTS = {
     "sub-currencies": "透過匯率 API 提供的每日即時匯率，自動換算為穩定幣金額。",
     "lbl-countries": "可用國家",
     "ttl-countries": "已於 Google Play 上線 8 個國家",
-    "lbl-patent": "註冊專利",
-    "ttl-patent": "技術實力已獲驗證",
-    "pat1-num": "申請號 10-2025-0079540 · 韓國專利已於 2025.11.14 獲批",
-    "pat1-h": "基於 QR Code 的穩定幣付款系統及方法",
-    "pat1-p": "<span class='highlight'>申請日：2025年6月17日</span> · 已完成 PCT 國際申請",
-    "pat2-num": "申請號 10-2025-0215773 · 申請日 2025.12.31",
-    "pat2-h": "基於 Web3 多錢包的付款結算與稅務自動化系統",
-    "pat2-p": "區塊鏈付款結算與稅務自動化的核心技術",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "以技術實力證明",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "專利1：《基於QR的穩定幣付款系統及方法》",
+    "pat1-filed": "申請日期：2025.06.17（申請號：10-2025-0079540）",
+    "pat1-registered": "註冊日期：2025.11.14（註冊號：10-2888374-0000）",
+    "pat1-pct": "PCT國際申請號：PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "專利2：《基於Web3多錢包的付款結算與稅務自動化系統》",
+    "pat2-filed": "申請日期：2025.12.31（申請號：10-2025-0215773）",
+    "pat2-registered": "註冊日期：2026.08.03（註冊號：10-3001369-0000）",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "專利3：《利用KYC聯動錢包權限委託與AI代理的區塊鏈付款及結算系統》",
+    "pat3-filed": "申請日期：2026.03.31（申請號：10-2026-0058433）",
+    "pat3-status": "目前正在優先審查中（Patent Pending）",
     "footer-desc": "無需換匯即可付款。<br>Web3 穩定幣付款的新標準。",
     "footer-h-service": "服務",
     "footer-h-info": "資訊",
@@ -3622,14 +3730,21 @@ var TEXTS = {
     "sub-currencies": "Tự động quy đổi sang stablecoin bằng tỷ giá trong ngày từ API tỷ giá thời gian thực.",
     "lbl-countries": "Quốc gia phát hành",
     "ttl-countries": "Có mặt trên Google Play tại 8 quốc gia",
-    "lbl-patent": "Bằng sáng chế đã đăng ký",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
     "ttl-patent": "Được chứng minh bằng công nghệ",
-    "pat1-num": "Số đơn 10-2025-0079540 · Bằng sáng chế Hàn Quốc được phê duyệt ngày 14.11.2025",
-    "pat1-h": "Hệ thống và phương pháp thanh toán stablecoin dựa trên QR",
-    "pat1-p": "<span class='highlight'>Ngày nộp đơn: 17 tháng 6 năm 2025</span> · Đã hoàn tất nộp đơn PCT quốc tế",
-    "pat2-num": "Số đơn 10-2025-0215773 · Nộp ngày 31.12.2025",
-    "pat2-h": "Hệ thống tự động đối soát thanh toán và thuế bằng Multi-Wallet trên Web3",
-    "pat2-p": "Công nghệ cốt lõi cho đối soát thanh toán và tự động hóa thuế trên blockchain",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "Bằng sáng chế 1: “Hệ thống và phương pháp thanh toán stablecoin dựa trên QR”",
+    "pat1-filed": "Ngày nộp đơn: 2025.06.17 (Số đơn: 10-2025-0079540)",
+    "pat1-registered": "Ngày đăng ký: 2025.11.14 (Số đăng ký: 10-2888374-0000)",
+    "pat1-pct": "Số đơn PCT quốc tế: PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "Bằng sáng chế 2: “Hệ thống tự động đối soát thanh toán và thuế dựa trên Web3 sử dụng nhiều ví”",
+    "pat2-filed": "Ngày nộp đơn: 2025.12.31 (Số đơn: 10-2025-0215773)",
+    "pat2-registered": "Ngày đăng ký: 2026.08.03 (Số đăng ký: 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "Bằng sáng chế 3: “Hệ thống thanh toán và đối soát blockchain sử dụng ủy quyền ví liên kết KYC và AI Agent”",
+    "pat3-filed": "Ngày nộp đơn: 2026.03.31 (Số đơn: 10-2026-0058433)",
+    "pat3-status": "Hiện đang được thẩm định ưu tiên (Patent Pending)",
     "footer-desc": "Thanh toán ở mọi nơi mà không cần đổi tiền<br>Chuẩn mực mới cho thanh toán stablecoin trên Web3",
     "footer-h-service": "Dịch vụ",
     "footer-h-info": "Thông tin",
@@ -3755,14 +3870,21 @@ var TEXTS = {
     "sub-currencies": "แปลงเป็นสเตเบิลคอยน์อัตโนมัติด้วยอัตราแลกเปลี่ยนรายวันจาก API อัตราแลกเปลี่ยน",
     "lbl-countries": "ประเทศที่ให้บริการ",
     "ttl-countries": "พร้อมให้บริการใน Google Play 8 ประเทศ",
-    "lbl-patent": "สิทธิบัตรที่จดทะเบียน",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
     "ttl-patent": "พิสูจน์ด้วยเทคโนโลยี",
-    "pat1-num": "เลขที่คำขอ 10-2025-0079540 · สิทธิบัตรเกาหลีอนุมัติ 14 พ.ย. 2025",
-    "pat1-h": "ระบบและวิธีการชำระเงินด้วยสเตเบิลคอยน์ผ่าน QR",
-    "pat1-p": "<span class='highlight'>ยื่นคำขอ: 17 มิถุนายน 2025</span> · ดำเนินการยื่น PCT ระหว่างประเทศแล้ว",
-    "pat2-num": "เลขที่คำขอ 10-2025-0215773 · ยื่นเมื่อ 31 ธ.ค. 2025",
-    "pat2-h": "ระบบชำระบัญชีการชำระเงินและระบบภาษีอัตโนมัติด้วย Multi-Wallet บน Web3",
-    "pat2-p": "เทคโนโลยีหลักสำหรับการชำระบัญชีและการทำภาษีอัตโนมัติบนบล็อกเชน",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "สิทธิบัตร 1: “ระบบและวิธีการชำระเงินด้วยสเตเบิลคอยน์ผ่าน QR”",
+    "pat1-filed": "วันที่ยื่นคำขอ: 2025.06.17 (เลขที่คำขอ: 10-2025-0079540)",
+    "pat1-registered": "วันที่จดทะเบียน: 2025.11.14 (เลขทะเบียน: 10-2888374-0000)",
+    "pat1-pct": "เลขที่คำขอ PCT ระหว่างประเทศ: PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "สิทธิบัตร 2: “ระบบ Web3 สำหรับการชำระบัญชีการชำระเงินและระบบภาษีอัตโนมัติด้วยหลายกระเป๋าเงิน”",
+    "pat2-filed": "วันที่ยื่นคำขอ: 2025.12.31 (เลขที่คำขอ: 10-2025-0215773)",
+    "pat2-registered": "วันที่จดทะเบียน: 2026.08.03 (เลขทะเบียน: 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "สิทธิบัตร 3: “ระบบการชำระเงินและการชำระบัญชีบนบล็อกเชนโดยใช้การมอบสิทธิ์กระเป๋าเงินที่เชื่อมโยง KYC และ AI Agent”",
+    "pat3-filed": "วันที่ยื่นคำขอ: 2026.03.31 (เลขที่คำขอ: 10-2026-0058433)",
+    "pat3-status": "อยู่ระหว่างการตรวจสอบแบบเร่งรัด (Patent Pending)",
     "footer-desc": "จ่ายได้ทุกที่โดยไม่ต้องแลกเงิน<br>มาตรฐานใหม่ของการชำระเงินด้วยสเตเบิลคอยน์บน Web3",
     "footer-h-service": "บริการ",
     "footer-h-info": "ข้อมูล",
@@ -3888,14 +4010,21 @@ var TEXTS = {
     "sub-currencies": "Gamit ang real-time exchange rate API, awtomatikong kino-convert sa stablecoin batay sa kasalukuyang rate ng araw.",
     "lbl-countries": "Mga Bansang Nailunsad",
     "ttl-countries": "Nasa Google Play na sa 8 bansa",
-    "lbl-patent": "Rehistradong Patent",
-    "ttl-patent": "Pinatutunayan ng teknolohiya",
-    "pat1-num": "Application No. 10-2025-0079540 · Patent Approved 2025.11.14",
-    "pat1-h": "QR-Based Stablecoin Payment System and Method",
-    "pat1-p": "<span class='highlight'>Petsa ng paghahain: Hunyo 17, 2025</span> · Naipasa na rin ang internasyonal na PCT filing",
-    "pat2-num": "Application No. 10-2025-0215773 · Filed 2025.12.31",
-    "pat2-h": "Web3 Multi-Wallet Payment Settlement and Tax Automation System",
-    "pat2-p": "Pangunahing teknolohiya para sa blockchain-based payment settlement at tax automation",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "Pinatutunayan ng Teknolohiya",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "Patent 1: “QR-Based Stablecoin Payment System and Method”",
+    "pat1-filed": "Petsa ng paghahain: 2025.06.17 (Application No.: 10-2025-0079540)",
+    "pat1-registered": "Petsa ng rehistro: 2025.11.14 (Registration No.: 10-2888374-0000)",
+    "pat1-pct": "PCT International Application No.: PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "Patent 2: “Web3-Based Payment Settlement and Tax Automation System Using Multiple Wallets”",
+    "pat2-filed": "Petsa ng paghahain: 2025.12.31 (Application No.: 10-2025-0215773)",
+    "pat2-registered": "Petsa ng rehistro: 2026.08.03 (Registration No.: 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "Patent 3: “Blockchain Payment and Settlement System Using KYC-Linked Wallet Authorization Delegation and AI Agents”",
+    "pat3-filed": "Petsa ng paghahain: 2026.03.31 (Application No.: 10-2026-0058433)",
+    "pat3-status": "Kasalukuyang nasa priority examination (Patent Pending)",
     "footer-desc": "Magbayad kahit saan sa mundo nang walang palitan ng pera.<br>Bagong pamantayan sa Web3 stablecoin payment.",
     "footer-h-service": "Serbisyo",
     "footer-h-info": "Impormasyon",
@@ -3985,13 +4114,21 @@ var TEXTS = {
     "lbl-currencies": "العملات المدعومة", "ttl-currencies": "دعم 21 عملة",
     "sub-currencies": "تحويل تلقائي إلى عملة مستقرة باستخدام أسعار الصرف المباشرة اليومية عبر واجهة API لأسعار الصرف.",
     "lbl-countries": "الدول المتاحة", "ttl-countries": "متوفر في 8 دول على Google Play",
-    "lbl-patent": "البراءات المسجلة", "ttl-patent": "مثبت بالتقنية",
-    "pat1-num": "رقم الطلب 10-2025-0079540 · تمت الموافقة على البراءة الكورية 2025.11.14",
-    "pat1-h": "نظام وطريقة دفع بالعملات المستقرة قائم على QR",
-    "pat1-p": "<span class='highlight'>تاريخ الإيداع: 17 يونيو 2025</span> · تم استكمال طلب الإيداع الدولي PCT",
-    "pat2-num": "رقم الطلب 10-2025-0215773 · تم الإيداع 2025.12.31",
-    "pat2-h": "نظام Web3 متعدد المحافظ لتسوية المدفوعات والأتمتة الضريبية",
-    "pat2-p": "تقنية أساسية لتسوية المدفوعات والأتمتة الضريبية المعتمدة على البلوكتشين",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "مثبت بالتقنية",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "البراءة 1: «نظام وطريقة دفع بالعملات المستقرة قائم على QR»",
+    "pat1-filed": "تاريخ الإيداع: 2025.06.17 (رقم الطلب: 10-2025-0079540)",
+    "pat1-registered": "تاريخ التسجيل: 2025.11.14 (رقم التسجيل: 10-2888374-0000)",
+    "pat1-pct": "رقم طلب PCT الدولي: PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "البراءة 2: «نظام Web3 لتسوية المدفوعات والأتمتة الضريبية باستخدام محافظ متعددة»",
+    "pat2-filed": "تاريخ الإيداع: 2025.12.31 (رقم الطلب: 10-2025-0215773)",
+    "pat2-registered": "تاريخ التسجيل: 2026.08.03 (رقم التسجيل: 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "البراءة 3: «نظام دفع وتسوية بالبلوكتشين باستخدام تفويض صلاحيات المحافظ المرتبطة بـ KYC ووكلاء الذكاء الاصطناعي»",
+    "pat3-filed": "تاريخ الإيداع: 2026.03.31 (رقم الطلب: 10-2026-0058433)",
+    "pat3-status": "قيد الفحص ذي الأولوية حاليًا (Patent Pending)",
     "footer-desc": "ادفع في أي مكان من دون تحويل عملات.<br>المعيار الجديد لمدفوعات Web3 بالعملات المستقرة.",
     "footer-h-service": "الخدمات", "footer-h-info": "معلومات",
     "footer-h-download": "تحميل", "footer-h-contact": "تواصل",
@@ -4070,13 +4207,21 @@ var TEXTS = {
     "lbl-currencies": "SUPPORTED CURRENCIES", "ttl-currencies": "21 Currencies Supported",
     "sub-currencies": "Amounts are automatically converted into stablecoins using daily live exchange rates from our exchange-rate API.",
     "lbl-countries": "AVAILABLE COUNTRIES", "ttl-countries": "Available in 8 Countries on Google Play",
-    "lbl-patent": "REGISTERED PATENTS", "ttl-patent": "Proven by Technology",
-    "pat1-num": "Application No. 10-2025-0079540 · Korean patent approved on 2025.11.14",
-    "pat1-h": "QR-Based Stablecoin Payment System and Method",
-    "pat1-p": "<span class='highlight'>Filed: June 17, 2025</span> · PCT International Filing Complete",
-    "pat2-num": "Application No. 10-2025-0215773 · Filed 2025.12.31",
-    "pat2-h": "Web3 Multi-Wallet Payment Settlement and Tax Automation System",
-    "pat2-p": "Core technology for blockchain-based payment settlement and tax automation",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "Proven by Technology",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "Patent 1: “QR-Based Stablecoin Payment System and Method”",
+    "pat1-filed": "Filing Date: 2025.06.17 (Application No.: 10-2025-0079540)",
+    "pat1-registered": "Registration Date: 2025.11.14 (Registration No.: 10-2888374-0000)",
+    "pat1-pct": "PCT International Application No.: PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "Patent 2: “Web3-Based Payment Settlement and Tax Automation System Using Multiple Wallets”",
+    "pat2-filed": "Filing Date: 2025.12.31 (Application No.: 10-2025-0215773)",
+    "pat2-registered": "Registration Date: 2026.08.03 (Registration No.: 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "Patent 3: “Blockchain Payment and Settlement System Using KYC-Linked Wallet Authorization Delegation and AI Agents”",
+    "pat3-filed": "Filing Date: 2026.03.31 (Application No.: 10-2026-0058433)",
+    "pat3-status": "Currently under expedited examination (Patent Pending)",
     "footer-desc": "Pay anywhere without currency exchange.<br>A new standard for Web3 stablecoin payments.",
     "footer-h-service": "Services", "footer-h-info": "Info",
     "footer-h-download": "Download", "footer-h-contact": "Contact",
@@ -4192,14 +4337,21 @@ var TEXTS = {
     "sub-currencies": "Automatische Umrechnung in Stablecoin anhand täglicher Live-Wechselkurse aus unserer Wechselkurs-API.",
     "lbl-countries": "VERFÜGBARE LÄNDER",
     "ttl-countries": "Bei Google Play in 8 Ländern verfügbar",
-    "lbl-patent": "PATENTIERTE TECHNOLOGIE",
-    "ttl-patent": "Technologisch belegt",
-    "pat1-num": "Anmeldenummer 10-2025-0079540 · Koreanisches Patent genehmigt am 14.11.2025",
-    "pat1-h": "QR-basiertes Stablecoin-Zahlungssystem und Verfahren",
-    "pat1-p": "<span class='highlight'>Eingereicht: 17. Juni 2025</span> · PCT-Internationale Anmeldenummer: PCT/KR2025/021643",
-    "pat2-num": "Anmeldenummer 10-2025-0215773 · Eingereicht am 31.12.2025",
-    "pat2-h": "Web3-System für Zahlungsabwicklung und Steuerautomatisierung mit Multi-Wallet",
-    "pat2-p": "Kerntechnologie für blockchainbasierte Zahlungsabwicklung und Steuerautomatisierung",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "Durch Technologie belegt",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "Patent 1: „QR-basiertes Stablecoin-Zahlungssystem und Verfahren“",
+    "pat1-filed": "Anmeldedatum: 2025.06.17 (Anmeldenummer: 10-2025-0079540)",
+    "pat1-registered": "Registrierungsdatum: 2025.11.14 (Registrierungsnummer: 10-2888374-0000)",
+    "pat1-pct": "PCT-Internationale Anmeldenummer: PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "Patent 2: „Web3-basiertes System zur Zahlungsabwicklung und Steuerautomatisierung mit mehreren Wallets“",
+    "pat2-filed": "Anmeldedatum: 2025.12.31 (Anmeldenummer: 10-2025-0215773)",
+    "pat2-registered": "Registrierungsdatum: 2026.08.03 (Registrierungsnummer: 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "Patent 3: „Blockchain-Zahlungs- und Abwicklungssystem mit KYC-gekoppelter Wallet-Berechtigungsdelegation und KI-Agenten“",
+    "pat3-filed": "Anmeldedatum: 2026.03.31 (Anmeldenummer: 10-2026-0058433)",
+    "pat3-status": "Derzeit im beschleunigten Prüfungsverfahren (Patent Pending)",
     "footer-desc": "Überall bezahlen ohne Währungswechsel.<br>Der neue Standard für Web3-Stablecoin-Zahlungen.",
     "footer-h-service": "Services",
     "footer-h-info": "Info",
@@ -4326,14 +4478,21 @@ var TEXTS = {
     "sub-currencies": "Conversion automatique en stablecoin avec le taux du jour via une API de change en temps réel.",
     "lbl-countries": "PAYS LANCÉS",
     "ttl-countries": "8 pays disponibles sur Google Play",
-    "lbl-patent": "BREVETS ENREGISTRÉS",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
     "ttl-patent": "Une technologie qui fait ses preuves",
-    "pat1-num": "Demande n° 10-2025-0079540 · Brevet approuvé le 14.11.2025",
-    "pat1-h": "Système et méthode de paiement en stablecoin basé sur QR",
-    "pat1-p": "<span class='highlight'>Date de dépôt : 17 juin 2025</span> · Dépôt international PCT terminé",
-    "pat2-num": "Demande n° 10-2025-0215773 · Déposée le 31.12.2025",
-    "pat2-h": "Système Web3 de règlement des paiements et d'automatisation fiscale utilisant plusieurs portefeuilles",
-    "pat2-p": "Technologie clé d'automatisation du règlement et de la fiscalité basée sur la blockchain",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "Brevet 1 : « Système et méthode de paiement en stablecoin basé sur QR »",
+    "pat1-filed": "Date de dépôt : 2025.06.17 (Demande n° : 10-2025-0079540)",
+    "pat1-registered": "Date d’enregistrement : 2025.11.14 (N° d’enregistrement : 10-2888374-0000)",
+    "pat1-pct": "N° de demande internationale PCT : PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "Brevet 2 : « Système Web3 de règlement des paiements et d’automatisation fiscale utilisant plusieurs portefeuilles »",
+    "pat2-filed": "Date de dépôt : 2025.12.31 (Demande n° : 10-2025-0215773)",
+    "pat2-registered": "Date d’enregistrement : 2026.08.03 (N° d’enregistrement : 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "Brevet 3 : « Système de paiement et de règlement blockchain utilisant la délégation d’autorisation de portefeuille liée au KYC et des agents IA »",
+    "pat3-filed": "Date de dépôt : 2026.03.31 (Demande n° : 10-2026-0058433)",
+    "pat3-status": "Actuellement en examen prioritaire (Patent Pending)",
     "footer-desc": "Partout dans le monde sans change.<br>Le nouveau standard du paiement Web3 en stablecoin.",
     "footer-h-service": "Service",
     "footer-h-info": "Informations",
@@ -4459,14 +4618,21 @@ var TEXTS = {
       "sub-currencies": "Conversão automática para stablecoin com a taxa do dia usando API de câmbio em tempo real.",
       "lbl-countries": "PAÍSES LANÇADOS",
       "ttl-countries": "8 países disponíveis no Google Play",
-      "lbl-patent": "PATENTES REGISTRADAS",
-      "ttl-patent": "Tecnologia comprovada",
-      "pat1-num": "Pedido nº 10-2025-0079540 · Patente aprovada em 14/11/2025",
-      "pat1-h": "Sistema e método de pagamento com stablecoin baseado em QR",
-      "pat1-p": "<span class='highlight'>Data de depósito: 17 de junho de 2025</span> · Depósito internacional PCT concluído",
-      "pat2-num": "Pedido nº 10-2025-0215773 · Protocolado em 31/12/2025",
-      "pat2-h": "Sistema Web3 de liquidação de pagamentos e automação fiscal usando múltiplas carteiras",
-      "pat2-p": "Tecnologia principal de automação de liquidação e tributos baseada em blockchain",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "Comprovado pela tecnologia",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "Patente 1: “Sistema e método de pagamento com stablecoin baseado em QR”",
+    "pat1-filed": "Data do depósito: 2025.06.17 (Pedido nº: 10-2025-0079540)",
+    "pat1-registered": "Data do registro: 2025.11.14 (Registro nº: 10-2888374-0000)",
+    "pat1-pct": "Pedido internacional PCT nº: PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "Patente 2: “Sistema Web3 de liquidação de pagamentos e automação fiscal usando múltiplas carteiras”",
+    "pat2-filed": "Data do depósito: 2025.12.31 (Pedido nº: 10-2025-0215773)",
+    "pat2-registered": "Data do registro: 2026.08.03 (Registro nº: 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "Patente 3: “Sistema de pagamento e liquidação em blockchain usando delegação de autorização de carteira vinculada a KYC e agentes de IA”",
+    "pat3-filed": "Data do depósito: 2026.03.31 (Pedido nº: 10-2026-0058433)",
+    "pat3-status": "Atualmente em exame prioritário (Patent Pending)",
       "footer-desc": "Pague no mundo todo sem câmbio.<br>O novo padrão de pagamentos Web3 com stablecoin.",
       "footer-h-service": "Serviço",
       "footer-h-info": "Informações",
@@ -4592,14 +4758,21 @@ var TEXTS = {
       "sub-currencies": "Conversión automática a stablecoin con el tipo de cambio del día mediante API en tiempo real.",
       "lbl-countries": "PAÍSES LANZADOS",
       "ttl-countries": "Disponible en Google Play en 8 países",
-      "lbl-patent": "PATENTES REGISTRADAS",
-      "ttl-patent": "Tecnología demostrada",
-      "pat1-num": "N.º de solicitud 10-2025-0079540 · Patente aprobada el 14/11/2025",
-      "pat1-h": "Sistema y método de pago con stablecoins basado en QR",
-      "pat1-p": "<span class='highlight'>Fecha de solicitud: 17 de junio de 2025</span> · Solicitud internacional PCT completada",
-      "pat2-num": "N.º de solicitud 10-2025-0215773 · Presentada el 31/12/2025",
-      "pat2-h": "Sistema Web3 de liquidación de pagos y automatización fiscal con múltiples carteras",
-      "pat2-p": "Tecnología principal de liquidación y automatización tributaria basada en blockchain",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "Tecnología demostrada",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "Patente 1: «Sistema y método de pago con stablecoins basado en QR»",
+    "pat1-filed": "Fecha de solicitud: 2025.06.17 (N.º de solicitud: 10-2025-0079540)",
+    "pat1-registered": "Fecha de registro: 2025.11.14 (N.º de registro: 10-2888374-0000)",
+    "pat1-pct": "N.º de solicitud internacional PCT: PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "Patente 2: «Sistema Web3 de liquidación de pagos y automatización fiscal con múltiples carteras»",
+    "pat2-filed": "Fecha de solicitud: 2025.12.31 (N.º de solicitud: 10-2025-0215773)",
+    "pat2-registered": "Fecha de registro: 2026.08.03 (N.º de registro: 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "Patente 3: «Sistema de pago y liquidación blockchain con delegación de autorización de cartera vinculada a KYC y agentes de IA»",
+    "pat3-filed": "Fecha de solicitud: 2026.03.31 (N.º de solicitud: 10-2026-0058433)",
+    "pat3-status": "Actualmente en examen prioritario (Patent Pending)",
       "footer-desc": "Paga en todo el mundo sin cambiar divisas.<br>El nuevo estándar de pagos Web3 con stablecoins.",
       "footer-h-service": "Servicio",
       "footer-h-info": "Información",
@@ -4725,14 +4898,21 @@ var TEXTS = {
       "sub-currencies": "रियल-टाइम API के आधार पर दिन की दर से स्टेबलकॉइन में स्वतः रूपांतरण।",
       "lbl-countries": "लॉन्च किए गए देश",
       "ttl-countries": "Google Play पर 8 देशों में उपलब्ध",
-      "lbl-patent": "पंजीकृत पेटेंट",
-      "ttl-patent": "सिद्ध तकनीक",
-      "pat1-num": "आवेदन सं. 10-2025-0079540 · 14/11/2025 को पेटेंट अनुमोदित",
-      "pat1-h": "QR आधारित स्टेबलकॉइन भुगतान प्रणाली और विधि",
-      "pat1-p": "<span class='highlight'>आवेदन तिथि: 17 जून 2025</span> · अंतरराष्ट्रीय PCT आवेदन पूरा",
-      "pat2-num": "आवेदन सं. 10-2025-0215773 · 31/12/2025 को दायर",
-      "pat2-h": "मल्टी-वॉलेट आधारित Web3 भुगतान निपटान और कर स्वचालन प्रणाली",
-      "pat2-p": "ब्लॉकचेन आधारित भुगतान निपटान और कर स्वचालन की मुख्य तकनीक",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "तकनीक से प्रमाणित",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "पेटेंट 1: “QR आधारित स्टेबलकॉइन भुगतान प्रणाली और विधि”",
+    "pat1-filed": "आवेदन तिथि: 2025.06.17 (आवेदन सं.: 10-2025-0079540)",
+    "pat1-registered": "पंजीकरण तिथि: 2025.11.14 (पंजीकरण सं.: 10-2888374-0000)",
+    "pat1-pct": "अंतरराष्ट्रीय PCT आवेदन सं.: PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "पेटेंट 2: “मल्टी-वॉलेट का उपयोग करने वाली Web3 भुगतान निपटान और कर स्वचालन प्रणाली”",
+    "pat2-filed": "आवेदन तिथि: 2025.12.31 (आवेदन सं.: 10-2025-0215773)",
+    "pat2-registered": "पंजीकरण तिथि: 2026.08.03 (पंजीकरण सं.: 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "पेटेंट 3: “KYC-लिंक्ड वॉलेट अनुमति प्रत्यायोजन और AI एजेंट का उपयोग करने वाली ब्लॉकचेन भुगतान व निपटान प्रणाली”",
+    "pat3-filed": "आवेदन तिथि: 2026.03.31 (आवेदन सं.: 10-2026-0058433)",
+    "pat3-status": "वर्तमान में प्राथमिकता परीक्षा जारी है (Patent Pending)",
       "footer-desc": "बिना मुद्रा बदले दुनिया भर में भुगतान करें।<br>स्टेबलकॉइन आधारित Web3 भुगतान का नया मानक।",
       "footer-h-service": "सेवा",
       "footer-h-info": "जानकारी",
@@ -4858,14 +5038,21 @@ var TEXTS = {
       "sub-currencies": "StablePay автоматически рассчитывает локальную стоимость по актуальному курсу.",
       "lbl-countries": "Страны запуска",
       "ttl-countries": "Уже запущено в 8 странах",
-      "lbl-patent": "Патенты",
-      "ttl-patent": "Запатентованные технологии StablePay",
-      "pat1-num": "№ заявки 10-2025-0079540 · Патент одобрен 14.11.2025",
-      "pat1-h": "Система и способ оплаты стейблкоинами на основе QR",
-      "pat1-p": "<span class=\"highlight\">Дата подачи: 17 июня 2025</span> · Международная заявка PCT завершена",
-      "pat2-num": "№ заявки 10-2025-0215773 · Подано 31.12.2025",
-      "pat2-h": "Система расчётов и налоговой автоматизации на Web3 с мультикошельками",
-      "pat2-p": "Ключевая технология для блокчейн-расчётов и автоматизации налоговых процессов",
+    "lbl-patent": "PATENTS & INTELLECTUAL PROPERTY",
+    "ttl-patent": "Подтверждено технологией",
+    "pat1-label": "PATENT 01",
+    "pat1-h": "Патент 1: «Система и способ оплаты стейблкоинами на основе QR»",
+    "pat1-filed": "Дата подачи: 2025.06.17 (№ заявки: 10-2025-0079540)",
+    "pat1-registered": "Дата регистрации: 2025.11.14 (№ регистрации: 10-2888374-0000)",
+    "pat1-pct": "№ международной заявки PCT: PCT/KR2025/021643",
+    "pat2-label": "PATENT 02",
+    "pat2-h": "Патент 2: «Система расчётов по платежам и налоговой автоматизации на базе Web3 с использованием нескольких кошельков»",
+    "pat2-filed": "Дата подачи: 2025.12.31 (№ заявки: 10-2025-0215773)",
+    "pat2-registered": "Дата регистрации: 2026.08.03 (№ регистрации: 10-3001369-0000)",
+    "pat3-label": "PATENT 03",
+    "pat3-h": "Патент 3: «Система блокчейн-платежей и расчётов с делегированием полномочий KYC-связанного кошелька и AI-агентами»",
+    "pat3-filed": "Дата подачи: 2026.03.31 (№ заявки: 10-2026-0058433)",
+    "pat3-status": "В настоящее время проходит приоритетную экспертизу (Patent Pending)",
       "footer-desc": "Некастодиальное платежное решение в стейблкоинах для глобальных расчётов без обмена валюты.",
       "footer-h-service": "Сервис",
       "footer-h-info": "Информация",
