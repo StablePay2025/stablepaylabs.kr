@@ -892,6 +892,51 @@ html[dir="rtl"] .fx-invisible-core{
 }
 .modal-contact-email a:hover{text-decoration:underline;}
 
+
+/* Hero title: staged entrance followed by a quiet light sweep. */
+.hero h1 .hero-line{display:block;color:inherit;overflow-wrap:break-word;}
+.hero h1 .hero-emphasis{color:#7de8ff;}
+.hero-motion-ready .hero-line{
+  animation:heroLineReveal 0.78s cubic-bezier(0.22,1,0.36,1) both;
+  animation-delay:var(--hero-line-delay,0s);
+}
+@keyframes heroLineReveal{
+  from{opacity:0;transform:translateY(18px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@supports ((background-clip:text) or (-webkit-background-clip:text)){
+  .hero h1 .hero-emphasis{
+    background-image:linear-gradient(105deg,#7de8ff 0%,#7de8ff 41%,#d8f8ff 48%,#ffffff 50%,#d8f8ff 52%,#7de8ff 59%,#7de8ff 100%);
+    background-size:260% 100%;background-position:100% 0;
+    -webkit-background-clip:text;background-clip:text;
+    color:transparent;-webkit-text-fill-color:transparent;
+    animation:heroTextLight 7s ease-in-out 1.5s infinite;
+  }
+}
+@keyframes heroTextLight{
+  0%,68%{background-position:100% 0;}
+  92%,100%{background-position:0% 0;}
+}
+@media(max-width:768px){
+  .hero{height:auto;min-height:100vh;min-height:100svh;padding-top:92px;}
+  .lang-menu{max-height:calc(100vh - 90px);max-height:calc(100svh - 90px);overflow-y:auto;overscroll-behavior:contain;}
+}
+@media(max-width:480px){
+  .lang-guide{display:none;}
+  .nav-right{gap:6px;min-width:0;}
+  .nav-logo{gap:6px;flex-shrink:0;}
+  .lang-switch-wrap{flex-shrink:0;}
+  .nav-cta{font-size:11px;padding:8px 10px;white-space:normal;min-width:0;text-align:center;line-height:1.3;}
+  .lang-selected{gap:4px;padding:5px 6px;}
+  #lang-code{max-width:58px;overflow:hidden;text-overflow:ellipsis;}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-motion-ready .hero-line{animation:none;opacity:1;transform:none;}
+  .hero h1 .hero-emphasis{
+    animation:none;background-image:none;color:#7de8ff;-webkit-text-fill-color:#7de8ff;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -940,6 +985,7 @@ html[dir="rtl"] .fx-invisible-core{
 <div class="lang-menu-item" id="lang-item-ru" onclick="return selectLang('ru','🇷🇺','Русский', event)">🇷🇺 Русский</div>
 </div>
 </div>
+</div>
 <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.stablepay" id="nav-download" target="_blank">앱 다운로드</a>
 </div>
 </nav>
@@ -976,7 +1022,7 @@ html[dir="rtl"] .fx-invisible-core{
 <div class="feature-card"><div class="feature-icon icon-navy">📷</div><h3 id="f2-h">QR 스캔 + OTP 코드</h3><p id="f2-p">근거리는 QR 코드, 원거리는 7자리 OTP 코드로 어디서나 간편하게 결제 요청과 승인이 가능합니다.</p></div>
 <div class="feature-card"><div class="feature-icon icon-green">🔒</div><h3 id="f3-h">지문 인증 보안</h3><p id="f3-p">앱 진입 및 결제 서명에 생체 인증 적용. 개인 키는 Android Keystore + AES-256으로 기기 내 보안 저장.</p></div>
 <div class="feature-card"><div class="feature-icon icon-gold">🪙</div><h3 id="f4-h">잔돈 자동 적립</h3><p id="f4-p">0.01 USD 미만의 잔돈은 자동으로 포인트로 적립됩니다. 누적 통계가 실시간으로 반영됩니다.</p></div>
-<div class="feature-card"><div class="feature-icon icon-cyan">⛽</div><h3 id="f5-h">가스비 무료 대납</h3><p id="f5-p">Particle Wallet 기반 정회원 대상 가스비 전액 대납.</p></div>
+<div class="feature-card"><div class="feature-icon icon-cyan" aria-hidden="true">📲</div><h3 id="f5-h">MetaMask·OKX 앱 결제</h3><p id="f5-p">판매자의 QR 또는 OTP 결제 요청을 확인하고, 연결된 MetaMask 또는 OKX Wallet 앱에서 승인하여 결제합니다.</p></div>
 <div class="feature-card"><div class="feature-icon icon-navy">🌐</div><h3 id="f6-h">15개국어 완벽 지원</h3><p id="f6-p">한국어, 영어, 아랍어, 중국어 등 15개 언어를 지원하며 화면 크기에 맞는 폰트를 자동 적용합니다.</p></div>
 </div>
 </section>
@@ -1091,7 +1137,7 @@ html[dir="rtl"] .fx-invisible-core{
       <div class="payment-architecture-step-card">
         <div class="payment-architecture-step-num">04</div>
         <h3 id="payment-architecture-step4-title">잔돈 적립 및 정산 연결</h3>
-        <p id="payment-architecture-step4-body">0.01달러 미만의 잔돈은 자동 적립되어 향후 가스비 보전 및 결제 편의성 향상에 활용됩니다.</p>
+        <p id="payment-architecture-step4-body">0.01달러 미만의 잔돈은 자동으로 적립됩니다.</p>
       </div>
     </div>
   </div>
@@ -1165,10 +1211,10 @@ html[dir="rtl"] .fx-invisible-core{
 <div class="section-title" id="ttl-how">간단 4단계로 시작하세요</div>
 <p class="section-sub" id="sub-how">복잡한 설정 없이 소셜 로그인 하나로 바로 결제를 시작할 수 있습니다.</p>
 <div class="steps">
-<div class="step"><div class="step-num">1</div><h3 id="s1-h">소셜 로그인으로 가입</h3><p id="s1-p">구글 · 카카오톡 · 페이스북 계정으로 30초 만에 가입 완료. Particle Wallet이 자동 생성됩니다.</p></div>
-<div class="step"><div class="step-num">2</div><h3 id="s2-h">화폐 &amp; 코인 선택</h3><p id="s2-p">사용할 현지 화폐와 스테이블코인(USDT/USDC)을 선택하고 지갑 주소를 등록합니다.</p></div>
+<div class="step"><div class="step-num">1</div><h3 id="s1-h">소셜 로그인으로 가입</h3><p id="s1-p">구글 · 카카오톡 · 페이스북 계정으로 가입합니다.</p></div>
+<div class="step"><div class="step-num">2</div><h3 id="s2-h">화폐 &amp; 코인 선택</h3><p id="s2-p">사용할 현지 화폐와 스테이블코인(USDT/USDC)을 선택하고, MetaMask 또는 OKX Wallet을 연결합니다.</p></div>
 <div class="step"><div class="step-num">3</div><h3 id="s3-h">QR 또는 OTP 요청</h3><p id="s3-p">판매자가 QR 코드 또는 OTP 코드를 생성하면 구매자가 스캔하여 결제 내용을 확인합니다.</p></div>
-<div class="step"><div class="step-num">4</div><h3 id="s4-h">지문 인증으로 결제 완료</h3><p id="s4-p">지문 인증으로 서명 승인 후 결제가 즉시 완료됩니다. 잔돈은 자동으로 적립됩니다.</p></div>
+<div class="step"><div class="step-num">4</div><h3 id="s4-h">외부 지갑 앱에서 결제 승인</h3><p id="s4-p">결제 내용을 확인하고 MetaMask 또는 OKX Wallet 앱에서 승인하여 결제합니다. 잔돈은 자동으로 적립됩니다.</p></div>
 </div>
 </section>
 <section class="section pricing-section" id="pricing">
@@ -1205,10 +1251,9 @@ html[dir="rtl"] .fx-invisible-core{
 <div class="plan-tag premium" id="plan3-tag">정회원</div>
 <h3 id="plan3-h">프리미엄</h3>
 <div class="plan-price">$45 <span id="plan3-period">/ 6개월</span></div>
-<p class="plan-desc" id="plan3-desc">무제한 사용 + 가스비 전액 대납. 연간 $75 옵션도 제공.</p>
+<p class="plan-desc" id="plan3-desc">QR/OTP 결제 요청 무제한 생성. 연간 $75 옵션도 제공.</p>
 <ul class="plan-features">
 <li id="plan3-f1">QR/OTP 무제한 생성</li>
-<li id="plan3-f2">가스비 무료 대납</li>
 <li id="plan3-f3">우선 고객 지원</li>
 <li id="plan3-f4">누적 통계 대시보드</li>
 <li id="plan3-f5">연간 플랜 $75</li>
@@ -2112,7 +2157,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>실시간 환율 기반 현지 화폐 환산 서비스</li>
 <li>QR 코드 및 OTP 코드 생성·스캔 서비스</li>
 <li>잔돈 자동 적립 서비스</li>
-<li>Particle Wallet 연동 서비스</li>
+<li>MetaMask 및 OKX Wallet 등 외부 지갑 앱을 통한 결제 연동 서비스</li>
 </ul>
 <h3>제3조 (회원 가입)</h3>
 <ul>
@@ -2125,7 +2170,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>구매자 : 완전 무료 · 무제한 이용</li>
 <li>판매자 (무료) : 하루 5회 QR/OTP 생성 무료</li>
 <li>정회원 : $45 / 6개월 또는 $75 / 1년 (구글 인앱 결제)</li>
-<li>가스비 : 정회원 대상 무료 대납</li>
+<li>네트워크 가스비: 사용자가 부담합니다.</li>
 </ul>
 <h3>제5조 (요청 기반 결제 구조)</h3>
 <ul>
@@ -2175,7 +2220,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>リアルタイム為替レートに基づく現地通貨換算サービス</li>
 <li>QRコードおよびOTPコードの生成・読み取りサービス</li>
 <li>おつりの自動積立サービス</li>
-<li>Particle Wallet 連携サービス</li>
+<li>MetaMaskやOKX Walletなどの外部ウォレットアプリとの決済連携サービス</li>
 </ul>
 <h3>第3条（会員登録）</h3>
 <ul>
@@ -2188,7 +2233,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>購入者：完全無料・無制限で利用可能</li>
 <li>販売者（無料会員）：1日5回まで QR / OTP の生成が無料</li>
 <li>正会員：45米ドル / 6か月、または75米ドル / 1年（Google アプリ内課金）</li>
-<li>ガス代：正会員は無料サポート</li>
+<li>ネットワークのガス代：利用者の負担となります。</li>
 </ul>
 <h3>第5条（リクエストベースの決済構造）</h3>
 <ul>
@@ -2238,7 +2283,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>基于实时汇率的本地货币换算服务</li>
 <li>二维码及 OTP 代码的生成与扫描服务</li>
 <li>零钱自动积存服务</li>
-<li>Particle Wallet 集成服务</li>
+<li>与 MetaMask、OKX Wallet 等外部钱包应用的支付集成服务</li>
 </ul>
 <h3>第3条（会员注册）</h3>
 <ul>
@@ -2251,7 +2296,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>买家：完全免费 · 无限使用</li>
 <li>卖家（免费）：每天最多可免费发起 5 次 QR/OTP 请求</li>
 <li>正式会员：45 美元 / 6 个月 或 75 美元 / 1 年（Google 应用内购买）</li>
-<li>Gas 费用：为正式会员免费代付</li>
+<li>网络 Gas 费：由用户承担。</li>
 </ul>
 <h3>第5条（请求式支付结构）</h3>
 <ul>
@@ -2301,7 +2346,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>基於即時匯率的本地貨幣換算服務</li>
 <li>QR Code 及 OTP 驗證碼的產生與掃描服務</li>
 <li>零錢自動累積服務</li>
-<li>Particle Wallet 整合服務</li>
+<li>與 MetaMask、OKX Wallet 等外部錢包應用程式的付款整合服務</li>
 </ul>
 <h3>第3條（會員註冊）</h3>
 <ul>
@@ -2314,7 +2359,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>買家：完全免費・無限使用</li>
 <li>商戶（免費版）：每天最多可免費產生 5 次 QR／OTP 請求</li>
 <li>付費會員：45 美元／6 個月 或 75 美元／1 年（Google Play App 內購買）</li>
-<li>Gas 費：為付費會員代付</li>
+<li>網絡 Gas 費：由用戶承擔。</li>
 </ul>
 <h3>第5條（請求式付款結構）</h3>
 <ul>
@@ -2364,7 +2409,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>บริการแปลงเป็นสกุลเงินท้องถิ่นตามอัตราแลกเปลี่ยนแบบเรียลไทม์</li>
 <li>บริการสร้างและสแกนรหัส QR และรหัส OTP</li>
 <li>บริการสะสมเงินทอนอัตโนมัติ</li>
-<li>บริการเชื่อมต่อกับ Particle Wallet และกระเป๋าเงินที่รองรับ</li>
+<li>บริการเชื่อมต่อการชำระเงินกับแอปกระเป๋าเงินภายนอก เช่น MetaMask และ OKX Wallet</li>
 </ul>
 <h3>ข้อ 3 (การสมัครสมาชิก)</h3>
 <ul>
@@ -2377,7 +2422,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>ผู้ซื้อ: ฟรีทั้งหมด · ใช้งานได้ไม่จำกัด</li>
 <li>ผู้ขาย (แผนฟรี): สร้างคำขอ QR/OTP ได้ฟรีสูงสุด 5 ครั้งต่อวัน</li>
 <li>สมาชิกแบบชำระเงิน: 45 ดอลลาร์สหรัฐ / 6 เดือน หรือ 75 ดอลลาร์สหรัฐ / 1 ปี (ชำระผ่านระบบซื้อในแอปของ Google)</li>
-<li>ค่าก๊าซ: ฟรีสำหรับสมาชิกแบบชำระเงิน</li>
+<li>ค่าก๊าซของเครือข่าย: ผู้ใช้เป็นผู้ชำระ</li>
 </ul>
 <h3>ข้อ 5 (โครงสร้างการชำระเงินตามคำขอ)</h3>
 <ul>
@@ -2427,7 +2472,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Dịch vụ quy đổi tiền tệ địa phương theo tỷ giá thời gian thực</li>
 <li>Dịch vụ tạo và quét mã QR và mã OTP</li>
 <li>Dịch vụ tự động tích lũy tiền lẻ</li>
-<li>Dịch vụ tích hợp Particle Wallet</li>
+<li>Dịch vụ tích hợp thanh toán với ứng dụng ví bên ngoài như MetaMask và OKX Wallet</li>
 </ul>
 <h3>Điều 3 (Đăng ký thành viên)</h3>
 <ul>
@@ -2440,7 +2485,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Người mua: hoàn toàn miễn phí và sử dụng không giới hạn</li>
 <li>Người bán (gói miễn phí): được tạo tối đa 5 yêu cầu QR/OTP miễn phí mỗi ngày</li>
 <li>Thành viên chính thức: 45 USD / 6 tháng hoặc 75 USD / 1 năm (mua trong ứng dụng Google)</li>
-<li>Phí gas: do Công ty chi trả cho thành viên chính thức</li>
+<li>Phí gas của mạng: do người dùng chi trả.</li>
 </ul>
 <h3>Điều 5 (Cấu trúc thanh toán theo yêu cầu)</h3>
 <ul>
@@ -2490,7 +2535,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Serbisyo ng real-time na conversion mula lokal na currency batay sa exchange rate</li>
 <li>Serbisyo ng pagbuo at pag-scan ng QR code at OTP code</li>
 <li>Serbisyo ng awtomatikong pag-iipon ng sukli</li>
-<li>Serbisyo ng integrasyon sa Particle Wallet</li>
+<li>Serbisyo ng payment integration sa mga external wallet app tulad ng MetaMask at OKX Wallet</li>
 </ul>
 <h3>Artikulo 3 (Pagpaparehistro ng Miyembro)</h3>
 <ul>
@@ -2503,7 +2548,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Buyer: Ganap na libre · Walang limitasyong paggamit</li>
 <li>Seller (Libre): Hanggang 5 libreng QR/OTP request kada araw</li>
 <li>Premium Member: $45 / 6 na buwan o $75 / 1 taon (Google In-App Purchase)</li>
-<li>Gas fee: Sagot ng StablePay para sa premium members</li>
+<li>Gas fee ng network: sagot ng user.</li>
 </ul>
 <h3>Artikulo 5 (Request-Based Payment Structure)</h3>
 <ul>
@@ -2553,7 +2598,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>خدمة التحويل الفوري من العملة المحلية وفق سعر الصرف المباشر</li>
 <li>خدمة إنشاء رموز QR وOTP ومسحها</li>
 <li>خدمة الادخار التلقائي للفكة</li>
-<li>خدمة التكامل مع Particle Wallet</li>
+<li>خدمة تكامل الدفع مع تطبيقات المحافظ الخارجية مثل MetaMask وOKX Wallet</li>
 </ul>
 <h3>المادة 3 (تسجيل العضوية)</h3>
 <ul>
@@ -2566,7 +2611,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>المشتري: مجاني بالكامل · استخدام غير محدود</li>
 <li>البائع (مجاني): حتى 5 طلبات QR/OTP مجانية يوميًا</li>
 <li>العضو المميز: 45 دولارًا / 6 أشهر أو 75 دولارًا / سنة واحدة (شراء داخل تطبيق Google)</li>
-<li>رسوم الغاز: تغطية مجانية للأعضاء المميزين</li>
+<li>رسوم الغاز للشبكة: يتحملها المستخدم.</li>
 </ul>
 <h3>المادة 5 (هيكل الدفع القائم على الطلب)</h3>
 <ul>
@@ -2616,7 +2661,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Dienst zur Umrechnung lokaler Währungen anhand von Echtzeit-Wechselkursen</li>
 <li>Dienst zur Erstellung und zum Scannen von QR-Codes und OTP-Codes für Zahlungsanfragen</li>
 <li>Dienst zur automatischen Kleingeld-Speicherung</li>
-<li>Integrationsdienst mit Particle Wallet</li>
+<li>Zahlungsintegration mit externen Wallet-Apps wie MetaMask und OKX Wallet</li>
 </ul>
 <h3>Artikel 3 (Registrierung und Konto)</h3>
 <ul>
@@ -2629,7 +2674,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Käufer: Vollständig kostenlos · Unbegrenzte Nutzung</li>
 <li>Verkäufer (kostenlos): bis zu 5 kostenlose QR-/OTP-Anfragen pro Tag</li>
 <li>Premium-Mitglied: 45 $ / 6 Monate oder 75 $ / 1 Jahr (Google In-App-Kauf)</li>
-<li>Gasgebühren: kostenlose Übernahme für Premium-Mitglieder</li>
+<li>Gasgebühren des Netzwerks: werden vom Nutzer getragen.</li>
 </ul>
 <h3>Artikel 5 (Anfragebasierte Zahlungsstruktur)</h3>
 <ul>
@@ -2680,6 +2725,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Service de conversion de devises locales sur la base du taux de change en temps réel</li>
 <li>Service de génération et de scan de QR / codes OTP pour les demandes de paiement</li>
 <li>Service d'accumulation automatique de la monnaie inférieure à 0,01 USD</li>
+<li>Service de paiement intégré aux applications de portefeuilles externes telles que MetaMask et OKX Wallet</li>
 </ul>
 <h3>Article 3 (Inscription et gestion du compte)</h3>
 <ul>
@@ -2691,7 +2737,8 @@ html[dir="rtl"] .fx-invisible-core{
 <ul>
 <li>Acheteur : entièrement gratuit, utilisation illimitée</li>
 <li>Vendeur (gratuit) : jusqu'à 5 demandes QR/OTP gratuites par jour</li>
-<li>Membre premium : utilisation illimitée selon le forfait payé, avec avantages supplémentaires comme la prise en charge des frais de gas</li>
+<li>Membre premium : utilisation illimitée selon le forfait payé</li>
+<li>Frais de gas du réseau : à la charge de l'utilisateur.</li>
 </ul>
 <h3>Article 5 (Structure de paiement basée sur la demande)</h3>
 <ul>
@@ -2736,7 +2783,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>रियल-टाइम विनिमय दर रूपांतरण आधारित स्थानीय मुद्रा रूपांतरण सेवा</li>
 <li>QR कोड और OTP कोड जनरेशन तथा स्कैनिंग सेवा</li>
 <li>0.01 USD से कम बची राशि की स्वचालित बचत सेवा</li>
-<li>Particle Wallet एकीकरण सेवा</li>
+<li>MetaMask और OKX Wallet जैसे बाहरी वॉलेट ऐप के साथ भुगतान एकीकरण सेवा</li>
 </ul>
 <h3>अनुच्छेद 3 (सदस्य पंजीकरण)</h3>
 <ul>
@@ -2749,7 +2796,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>खरीदार: पूरी तरह निःशुल्क · असीमित उपयोग</li>
 <li>विक्रेता (मुफ़्त): प्रतिदिन अधिकतम 5 मुफ्त QR/OTP अनुरोध</li>
 <li>प्रीमियम सदस्य: $45 / 6 महीने या $75 / 1 वर्ष (Google इन-ऐप खरीद)</li>
-<li>गैस शुल्क: प्रीमियम सदस्यों के लिए शुल्क सहायता</li>
+<li>नेटवर्क गैस शुल्क: उपयोगकर्ता द्वारा देय।</li>
 </ul>
 <h3>अनुच्छेद 5 (अनुरोध-आधारित भुगतान व्यवस्था)</h3>
 <ul>
@@ -2799,7 +2846,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Сервис конвертации местной валюты по курсу в реальном времени</li>
 <li>Сервис генерации и сканирования QR-кодов и OTP-кодов для запросов на оплату</li>
 <li>Сервис автоматического накопления сдачи менее 0,01 USD</li>
-<li>Сервис интеграции с Particle Wallet</li>
+<li>Интеграция платежей с внешними кошельками, такими как MetaMask и OKX Wallet</li>
 </ul>
 <h3>Статья 3 (Регистрация участников)</h3>
 <ul>
@@ -2812,7 +2859,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Покупатель: полностью бесплатно · без ограничений</li>
 <li>Продавец (бесплатно): до 5 бесплатных QR/OTP-запросов в день</li>
 <li>Премиум-участник: 45 USD / 6 месяцев или 75 USD / 1 год (покупка в приложении Google)</li>
-<li>Gas fee: бесплатно для премиум-участников</li>
+<li>Комиссию сети (gas) оплачивает пользователь.</li>
 </ul>
 <h3>Статья 5 (Структура оплаты по запросу)</h3>
 <ul>
@@ -2862,7 +2909,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Local-currency conversion service based on real-time exchange rates</li>
 <li>QR code and OTP code generation and scanning service</li>
 <li>Automatic spare-change accumulation service</li>
-<li>Particle Wallet integration service</li>
+<li>Payment integration with external wallet apps such as MetaMask and OKX Wallet</li>
 </ul>
 <h3>Article 3 (Membership Registration)</h3>
 <ul>
@@ -2875,7 +2922,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Buyer: Free · Unlimited use</li>
 <li>Seller (Free): Up to 5 free QR/OTP requests per day</li>
 <li>Premium Member: $45 / 6 months or $75 / 1 year (Google in-app purchase)</li>
-<li>Gas fees: Covered for Premium members</li>
+<li>Network gas fees: paid by the user.</li>
 </ul>
 <h3>Article 5 (Request-Based Payment Structure)</h3>
 <ul>
@@ -2925,7 +2972,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Serviço de conversão para moeda local com base em taxa de câmbio em tempo real</li>
 <li>Serviço de geração e leitura de QR code e código OTP</li>
 <li>Serviço de acúmulo automático de troco</li>
-<li>Serviço de integração com Particle Wallet</li>
+<li>Serviço de integração de pagamentos com aplicativos de carteiras externas, como MetaMask e OKX Wallet</li>
 </ul>
 <h3>Artigo 3 (Cadastro de membro)</h3>
 <ul>
@@ -2938,7 +2985,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Comprador: totalmente gratuito, com uso ilimitado</li>
 <li>Vendedor (gratuito): até 5 gerações de QR/OTP por dia sem custo</li>
 <li>Membro premium: US$ 45 / 6 meses ou US$ 75 / 1 ano (compra no aplicativo do Google)</li>
-<li>Taxa de gas: cobertura gratuita para membros premium</li>
+<li>Taxas de gas da rede: pagas pelo usuário.</li>
 </ul>
 <h3>Artigo 5 (Estrutura de pagamento baseada em solicitação)</h3>
 <ul>
@@ -2988,7 +3035,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Servicio de conversión a moneda local con base en el tipo de cambio en tiempo real</li>
 <li>Servicio de generación y escaneo de códigos QR y códigos OTP</li>
 <li>Servicio de acumulación automática del cambio</li>
-<li>Servicio de integración con Particle Wallet</li>
+<li>Servicio de integración de pagos con aplicaciones de carteras externas como MetaMask y OKX Wallet</li>
 </ul>
 <h3>Artículo 3 (Registro de miembros)</h3>
 <ul>
@@ -3001,7 +3048,7 @@ html[dir="rtl"] .fx-invisible-core{
 <li>Comprador: totalmente gratuito y con uso ilimitado</li>
 <li>Vendedor (gratuito): hasta 5 generaciones de QR/OTP al día sin costo</li>
 <li>Miembro premium: 45 USD / 6 meses o 75 USD / 1 año (compra integrada de Google)</li>
-<li>Tarifa de gas: cobertura gratuita para miembros premium</li>
+<li>Comisiones de gas de la red: a cargo del usuario.</li>
 </ul>
 <h3>Artículo 5 (Estructura de pago basada en solicitud)</h3>
 <ul>
@@ -3191,7 +3238,7 @@ var TEXTS = {
     "f2-h": "QR 스캔 + OTP 코드", "f2-p": "근거리는 QR 코드, 원거리는 7자리 OTP 코드로 어디서나 간편하게 결제 요청과 승인이 가능합니다.",
     "f3-h": "지문 인증 보안", "f3-p": "앱 진입 및 결제 서명에 생체 인증 적용. 개인 키는 Android Keystore + AES-256으로 기기 내 보안 저장.",
     "f4-h": "잔돈 자동 적립", "f4-p": "0.01 USD 미만의 잔돈은 자동으로 포인트로 적립됩니다. 누적 통계가 실시간으로 반영됩니다.",
-    "f5-h": "가스비 무료 대납", "f5-p": "Particle Wallet 기반 정회원 대상 가스비 전액 대납.",
+    "f5-h": "MetaMask·OKX 앱 결제", "f5-p": "판매자의 QR 또는 OTP 결제 요청을 확인하고, 연결된 MetaMask 또는 OKX Wallet 앱에서 승인하여 결제합니다.",
     "f6-h": "15개국어 완벽 지원", "f6-p": "한국어, 영어, 아랍어, 중국어 등 15개 언어를 지원하며 화면 크기에 맞는 폰트를 자동 적용합니다.",
     "lbl-app": "실제 앱 화면", "ttl-app": "직접 확인해보세요",
     "sub-app": "복잡한 설정 없이 직관적인 UI로 누구나 쉽게 사용할 수 있습니다.",
@@ -3207,10 +3254,10 @@ var TEXTS = {
     "app2-li5": "결제 완료 후 잔돈 자동 적립",
     "lbl-how": "사용 방법", "ttl-how": "간단 4단계로 시작하세요",
     "sub-how": "복잡한 설정 없이 소셜 로그인 하나로 바로 결제를 시작할 수 있습니다.",
-    "s1-h": "소셜 로그인으로 가입", "s1-p": "구글 · 카카오톡 · 페이스북 계정으로 30초 만에 가입 완료. Particle Wallet이 자동 생성됩니다.",
-    "s2-h": "화폐 & 코인 선택", "s2-p": "사용할 현지 화폐와 스테이블코인(USDT/USDC)을 선택하고 지갑 주소를 등록합니다.",
+    "s1-h": "소셜 로그인으로 가입", "s1-p": "구글 · 카카오톡 · 페이스북 계정으로 가입합니다.",
+    "s2-h": "화폐 & 코인 선택", "s2-p": "사용할 현지 화폐와 스테이블코인(USDT/USDC)을 선택하고, MetaMask 또는 OKX Wallet을 연결합니다.",
     "s3-h": "QR 또는 OTP 요청", "s3-p": "판매자가 QR 코드 또는 OTP 코드를 생성하면 구매자가 스캔하여 결제 내용을 확인합니다.",
-    "s4-h": "지문 인증으로 결제 완료", "s4-p": "지문 인증으로 서명 승인 후 결제가 즉시 완료됩니다. 잔돈은 자동으로 적립됩니다.",
+    "s4-h": "외부 지갑 앱에서 결제 승인", "s4-p": "결제 내용을 확인하고 MetaMask 또는 OKX Wallet 앱에서 승인하여 결제합니다. 잔돈은 자동으로 적립됩니다.",
     "lbl-pricing": "요금제", "ttl-pricing": "합리적인 가격으로 시작하세요",
     "sub-pricing": "구매자는 완전 무료, 판매자도 하루 5회 무료 사용 가능합니다.",
     "plan1-tag": "구매자", "plan1-h": "완전 무료", "plan1-period": "/ 무제한",
@@ -3222,8 +3269,8 @@ var TEXTS = {
     "plan2-f1": "QR 코드 생성 5회/일", "plan2-f2": "OTP 코드 생성 5회/일",
     "plan2-f3": "실시간 환율 환산", "plan2-f4": "결제 내역 확인",
     "plan3-tag": "정회원", "plan3-h": "프리미엄", "plan3-period": "/ 6개월",
-    "plan3-desc": "무제한 사용 + 가스비 전액 대납. 연간 $75 옵션도 제공.",
-    "plan3-f1": "QR/OTP 무제한 생성", "plan3-f2": "가스비 무료 대납",
+    "plan3-desc": "QR/OTP 결제 요청 무제한 생성. 연간 $75 옵션도 제공.",
+    "plan3-f1": "QR/OTP 무제한 생성", 
     "plan3-f3": "우선 고객 지원", "plan3-f4": "누적 통계 대시보드", "plan3-f5": "연간 플랜 $75",
     "lbl-currencies": "지원 현지 화폐", "ttl-currencies": "21개국 화폐 지원",
     "sub-currencies": "실시간 환율 API로 당일 기준 환율을 적용하여 스테이블코인으로 자동 환산합니다.",
@@ -3281,7 +3328,7 @@ var TEXTS = {
     "f2-h": "QRスキャン＋OTPコード", "f2-p": "近距離ではQRコード、遠距離では7桁のOTPコードで、支払いリクエストの確認と承認を簡単に行えます。",
     "f3-h": "指紋認証セキュリティ", "f3-p": "アプリ起動・決済署名に生体認証を適用。秘密鍵はAndroid Keystore+AES-256でデバイス内に安全保存。",
     "f4-h": "おつり自動積立", "f4-p": "0.01ドル未満のおつりは自動でポイントとして積み立てられます。累積統計もリアルタイムで反映。",
-    "f5-h": "ガス代無料サポート", "f5-p": "Particle Wallet連携により、正会員のガス代を全額サポート。",
+    "f5-h": "MetaMask・OKXアプリで決済", "f5-p": "販売者のQRまたはOTP決済リクエストを確認し、接続したMetaMaskまたはOKX Walletアプリで承認して決済します。",
     "f6-h": "15言語に対応", "f6-p": "韓国語、英語、アラビア語、中国語など15言語に対応し、画面サイズに合わせてフォントを自動調整。",
     "lbl-app": "実際のアプリ画面", "ttl-app": "アプリ画面でチェック",
     "sub-app": "複雑な設定は不要。直感的なUIで、誰でもかんたんに使えます。",
@@ -3301,10 +3348,10 @@ var TEXTS = {
     "app2-li5": "決済完了後におつり自動積立",
     "lbl-how": "使い方", "ttl-how": "4ステップでかんたん開始",
     "sub-how": "複雑な設定は不要。ソーシャルログインだけで、すぐに決済を始められます。",
-    "s1-h": "ソーシャルログインで登録", "s1-p": "Google・KakaoTalk・Facebookで30秒で登録完了。Particle Walletが自動作成されます。",
-    "s2-h": "通貨＆コインを選択", "s2-p": "使用する現地通貨とステーブルコイン（USDT/USDC）を選択し、ウォレットアドレスを登録します。",
+    "s1-h": "ソーシャルログインで登録", "s1-p": "Google・KakaoTalk・Facebookのアカウントで登録します。",
+    "s2-h": "通貨＆コインを選択", "s2-p": "使用する現地通貨とステーブルコイン（USDT/USDC）を選択し、MetaMaskまたはOKX Walletを接続します。",
     "s3-h": "QRまたはOTPリクエスト", "s3-p": "販売者がQRコードまたはOTPコードを生成し、購入者がスキャンして支払い内容を確認します。",
-    "s4-h": "指紋認証で決済完了", "s4-p": "指紋認証で署名承認後、決済が即座に完了します。おつりは自動で積み立てられます。",
+    "s4-h": "外部ウォレットアプリで承認", "s4-p": "決済内容を確認し、MetaMaskまたはOKX Walletアプリで承認して決済します。おつりは自動で積み立てられます。",
     "lbl-pricing": "料金プラン", "ttl-pricing": "始めやすい料金プラン",
     "sub-pricing": "購入者は完全無料。販売者も1日5回まで無料でご利用いただけます。",
     "plan1-tag": "購入者", "plan1-h": "完全無料", "plan1-period": "/ 無制限",
@@ -3316,8 +3363,8 @@ var TEXTS = {
     "plan2-f1": "QRコード生成5回/日", "plan2-f2": "OTPコード生成5回/日",
     "plan2-f3": "リアルタイム為替換算", "plan2-f4": "決済履歴確認",
     "plan3-tag": "正会員", "plan3-h": "プレミアム", "plan3-period": "/ 6か月",
-    "plan3-desc": "無制限で利用でき、ガス代も全額サポート。年間75ドルのプランもご用意しています。",
-    "plan3-f1": "QR/OTP無制限作成", "plan3-f2": "ガス代無料サポート",
+    "plan3-desc": "QR/OTP決済リクエストを無制限に作成。年間75ドルのプランもご用意しています。",
+    "plan3-f1": "QR/OTP無制限作成", 
     "plan3-f3": "優先サポート", "plan3-f4": "累積統計ダッシュボード", "plan3-f5": "年間プラン$75",
     "lbl-currencies": "対応現地通貨", "ttl-currencies": "21通貨に対応",
     "sub-currencies": "リアルタイム為替APIで当日レートを適用し、ステーブルコインに自動換算します。",
@@ -3387,8 +3434,8 @@ var TEXTS = {
     "f3-p": "应用进入与支付签名均支持生物识别。私钥采用 AES-256 加密并安全保存在设备内。",
     "f4-h": "零钱自动积存",
     "f4-p": "低于 0.01 美元的零钱将自动累计为积分，并实时更新统计数据。",
-    "f5-h": "Gas 费免费代付",
-    "f5-p": "基于 Particle Wallet，为正式会员全额代付 Gas 费。",
+    "f5-h": "使用 MetaMask·OKX 应用支付",
+    "f5-p": "查看卖家的 QR 或 OTP 支付请求，然后在已连接的 MetaMask 或 OKX Wallet 应用中批准付款。",
     "f6-h": "完整支持 15 种语言",
     "f6-p": "支持韩语、英语、阿拉伯语、中文等 15 种语言，并根据屏幕尺寸自动调整字体。",
     "lbl-app": "真实 App 界面",
@@ -3412,13 +3459,13 @@ var TEXTS = {
     "ttl-how": "4 个简单步骤即可开始",
     "sub-how": "无需复杂设置，只需通过社交账号登录即可立即开始支付。",
     "s1-h": "通过社交登录注册",
-    "s1-p": "使用 Google · KakaoTalk · Facebook 账号，30 秒内即可完成注册。Particle Wallet 会自动创建。",
+    "s1-p": "使用 Google、KakaoTalk 或 Facebook 账号注册。",
     "s2-h": "选择货币与币种",
-    "s2-p": "选择您要使用的本地货币和稳定币（USDT/USDC），然后注册钱包地址。",
+    "s2-p": "选择本地货币和稳定币（USDT/USDC），然后连接 MetaMask 或 OKX Wallet。",
     "s3-h": "QR 或 OTP 请求",
     "s3-p": "卖家生成 QR 码或 OTP 代码后，买家扫码查看并确认支付内容。",
-    "s4-h": "指纹认证完成支付",
-    "s4-p": "通过指纹认证批准签名后，支付会立即完成，零钱也会自动积存。",
+    "s4-h": "在外部钱包应用中批准支付",
+    "s4-p": "确认支付详情，并在 MetaMask 或 OKX Wallet 应用中批准付款。零钱会自动积存。",
     "lbl-pricing": "价格方案",
     "ttl-pricing": "轻松上手的资费方案",
     "sub-pricing": "买家可永久免费、无限次使用；卖家每天可免费发起 5 次请求。",
@@ -3442,9 +3489,9 @@ var TEXTS = {
     "plan3-tag": "高级版",
     "plan3-h": "高级版",
     "plan3-period": "/ 6 个月",
-    "plan3-desc": "无限使用 + Gas 费全额代付。另有年付方案 75 美元。",
+    "plan3-desc": "无限创建 QR/OTP 支付请求。另有每年 75 美元的方案。",
     "plan3-f1": "无限生成 QR / OTP",
-    "plan3-f2": "Gas 费免费代付",
+    
     "plan3-f3": "优先支持",
     "plan3-f4": "累计统计仪表板",
     "plan3-f5": "年付方案 75 美元",
@@ -3528,8 +3575,8 @@ var TEXTS = {
     "f3-p": "應用進入與付款簽名均支援生物識別。私鑰採用 AES-256 加密並安全保存在裝置內。",
     "f4-h": "零錢自動積存",
     "f4-p": "低於 0.01 美元的零錢將自動累計為積分，並即時更新統計數據。",
-    "f5-h": "Gas 費代付",
-    "f5-p": "透過 Particle Wallet，為正式會員代付 Gas 費。",
+    "f5-h": "使用 MetaMask·OKX 應用程式付款",
+    "f5-p": "查看商戶的 QR 或 OTP 付款請求，然後在已連接的 MetaMask 或 OKX Wallet 應用程式中批准付款。",
     "f6-h": "完整支援 15 種語言",
     "f6-p": "支援韓語、英語、阿拉伯語、中文等 15 種語言，並根據螢幕尺寸自動調整字體。",
     "lbl-app": "實際 App 介面",
@@ -3553,13 +3600,13 @@ var TEXTS = {
     "ttl-how": "4 個簡單步驟即可開始",
     "sub-how": "無需複雜設定，只需社交登入即可立即開始付款。",
     "s1-h": "透過社交登入註冊",
-    "s1-p": "使用 Google · KakaoTalk · Facebook 帳號，30 秒內即可完成註冊。Particle Wallet 會自動建立。",
+    "s1-p": "使用 Google、KakaoTalk 或 Facebook 帳號註冊。",
     "s2-h": "選擇貨幣與幣種",
-    "s2-p": "選擇您要使用的本地貨幣和穩定幣（USDT/USDC），然後登記錢包地址。",
+    "s2-p": "選擇本地貨幣和穩定幣（USDT/USDC），然後連接 MetaMask 或 OKX Wallet。",
     "s3-h": "QR 或 OTP 付款請求",
     "s3-p": "商戶產生 QR Code 或 OTP 驗證碼後，買家即可查看並確認付款內容。",
-    "s4-h": "指紋認證完成付款",
-    "s4-p": "透過指紋認證批准簽署後，付款會立即完成，零錢也會自動積存。",
+    "s4-h": "在外部錢包應用程式中批准付款",
+    "s4-p": "確認付款詳情，並在 MetaMask 或 OKX Wallet 應用程式中批准付款。零錢會自動積存。",
     "lbl-pricing": "收費方案",
     "ttl-pricing": "以實惠方案輕鬆開始",
     "sub-pricing": "買家可永久免費無限使用；商戶每天可獲 5 次免費付款請求。",
@@ -3583,9 +3630,9 @@ var TEXTS = {
     "plan3-tag": "付費會員",
     "plan3-h": "付費會員方案",
     "plan3-period": "/ 6 個月",
-    "plan3-desc": "無限使用 + Gas 費全額代付。另有年付方案 75 美元。",
+    "plan3-desc": "無限建立 QR/OTP 付款請求。另有每年 75 美元的方案。",
     "plan3-f1": "無限產生 QR / OTP",
-    "plan3-f2": "Gas 費免費代付",
+    
     "plan3-f3": "優先支援",
     "plan3-f4": "累計統計儀表板",
     "plan3-f5": "年付方案 75 美元",
@@ -3669,8 +3716,8 @@ var TEXTS = {
     "f3-p": "Xác thực sinh trắc học khi vào ứng dụng và ký thanh toán. Khóa riêng được lưu bằng mã hóa AES-256.",
     "f4-h": "Tự động tích lũy tiền lẻ",
     "f4-p": "Khoản dưới 0,01 USD sẽ tự động được lưu thành điểm cùng thống kê thời gian thực.",
-    "f5-h": "Miễn phí gas",
-    "f5-p": "Thanh toán toàn bộ phí gas cho thành viên Premium qua Particle Wallet.",
+    "f5-h": "Thanh toán bằng MetaMask·OKX",
+    "f5-p": "Kiểm tra yêu cầu thanh toán QR hoặc OTP của người bán, sau đó phê duyệt trong ứng dụng MetaMask hoặc OKX Wallet đã kết nối.",
     "f6-h": "Hỗ trợ 15 ngôn ngữ",
     "f6-p": "Hỗ trợ 15 ngôn ngữ gồm tiếng Hàn, tiếng Anh, tiếng Ả Rập, tiếng Trung và tự động điều chỉnh cỡ chữ.",
     "lbl-app": "Màn hình ứng dụng",
@@ -3694,13 +3741,13 @@ var TEXTS = {
     "ttl-how": "Bắt đầu chỉ với 4 bước",
     "sub-how": "Chỉ cần đăng nhập mạng xã hội là có thể bắt đầu thanh toán ngay, không cần thiết lập phức tạp.",
     "s1-h": "Đăng ký bằng đăng nhập mạng xã hội",
-    "s1-p": "Đăng ký trong 30 giây với Google · KakaoTalk · Facebook, Particle Wallet sẽ được tạo tự động.",
+    "s1-p": "Đăng ký bằng tài khoản Google, KakaoTalk hoặc Facebook.",
     "s2-h": "Chọn tiền tệ và coin",
-    "s2-p": "Chọn tiền tệ địa phương và stablecoin (USDT/USDC), sau đó đăng ký địa chỉ ví của bạn.",
+    "s2-p": "Chọn tiền tệ địa phương và stablecoin (USDT/USDC), sau đó kết nối MetaMask hoặc OKX Wallet.",
     "s3-h": "Yêu cầu qua QR hoặc OTP",
     "s3-p": "Người bán tạo mã QR hoặc mã OTP, người mua quét để xem và xác nhận thanh toán.",
-    "s4-h": "Xác nhận bằng vân tay",
-    "s4-p": "Phê duyệt bằng vân tay, giao dịch hoàn tất ngay và tiền lẻ được tích lũy tự động.",
+    "s4-h": "Phê duyệt trong ứng dụng ví",
+    "s4-p": "Kiểm tra chi tiết và phê duyệt thanh toán trong MetaMask hoặc OKX Wallet. Tiền lẻ được tích lũy tự động.",
     "lbl-pricing": "Gói giá",
     "ttl-pricing": "Bắt đầu với mức phí hợp lý",
     "sub-pricing": "Người mua được sử dụng miễn phí không giới hạn, người bán có 5 yêu cầu miễn phí mỗi ngày.",
@@ -3724,9 +3771,9 @@ var TEXTS = {
     "plan3-tag": "Premium",
     "plan3-h": "Premium",
     "plan3-period": "/ 6 tháng",
-    "plan3-desc": "Sử dụng không giới hạn + miễn phí toàn bộ gas. Có cả gói năm 75 USD.",
+    "plan3-desc": "Tạo yêu cầu thanh toán QR/OTP không giới hạn. Có cả gói năm 75 USD.",
     "plan3-f1": "Tạo QR/OTP không giới hạn",
-    "plan3-f2": "Miễn phí gas",
+    
     "plan3-f3": "Hỗ trợ ưu tiên",
     "plan3-f4": "Bảng điều khiển thống kê tích lũy",
     "plan3-f5": "Gói năm 75 USD",
@@ -3810,8 +3857,8 @@ var TEXTS = {
     "f3-p": "ยืนยันตัวตนด้วยไบโอเมตริกสำหรับเข้าแอปและลงนามการชำระเงิน โดยเก็บ private key ด้วยการเข้ารหัส AES-256",
     "f4-h": "เก็บเศษเงินอัตโนมัติ",
     "f4-p": "ยอดต่ำกว่า 0.01 ดอลลาร์สหรัฐจะถูกเก็บเป็นพอยต์อัตโนมัติ พร้อมสถิติแบบเรียลไทม์",
-    "f5-h": "ค่าก๊าซฟรี",
-    "f5-p": "สมาชิกพรีเมียมได้รับการครอบคลุมค่าก๊าซเต็มจำนวนผ่าน Particle Wallet",
+    "f5-h": "ชำระผ่านแอป MetaMask·OKX",
+    "f5-p": "ตรวจสอบคำขอชำระเงิน QR หรือ OTP จากผู้ขาย แล้วอนุมัติในแอป MetaMask หรือ OKX Wallet ที่เชื่อมต่อไว้",
     "f6-h": "รองรับ 15 ภาษา",
     "f6-p": "รองรับ 15 ภาษา รวมถึงเกาหลี อังกฤษ อาหรับ และจีน พร้อมปรับฟอนต์อัตโนมัติตามหน้าจอ",
     "lbl-app": "ภาพหน้าจอแอป",
@@ -3835,13 +3882,13 @@ var TEXTS = {
     "ttl-how": "เริ่มต้นง่ายใน 4 ขั้นตอน",
     "sub-how": "เพียงล็อกอินโซเชียลก็พร้อมจ่ายเงินได้ทันที โดยไม่ต้องตั้งค่าซับซ้อน",
     "s1-h": "สมัครด้วยโซเชียลล็อกอิน",
-    "s1-p": "สมัครภายใน 30 วินาทีด้วย Google · KakaoTalk · Facebook โดยสร้าง Particle Wallet อัตโนมัติ",
+    "s1-p": "สมัครด้วยบัญชี Google, KakaoTalk หรือ Facebook",
     "s2-h": "เลือกสกุลเงินและเหรียญ",
-    "s2-p": "เลือกสกุลเงินท้องถิ่นและสเตเบิลคอยน์ (USDT/USDC) แล้วลงทะเบียนที่อยู่กระเป๋าเงินของคุณ",
+    "s2-p": "เลือกสกุลเงินท้องถิ่นและสเตเบิลคอยน์ (USDT/USDC) แล้วเชื่อมต่อ MetaMask หรือ OKX Wallet",
     "s3-h": "ขอชำระผ่าน QR หรือ OTP",
     "s3-p": "ผู้ขายสร้าง QR หรือรหัส OTP แล้วผู้ซื้อสแกนเพื่อตรวจสอบและยืนยันการชำระเงิน",
-    "s4-h": "ยืนยันด้วยลายนิ้วมือ",
-    "s4-p": "อนุมัติด้วยลายนิ้วมือ การชำระเงินเสร็จทันที และเศษเงินจะถูกเก็บอัตโนมัติ",
+    "s4-h": "อนุมัติในแอปกระเป๋าเงิน",
+    "s4-p": "ตรวจสอบรายละเอียดและอนุมัติการชำระเงินในแอป MetaMask หรือ OKX Wallet เศษเงินจะถูกสะสมโดยอัตโนมัติ",
     "lbl-pricing": "ราคา",
     "ttl-pricing": "เริ่มต้นได้ในราคาคุ้มค่า",
     "sub-pricing": "ผู้ซื้อใช้งานฟรีไม่จำกัด ผู้ขายได้รับคำขอฟรีวันละ 5 ครั้ง",
@@ -3865,9 +3912,9 @@ var TEXTS = {
     "plan3-tag": "พรีเมียม",
     "plan3-h": "พรีเมียม",
     "plan3-period": "/ 6 เดือน",
-    "plan3-desc": "ใช้งานไม่จำกัด + ค่าก๊าซฟรีเต็มจำนวน มีแพ็กเกจรายปี $75 ด้วย",
+    "plan3-desc": "สร้างคำขอชำระเงิน QR/OTP ได้ไม่จำกัด มีแพ็กเกจรายปี $75 ด้วย",
     "plan3-f1": "สร้าง QR/OTP ไม่จำกัด",
-    "plan3-f2": "ค่าก๊าซฟรี",
+    
     "plan3-f3": "ซัพพอร์ตแบบเร่งด่วน",
     "plan3-f4": "แดชบอร์ดสถิติสะสม",
     "plan3-f5": "แพ็กเกจรายปี $75",
@@ -3951,8 +3998,8 @@ var TEXTS = {
     "f3-p": "May biometric authentication sa pagpasok sa app at pagpirma ng bayad. Ang private key ay ligtas na nakaimbak sa device gamit ang Android Keystore + AES-256.",
     "f4-h": "Awtomatikong ipon ng sukli",
     "f4-p": "Ang sukling mas mababa sa 0.01 USD ay awtomatikong naiipon bilang points. Real-time ding naa-update ang pinagsamang istatistika.",
-    "f5-h": "Sagot ang gas fee",
-    "f5-p": "Sagot namin nang buo ang gas fee para sa premium members sa pamamagitan ng Particle Wallet.",
+    "f5-h": "Magbayad gamit ang MetaMask·OKX",
+    "f5-p": "Suriin ang QR o OTP payment request ng seller, saka aprubahan ang bayad sa nakakonektang MetaMask o OKX Wallet app.",
     "f6-h": "Kumpletong suporta sa 15 wika",
     "f6-p": "Suporta sa 15 wika kabilang ang Korean, English, Arabic at Chinese, at awtomatikong inaangkop ang font sa laki ng screen.",
     "lbl-app": "Aktuwal na screen ng app",
@@ -3976,13 +4023,13 @@ var TEXTS = {
     "ttl-how": "Magsimula sa 4 na simpleng hakbang",
     "sub-how": "Walang komplikadong setup. Isang social login lang at maaari ka nang magbayad agad.",
     "s1-h": "Mag-sign up gamit ang social login",
-    "s1-p": "Matapos sa loob ng 30 segundo gamit ang Google · KakaoTalk · Facebook. Awtomatikong nalilikha ang Particle Wallet.",
+    "s1-p": "Mag-sign up gamit ang iyong Google, KakaoTalk, o Facebook account.",
     "s2-h": "Piliin ang currency at coin",
-    "s2-p": "Piliin ang lokal na currency at stablecoin (USDT/USDC) na gagamitin at irehistro ang wallet address.",
+    "s2-p": "Piliin ang lokal na currency at stablecoin (USDT/USDC), saka ikonekta ang MetaMask o OKX Wallet.",
     "s3-h": "QR o OTP request",
     "s3-p": "Kapag gumawa ng QR code o OTP code ang seller, i-scan ito ng buyer upang makita ang detalye ng bayad.",
-    "s4-h": "Bayad na gamit ang fingerprint",
-    "s4-p": "Matapos aprubahan ang pirma gamit ang fingerprint, agad na makukumpleto ang bayad. Awtomatikong maiipon ang sukli.",
+    "s4-h": "Aprubahan sa Wallet App",
+    "s4-p": "Suriin ang mga detalye at aprubahan ang bayad sa MetaMask o OKX Wallet app. Awtomatikong naiipon ang sukli.",
     "lbl-pricing": "Presyo",
     "ttl-pricing": "Magsimula sa makatwirang presyo",
     "sub-pricing": "Ganap na libre para sa buyer, at libre ring magamit ng seller nang hanggang 5 beses bawat araw.",
@@ -4006,9 +4053,9 @@ var TEXTS = {
     "plan3-tag": "Premium Member",
     "plan3-h": "Premium",
     "plan3-period": "/ 6 na buwan",
-    "plan3-desc": "Walang limitasyong paggamit + sagot namin ang gas fee. Mayroon ding taunang plan na $75.",
+    "plan3-desc": "Gumawa ng walang limitasyong QR/OTP payment request. May taunang plan din na $75.",
     "plan3-f1": "Walang limitasyong paggawa ng QR/OTP",
-    "plan3-f2": "Libreng sagot sa gas fee",
+    
     "plan3-f3": "Priyoridad na customer support",
     "plan3-f4": "Dashboard ng pinagsamang istatistika",
     "plan3-f5": "Taunang plan $75",
@@ -4081,7 +4128,7 @@ var TEXTS = {
     "f2-h": "مسح رمز QR + رمز OTP", "f2-p": "رمز QR للمدفوعات القريبة ورمز OTP مكوّن من 7 أرقام للمدفوعات عن بُعد — بسهولة وأمان.",
     "f3-h": "أمان ببصمة الإصبع", "f3-p": "مصادقة بيومترية للدخول إلى التطبيق وتوقيع المدفوعات. يتم تخزين المفتاح الخاص بتشفير AES-256.",
     "f4-h": "حفظ الفكة تلقائيًا", "f4-p": "المبالغ الأقل من 0.01 دولار أمريكي يتم حفظها تلقائيًا كنقاط مع إحصاءات فورية.",
-    "f5-h": "تغطية رسوم الغاز مجانًا", "f5-p": "تغطية كاملة لرسوم الغاز للأعضاء المميزين عبر Particle Wallet.",
+    "f5-h": "الدفع عبر MetaMask أو OKX", "f5-p": "راجع طلب الدفع برمز QR أو OTP من البائع، ثم وافق على الدفع في تطبيق MetaMask أو OKX Wallet المتصل.",
     "f6-h": "يدعم 15 لغة", "f6-p": "يدعم 15 لغة منها الكورية والإنجليزية والعربية والصينية مع ضبط تلقائي لحجم الخط.",
     "lbl-app": "شاشات التطبيق", "ttl-app": "شاهده أثناء العمل",
     "sub-app": "واجهة سهلة الاستخدام تتيح لأي شخص البدء من دون إعدادات معقدة.",
@@ -4101,10 +4148,10 @@ var TEXTS = {
     "app2-li5": "حفظ الفكة تلقائيًا بعد الدفع",
     "lbl-how": "طريقة الاستخدام", "ttl-how": "ابدأ في 4 خطوات سهلة",
     "sub-how": "يكفي تسجيل الدخول الاجتماعي لتكون جاهزًا للدفع، من دون إعدادات معقدة.",
-    "s1-h": "التسجيل عبر تسجيل الدخول الاجتماعي", "s1-p": "أنشئ حسابك خلال 30 ثانية عبر Google أو KakaoTalk أو Facebook. يتم إنشاء Particle Wallet تلقائيًا.",
-    "s2-h": "اختر العملة والعملة المستقرة", "s2-p": "اختر عملتك المحلية والعملة المستقرة (USDT/USDC)، ثم سجّل عنوان محفظتك.",
+    "s1-h": "التسجيل عبر تسجيل الدخول الاجتماعي", "s1-p": "أنشئ حسابًا باستخدام Google أو KakaoTalk أو Facebook.",
+    "s2-h": "اختر العملة والعملة المستقرة", "s2-p": "اختر العملة المحلية والعملة المستقرة (USDT/USDC)، ثم اربط MetaMask أو OKX Wallet.",
     "s3-h": "طلب QR أو OTP", "s3-p": "ينشئ البائع رمز QR أو OTP، ثم يستخدمه المشتري لمراجعة عملية الدفع وتأكيدها.",
-    "s4-h": "الإكمال ببصمة الإصبع", "s4-p": "وافق باستخدام بصمة الإصبع — وتكتمل عملية الدفع فورًا. ويتم حفظ الفكة تلقائيًا.",
+    "s4-h": "الموافقة في تطبيق المحفظة", "s4-p": "راجع تفاصيل الدفع ووافق عليه في تطبيق MetaMask أو OKX Wallet. تُحفظ الفكة تلقائيًا.",
     "lbl-pricing": "الأسعار", "ttl-pricing": "ابدأ بسعر ممتاز",
     "sub-pricing": "يمكن للمشترين استخدام الخدمة مجانًا بلا حدود، ويحصل البائعون على 5 طلبات مجانية يوميًا.",
     "plan1-tag": "مشتري", "plan1-h": "مجاني بالكامل", "plan1-period": "/ غير محدود",
@@ -4116,8 +4163,8 @@ var TEXTS = {
     "plan2-f1": "5 رموز QR يوميًا", "plan2-f2": "5 رموز OTP يوميًا",
     "plan2-f3": "سعر صرف فوري", "plan2-f4": "سجل المدفوعات",
     "plan3-tag": "مميز", "plan3-h": "Premium", "plan3-period": "/ 6 أشهر",
-    "plan3-desc": "استخدام غير محدود مع تغطية كاملة لرسوم الغاز. كما تتوفر خطة سنوية بسعر 75 دولارًا.",
-    "plan3-f1": "إنشاء QR/OTP غير محدود", "plan3-f2": "تغطية مجانية لرسوم الغاز",
+    "plan3-desc": "أنشئ طلبات دفع QR/OTP بلا حدود. تتوفر أيضًا خطة سنوية بسعر 75 دولارًا.",
+    "plan3-f1": "إنشاء QR/OTP غير محدود", 
     "plan3-f3": "دعم أولوية", "plan3-f4": "لوحة إحصاءات تراكمية", "plan3-f5": "الخطة السنوية 75 دولارًا",
     "lbl-currencies": "العملات المدعومة", "ttl-currencies": "دعم 21 عملة",
     "sub-currencies": "تحويل تلقائي إلى عملة مستقرة باستخدام أسعار الصرف المباشرة اليومية عبر واجهة API لأسعار الصرف.",
@@ -4175,7 +4222,7 @@ var TEXTS = {
     "f2-h": "QR Scan + OTP Code", "f2-p": "Use a QR code for nearby payments and a 7-digit OTP for remote payments — simple and secure.",
     "f3-h": "Fingerprint Security", "f3-p": "Biometric authentication for app entry and payment signing. Private key stored with AES-256 encryption.",
     "f4-h": "Auto Spare Change", "f4-p": "Amounts under USD 0.01 are automatically saved as points, with totals updated in real time.",
-    "f5-h": "Free Gas Fee Coverage", "f5-p": "Premium members receive full gas fee support through Particle Wallet.",
+    "f5-h": "Pay with MetaMask or OKX", "f5-p": "Review the seller's QR or OTP payment request, then approve the payment in your connected MetaMask or OKX Wallet app.",
     "f6-h": "15 Languages", "f6-p": "Supports 15 languages including Korean, English, Arabic, Chinese with auto font sizing.",
     "lbl-app": "APP SCREENSHOTS", "ttl-app": "See It in Action",
     "sub-app": "An intuitive interface that is easy to use without complicated setup.",
@@ -4195,10 +4242,10 @@ var TEXTS = {
     "app2-li5": "Spare change auto-saved after payment",
     "lbl-how": "HOW IT WORKS", "ttl-how": "Get Started in 4 Easy Steps",
     "sub-how": "Just sign in with social login and you are ready to pay — no complicated setup required.",
-    "s1-h": "Sign Up with Social Login", "s1-p": "Sign up in 30 seconds with Google · KakaoTalk · Facebook. Particle Wallet is auto-created.",
-    "s2-h": "Select Currency & Coin", "s2-p": "Choose your local currency and stablecoin (USDT/USDC), then register your wallet address.",
+    "s1-h": "Sign Up with Social Login", "s1-p": "Sign up with your Google, KakaoTalk, or Facebook account.",
+    "s2-h": "Select Currency & Coin", "s2-p": "Choose your local currency and stablecoin (USDT/USDC), then connect MetaMask or OKX Wallet.",
     "s3-h": "QR or OTP Request", "s3-p": "The seller generates a QR code or OTP request, and the buyer reviews and confirms the payment.",
-    "s4-h": "Complete with Fingerprint", "s4-p": "Approve with fingerprint authentication — payment completes instantly. Spare change is auto-saved.",
+    "s4-h": "Approve in Your Wallet App", "s4-p": "Review the payment details and approve the payment in MetaMask or OKX Wallet. Spare change is saved automatically.",
     "lbl-pricing": "PRICING", "ttl-pricing": "Start at a Great Price",
     "sub-pricing": "Buyers can use the service for free with no limits. Sellers receive 5 free requests per day.",
     "plan1-tag": "Buyer", "plan1-h": "Completely Free", "plan1-period": "/ Unlimited",
@@ -4210,8 +4257,8 @@ var TEXTS = {
     "plan2-f1": "5 QR codes/day", "plan2-f2": "5 OTP codes/day",
     "plan2-f3": "Real-time exchange rate", "plan2-f4": "Payment history",
     "plan3-tag": "Premium", "plan3-h": "Premium", "plan3-period": "/ 6 months",
-    "plan3-desc": "Unlimited use plus full gas fee support. An annual plan for $75 is also available.",
-    "plan3-f1": "Unlimited QR/OTP generation", "plan3-f2": "Free gas fee coverage",
+    "plan3-desc": "Create unlimited QR/OTP payment requests. An annual plan for $75 is also available.",
+    "plan3-f1": "Unlimited QR/OTP generation", 
     "plan3-f3": "Priority support", "plan3-f4": "Cumulative stats dashboard", "plan3-f5": "Annual plan $75",
     "lbl-currencies": "SUPPORTED CURRENCIES", "ttl-currencies": "21 Currencies Supported",
     "sub-currencies": "Amounts are automatically converted into stablecoins using daily live exchange rates from our exchange-rate API.",
@@ -4281,8 +4328,8 @@ var TEXTS = {
     "f3-p": "Biometrische Authentifizierung für App-Zugang und Zahlungssignatur. Der private Schlüssel wird sicher im Android Keystore gespeichert.",
     "f4-h": "Automatische Kleingeld-Speicherung",
     "f4-p": "Beträge unter 0,01 USD werden automatisch als Guthaben gespeichert – inklusive Statistik in Echtzeit.",
-    "f5-h": "Gasgebühren inklusive",
-    "f5-p": "Die Gasgebühren werden für Premium-Mitglieder über Particle Wallet vollständig übernommen.",
+    "f5-h": "Mit MetaMask oder OKX bezahlen",
+    "f5-p": "Prüfe die QR- oder OTP-Zahlungsanfrage des Verkäufers und bestätige die Zahlung in deiner verbundenen MetaMask- oder OKX-Wallet-App.",
     "f6-h": "15 verfügbare Sprachen",
     "f6-p": "Unterstützt 15 Sprachen wie Koreanisch, Englisch, Arabisch und Chinesisch; die Schriftgröße passt sich automatisch an den Bildschirm an.",
     "lbl-app": "APP-SCREENSHOTS",
@@ -4306,13 +4353,13 @@ var TEXTS = {
     "ttl-how": "In 4 einfachen Schritten starten",
     "sub-how": "Einfach per Social Login anmelden und sofort bezahlen – ohne komplizierte Einrichtung.",
     "s1-h": "Mit Social Login registrieren",
-    "s1-p": "In 30 Sekunden mit Google · KakaoTalk · Facebook anmelden. Particle Wallet wird automatisch verbunden.",
+    "s1-p": "Registriere dich mit deinem Google-, KakaoTalk- oder Facebook-Konto.",
     "s2-h": "Währung & Coin wählen",
-    "s2-p": "Wähle deine lokale Währung und den Stablecoin (USDT/USDC) und registriere danach deine Wallet-Adresse.",
+    "s2-p": "Wähle die lokale Währung und den Stablecoin (USDT/USDC) und verbinde dann MetaMask oder OKX Wallet.",
     "s3-h": "QR- oder OTP-Anfrage",
     "s3-p": "Der Verkäufer erstellt einen QR- oder OTP-Code, und der Käufer scannt ihn und bestätigt die Zahlung.",
-    "s4-h": "Mit Fingerabdruck abschließen",
-    "s4-p": "Mit Fingerabdruck bestätigen — die Zahlung wird sofort abgeschlossen. Kleingeld wird automatisch gespeichert.",
+    "s4-h": "In der Wallet-App bestätigen",
+    "s4-p": "Prüfe die Zahlungsdetails und bestätige die Zahlung in MetaMask oder OKX Wallet. Kleingeld wird automatisch angesammelt.",
     "lbl-pricing": "PREISE",
     "ttl-pricing": "Stark starten, günstig nutzen",
     "sub-pricing": "Käufer nutzen den Dienst unbegrenzt kostenlos. Verkäufer können täglich bis zu 5 Anfragen kostenlos erstellen.",
@@ -4336,9 +4383,9 @@ var TEXTS = {
     "plan3-tag": "Premium",
     "plan3-h": "Premium",
     "plan3-period": "/ 6 Monate",
-    "plan3-desc": "Unbegrenzte Nutzung + volle Gas-Gebühren-Übernahme. Jahresplan für 75 $ ebenfalls verfügbar.",
+    "plan3-desc": "Unbegrenzt QR-/OTP-Zahlungsanfragen erstellen. Ein Jahresplan für 75 $ ist ebenfalls verfügbar.",
     "plan3-f1": "Unbegrenzte QR-/OTP-Erstellung",
-    "plan3-f2": "Kostenlose Gas-Gebühren",
+    
     "plan3-f3": "Priorisierter Support",
     "plan3-f4": "Dashboard für kumulative Statistiken",
     "plan3-f5": "Jahresplan 75 $",
@@ -4423,8 +4470,8 @@ var TEXTS = {
     "f3-p": "Authentification biométrique pour l'accès et la signature du paiement. La clé privée est sécurisée via Android Keystore + AES-256.",
     "f4-h": "Petite monnaie créditée automatiquement",
     "f4-p": "Les montants inférieurs à 0,01 USD sont automatiquement crédités en points, avec un suivi en temps réel.",
-    "f5-h": "Frais de gas offerts",
-    "f5-p": "Prise en charge complète des frais de gas via Particle Wallet pour les membres premium.",
+    "f5-h": "Payer avec MetaMask ou OKX",
+    "f5-p": "Vérifiez la demande de paiement QR ou OTP du vendeur, puis approuvez le paiement dans votre application MetaMask ou OKX Wallet connectée.",
     "f6-h": "15 langues prises en charge",
     "f6-p": "Prend en charge 15 langues, dont le coréen, l'anglais, l'arabe et le chinois, avec adaptation automatique des polices.",
     "lbl-app": "ÉCRANS DE L'APPLICATION",
@@ -4448,13 +4495,13 @@ var TEXTS = {
     "ttl-how": "Commencez en 4 étapes simples",
     "sub-how": "Démarrez immédiatement avec une connexion sociale, sans configuration compliquée.",
     "s1-h": "Inscription par connexion sociale",
-    "s1-p": "Inscription en 30 secondes avec Google · KakaoTalk · Facebook. Particle Wallet est créé automatiquement.",
+    "s1-p": "Inscrivez-vous avec votre compte Google, KakaoTalk ou Facebook.",
     "s2-h": "Choisir devise et coin",
-    "s2-p": "Choisissez la devise locale et le stablecoin (USDT/USDC), puis enregistrez votre adresse de portefeuille.",
+    "s2-p": "Choisissez la devise locale et le stablecoin (USDT/USDC), puis connectez MetaMask ou OKX Wallet.",
     "s3-h": "Demande par QR ou OTP",
     "s3-p": "Le vendeur génère un QR ou un code OTP, puis l'acheteur le scanne et vérifie les détails du paiement.",
-    "s4-h": "Paiement validé par empreinte digitale",
-    "s4-p": "Après validation par empreinte digitale, le paiement est exécuté immédiatement. La monnaie est créditée automatiquement.",
+    "s4-h": "Approuver dans votre portefeuille",
+    "s4-p": "Vérifiez les détails et approuvez le paiement dans MetaMask ou OKX Wallet. La monnaie est accumulée automatiquement.",
     "lbl-pricing": "TARIFS",
     "ttl-pricing": "Commencez à un prix raisonnable",
     "sub-pricing": "Les acheteurs utilisent le service gratuitement, et les vendeurs bénéficient aussi de 5 utilisations gratuites par jour.",
@@ -4478,9 +4525,9 @@ var TEXTS = {
     "plan3-tag": "Membre premium",
     "plan3-h": "Premium",
     "plan3-period": "/ 6 mois",
-    "plan3-desc": "Utilisation illimitée + frais de gas offerts. Option annuelle à 75 $ disponible.",
+    "plan3-desc": "Créez des demandes de paiement QR/OTP illimitées. Une formule annuelle à 75 $ est également disponible.",
     "plan3-f1": "Génération illimitée de QR/OTP",
-    "plan3-f2": "Frais de gas offerts",
+    
     "plan3-f3": "Support prioritaire",
     "plan3-f4": "Tableau de bord des statistiques",
     "plan3-f5": "Forfait annuel 75 $",
@@ -4564,8 +4611,8 @@ var TEXTS = {
       "f3-p": "Autenticação biométrica para acesso e assinatura do pagamento. A chave privada é protegida com Android Keystore + AES-256.",
       "f4-h": "Troco acumulado automaticamente",
       "f4-p": "Valores abaixo de US$ 0,01 são acumulados automaticamente em pontos, com estatísticas em tempo real.",
-      "f5-h": "Taxa de gas gratuita",
-      "f5-p": "Cobertura integral da taxa de gas via Particle Wallet para membros premium.",
+      "f5-h": "Pague com MetaMask ou OKX",
+      "f5-p": "Confira a solicitação de pagamento por QR ou OTP do vendedor e aprove o pagamento no aplicativo MetaMask ou OKX Wallet conectado.",
       "f6-h": "Suporte a 15 idiomas",
       "f6-p": "Suporta 15 idiomas, incluindo coreano, inglês, árabe e chinês, com ajuste automático de fontes.",
       "lbl-app": "TELAS REAIS DO APLICATIVO",
@@ -4589,13 +4636,13 @@ var TEXTS = {
       "ttl-how": "Comece em 4 passos simples",
       "sub-how": "Comece imediatamente com login social, sem configuração complexa.",
       "s1-h": "Cadastro com login social",
-      "s1-p": "Cadastre-se em 30 segundos com Google · KakaoTalk · Facebook. A Particle Wallet é criada automaticamente.",
+      "s1-p": "Cadastre-se com sua conta Google, KakaoTalk ou Facebook.",
       "s2-h": "Escolha moeda e coin",
-      "s2-p": "Selecione a moeda local e a stablecoin (USDT/USDC) e depois cadastre o endereço da sua carteira.",
+      "s2-p": "Selecione a moeda local e a stablecoin (USDT/USDC) e conecte a MetaMask ou OKX Wallet.",
       "s3-h": "Solicitação por QR ou OTP",
       "s3-p": "O vendedor gera um QR ou um código OTP, e o comprador escaneia e confere os detalhes do pagamento.",
-      "s4-h": "Pagamento confirmado por impressão digital",
-      "s4-p": "Após a confirmação por impressão digital, o pagamento é executado imediatamente. O troco é acumulado automaticamente.",
+      "s4-h": "Aprove no aplicativo da carteira",
+      "s4-p": "Confira os detalhes e aprove o pagamento na MetaMask ou OKX Wallet. O troco é acumulado automaticamente.",
       "lbl-pricing": "PLANOS E PREÇOS",
       "ttl-pricing": "Comece com um plano acessível",
       "sub-pricing": "Compradores usam o serviço gratuitamente, e vendedores também contam com 5 usos grátis por dia.",
@@ -4619,9 +4666,9 @@ var TEXTS = {
       "plan3-tag": "Membro premium",
       "plan3-h": "Premium",
       "plan3-period": "/ 6 meses",
-      "plan3-desc": "Uso ilimitado + taxa de gas gratuita. Plano anual de US$ 75 também disponível.",
+      "plan3-desc": "Crie solicitações de pagamento QR/OTP ilimitadas. Plano anual de US$ 75 também disponível.",
       "plan3-f1": "Geração ilimitada de QR/OTP",
-      "plan3-f2": "Taxa de gas gratuita",
+      
       "plan3-f3": "Suporte prioritário",
       "plan3-f4": "Painel de estatísticas",
       "plan3-f5": "Plano anual de US$ 75",
@@ -4705,8 +4752,8 @@ var TEXTS = {
       "f3-p": "Autenticación biométrica para acceso y firma del pago. La clave privada se protege con Android Keystore + AES-256.",
       "f4-h": "Cambio acreditado automáticamente",
       "f4-p": "Los importes inferiores a 0,01 USD se acumulan automáticamente como puntos, con estadísticas en tiempo real.",
-      "f5-h": "Gas sin costo",
-      "f5-p": "Cobertura total del gas mediante Particle Wallet para miembros premium.",
+      "f5-h": "Paga con MetaMask u OKX",
+      "f5-p": "Revisa la solicitud de pago QR u OTP del vendedor y aprueba el pago en tu aplicación MetaMask u OKX Wallet conectada.",
       "f6-h": "Soporte en 15 idiomas",
       "f6-p": "Admite 15 idiomas, incluidos coreano, inglés, árabe y chino, con ajuste automático de fuentes.",
       "lbl-app": "PANTALLAS REALES DE LA APLICACIÓN",
@@ -4730,13 +4777,13 @@ var TEXTS = {
       "ttl-how": "Empieza en 4 pasos sencillos",
       "sub-how": "Empieza de inmediato con inicio de sesión social, sin configuración compleja.",
       "s1-h": "Registro con inicio de sesión social",
-      "s1-p": "Regístrate en 30 segundos con Google · KakaoTalk · Facebook. Particle Wallet se crea automáticamente.",
+      "s1-p": "Regístrate con tu cuenta de Google, KakaoTalk o Facebook.",
       "s2-h": "Elige la moneda y la stablecoin",
-      "s2-p": "Selecciona la moneda local y la stablecoin (USDT/USDC) y luego registra la dirección de tu cartera.",
+      "s2-p": "Selecciona la moneda local y la stablecoin (USDT/USDC) y conecta MetaMask u OKX Wallet.",
       "s3-h": "Solicitud por QR u OTP",
       "s3-p": "El vendedor genera un QR o un código OTP, y el comprador escanea o introduce el código para revisar los detalles del pago.",
-      "s4-h": "Pago confirmado con huella",
-      "s4-p": "Tras la confirmación con huella, el pago se ejecuta inmediatamente. El cambio se acumula automáticamente.",
+      "s4-h": "Aprueba en la aplicación de tu cartera",
+      "s4-p": "Revisa los detalles y aprueba el pago en MetaMask u OKX Wallet. El cambio se acumula automáticamente.",
       "lbl-pricing": "PLANES",
       "ttl-pricing": "Empieza con un precio accesible",
       "sub-pricing": "Los compradores usan el servicio gratis, y los vendedores también disponen de 5 usos gratuitos al día.",
@@ -4760,9 +4807,9 @@ var TEXTS = {
       "plan3-tag": "Miembro premium",
       "plan3-h": "Premium",
       "plan3-period": "/ 6 meses",
-      "plan3-desc": "Uso ilimitado + gas gratis. Plan anual de 75 USD disponible.",
+      "plan3-desc": "Crea solicitudes de pago QR/OTP ilimitadas. También hay un plan anual de 75 USD.",
       "plan3-f1": "Generación ilimitada de QR/OTP",
-      "plan3-f2": "Gas gratis",
+      
       "plan3-f3": "Soporte prioritario",
       "plan3-f4": "Panel de estadísticas",
       "plan3-f5": "Plan anual de 75 USD",
@@ -4846,8 +4893,8 @@ var TEXTS = {
       "f3-p": "ऐप एक्सेस और भुगतान स्वीकृति के लिए बायोमेट्रिक प्रमाणीकरण। निजी कुंजी Android Keystore + AES-256 से सुरक्षित है।",
       "f4-h": "बची हुई राशि स्वतः जमा",
       "f4-p": "0.01 USD से कम राशि स्वतः सेविंग्स के रूप में जमा होती है और आँकड़े रियल-टाइम में दिखते हैं।",
-      "f5-h": "गैस शुल्क सहायता",
-      "f5-p": "प्रीमियम सदस्यों के लिए Particle Wallet के माध्यम से गैस शुल्क कवरेज।",
+      "f5-h": "MetaMask या OKX से भुगतान",
+      "f5-p": "विक्रेता का QR या OTP भुगतान अनुरोध जाँचें, फिर जुड़े हुए MetaMask या OKX Wallet ऐप में भुगतान स्वीकृत करें।",
       "f6-h": "15 भाषाओं का समर्थन",
       "f6-p": "कोरियन, अंग्रेज़ी, अरबी, चीनी सहित 15 भाषाएँ और स्वचालित फ़ॉन्ट समायोजन।",
       "lbl-app": "ऐप की वास्तविक स्क्रीन",
@@ -4871,13 +4918,13 @@ var TEXTS = {
       "ttl-how": "4 आसान चरणों में शुरुआत करें",
       "sub-how": "जटिल सेटअप के बिना सोशल लॉगिन से तुरंत शुरुआत करें।",
       "s1-h": "सोशल लॉगिन से साइन-अप",
-      "s1-p": "Google · KakaoTalk · Facebook के साथ 30 सेकंड में जुड़ें। Particle Wallet स्वतः बनता है।",
+      "s1-p": "अपने Google, KakaoTalk या Facebook खाते से पंजीकरण करें।",
       "s2-h": "मुद्रा और कॉइन चुनें",
-      "s2-p": "स्थानीय मुद्रा और स्टेबलकॉइन (USDT/USDC) चुनें और फिर अपना वॉलेट पता दर्ज करें।",
+      "s2-p": "स्थानीय मुद्रा और स्टेबलकॉइन (USDT/USDC) चुनें, फिर MetaMask या OKX Wallet कनेक्ट करें।",
       "s3-h": "QR या OTP अनुरोध",
       "s3-p": "विक्रेता QR या OTP कोड बनाता है, खरीदार स्कैन करके भुगतान विवरण की जाँच करता है।",
-      "s4-h": "फ़िंगरप्रिंट से भुगतान की पुष्टि",
-      "s4-p": "फिंगरप्रिंट पुष्टि के बाद भुगतान तुरंत निष्पादित होता है और बची राशि स्वतः जमा होती है।",
+      "s4-h": "वॉलेट ऐप में भुगतान स्वीकृत करें",
+      "s4-p": "भुगतान का विवरण जाँचें और MetaMask या OKX Wallet ऐप में स्वीकृति दें। बची हुई छोटी राशि अपने आप जमा होती है।",
       "lbl-pricing": "प्लान",
       "ttl-pricing": "उचित मूल्य पर शुरुआत करें",
       "sub-pricing": "खरीदारों के लिए पूर्णतः निःशुल्क, और विक्रेताओं के लिए प्रतिदिन 5 मुफ्त उपयोग।",
@@ -4901,9 +4948,9 @@ var TEXTS = {
       "plan3-tag": "प्रीमियम सदस्य",
       "plan3-h": "प्रीमियम",
       "plan3-period": "/ 6 महीने",
-      "plan3-desc": "असीमित उपयोग + गैस शुल्क सहायता। वार्षिक 75 USD योजना भी उपलब्ध है।",
+      "plan3-desc": "असीमित QR/OTP भुगतान अनुरोध बनाएँ। 75 USD की वार्षिक योजना भी उपलब्ध है।",
       "plan3-f1": "असीमित QR/OTP जनरेशन",
-      "plan3-f2": "गैस शुल्क सहायता",
+      
       "plan3-f3": "प्राथमिकता सहायता",
       "plan3-f4": "सांख्यिकी डैशबोर्ड",
       "plan3-f5": "75 USD वार्षिक प्लान",
@@ -4987,8 +5034,8 @@ var TEXTS = {
       "f3-p": "Вход в приложение и подпись платежа защищены биометрией. Приватный ключ шифруется AES-256 и хранится на устройстве.",
       "f4-h": "Автоматическое накопление сдачи",
       "f4-p": "Сдача менее 0,01 USD автоматически накапливается, а статистика обновляется в реальном времени.",
-      "f5-h": "Поддержка оплаты gas fee",
-      "f5-p": "Работает на базе Particle Wallet. Для премиум-участников gas fee покрывается автоматически.",
+      "f5-h": "Оплата через MetaMask или OKX",
+      "f5-p": "Проверьте QR- или OTP-запрос продавца и подтвердите оплату в подключённом приложении MetaMask или OKX Wallet.",
       "f6-h": "Поддержка 15 языков",
       "f6-p": "Поддерживаются корейский, английский, арабский, китайский и другие языки с автоматической подстройкой интерфейса.",
       "lbl-app": "Экран приложения",
@@ -5014,11 +5061,11 @@ var TEXTS = {
       "s1-h": "1. Выберите валюту",
       "s1-p": "Выберите местную валюту для оплаты и проверьте курс в реальном времени.",
       "s2-h": "2. Подключите кошелёк",
-      "s2-p": "Подключите Particle Wallet или OKX Wallet через QR и выберите монету.",
+      "s2-p": "Подключите MetaMask или OKX Wallet и выберите стейблкоин (USDT/USDC).",
       "s3-h": "3. Введите сумму",
       "s3-p": "Отсканируйте QR продавца или введите OTP-код и подтвердите сумму.",
-      "s4-h": "4. Подтвердите оплату",
-      "s4-p": "Подтвердите платёж отпечатком пальца или другой биометрией и завершите транзакцию.",
+      "s4-h": "4. Подтвердите оплату в кошельке",
+      "s4-p": "Проверьте детали и подтвердите оплату в приложении MetaMask или OKX Wallet. Мелкие остатки накапливаются автоматически.",
       "lbl-pricing": "Тарифные планы",
       "ttl-pricing": "План для каждого сценария",
       "sub-pricing": "Покупатели пользуются сервисом бесплатно всегда. Продавцы могут выбрать бесплатный или премиум-план.",
@@ -5042,9 +5089,9 @@ var TEXTS = {
       "plan3-tag": "Премиум",
       "plan3-h": "Премиум-продавец",
       "plan3-period": "$45 / 6 месяцев · $75 / 1 год",
-      "plan3-desc": "Для продавцов и партнёров, которым нужен неограниченный доступ.",
+      "plan3-desc": "Создавайте неограниченное число QR/OTP-запросов на оплату. Также доступен годовой план за 75 USD.",
       "plan3-f1": "Неограниченные QR/OTP-запросы",
-      "plan3-f2": "Бесплатная оплата Gas",
+      
       "plan3-f3": "Приоритетная поддержка",
       "plan3-f4": "Поддержка расширенных настроек",
       "plan3-f5": "Подходит для бизнеса и партнёров",
@@ -5273,7 +5320,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "잔돈 적립 및 정산 연결",
-        "body": "0.01달러 미만의 잔돈은 자동 적립되어 향후 가스비 보전 및 결제 편의성 향상에 활용됩니다."
+        "body": "0.01달러 미만의 잔돈은 자동으로 적립됩니다."
       }
     ]
   },
@@ -5301,7 +5348,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "Dust Accumulation & Settlement Link",
-        "body": "Dust under $0.01 is automatically accumulated and can be used to offset future gas fees and improve payment efficiency."
+        "body": "Spare change under $0.01 is saved automatically."
       }
     ]
   },
@@ -5329,7 +5376,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "端数積立と精算連携",
-        "body": "0.01ドル未満の端数は自動的に積み立てられ、将来のガス代補填や決済効率の向上に活用できます。"
+        "body": "0.01米ドル未満のおつりは自動で積み立てられます。"
       }
     ]
   },
@@ -5357,7 +5404,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "零钱累积与结算连接",
-        "body": "低于 0.01 美元的零钱会自动累积，可用于抵扣未来 gas 费用并提升支付效率。"
+        "body": "低于 0.01 美元的零钱会自动积存。"
       }
     ]
   },
@@ -5385,7 +5432,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "零錢累積與結算連接",
-        "body": "低於 0.01 美元的零錢會自動累積，可用於抵扣未來 gas 費用並提升支付效率。"
+        "body": "低於 0.01 美元的零錢會自動積存。"
       }
     ]
   },
@@ -5413,7 +5460,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "สะสมเศษเงินและเชื่อมต่อการชำระบัญชี",
-        "body": "เศษเงินต่ำกว่า $0.01 จะถูกสะสมอัตโนมัติ และสามารถใช้ชดเชยค่า gas ในอนาคตหรือเพิ่มประสิทธิภาพการชำระเงินได้"
+        "body": "เศษเงินที่ต่ำกว่า 0.01 ดอลลาร์สหรัฐจะถูกสะสมโดยอัตโนมัติ"
       }
     ]
   },
@@ -5441,7 +5488,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "Tích lũy tiền lẻ và liên kết đối soát",
-        "body": "Phần tiền lẻ dưới $0.01 được tự động tích lũy và có thể dùng để bù phí gas trong tương lai cũng như cải thiện hiệu quả thanh toán."
+        "body": "Tiền lẻ dưới 0,01 USD được tích lũy tự động."
       }
     ]
   },
@@ -5469,7 +5516,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "Dust Accumulation at Settlement Link",
-        "body": "Ang dust na mas mababa sa $0.01 ay awtomatikong naiipon at maaaring gamitin upang bawasan ang future gas fees at mapahusay ang payment efficiency."
+        "body": "Awtomatikong naiipon ang sukling mas mababa sa $0.01."
       }
     ]
   },
@@ -5497,7 +5544,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "تجميع الفروقات وربط التسوية",
-        "body": "يتم تجميع الفروقات التي تقل عن 0.01 دولار تلقائياً، ويمكن استخدامها لتعويض رسوم الغاز المستقبلية وتحسين كفاءة الدفع."
+        "body": "تُحفظ الفكة التي تقل عن 0.01 دولار أمريكي تلقائيًا."
       }
     ]
   },
@@ -5525,7 +5572,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "Dust-Sammlung & Settlement-Link",
-        "body": "Beträge unter 0,01 USD werden automatisch gesammelt und können zur Kompensation zukünftiger Gasgebühren sowie zur Verbesserung der Zahlungseffizienz genutzt werden."
+        "body": "Kleingeld unter 0,01 USD wird automatisch angesammelt."
       }
     ]
   },
@@ -5553,7 +5600,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "Accumulation du dust & lien de règlement",
-        "body": "Le dust inférieur à 0,01 USD est automatiquement accumulé et peut servir à compenser de futurs frais de gas et à améliorer l’efficacité des paiements."
+        "body": "La monnaie inférieure à 0,01 USD est accumulée automatiquement."
       }
     ]
   },
@@ -5581,7 +5628,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "Acúmulo de dust e conexão com liquidação",
-        "body": "O dust abaixo de US$ 0,01 é acumulado automaticamente e pode ser usado para compensar futuras taxas de gas e melhorar a eficiência do pagamento."
+        "body": "O troco inferior a US$ 0,01 é acumulado automaticamente."
       }
     ]
   },
@@ -5609,7 +5656,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "Acumulación de dust y enlace de liquidación",
-        "body": "El dust inferior a 0,01 USD se acumula automáticamente y puede usarse para compensar futuras comisiones de gas y mejorar la eficiencia del pago."
+        "body": "El cambio inferior a 0,01 USD se acumula automáticamente."
       }
     ]
   },
@@ -5637,7 +5684,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "Dust accumulation और settlement link",
-        "body": "$0.01 से कम dust अपने आप accumulate होता है और future gas fees को offset करने तथा payment efficiency बढ़ाने में उपयोग हो सकता है।"
+        "body": "0.01 अमेरिकी डॉलर से कम की बची हुई राशि अपने आप जमा होती है।"
       }
     ]
   },
@@ -5665,7 +5712,7 @@ var PAYMENT_ARCH_COPY = {
       },
       {
         "title": "Накопление dust и связь с расчетами",
-        "body": "Dust менее 0,01 USD автоматически накапливается и может использоваться для компенсации будущих gas fees и повышения эффективности платежей."
+        "body": "Остатки менее 0,01 USD накапливаются автоматически."
       }
     ]
   }
@@ -5909,6 +5956,29 @@ function updateFxInvisible(lang) {
   if (link) link.href = src;
 }
 
+
+// Wrap existing translated title lines so language switching preserves the motion.
+function animateHeroTitle() {
+  var title = document.getElementById('hero-h1');
+  if (!title) return;
+  var lines = title.innerHTML.split(/<br\s*\/?>/i);
+  var fragment = document.createDocumentFragment();
+  title.classList.remove('hero-motion-ready');
+  lines.forEach(function(html, index) {
+    var line = document.createElement('span');
+    line.className = 'hero-line';
+    line.style.setProperty('--hero-line-delay', (0.1 + index * 0.24) + 's');
+    line.innerHTML = html;
+    line.querySelectorAll('span').forEach(function(emphasis) {
+      emphasis.classList.add('hero-emphasis');
+    });
+    fragment.appendChild(line);
+    if (index < lines.length - 1) fragment.appendChild(document.createTextNode('\n'));
+  });
+  title.replaceChildren(fragment);
+  title.classList.add('hero-motion-ready');
+}
+
 function setLang(lang) {
   currentLang = lang;
   document.documentElement.setAttribute('lang', lang);
@@ -5930,6 +6000,8 @@ function setLang(lang) {
     var el = document.getElementById(id);
     if (el) el.innerHTML = texts[id];
   }
+
+  animateHeroTitle();
 
   // 화폐/국가 태그 (data-ko/en/ja 방식, 없으면 영어 fallback)
   document.querySelectorAll('.c-name').forEach(function(el) {
