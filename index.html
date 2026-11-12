@@ -893,29 +893,31 @@ html[dir="rtl"] .fx-invisible-core{
 .modal-contact-email a:hover{text-decoration:underline;}
 
 
-/* Hero title: staged entrance followed by a quiet light sweep. */
+/* Hero title: repeat the staged entrance every 8 seconds with a brighter light sweep. */
 .hero h1 .hero-line{display:block;color:inherit;overflow-wrap:break-word;}
 .hero h1 .hero-emphasis{color:#7de8ff;}
 .hero-motion-ready .hero-line{
-  animation:heroLineReveal 0.78s cubic-bezier(0.22,1,0.36,1) both;
+  animation:heroLineReveal 8s cubic-bezier(0.22,1,0.36,1) infinite both;
   animation-delay:var(--hero-line-delay,0s);
 }
 @keyframes heroLineReveal{
-  from{opacity:0;transform:translateY(18px);}
-  to{opacity:1;transform:translateY(0);}
+  0%{opacity:0;transform:translateY(18px);}
+  10%,80%{opacity:1;transform:translateY(0);}
+  90%,100%{opacity:0;transform:translateY(-8px);}
 }
 @supports ((background-clip:text) or (-webkit-background-clip:text)){
   .hero h1 .hero-emphasis{
-    background-image:linear-gradient(105deg,#7de8ff 0%,#7de8ff 41%,#d8f8ff 48%,#ffffff 50%,#d8f8ff 52%,#7de8ff 59%,#7de8ff 100%);
-    background-size:260% 100%;background-position:100% 0;
+    background-image:linear-gradient(105deg,#7de8ff 0%,#7de8ff 36%,#d8f8ff 43%,#ffffff 48%,#ffffff 52%,#d8f8ff 57%,#7de8ff 64%,#7de8ff 100%);
+    background-size:280% 100%;background-position:100% 0;
     -webkit-background-clip:text;background-clip:text;
     color:transparent;-webkit-text-fill-color:transparent;
-    animation:heroTextLight 7s ease-in-out 1.5s infinite;
+    animation:heroTextLight 8s ease-in-out 0.34s infinite;
   }
 }
 @keyframes heroTextLight{
-  0%,68%{background-position:100% 0;}
-  92%,100%{background-position:0% 0;}
+  0%,22%{background-position:100% 0;filter:drop-shadow(0 0 0 rgba(125,232,255,0));}
+  36%{filter:drop-shadow(0 0 7px rgba(125,232,255,0.55));}
+  50%,100%{background-position:0% 0;filter:drop-shadow(0 0 0 rgba(125,232,255,0));}
 }
 @media(max-width:768px){
   .hero{height:auto;min-height:100vh;min-height:100svh;padding-top:92px;}
@@ -933,7 +935,7 @@ html[dir="rtl"] .fx-invisible-core{
 @media(prefers-reduced-motion:reduce){
   .hero-motion-ready .hero-line{animation:none;opacity:1;transform:none;}
   .hero h1 .hero-emphasis{
-    animation:none;background-image:none;color:#7de8ff;-webkit-text-fill-color:#7de8ff;
+    animation:none;background-image:none;color:#7de8ff;-webkit-text-fill-color:#7de8ff;filter:none;
   }
 }
 
